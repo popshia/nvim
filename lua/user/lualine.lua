@@ -3,6 +3,17 @@ if not status_ok then
 	return
 end
 
+local gps = require("nvim-gps")
+gps.setup({
+	icons = {
+		["class-name"] = " ", -- Classes and class-like objects
+		["function-name"] = " ", -- Functions
+		["method-name"] = " ", -- Methods (functions inside class-like objects)
+		["container-name"] = "離", -- Containers (example: lua tables)
+		["tag-name"] = "炙", -- Tags (example: html tags)
+	},
+})
+
 local hide_in_width = function()
 	return vim.fn.winwidth(0) > 80
 end
@@ -14,14 +25,14 @@ local diagnostics = {
 	symbols = { error = " ", warn = " " },
 	colored = false,
 	update_in_insert = false,
-	always_visible = true,
+	always_visible = false,
 }
 
 local diff = {
 	"diff",
 	colored = false,
 	symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
-  cond = hide_in_width
+	cond = hide_in_width,
 }
 
 -- local mode = {
@@ -66,31 +77,35 @@ lualine.setup({
 	options = {
 		icons_enabled = true,
 		theme = "auto",
-		component_separators = { left = '|', right = '|'},
-		section_separators = { left = '', right = ''},
+		component_separators = { left = "|", right = "|" },
+		section_separators = { left = "", right = "" },
 		disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
 		always_divide_middle = true,
 	},
 	sections = {
-    lualine_a = {'mode'},
-    lualine_b = { branch, 'diff', 'diagnostics'},
-    lualine_c = {
-        {
-            'filename',
-            file_status = true,   -- displays file status (readonly status, modified status)
-            path = 2,             -- 0 = just filename, 1 = relative path, 2 = absolute path
-            shorting_target = 40, -- Shortens path to leave 40 space in the window
-                                  -- for other components. Terrible name any suggestions?
-            symbols = {
-                modified = '[+]',      -- when the file was modified
-                readonly = '[-]',      -- if the file is not modifiable or readonly
-                unnamed = '[No Name]', -- default display name for unnamed buffers
-            }
-        },
-    },
-    lualine_x = {'encoding', filetype, spaces},
-    lualine_y = {'progress'},
-    lualine_z = {'location'},
+		lualine_a = { "mode" },
+		lualine_b = { branch, diff, diagnostics },
+		lualine_c = {
+			{
+				gps.get_location,
+				cond = gps.is_available,
+			},
+			{
+				"filename",
+				file_status = true, -- displays file status (readonly status, modified status)
+				path = 1, -- 0 = just filename, 1 = relative path, 2 = absolute path
+				shorting_target = 40, -- Shortens path to leave 40 space in the window
+				-- for other components. Terrible name any suggestions?
+				symbols = {
+					modified = "[+]", -- when the file was modified
+					readonly = "[-]", -- if the file is not modifiable or readonly
+					unnamed = "[No Name]", -- default display name for unnamed buffers
+				},
+			},
+		},
+		lualine_x = { filetype, spaces },
+		lualine_y = { "progress" },
+		lualine_z = { "location" },
 
 		-- lualine_a = { 'mode' },
 		-- lualine_b = { branch, diagnostics },
