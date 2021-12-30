@@ -51,6 +51,7 @@ return packer.startup(function(use)
 	use("ahmedkhalf/project.nvim") -- project file search
 	use("lukas-reineke/indent-blankline.nvim") -- show tab and indents
 	use("antoinemadec/FixCursorHold.nvim") -- this is needed to fix lsp doc highlight
+	use("kevinhwang91/nvim-hlslens") -- search with count
 	use({
 		"phaazon/hop.nvim",
 		branch = "v1", -- optional but strongly recommended

@@ -62,6 +62,11 @@ map("n", "K", ":m .-2<CR>==", opts)
 map("x", "J", ":move '>+1<CR>gv-gv", opts)
 map("x", "K", ":move '<-2<CR>gv-gv", opts)
 
+-- Hop.nvim
+map("n", "f", "<cmd>HopWord<cr>", opts)
+map("n", "F", "<cmd>HopLine<cr>", opts)
+-- map("n", "f", "<cmd>Hopword<cr>", opts)
+
 -- Terminal --
 -- Better terminal navigation
 -- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
