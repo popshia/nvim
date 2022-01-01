@@ -1,3 +1,7 @@
+-- Impatient
+require("impatient")
+require("packer_compiled")
+
 -- General
 require("user.autocommands")
 require("user.colorscheme")

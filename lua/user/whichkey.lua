@@ -81,7 +81,6 @@ local opts = {
 local mappings = {
 	["a"] = { "<cmd>Alpha<cr>", "Alpha" },
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-	["w"] = { "<cmd>w!<CR>", "Save" },
 	["q"] = { "<cmd>q!<CR>", "Quit" },
 	["d"] = { "<cmd>Bdelete!<cr>", "Close" },
 	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
@@ -92,6 +91,7 @@ local mappings = {
 	["r"] = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
 	["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
 	["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
+	["R"] = { "<cmd>SnipRun<cr>", "Run Code" },
 
 	b = {
 		name = "Buffer",
