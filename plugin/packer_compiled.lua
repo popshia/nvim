@@ -79,11 +79,6 @@ _G.packer_plugins = {
     path = "/Users/popshia/.local/share/nvim/site/pack/packer/start/FixCursorHold.nvim",
     url = "https://github.com/antoinemadec/FixCursorHold.nvim"
   },
-  ["JABS.nvim"] = {
-    loaded = true,
-    path = "/Users/popshia/.local/share/nvim/site/pack/packer/start/JABS.nvim",
-    url = "https://github.com/matbme/JABS.nvim"
-  },
   LuaSnip = {
     loaded = true,
     path = "/Users/popshia/.local/share/nvim/site/pack/packer/start/LuaSnip",

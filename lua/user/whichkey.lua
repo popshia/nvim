@@ -80,20 +80,15 @@ local opts = {
 
 local mappings = {
 	["a"] = { "<cmd>Alpha<cr>", "Alpha" },
-	-- ["b"] = {
-	-- 	"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-	-- 	"Buffers",
-	-- },
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	["w"] = { "<cmd>w!<CR>", "Save" },
 	["q"] = { "<cmd>q!<CR>", "Quit" },
-	-- ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
-	["n"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-	-- ["f"] = { "<cmd>Telescope find_files theme=dropdown<cr>", "Find files" },
+	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 	["f"] = {
-		"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+		"<cmd>Telescope find_files<cr>",
 		"Find files",
 	},
+	["r"] = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
 	["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
 	["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
 
@@ -104,7 +99,6 @@ local mappings = {
 			"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
 			"List",
 		},
-		-- l = { "<cmd>JABSOpen<cr>", "List" },
 		d = { "<cmd>Bdelete!<cr>", "Delete" },
 		w = { "<cmd>Bwipeout!<cr>", "Wipeout" },
 	},
@@ -164,7 +158,7 @@ local mappings = {
 			"Prev Diagnostic",
 		},
 		l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-		q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
+		q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "QuickFix" },
 		r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
 		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
 		S = {
@@ -173,9 +167,8 @@ local mappings = {
 		},
 	},
 
-	s = {
-		name = "Search",
-		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+	u = {
+		name = "Utility",
 		c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
 		p = {
 			"<cmd>lua require('telescope.builtin.internal').colorscheme({enable_preview = true})<cr>",
@@ -183,8 +176,6 @@ local mappings = {
 		},
 		h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
 		M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-		r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-		R = { "<cmd>Telescope registers<cr>", "Registers" },
 		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
 		C = { "<cmd>Telescope commands<cr>", "Commands" },
 	},
@@ -197,15 +188,6 @@ local mappings = {
 		f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
 		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
 		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
-	},
-
-	h = {
-		name = "Hop",
-		w = { "<cmd>HopWord<cr>", "Word" },
-		l = { "<cmd>HopLine<cr>", "Line" },
-		c = { "<cmd>HopChar1<cr>", "1-char" },
-		s = { "<cmd>HopChar2<cr>", "2-char" },
-		p = { "<cmd>HopPattern<cr>", "Pattern" },
 	},
 }
 

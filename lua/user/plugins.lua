@@ -69,7 +69,6 @@ return packer.startup(function(use)
 	use("nvim-lualine/lualine.nvim") -- status line
 	use("akinsho/bufferline.nvim") -- buffer tab line
 	use("SmiteshP/nvim-gps") -- status line components
-	use("matbme/JABS.nvim") -- buffer list and actions
 	use("rcarriga/nvim-notify") -- notifications popup
 
 	-- Colorschemes
