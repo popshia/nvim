@@ -1,6 +1,6 @@
 local opts = { noremap = true, silent = true }
 
-local term_opts = { silent = true }
+-- local term_opts = { silent = true }
 
 -- Shorten function name
 local map = vim.api.nvim_set_keymap
@@ -66,9 +66,9 @@ map("x", "K", ":move '<-2<CR>gv-gv", opts)
 map("n", "f", "<cmd>HopWord<cr>", opts)
 map("n", "F", "<cmd>HopLine<cr>", opts)
 
--- Sniprun.nvim
-map("n", "<C-r>", "<cmd>Sniprun<cr>", opts)
-map("v", "<C-r>", "<cmd>Sniprun<cr>", opts)
+-- -- Sniprun.nvim
+-- map("n", "<C-r>", "<cmd>Sniprun<cr>", opts)
+-- map("v", "<C-r>", "<cmd>Sniprun<cr>", opts)
 
 -- Terminal --
 -- Better terminal navigation
