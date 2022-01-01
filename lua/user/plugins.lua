@@ -92,6 +92,7 @@ return packer.startup(function(use)
 	use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 	use("RRethy/vim-illuminate") -- automatically highlighting other uses of the current word under the cursor
+	use("tami5/lspsaga.nvim") -- lspsaga
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim") -- highly extendable fuzzy finder over lists

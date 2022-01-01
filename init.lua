@@ -6,6 +6,7 @@ require("user.options")
 
 -- Packer
 require("user.plugins")
+
 -- Plugin configs
 require("user.alpha")
 require("user.autopairs")
@@ -16,8 +17,8 @@ require("user.gitsigns")
 require("user.hlslens")
 require("user.hop")
 require("user.indentline")
+require("user.lspsaga")
 require("user.lualine")
--- vim.notify = require("notify")
 require("user.neoscroll")
 require("user.nvim-tree")
 require("user.project")
@@ -25,6 +26,7 @@ require("user.toggleterm")
 require("user.treesitter")
 require("user.telescope")
 require("user.whichkey")
+-- vim.notify = require("notify")
 
 -- LSP folder
 require("user.lsp")
