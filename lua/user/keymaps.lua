@@ -65,6 +65,11 @@ map("x", "K", ":move '<-2<CR>gv-gv", opts)
 -- Hop.nvim
 map("n", "f", "<cmd>HopWord<cr>", opts)
 map("n", "F", "<cmd>HopLine<cr>", opts)
+map("v", "f", "<cmd>HopWord<cr>", opts)
+map("v", "F", "<cmd>HopLine<cr>", opts)
+
+-- Pick buffers
+map("n", "gb", "<cmd>BufferLinePick<cr>", opts)
 
 -- -- Sniprun.nvim
 -- map("n", "<C-r>", "<cmd>Sniprun<cr>", opts)
