@@ -92,7 +92,6 @@ return packer.startup({
 		use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
 		use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 		use("RRethy/vim-illuminate") -- automatically highlighting other uses of the current word under the cursor
-		use("tami5/lspsaga.nvim") -- lspsaga
 
 		-- Telescope
 		use("nvim-telescope/telescope.nvim") -- highly extendable fuzzy finder over lists
@@ -105,7 +104,7 @@ return packer.startup({
 		use("lewis6991/gitsigns.nvim") -- git integration
 
 		-- Code runners
-		use({ "michaelb/sniprun", run = "bash ./install.sh", cmd = { "Sniprun" } }) -- run range of code
+		use({ "michaelb/sniprun", run = "bash ./install.sh", cmd = { "SnipRun" } }) -- run range of code
 
 		-- Automatically set up your configuration after cloning packer.nvim
 		-- Put this at the end after all plugins

@@ -15,20 +15,20 @@ null_ls.setup({
 		formatting.stylua,
 
 		-- python
-		formatting.black,
-		formatting.isort,
+		-- formatting.black.with({ extra_args = { "fast" } }),
+		-- formatting.isort,
 		-- formatting.autopep8,
-		-- formatting.YAPF,
+		formatting.yapf,
 
 		-- c, c++
-		formatting.clang_format,
+		-- formatting.clang_format,
 
 		-- code spelling
-		formatting.codespell,
+		-- formatting.codespell,
 
 		-- other languages
 		-- formatting.eslint_d,
-		-- formatting.prettier,
+		-- formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
 		-- formatting.json_tool,
 	},
 

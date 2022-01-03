@@ -25,11 +25,11 @@ require("user.lualine")
 require("user.neoscroll")
 require("user.nvim-tree")
 require("user.project")
+require("user.telescope")
 require("user.toggleterm")
 require("user.treesitter")
-require("user.telescope")
 require("user.whichkey")
--- vim.notify = require("notify")
+--vim.notify = require("notify")
 
 -- LSP folder
 require("user.lsp")
