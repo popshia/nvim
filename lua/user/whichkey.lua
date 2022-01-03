@@ -5,7 +5,7 @@ end
 
 local setup = {
 	plugins = {
-		marks = true, -- shows a list of your marks on ' and `
+		marks = false, -- shows a list of your marks on ' and `
 		registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
 		spelling = {
 			enabled = false, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
@@ -58,8 +58,8 @@ local setup = {
 	ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
 	hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
 	show_help = true, -- show help message on the command line when the popup is visible
-	triggers = "auto", -- automatically setup triggers
-	-- triggers = {"<leader>"} -- or specify a list manually
+	-- triggers = "auto", -- automatically setup triggers
+	triggers = { "<leader>" }, -- or specify a list manually
 	triggers_blacklist = {
 		-- list of mode / prefixes that should never be hooked by WhichKey
 		-- this is mostly relevant for key maps that start with a native binding

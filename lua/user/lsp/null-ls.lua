@@ -27,9 +27,9 @@ null_ls.setup({
 		formatting.codespell,
 
 		-- other languages
-		formatting.eslint_d,
-		formatting.prettier,
-		formatting.json_tool,
+		-- formatting.eslint_d,
+		-- formatting.prettier,
+		-- formatting.json_tool,
 	},
 
 	on_attach = function(client)

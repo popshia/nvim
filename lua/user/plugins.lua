@@ -44,6 +44,7 @@ return packer.startup({
 		-- Utility
 		use("wbthomason/packer.nvim") -- have packer manage itself
 		use("nvim-lua/plenary.nvim") -- useful lua functions used ny lots of plugins
+		use("nvim-lua/popup.nvim") -- vim popup api in neovim
 		use("windwp/nvim-autopairs") -- autopairs, integrates with both cmp and treesitter
 		use("numToStr/Comment.nvim") -- easily comment stuff
 		use("kyazdani42/nvim-web-devicons") -- file icons
@@ -56,10 +57,7 @@ return packer.startup({
 		use("famiu/bufdelete.nvim") -- better buffer manipulation
 		use("karb94/neoscroll.nvim") -- smooth scrolling
 		use("lewis6991/impatient.nvim") -- improve startup speed
-		use({
-			"phaazon/hop.nvim",
-			branch = "v1", -- optional but strongly recommended
-		})
+		use("phaazon/hop.nvim") -- optional but strongly recommended
 
 		-- Interface
 		use("folke/which-key.nvim") -- show available keys after hitting space
@@ -100,17 +98,14 @@ return packer.startup({
 		use("nvim-telescope/telescope.nvim") -- highly extendable fuzzy finder over lists
 
 		-- Treesitter
-		use({
-			"nvim-treesitter/nvim-treesitter", -- treesitter for syntax highlighting
-			run = ":TSUpdate",
-		})
+		use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }) -- treesitter for syntax highlighting
 		use("JoosepAlviste/nvim-ts-context-commentstring") -- set comments based on file type
 
 		-- Git
 		use("lewis6991/gitsigns.nvim") -- git integration
 
 		-- Code runners
-		use({ "michaelb/sniprun", run = "bash ./install.sh" }) -- sniprun to run range or file
+		use({ "michaelb/sniprun", run = "bash ./install.sh", cmd = { "Sniprun" } }) -- run range of code
 
 		-- Automatically set up your configuration after cloning packer.nvim
 		-- Put this at the end after all plugins
