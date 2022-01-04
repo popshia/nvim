@@ -21,23 +21,21 @@ vim.g.maplocalleader = " "
 -- Normal --
 -- Better window navigation
 map("n", "<C-h>", "<C-w>h", opts)
-map("n", "<C-j>", "<C-w>j", opts)
-map("n", "<C-k>", "<C-w>k", opts)
+-- map("n", "<C-j>", "<C-w>j", opts)
+-- map("n", "<C-k>", "<C-w>k", opts)
 map("n", "<C-l>", "<C-w>l", opts)
 
 -- Resize with arrows
-map("n", "<C-Up>", ":resize +2<CR>", opts)
-map("n", "<C-Down>", ":resize -2<CR>", opts)
-map("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-map("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+-- map("n", "<C-Up>", ":resize +2<CR>", opts)
+-- map("n", "<C-Down>", ":resize -2<CR>", opts)
+-- map("n", "<C-Left>", ":vertical resize -2<CR>", opts)
+-- map("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-map("n", "<Tab>", ":bnext<CR>", opts)
-map("n", "<S-Tab>", ":bprevious<CR>", opts)
-
--- Move text up and down
--- map("n", "∆", "<Esc>:m .+1<CR>==gi", opts)
--- map("n", "˚", "<Esc>:m .-2<CR>==gi", opts)
+-- map("n", "<Tab>", ":bnext<CR>", opts)
+-- map("n", "<S-Tab>", ":bprevious<CR>", opts)
+map("n", "<S-l>", ":bnext<CR>", opts)
+map("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Paste without yanking
 map("v", "p", '"_dp', opts)
