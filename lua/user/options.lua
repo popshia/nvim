@@ -25,6 +25,7 @@ local options = {
 	writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 	expandtab = true, -- convert tabs to spaces
 	cursorline = true, -- highlight the current line
+	virtualedit = "all", -- visual block selection
 	number = true, -- set numbered lines
 	relativenumber = true, -- set relative numbered lines
 	shiftwidth = 4, -- the number of spaces inserted for each indentation
@@ -46,3 +47,5 @@ end
 vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd([[set iskeyword+=-]])
 vim.cmd([[set formatoptions-=cro]]) -- TODO: this doesn't seem to work
+vim.cmd("let g:neovide_refresh_rate=165")
+vim.cmd("let g:neovide_remember_window_size = v:true")
