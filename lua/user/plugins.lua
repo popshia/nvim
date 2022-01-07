@@ -80,6 +80,7 @@ return packer.startup({
 		use("saadparwaiz1/cmp_luasnip") -- snippet completions
 		use("hrsh7th/cmp-nvim-lsp") -- lsp completions
 		use({ "tzachar/cmp-tabnine", run = "./install.sh" }) -- tabnine completions
+		use("github/copilot.vim") -- github copilot
 		use("lukas-reineke/cmp-under-comparator") -- sort completions
 
 		-- Snippets
