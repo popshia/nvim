@@ -79,9 +79,9 @@ return packer.startup({
 		use("hrsh7th/cmp-cmdline") -- cmdline completions
 		use("saadparwaiz1/cmp_luasnip") -- snippet completions
 		use("hrsh7th/cmp-nvim-lsp") -- lsp completions
-		use({ "tzachar/cmp-tabnine", run = "./install.sh" }) -- tabnine completions
-		use("github/copilot.vim") -- github copilot
 		use("lukas-reineke/cmp-under-comparator") -- sort completions
+		use({ "tzachar/cmp-tabnine", run = "./install.sh" }) -- tabnine completions
+		-- use("github/copilot.vim") -- github copilot
 
 		-- Snippets
 		use("L3MON4D3/LuaSnip") --snippet engine
