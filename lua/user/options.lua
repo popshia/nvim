@@ -34,8 +34,7 @@ local options = {
 	wrap = false, -- display lines as one long line
 	scrolloff = 8, -- is one of my fav
 	sidescrolloff = 8, -- side scrolloff with 8 char
-	guifont = "monospace:h17", -- the font used in graphical neovim applications
-	-- autochdir = true,			   -- auto change directory
+	guifont = "JetBrainsMonoMedium Nerd Font Mono:h18", -- the font used in graphical neovim applications
 }
 
 vim.opt.shortmess:append("c")
