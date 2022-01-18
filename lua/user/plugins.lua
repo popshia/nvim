@@ -43,7 +43,7 @@ return packer.startup({
 	function(use)
 		-- Utility
 		use("wbthomason/packer.nvim") -- have packer manage itself
-		use("nvim-lua/plenary.nvim") -- useful lua functions used ny lots of plugins
+		use("nvim-lua/plenary.nvim") -- useful lua functions used by lots of plugins
 		use("nvim-lua/popup.nvim") -- vim popup api in neovim
 		use("windwp/nvim-autopairs") -- autopairs, integrates with both cmp and treesitter
 		use("numToStr/Comment.nvim") -- easily comment stuff
@@ -57,7 +57,7 @@ return packer.startup({
 		use("famiu/bufdelete.nvim") -- better buffer manipulation
 		use("karb94/neoscroll.nvim") -- smooth scrolling
 		use("lewis6991/impatient.nvim") -- improve startup speed
-		use("phaazon/hop.nvim") -- optional but strongly recommended
+		use("phaazon/hop.nvim") -- hop to any word you like
 
 		-- Interface
 		use("folke/which-key.nvim") -- show available keys after hitting space
@@ -65,7 +65,6 @@ return packer.startup({
 		use("nvim-lualine/lualine.nvim") -- status line
 		use("akinsho/bufferline.nvim") -- buffer tab line
 		use("SmiteshP/nvim-gps") -- status line components
-		use("rcarriga/nvim-notify") -- notifications popup
 
 		-- Colorschemes
 		use("RRethy/nvim-base16") -- neovim base16 colorschemes
