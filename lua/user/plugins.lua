@@ -58,6 +58,7 @@ return packer.startup({
 		use("karb94/neoscroll.nvim") -- smooth scrolling
 		use("lewis6991/impatient.nvim") -- improve startup speed
 		use("phaazon/hop.nvim") -- hop to any word you like
+		use({ "mrjones2014/dash.nvim", run = "make install" }) -- dash documentation searching
 
 		-- Interface
 		use("folke/which-key.nvim") -- show available keys after hitting space
