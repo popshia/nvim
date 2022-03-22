@@ -29,6 +29,7 @@ require("user.telescope")
 require("user.toggleterm")
 require("user.treesitter")
 require("user.whichkey")
+require("user.jaq")
 
 -- LSP folder
 require("user.lsp")

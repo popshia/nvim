@@ -45,7 +45,6 @@ return packer.startup({
 		use("wbthomason/packer.nvim") -- have packer manage itself
 		use("nvim-lua/plenary.nvim") -- useful lua functions used by lots of plugins
 		use("nvim-lua/popup.nvim") -- vim popup api in neovim
-		use("windwp/nvim-autopairs") -- autopairs, integrates with both cmp and treesitter
 		use("numToStr/Comment.nvim") -- easily comment stuff
 		use("kyazdani42/nvim-web-devicons") -- file icons
 		use("kyazdani42/nvim-tree.lua") -- nvim-tree file explorer
@@ -58,7 +57,13 @@ return packer.startup({
 		use("karb94/neoscroll.nvim") -- smooth scrolling
 		use("lewis6991/impatient.nvim") -- improve startup speed
 		use("phaazon/hop.nvim") -- hop to any word you like
-		use({ "mrjones2014/dash.nvim", run = "make install" }) -- dash documentation searching
+		use({
+			"ZhiyuanLck/smart-pairs",
+			event = "InsertEnter",
+			config = function()
+				require("pairs"):setup()
+			end,
+		}) -- autopairs, integrates with both cmp and treesitter
 
 		-- Interface
 		use("folke/which-key.nvim") -- show available keys after hitting space
@@ -105,7 +110,15 @@ return packer.startup({
 		use("lewis6991/gitsigns.nvim") -- git integration
 
 		-- Code runners
-		use({ "michaelb/sniprun", run = "bash ./install.sh", cmd = { "SnipRun" } }) -- run range of code
+		use("is0n/jaq-nvim") -- code runner
+
+		-- -- Browser intergration
+		-- use({
+		-- 	"glacambre/firenvim",
+		-- 	run = function()
+		-- 		vim.fn["firenvim#install"](0)
+		-- 	end,
+		-- })
 
 		-- Automatically set up your configuration after cloning packer.nvim
 		-- Put this at the end after all plugins

@@ -85,10 +85,10 @@ local mappings = {
 	["d"] = { "<cmd>Bdelete!<cr>", "Close" },
 	["D"] = { "<cmd>Telescope dash search<cr>", "Documentation searching" },
 	["f"] = { "<cmd>Telescope find_files<cr>", "Find files" },
-	["r"] = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
+	["R"] = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
 	["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
 	["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
-	["R"] = { "<cmd>SnipRun<cr>", "Run Code" },
+	["r"] = { "<cmd>Jaq<cr>", "Run File" },
 	["c"] = { "<cmd>lua require('Comment.api').call('toggle_current_linewise_op')<cr>g@$", "Comment" },
 
 	p = {
@@ -154,6 +154,7 @@ local mappings = {
 		M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
 		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
 		C = { "<cmd>Telescope commands<cr>", "Commands" },
+		r = { "<cmd>luafile %<cr>", "Reload luafile" },
 	},
 
 	t = {
