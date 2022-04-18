@@ -69,7 +69,7 @@ return packer.startup({
 		use("folke/which-key.nvim") -- show available keys after hitting space
 		use("goolord/alpha-nvim") -- startup page
 		use("nvim-lualine/lualine.nvim") -- status line
-		use("akinsho/bufferline.nvim") -- buffer tab line
+		use({ "akinsho/bufferline.nvim", tag = "*" }) -- buffer tab line
 		use("SmiteshP/nvim-gps") -- status line components
 
 		-- Colorschemes
