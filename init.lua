@@ -13,7 +13,6 @@ require("user.plugins")
 
 -- Plugin configs
 require("user.alpha")
-require("user.autopairs")
 require("user.bufferline")
 require("user.cmp")
 require("user.comment")
