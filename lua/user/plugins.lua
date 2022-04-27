@@ -58,13 +58,14 @@ return packer.startup({
 		use("lewis6991/impatient.nvim") -- improve startup speed
 		use("phaazon/hop.nvim") -- hop to any word you like
 		use("rcarriga/nvim-notify") -- vim notify
-		use({
-			"ZhiyuanLck/smart-pairs",
-			event = "InsertEnter",
-			config = function()
-				require("pairs"):setup()
-			end,
-		}) -- autopairs, integrates with both cmp and treesitter
+		use("ZhiyuanLck/smart-pairs") -- autopairs, integrates with both cmp and treesitter
+		-- use({
+		-- 	"ZhiyuanLck/smart-pairs",
+		-- 	event = "InsertEnter",
+		-- 	config = function()
+		-- 		require("pairs"):setup()
+		-- 	end,
+		-- }) -- autopairs, integrates with both cmp and treesitter
 
 		-- Interface
 		use("folke/which-key.nvim") -- show available keys after hitting space

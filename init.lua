@@ -29,6 +29,8 @@ require("user.toggleterm")
 require("user.treesitter")
 require("user.whichkey")
 require("user.jaq")
+require("user.notify")
+require("user.smart-pairs")
 
 -- LSP folder
 require("user.lsp")
