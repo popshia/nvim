@@ -15,6 +15,8 @@ local check_backspace = function()
 	return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 end
 
+local kind = cmp.lsp.CompletionItemKind
+
 --   פּ ﯟ   some other good icons
 local kind_icons = {
 	Text = "",

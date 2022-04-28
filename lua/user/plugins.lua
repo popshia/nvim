@@ -52,20 +52,14 @@ return packer.startup({
 		use("ahmedkhalf/project.nvim") -- project file search
 		use("lukas-reineke/indent-blankline.nvim") -- show tab and indents
 		use("antoinemadec/FixCursorHold.nvim") -- this is needed to fix lsp doc highlight
-		use("kevinhwang91/nvim-hlslens") -- search with count
 		use("famiu/bufdelete.nvim") -- better buffer manipulation
-		use("karb94/neoscroll.nvim") -- smooth scrolling
+		use("declancm/cinnamon.nvim") -- smooth scroll
 		use("lewis6991/impatient.nvim") -- improve startup speed
 		use("phaazon/hop.nvim") -- hop to any word you like
 		use("rcarriga/nvim-notify") -- vim notify
 		use("ZhiyuanLck/smart-pairs") -- autopairs, integrates with both cmp and treesitter
-		-- use({
-		-- 	"ZhiyuanLck/smart-pairs",
-		-- 	event = "InsertEnter",
-		-- 	config = function()
-		-- 		require("pairs"):setup()
-		-- 	end,
-		-- }) -- autopairs, integrates with both cmp and treesitter
+		-- use("kevinhwang91/nvim-hlslens") -- search with count
+		-- use("karb94/neoscroll.nvim") -- smooth scrolling
 
 		-- Interface
 		use("folke/which-key.nvim") -- show available keys after hitting space
@@ -113,14 +107,6 @@ return packer.startup({
 
 		-- Code runners
 		use("is0n/jaq-nvim") -- code runner
-
-		-- -- Browser intergration
-		-- use({
-		-- 	"glacambre/firenvim",
-		-- 	run = function()
-		-- 		vim.fn["firenvim#install"](0)
-		-- 	end,
-		-- })
 
 		-- Automatically set up your configuration after cloning packer.nvim
 		-- Put this at the end after all plugins
