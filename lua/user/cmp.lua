@@ -109,6 +109,7 @@ cmp.setup({
 			vim_item.menu = ({
 				nvim_lsp = "[LSP]",
 				luasnip = "[Snippet]",
+				copilot = "[Copilot]",
 				buffer = "[Buffer]",
 				path = "[Path]",
 				cmp_tabnine = "[T9]",
@@ -119,6 +120,7 @@ cmp.setup({
 	sources = {
 		{ name = "nvim_lsp" },
 		{ name = "cmp_tabnine" },
+		{ name = "copilot" },
 		{ name = "buffer" },
 		{ name = "luasnip" },
 		{ name = "path" },

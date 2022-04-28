@@ -82,6 +82,19 @@ return packer.startup({
 		use("hrsh7th/cmp-nvim-lsp") -- lsp completions
 		use("lukas-reineke/cmp-under-comparator") -- sort completions
 		use({ "tzachar/cmp-tabnine", run = "./install.sh" }) -- tabnine completions
+		use({
+			"zbirenbaum/copilot.lua",
+			event = { "VimEnter" },
+			config = function()
+				vim.defer_fn(function()
+					require("copilot").setup()
+				end, 100)
+			end,
+		})
+		use({
+			"zbirenbaum/copilot-cmp",
+			after = { "copilot.lua", "nvim-cmp" },
+		})
 		-- use("github/copilot.vim") -- github copilot
 
 		-- Snippets
