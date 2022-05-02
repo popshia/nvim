@@ -84,16 +84,21 @@ lualine.setup({
 	},
 	sections = {
 		lualine_a = { "mode" },
-		lualine_b = { branch, diff, diagnostics },
-		lualine_c = {
+		lualine_b = {
 			{
 				gps.get_location,
 				cond = gps.is_available,
 			},
+		},
+		lualine_c = {
+			-- {
+			-- 	gps.get_location,
+			-- 	cond = gps.is_available,
+			-- },
 			{
 				"filename",
 				file_status = true, -- displays file status (readonly status, modified status)
-				path = 1, -- 0 = just filename, 1 = relative path, 2 = absolute path
+				path = 0, -- 0 = just filename, 1 = relative path, 2 = absolute path
 				shorting_target = 40, -- Shortens path to leave 40 space in the window
 				-- for other components. Terrible name any suggestions?
 				symbols = {
@@ -104,7 +109,7 @@ lualine.setup({
 			},
 		},
 		lualine_x = { filetype, spaces },
-		lualine_y = { "progress" },
+		lualine_y = { branch, diff, diagnostics },
 		lualine_z = { "location" },
 
 		-- lualine_a = { 'mode' },

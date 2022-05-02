@@ -59,7 +59,6 @@ return packer.startup({
 		use("rcarriga/nvim-notify") -- vim notify
 		use("ZhiyuanLck/smart-pairs") -- autopairs, integrates with both cmp and treesitter
 		-- use("kevinhwang91/nvim-hlslens") -- search with count
-		-- use("karb94/neoscroll.nvim") -- smooth scrolling
 
 		-- Interface
 		use("folke/which-key.nvim") -- show available keys after hitting space
