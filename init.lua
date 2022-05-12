@@ -31,7 +31,7 @@ require("user.whichkey")
 require("user.jaq")
 require("user.notify")
 require("user.smart-pairs")
--- require("user.neoscroll")
+require("user.sniprun")
 
 -- LSP folder
 require("user.lsp")

@@ -180,6 +180,7 @@ local vopts = {
 local vmappings = {
 	["/"] = { "<esc><cmd>lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<cr>", "Comment" },
 	["f"] = { "<esc><cmd>lua vim.lsp.buf.range_formatting()<cr>", "Format" },
+	["r"] = { "<esc><cmd>lua require'sniprun'.run('v')<cr>", "Run Code" },
 }
 
 which_key.setup(setup)

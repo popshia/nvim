@@ -119,6 +119,7 @@ return packer.startup({
 
 		-- Code runners
 		use("is0n/jaq-nvim") -- code runner
+		use({ "michaelb/sniprun", run = "bash ./install.sh" }) -- run code within a range
 
 		-- Automatically set up your configuration after cloning packer.nvim
 		-- Put this at the end after all plugins
