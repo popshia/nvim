@@ -42,7 +42,7 @@ packer.init({
 return packer.startup({
 	function(use)
 		-- Utility
-		use("wbthomason/packer.nvim") -- have packer manage itself
+	    use("wbthomason/packer.nvim") -- have packer manage itself
 		use("nvim-lua/plenary.nvim") -- useful lua functions used by lots of plugins
 		use("nvim-lua/popup.nvim") -- vim popup api in neovim
 		use("numToStr/Comment.nvim") -- easily comment stuff
