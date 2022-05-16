@@ -58,7 +58,8 @@ return packer.startup({
 		use("phaazon/hop.nvim") -- hop to any word you like
 		use("rcarriga/nvim-notify") -- vim notify
 		use("ZhiyuanLck/smart-pairs") -- autopairs, integrates with both cmp and treesitter
-		-- use("kevinhwang91/nvim-hlslens") -- search with count
+		use("kevinhwang91/nvim-hlslens") -- search with count
+		use("echasnovski/mini.nvim") -- mini plugins pack
 
 		-- Interface
 		use("folke/which-key.nvim") -- show available keys after hitting space
@@ -68,8 +69,6 @@ return packer.startup({
 		use("SmiteshP/nvim-gps") -- status line components
 
 		-- Colorschemes
-		use("RRethy/nvim-base16") -- neovim base16 colorschemes
-		use("olimorris/onedarkpro.nvim") -- one dark pro
 		use("sainnhe/gruvbox-material") -- gruvbox
 
 		-- Completion
@@ -80,7 +79,6 @@ return packer.startup({
 		use("saadparwaiz1/cmp_luasnip") -- snippet completions
 		use("hrsh7th/cmp-nvim-lsp") -- lsp completions
 		use("lukas-reineke/cmp-under-comparator") -- sort completions
-		use("kevinhwang91/nvim-hlslens") -- searching plugin
 		use({ "tzachar/cmp-tabnine", run = "./install.sh" }) -- tabnine completions
 		use({
 			"zbirenbaum/copilot.lua",
@@ -107,6 +105,7 @@ return packer.startup({
 		use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
 		use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 		use("RRethy/vim-illuminate") -- automatically highlighting other uses of the current word under the cursor
+		use("tami5/lspsaga.nvim") -- lspsaga
 
 		-- Telescope
 		use("nvim-telescope/telescope.nvim") -- highly extendable fuzzy finder over lists
@@ -130,7 +129,6 @@ return packer.startup({
 		end
 	end,
 	config = {
-		-- Move to lua dir so impatient.nvim can cache it
-		compile_path = vim.fn.stdpath("config") .. "/lua/packer_compiled.lua",
+		compile_path = vim.fn.stdpath("config") .. "/lua/plugins/packer_compiled.lua",
 	},
 })

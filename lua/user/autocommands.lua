@@ -30,15 +30,3 @@ vim.cmd([[
     autocmd User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2
   augroup end
 ]])
-
--- Autoformat
--- augroup _lsp
---   autocmd!
---   autocmd BufWritePre * lua vim.lsp.buf.formatting()
--- augroup end
-
--- Filetypes
--- augroup _filetypes
---   autocmd!
---   autocmd FileType lua setlocal ts=2 sw=2 expandtab
--- augroup end

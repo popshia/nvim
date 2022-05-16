@@ -67,11 +67,8 @@ map("v", "f", "<cmd>HopWord<cr>", opts)
 map("v", "F", "<cmd>HopLine<cr>", opts)
 
 -- Pick buffers
+-- TODO: Add this to whichkey
 map("n", "gb", "<cmd>BufferLinePick<cr>", opts)
-
--- -- Sniprun.nvim
--- map("n", "<C-r>", "<cmd>Sniprun<cr>", opts)
--- map("v", "<C-r>", "<cmd>Sniprun<cr>", opts)
 
 -- Terminal --
 -- Better terminal navigation

@@ -83,7 +83,6 @@ local mappings = {
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	["q"] = { "<cmd>q!<CR>", "Quit" },
 	["d"] = { "<cmd>Bdelete!<cr>", "Close" },
-	["D"] = { "<cmd>Telescope dash search<cr>", "Documentation searching" },
 	["f"] = { "<cmd>Telescope find_files<cr>", "Find files" },
 	["R"] = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
 	["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
