@@ -80,6 +80,7 @@ return packer.startup({
 		use("saadparwaiz1/cmp_luasnip") -- snippet completions
 		use("hrsh7th/cmp-nvim-lsp") -- lsp completions
 		use("lukas-reineke/cmp-under-comparator") -- sort completions
+		use("kevinhwang91/nvim-hlslens") -- searching plugin
 		use({ "tzachar/cmp-tabnine", run = "./install.sh" }) -- tabnine completions
 		use({
 			"zbirenbaum/copilot.lua",
@@ -112,6 +113,7 @@ return packer.startup({
 
 		-- Treesitter
 		use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }) -- treesitter for syntax highlighting
+		use("nvim-treesitter/nvim-treesitter-context") -- show treesitter context
 		use("JoosepAlviste/nvim-ts-context-commentstring") -- set comments based on file type
 
 		-- Git
