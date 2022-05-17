@@ -42,7 +42,7 @@ map("v", "p", '"_dp', opts)
 
 -- Insert --
 -- Press jk fast to enter
-map("i", "jk", "<ESC>", opts)
+map("i", "lk", "<ESC>", opts)
 
 -- Visual --
 -- Stay in indent mode
