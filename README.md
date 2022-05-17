@@ -1,7 +1,6 @@
 # My neovim setup written entirely in lua.
 
 ## Screenshots
-![Screen Shot 2022-05-17 at 22 40 47](https://user-images.githubusercontent.com/3250328/168838584-8c11a9f8-2142-4fe2-b69b-8c9b05221e34.png)
 ![Screen Shot 2022-05-17 at 22 38 46](https://user-images.githubusercontent.com/3250328/168838112-77e27fca-3d7d-4b28-8291-a2ca1dbacaa5.png)
 ![Screen Shot 2022-05-17 at 22 40 27](https://user-images.githubusercontent.com/3250328/168838508-fee2c082-aee7-4a2e-a9c0-9bb103fa8a6e.png)
 
