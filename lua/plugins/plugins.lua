@@ -60,6 +60,7 @@ return packer.startup({
 		use("ZhiyuanLck/smart-pairs") -- autopairs, integrates with both cmp and treesitter
 		use("kevinhwang91/nvim-hlslens") -- search with count
 		use("echasnovski/mini.nvim") -- mini plugins pack
+        use("norcalli/nvim-colorizer.lua") -- colorizer
 
 		-- Interface
 		use("folke/which-key.nvim") -- show available keys after hitting space

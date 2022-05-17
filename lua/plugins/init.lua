@@ -20,6 +20,7 @@ require("plugins/toggleterm")
 require("plugins/treesitter-context")
 require("plugins/treesitter")
 require("plugins/whichkey")
+require("plugins/nvim-colorizer")
 
 -- mini.nvim --
-require("plugins/surround").setup()
+require("plugins/surround").setup({})
