@@ -1,12 +1,13 @@
 # My neovim setup written entirely in lua.
 
 ## Screenshots
+
 ![Screen Shot 2022-05-17 at 22 38 46](https://user-images.githubusercontent.com/3250328/168838112-77e27fca-3d7d-4b28-8291-a2ca1dbacaa5.png)
 ![Screen Shot 2022-05-17 at 22 40 27](https://user-images.githubusercontent.com/3250328/168838508-fee2c082-aee7-4a2e-a9c0-9bb103fa8a6e.png)
 
 ## Requirements
 
-- [Neovim version > 0.7](https://github.com/neovim/neovim)
+- [Neovim](https://github.com/neovim/neovim) -- version > 0.7
 - [NodeJS](https://nodejs.org)
 - [Lazygit](https://github.com/jesseduffield/lazygit) -- for git integration (optional)
 
