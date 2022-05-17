@@ -42,7 +42,7 @@ packer.init({
 return packer.startup({
 	function(use)
 		-- Utility
-	    use("wbthomason/packer.nvim") -- have packer manage itself
+		use("wbthomason/packer.nvim") -- have packer manage itself
 		use("nvim-lua/plenary.nvim") -- useful lua functions used by lots of plugins
 		use("nvim-lua/popup.nvim") -- vim popup api in neovim
 		use("numToStr/Comment.nvim") -- easily comment stuff
@@ -60,7 +60,13 @@ return packer.startup({
 		use("ZhiyuanLck/smart-pairs") -- autopairs, integrates with both cmp and treesitter
 		use("kevinhwang91/nvim-hlslens") -- search with count
 		use("echasnovski/mini.nvim") -- mini plugins pack
-        use("norcalli/nvim-colorizer.lua") -- colorizer
+		use("norcalli/nvim-colorizer.lua") -- colorizer
+		use({
+			"iamcco/markdown-preview.nvim",
+			run = function()
+				vim.fn["mkdp#util#install"]()
+			end,
+		}) -- markdown-preview
 
 		-- Interface
 		use("folke/which-key.nvim") -- show available keys after hitting space
@@ -89,7 +95,7 @@ return packer.startup({
 					require("copilot").setup()
 				end, 100)
 			end,
-		})
+		}) -- copilot client
 		use({
 			"zbirenbaum/copilot-cmp",
 			after = { "copilot.lua", "nvim-cmp" },
@@ -106,7 +112,6 @@ return packer.startup({
 		use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
 		use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 		use("RRethy/vim-illuminate") -- automatically highlighting other uses of the current word under the cursor
-		use("tami5/lspsaga.nvim") -- lspsaga
 
 		-- Telescope
 		use("nvim-telescope/telescope.nvim") -- highly extendable fuzzy finder over lists

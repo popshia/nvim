@@ -12,7 +12,7 @@ local code_actions = null_ls.builtins.code_actions
 null_ls.setup({
     sources = {
         -- lua
-        -- formatting.stylua,
+        formatting.stylua,
 
         -- python
         formatting.black,
