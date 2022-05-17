@@ -1,18 +1,22 @@
 # My neovim setup written entirely in lua.
 
 ## Requirements
+
 - [Neovim version > 0.7](https://github.com/neovim/neovim)
 - [NodeJS](https://nodejs.org)
 - [Lazygit](https://github.com/jesseduffield/lazygit) -- for git integration (optional)
 
 ## Installation
+
 ```
 git clone https://github.com/popshia/neovim-lua ~/.config/nvim
 nvim +PackerSync
 ```
 
 ## Plugins
+
 ### Utility
+
 - [Packer](https://github.com/wbthomason/packer.nvim) -- plugin manager
 - [Comment.nvim](https://github.com/numToStr/Comment.nvim) -- easily comment stuff
 - [nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons) -- file icons
@@ -32,6 +36,7 @@ nvim +PackerSync
 - [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim) -- markdown preview
 
 ### Interface
+
 - [which-key](https:github.com/folke/which-key.nvim") -- show available keys after hitting space
 - [alpha-nvim](https:github.com/goolord/alpha-nvim) -- startup page
 - [lualine.nvim](https:github.com/nvim-lualine/lualine.nvim) -- status line
@@ -39,9 +44,11 @@ nvim +PackerSync
 - [nvim-gps](https:github.com/SmiteshP/nvim-gps") -- status line position components
 
 ### Colorschemes
+
 - [gruvbox-material](https://github.com/sainnhe/gruvbox-material) -- gruvbox
 
 ### Completion
+
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp") -- the completion plugin
 - [cmp-buffer](https://github.com/hrsh7th/cmp-buffer") -- buffer completions
 - [cmp-path](https://github.com/hrsh7th/cmp-path") -- path completions
@@ -55,10 +62,12 @@ nvim +PackerSync
 - [copilot.vim](https://github.com/github/copilot.vim") -- official github copilot
 
 ### Snippets
+
 - [LuaSnip](https://github.com/L3MON4D3/LuaSnip") --snippet engine
 - [friendly-snippets](https://github.com/rafamadriz/friendly-snippets") -- a bunch of snippets to use
 
 ### LSP
+
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig") -- enable LSP
 - [nvim-lsp-installer](https://github.com/williamboman/nvim-lsp-installer") -- simple to use language server installer
 - [nlsp-settings](https://github.com/tamago324/nlsp-settings.nvim") -- language server settings defined in json for
@@ -66,17 +75,21 @@ nvim +PackerSync
 - [vim-illuminate](https://github.com/RRethy/vim-illuminate") -- automatically highlighting other uses of the current word under the cursor
 
 ### Telescope
+
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim") -- highly extendable fuzzy finder over lists
 
 ### Treesitter
+
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) -- treesitter for syntax highlighting
 - [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context") -- show treesitter context
 - [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring") -- set comments based on file type
 
 ### Git
+
 - [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim") -- git integration
 
 ### Code runners
+
 - [jaq-nvim](https://github.com/is0n/jaq-nvim") -- code runner
 - [sniprun](https://github.com/michaelb/sniprun) -- run code within a range
 

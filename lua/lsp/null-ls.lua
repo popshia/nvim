@@ -1,7 +1,7 @@
 local status_ok, null_ls = pcall(require, "null-ls")
 
 if not status_ok then
-    return
+	return
 end
 
 local formatting = null_ls.builtins.formatting
@@ -10,31 +10,32 @@ local completion = null_ls.builtins.completion
 local code_actions = null_ls.builtins.code_actions
 
 null_ls.setup({
-    sources = {
-        -- lua
-        formatting.stylua,
+	sources = {
+		-- lua
+		formatting.stylua,
 
-        -- python
-        formatting.black,
-        -- formatting.isort,
-        -- formatting.autopep8,
-        -- formatting.yapf,
+		-- python
+		formatting.black,
+		-- formatting.isort,
+		-- formatting.autopep8,
+		-- formatting.yapf,
 
-        -- c, c++
-        -- formatting.clang_format,
+		-- c, c++
+		-- formatting.clang_format,
 
-        -- code spelling
-        -- formatting.codespell,
+		-- code spelling
+		-- formatting.codespell,
 
-        -- other languages
-        -- formatting.eslint_d,
-        -- formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
-        -- formatting.json_tool,
-    },
+		-- other languages
+		-- formatting.eslint_d,
+		-- formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
+		formatting.prettier,
+		-- formatting.json_tool,
+	},
 
-    on_attach = function(client)
-        if client.resolved_capabilities.document_formatting then
-            vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
-        end
-    end,
+	on_attach = function(client)
+		if client.resolved_capabilities.document_formatting then
+			vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+		end
+	end,
 })
