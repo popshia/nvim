@@ -35,7 +35,6 @@ local options = {
 	wrap = false, -- display lines as one long line
 	scrolloff = 8, -- is one of my fav
 	sidescrolloff = 8, -- side scrolloff with 8 char
-    background = "dark", -- dark background
 	guifont = "JetBrainsMono Nerd Font Mono:h18", -- the font used in graphical neovim applications
 }
 
