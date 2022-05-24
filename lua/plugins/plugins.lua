@@ -117,7 +117,8 @@ return packer.startup({
 		use("nvim-telescope/telescope.nvim") -- highly extendable fuzzy finder over lists
 
 		-- Treesitter
-		use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }) -- treesitter for syntax highlighting
+		-- use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }) -- treesitter for syntax highlighting
+		use("nvim-treesitter/nvim-treesitter") -- treesitter for syntax highlighting
 		use("nvim-treesitter/nvim-treesitter-context") -- show treesitter context
 		use("JoosepAlviste/nvim-ts-context-commentstring") -- set comments based on file type
 
