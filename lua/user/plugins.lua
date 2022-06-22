@@ -53,14 +53,11 @@ return packer.startup({
 		use("lukas-reineke/indent-blankline.nvim") -- show tab and indents
 		use("antoinemadec/FixCursorHold.nvim") -- this is needed to fix lsp doc highlight
 		use("famiu/bufdelete.nvim") -- better buffer manipulation
-		use("declancm/cinnamon.nvim") -- smooth scroll
+		use("karb94/neoscroll.nvim") -- smooth scroll
 		use("lewis6991/impatient.nvim") -- improve startup speed
 		use("phaazon/hop.nvim") -- hop to any word you like
 		use("rcarriga/nvim-notify") -- vim notify
-		use("ZhiyuanLck/smart-pairs") -- autopairs, integrates with both cmp and treesitter
 		use("kevinhwang91/nvim-hlslens") -- search with count
-		use("echasnovski/mini.nvim") -- mini plugins pack
-		use("norcalli/nvim-colorizer.lua") -- colorizer
 		use({
 			"iamcco/markdown-preview.nvim",
 			run = function()
@@ -72,8 +69,9 @@ return packer.startup({
 		use("folke/which-key.nvim") -- show available keys after hitting space
 		use("goolord/alpha-nvim") -- startup page
 		use("nvim-lualine/lualine.nvim") -- status line
-		use({ "akinsho/bufferline.nvim", tag = "*" }) -- buffer tab line
-		use("SmiteshP/nvim-gps") -- status line components
+		use("akinsho/bufferline.nvim") -- buffer tab line
+		use("SmiteshP/nvim-navic") -- status line components that shows current code context
+		use("folke/todo-comments.nvim") -- todo comments highlighting
 
 		-- Colorschemes
 		use("sainnhe/gruvbox-material") -- gruvbox
@@ -83,24 +81,13 @@ return packer.startup({
 		use("hrsh7th/cmp-buffer") -- buffer completions
 		use("hrsh7th/cmp-path") -- path completions
 		use("hrsh7th/cmp-cmdline") -- cmdline completions
-		use("saadparwaiz1/cmp_luasnip") -- snippet completions
 		use("hrsh7th/cmp-nvim-lsp") -- lsp completions
+		use("hrsh7th/cmp-nvim-lua") -- lua completions
+		use("saadparwaiz1/cmp_luasnip") -- snippet completions
 		use("lukas-reineke/cmp-under-comparator") -- sort completions
 		use({ "tzachar/cmp-tabnine", run = "./install.sh" }) -- tabnine completions
-		use({
-			"zbirenbaum/copilot.lua",
-			event = { "VimEnter" },
-			config = function()
-				vim.defer_fn(function()
-					require("copilot").setup()
-				end, 100)
-			end,
-		}) -- copilot client
-		use({
-			"zbirenbaum/copilot-cmp",
-			after = { "copilot.lua", "nvim-cmp" },
-		})
-		-- use("github/copilot.vim") -- github copilot
+		use("ur4ltz/surround.nvim") -- surround character manipulation
+		use("ZhiyuanLck/smart-pairs") -- autopairs, integrates with both cmp and treesitter
 
 		-- Snippets
 		use("L3MON4D3/LuaSnip") --snippet engine
@@ -109,21 +96,22 @@ return packer.startup({
 		-- LSP
 		use("neovim/nvim-lspconfig") -- enable LSP
 		use("williamboman/nvim-lsp-installer") -- simple to use language server installer
-		use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
 		use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 		use("RRethy/vim-illuminate") -- automatically highlighting other uses of the current word under the cursor
+		use("ray-x/lsp_signature.nvim") -- for lsp signatures
 
 		-- Telescope
 		use("nvim-telescope/telescope.nvim") -- highly extendable fuzzy finder over lists
-
-		-- Treesitter
-		-- use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }) -- treesitter for syntax highlighting
-		use("nvim-treesitter/nvim-treesitter") -- treesitter for syntax highlighting
+		use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }) -- treesitter for syntax highlighting
 		use("nvim-treesitter/nvim-treesitter-context") -- show treesitter context
-		use("JoosepAlviste/nvim-ts-context-commentstring") -- set comments based on file type
 
 		-- Git
 		use("lewis6991/gitsigns.nvim") -- git integration
+
+		-- Dap
+		use("mfussenegger/nvim-dap") -- debugging
+		use("rcarriga/nvim-dap-ui") -- debugging ui
+		use("ravenxrz/DAPInstall.nvim") -- debugger installation
 
 		-- Code runners
 		use("is0n/jaq-nvim") -- code runner
@@ -135,7 +123,4 @@ return packer.startup({
 			require("packer").sync()
 		end
 	end,
-	config = {
-		compile_path = vim.fn.stdpath("config") .. "/lua/plugins/packer_compiled.lua",
-	},
 })

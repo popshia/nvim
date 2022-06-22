@@ -52,7 +52,7 @@ local setup = {
 	layout = {
 		height = { min = 4, max = 25 }, -- min and max height of the columns
 		width = { min = 20, max = 50 }, -- min and max width of the columns
-		spacing = 3, -- spacing between columns
+		spacing = 10, -- spacing between columns
 		align = "left", -- align columns left, center or right
 	},
 	ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
@@ -80,15 +80,37 @@ local opts = {
 
 local mappings = {
 	["a"] = { "<cmd>Alpha<cr>", "Alpha" },
-	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-	["q"] = { "<cmd>q!<CR>", "Quit" },
-	["d"] = { "<cmd>Bdelete!<cr>", "Close" },
-	["f"] = { "<cmd>Telescope find_files<cr>", "Find files" },
-	["R"] = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-	["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
-	["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
+	["e"] = { "<cmd>NvimTreeToggle<cr>", "File Explorer" },
 	["r"] = { "<cmd>Jaq<cr>", "Run File" },
 	["c"] = { "<cmd>lua require('Comment.api').call('toggle_current_linewise_op')<cr>g@$", "Comment" },
+
+	b = {
+		name = "Buffer",
+		b = { "<cmd>BufferLinePick<cr>", "Pick Buffer" },
+		d = { "<cmd>Bdelete!<cr>", "Close" },
+	},
+
+	f = {
+		name = "Telescope",
+		f = { "<cmd>Telescope find_files<cr>", "Find files" },
+		t = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find text" },
+		r = { "<cmd>Telescope oldfiles<cr>", "Recent fils" },
+		p = { "<cmd>Telescope projects<cr>", "Projects" },
+		b = { "<cmd>Telescope buffers<cr>", "Buffers" },
+	},
+
+	d = {
+		name = "Debug",
+		b = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Breakpoint" },
+		c = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
+		i = { "<cmd>lua require'dap'.step_into()<cr>", "Into" },
+		o = { "<cmd>lua require'dap'.step_over()<cr>", "Over" },
+		O = { "<cmd>lua require'dap'.step_out()<cr>", "Out" },
+		r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Repl" },
+		l = { "<cmd>lua require'dap'.run_last()<cr>", "Last" },
+		u = { "<cmd>lua require'dapui'.toggle()<cr>", "UI" },
+		x = { "<cmd>lua require'dap'.terminate()<cr>", "Exit" },
+	},
 
 	p = {
 		name = "Packer",
@@ -156,15 +178,15 @@ local mappings = {
 		r = { "<cmd>luafile %<cr>", "Reload luafile" },
 	},
 
-	t = {
-		name = "Terminal",
-		n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
-		g = { "<cmd>lua _GOTOP_TOGGLE()<cr>", "GoTop" },
-		p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
-		f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
-		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
-		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
-	},
+	-- t = {
+	-- 	name = "Terminal",
+	-- 	n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
+	-- 	g = { "<cmd>lua _GOTOP_TOGGLE()<cr>", "GoTop" },
+	-- 	p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
+	-- 	f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
+	-- 	h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
+	-- 	v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
+	-- },
 }
 
 local vopts = {

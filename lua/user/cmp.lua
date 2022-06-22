@@ -120,7 +120,6 @@ cmp.setup({
 	sources = {
 		{ name = "nvim_lsp" },
 		{ name = "cmp_tabnine" },
-		{ name = "copilot" },
 		{ name = "buffer" },
 		{ name = "luasnip" },
 		{ name = "path" },
@@ -129,7 +128,17 @@ cmp.setup({
 		behavior = cmp.ConfirmBehavior.Replace,
 		select = false,
 	},
-	documentation = native,
+	window = {
+		-- documentation = "native",
+		documentation = {
+			border = "rounded",
+			winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
+		},
+		completion = {
+			border = "rounded",
+			winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
+		},
+	},
 	experimental = {
 		ghost_text = false,
 		native_menu = false,

@@ -1,9 +1,7 @@
 local opts = { noremap = true, silent = true }
 
--- local term_opts = { silent = true }
-
 -- Shorten function name
-local map = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 
 --Remap space as leader key
 map("", "<Space>", "<Nop>", opts)
@@ -32,8 +30,6 @@ map("n", "<C-l>", "<C-w>l", opts)
 -- map("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
--- map("n", "<Tab>", ":bnext<CR>", opts)
--- map("n", "<S-Tab>", ":bprevious<CR>", opts)
 map("n", "<S-l>", ":bnext<CR>", opts)
 map("n", "<S-h>", ":bprevious<CR>", opts)
 
@@ -41,7 +37,7 @@ map("n", "<S-h>", ":bprevious<CR>", opts)
 map("v", "p", '"_dp', opts)
 
 -- Insert --
--- Press jk fast to enter
+-- Press lk fast to enter
 map("i", "lk", "<ESC>", opts)
 
 -- Visual --
@@ -70,9 +66,3 @@ map("v", "F", "<cmd>HopLine<cr>", opts)
 -- TODO: Add this to whichkey
 map("n", "gb", "<cmd>BufferLinePick<cr>", opts)
 
--- Terminal --
--- Better terminal navigation
--- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
--- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
--- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
--- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)

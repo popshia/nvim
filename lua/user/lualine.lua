@@ -3,15 +3,40 @@ if not status_ok then
 	return
 end
 
-local gps = require("nvim-gps")
-gps.setup({
+local navic = require("nvim-navic")
+navic.setup({
 	icons = {
-		["class-name"] = " ", -- Classes and class-like objects
-		["function-name"] = " ", -- Functions
-		["method-name"] = " ", -- Methods (functions inside class-like objects)
-		["container-name"] = "離", -- Containers (example: lua tables)
-		["tag-name"] = "炙", -- Tags (example: html tags)
+		File          = " ",
+		Module        = " ",
+		Namespace     = " ",
+		Package       = " ",
+		Class         = " ",
+		Method        = " ",
+		Property      = " ",
+		Field         = " ",
+		Constructor   = " ",
+		Enum          = "練",
+		Interface     = "練",
+		Function      = " ",
+		Variable      = " ",
+		Constant      = " ",
+		String        = " ",
+		Number        = " ",
+		Boolean       = "◩ ",
+		Array         = " ",
+		Object        = " ",
+		Key           = " ",
+		Null          = "ﳠ ",
+		EnumMember    = " ",
+		Struct        = " ",
+		Event         = " ",
+		Operator      = " ",
+		TypeParameter = " ",
 	},
+	highlight = false,
+	separator = " > ",
+	depth_limit = 0,
+	depth_limit_indicator = "..",
 })
 
 local hide_in_width = function()
@@ -35,13 +60,6 @@ local diff = {
 	cond = hide_in_width,
 }
 
--- local mode = {
--- 	"mode",
--- 	fmt = function(str)
--- 		return "-- " .. str .. " --"
--- 	end,
--- }
-
 local filetype = {
 	"filetype",
 	icons_enabled = false,
@@ -58,16 +76,6 @@ local location = {
 	"location",
 	padding = 0,
 }
-
--- cool function for progress
-local progress = function()
-	local current_line = vim.fn.line(".")
-	local total_lines = vim.fn.line("$")
-	local chars = { "__", "▁▁", "▂▂", "▃▃", "▄▄", "▅▅", "▆▆", "▇▇", "██" }
-	local line_ratio = current_line / total_lines
-	local index = math.ceil(line_ratio * #chars)
-	return chars[index]
-end
 
 local spaces = function()
 	return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
@@ -86,15 +94,11 @@ lualine.setup({
 		lualine_a = { "mode" },
 		lualine_b = {
 			{
-				gps.get_location,
-				cond = gps.is_available,
+				navic.get_location,
+				cond = navic.is_available,
 			},
 		},
 		lualine_c = {
-			-- {
-			-- 	gps.get_location,
-			-- 	cond = gps.is_available,
-			-- },
 			{
 				"filename",
 				file_status = true, -- displays file status (readonly status, modified status)
@@ -110,7 +114,7 @@ lualine.setup({
 		},
 		lualine_x = { filetype, spaces },
 		lualine_y = { branch, diff, diagnostics },
-		lualine_z = { "location" },
+		lualine_z = { "progress" },
 
 		-- lualine_a = { 'mode' },
 		-- lualine_b = { branch, diagnostics },

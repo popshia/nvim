@@ -12,7 +12,7 @@
 ## Installation
 
 ```
-git clone https://github.com/popshia/neovim-lua ~/.config/nvim
+git clone https://github.com/popshia/nvim ~/.config/
 nvim +PackerSync
 ```
 
@@ -28,15 +28,15 @@ nvim +PackerSync
 - [project.nvim](https://github.com/ahmedkhalf/project.nvim") -- project searching
 - [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim) -- show your tab and indents
 - [bufdelete.nvim](https://github.com/famiu/bufdelete.nvim) -- better buffer manipulation
-- [cinnmon.nvim](https://github.com/declancm/cinnamon.nvim) -- smooth scroll
+- [neoscroll.nvim](https://github.com/karb94/neoscroll.nvim) -- smooth scroll
 - [impatient.nvim](https://github.com/lewis6991/impatient.nvim) -- improve startup speed
 - [hop.nvim](https://github.com/phaazon/hop.nvim) -- hop to any word you like
 - [nvim-notify](https://github.com/rcarriga/nvim-notify) -- nice interface for notifications
 - [smart-pairs](https://github.com/ZhiyuanLck/smart-pairs) -- automate pair insertion, integrates with both cmp and treesitter
 - [nvim-hlslens](https://github.com/kevinhwang91/nvim-hlslens) -- search with count
-- [mini.nvim](https://github.com/echasnovski/mini.nvim) -- mini plugins pack, but I only use mini.surround
-- [nvim-colorizer.nvim](https://github.com/norcalli/nvim-colorizer.lua) -- show colors
+- [surround.nvim](https://github.com/ur4ltz/surround.nvim) -- search with count
 - [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim) -- markdown preview
+- [todo-comments.nvim](https://github.com/folke/todo-comments.nvim) -- todo comments highlighting
 
 ### Interface
 
@@ -44,7 +44,7 @@ nvim +PackerSync
 - [alpha-nvim](https:github.com/goolord/alpha-nvim) -- startup page
 - [lualine.nvim](https:github.com/nvim-lualine/lualine.nvim) -- status line
 - [bufferline.nvim](https:github.com/akinsho/bufferline.nvim) -- buffer tab line
-- [nvim-gps](https:github.com/SmiteshP/nvim-gps") -- status line position components
+- [nvim-navic](https:github.com/SmiteshP/nvim-navic") -- status line position components
 
 ### Colorschemes
 
@@ -56,13 +56,10 @@ nvim +PackerSync
 - [cmp-buffer](https://github.com/hrsh7th/cmp-buffer") -- buffer completions
 - [cmp-path](https://github.com/hrsh7th/cmp-path") -- path completions
 - [cmp-cmdline](https://github.com/hrsh7th/cmp-cmdline") -- cmdline completions
-- [cmp-luasnip](https://github.com/saadparwaiz1/cmp_luasnip") -- snippet completions
 - [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp") -- lsp completions
+- [cmp-luasnip](https://github.com/saadparwaiz1/cmp_luasnip") -- snippet completions
 - [cmp-tabnine](https://github.com/tzachar/cmp-tabnine) -- tabnine completions
-- [copilot-cmp](https://github.com/zbirenbaum/copilot-cmp) -- copilot completions
 - [cmp-under-comparator](https://github.com/lukas-reineke/cmp-under-comparator") -- sort completions options
-- [copilot.lua](https://github.com/zbirenbaum/copilot.lua) -- copilot client in lua
-- [copilot.vim](https://github.com/github/copilot.vim") -- official github copilot
 
 ### Snippets
 
@@ -76,6 +73,7 @@ nvim +PackerSync
 - [nlsp-settings](https://github.com/tamago324/nlsp-settings.nvim") -- language server settings defined in json for
 - [null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 - [vim-illuminate](https://github.com/RRethy/vim-illuminate") -- automatically highlighting other uses of the current word under the cursor
+- [lsp_signature.nvim](https://github.com/ray-x/lsp_signature") -- for lsp signatures
 
 ### Telescope
 
@@ -90,6 +88,12 @@ nvim +PackerSync
 ### Git
 
 - [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim") -- git integration
+
+### Debugging
+
+- [nvim-dap](https://github.com/mfussenegger/nvim-dap") -- debugging client
+- [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui") -- debugging interface
+- [DAPInstall.nvim](https://github.com/ravenxrz/DAPInstall.nvim") -- debugger installation
 
 ### Code runners
 
