@@ -17,6 +17,7 @@ dap_install.setup({
 	installation_path = vim.fn.stdpath("data") .. "/dapinstall/",
 })
 dap_install.config("python", {})
+-- add other configs here
 
 dapui.setup({
 	icons = { expanded = "▾", collapsed = "▸" },

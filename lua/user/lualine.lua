@@ -50,7 +50,7 @@ local diagnostics = {
 	symbols = { error = " ", warn = " " },
 	colored = false,
 	update_in_insert = false,
-	always_visible = false,
+	always_visible = true,
 }
 
 local diff = {
@@ -63,7 +63,6 @@ local diff = {
 local filetype = {
 	"filetype",
 	icons_enabled = false,
-	icon = nil,
 }
 
 local branch = {
@@ -83,6 +82,7 @@ end
 
 lualine.setup({
 	options = {
+		globalstatus = true,
 		icons_enabled = true,
 		theme = "auto",
 		component_separators = { left = "|", right = "|" },
@@ -92,46 +92,15 @@ lualine.setup({
 	},
 	sections = {
 		lualine_a = { "mode" },
-		lualine_b = {
+		lualine_b = { branch, diagnostics },
+		lualine_c = {
 			{
 				navic.get_location,
 				cond = navic.is_available,
 			},
 		},
-		lualine_c = {
-			{
-				"filename",
-				file_status = true, -- displays file status (readonly status, modified status)
-				path = 0, -- 0 = just filename, 1 = relative path, 2 = absolute path
-				shorting_target = 40, -- Shortens path to leave 40 space in the window
-				-- for other components. Terrible name any suggestions?
-				symbols = {
-					modified = "[+]", -- when the file was modified
-					readonly = "[-]", -- if the file is not modifiable or readonly
-					unnamed = "[No Name]", -- default display name for unnamed buffers
-				},
-			},
-		},
-		lualine_x = { filetype, spaces },
-		lualine_y = { branch, diff, diagnostics },
+		lualine_x = { diff, spaces, "encoding", filetype },
+		lualine_y = { location },
 		lualine_z = { "progress" },
-
-		-- lualine_a = { 'mode' },
-		-- lualine_b = { branch, diagnostics },
-		-- lualine_c = { 'filename' },
-		-- -- lualine_x = { "encoding", "fileformat", "filetype" },
-		-- lualine_x = { diff, spaces, "encoding", filetype },
-		-- lualine_y = { location },
-		-- lualine_z = { },
 	},
-	inactive_sections = {
-		lualine_a = {},
-		lualine_b = {},
-		lualine_c = { "filename" },
-		lualine_x = { "location" },
-		lualine_y = {},
-		lualine_z = {},
-	},
-	tabline = {},
-	extensions = {},
 })

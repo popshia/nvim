@@ -17,9 +17,9 @@ sniprun.setup({
 
 	--# you can combo different display modes as desired
 	display = {
-		"Classic", --# display results in the command-line  area
+		-- "Classic", --# display results in the command-line  area
 		-- "NvimNotify", --# display with the nvim-notify plugin
-		-- "VirtualTextOk", --# display ok results as virtual text (multiline is shortened)
+		"VirtualTextOk", --# display ok results as virtual text (multiline is shortened)
 		-- "VirtualTextErr",          --# display error results as virtual text
 		-- "TempFloatingWindow",      --# display results in a floating window
 		-- "LongTempFloatingWindow",  --# same as above, but only long results. To use with VirtualText__
@@ -41,12 +41,12 @@ sniprun.setup({
 	},
 
 	--# customize highlight groups (setting this overrides colorscheme)
-	snipruncolors = {
-		SniprunVirtualTextOk = { bg = "#66eeff", fg = "#000000", ctermbg = "Cyan", cterfg = "Black" },
-		SniprunFloatingWinOk = { fg = "#66eeff", ctermfg = "Cyan" },
-		SniprunVirtualTextErr = { bg = "#881515", fg = "#000000", ctermbg = "DarkRed", cterfg = "Black" },
-		SniprunFloatingWinErr = { fg = "#881515", ctermfg = "DarkRed" },
-	},
+	-- snipruncolors = {
+	-- 	SniprunVirtualTextOk = { bg = "#66eeff", fg = "#000000", ctermbg = "Cyan", cterfg = "Black" },
+	-- 	SniprunFloatingWinOk = { fg = "#66eeff", ctermfg = "Cyan" },
+	-- 	SniprunVirtualTextErr = { bg = "#881515", fg = "#000000", ctermbg = "DarkRed", cterfg = "Black" },
+	-- 	SniprunFloatingWinErr = { fg = "#881515", ctermfg = "DarkRed" },
+	-- },
 
 	--# miscellaneous compatibility/adjustement settings
 	inline_messages = 0, --# inline_message (0/1) is a one-line way to display messages

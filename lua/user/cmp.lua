@@ -65,12 +65,7 @@ cmp.setup({
 		}),
 		-- Accept currently selected item. If none selected, `select` first item.
 		-- Set `select` to `false` to only confirm explicitly selected items.
-		-- ["<CR>"] = cmp.mapping.confirm({ select = true }),
-		["<CR>"] = cmp.mapping(function(fallback)
-			if not cmp.confirm({ select = true }) then
-				require("pairs.enter").type()
-			end
-		end),
+		["<CR>"] = cmp.mapping.confirm({ select = true }),
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
@@ -105,11 +100,9 @@ cmp.setup({
 		format = function(entry, vim_item)
 			-- Kind icons
 			vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-			-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatenates the icons with the name of the item kind
 			vim_item.menu = ({
 				nvim_lsp = "[LSP]",
 				luasnip = "[Snippet]",
-				copilot = "[Copilot]",
 				buffer = "[Buffer]",
 				path = "[Path]",
 				cmp_tabnine = "[T9]",
@@ -129,18 +122,11 @@ cmp.setup({
 		select = false,
 	},
 	window = {
-		-- documentation = "native",
-		documentation = {
-			border = "rounded",
-			winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
-		},
-		completion = {
-			border = "rounded",
-			winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
-		},
+		completion = cmp.config.window.bordered(),
+		documentation = cmp.config.window.bordered(),
 	},
 	experimental = {
-		ghost_text = false,
+		ghost_text = true,
 		native_menu = false,
 	},
 	sorting = {
@@ -157,26 +143,20 @@ cmp.setup({
 	},
 })
 
-cmp.event:on("confirm_done", function(event)
-	local item = event.entry:get_completion_item()
-	local parensDisabled = item.data and item.data.funcParensDisabled or false
-	if not parensDisabled and (item.kind == kind.Method or item.kind == kind.Function) then
-		require("pairs.bracket").type_left("(")
-	end
-end)
-
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline("/", {
+cmp.setup.cmdline('/', {
+	mapping = cmp.mapping.preset.cmdline(),
 	sources = {
-		{ name = "buffer" },
-	},
+		{ name = 'buffer' }
+	}
 })
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline(":", {
+cmp.setup.cmdline(':', {
+	mapping = cmp.mapping.preset.cmdline(),
 	sources = cmp.config.sources({
-		{ name = "path" },
+		{ name = 'path' }
 	}, {
-		{ name = "cmdline" },
-	}),
+		{ name = 'cmdline' }
+	})
 })

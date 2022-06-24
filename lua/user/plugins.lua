@@ -58,6 +58,7 @@ return packer.startup({
 		use("phaazon/hop.nvim") -- hop to any word you like
 		use("rcarriga/nvim-notify") -- vim notify
 		use("kevinhwang91/nvim-hlslens") -- search with count
+		use("norcalli/nvim-colorizer.lua") -- colorizer
 		use({
 			"iamcco/markdown-preview.nvim",
 			run = function()
@@ -87,7 +88,7 @@ return packer.startup({
 		use("lukas-reineke/cmp-under-comparator") -- sort completions
 		use({ "tzachar/cmp-tabnine", run = "./install.sh" }) -- tabnine completions
 		use("ur4ltz/surround.nvim") -- surround character manipulation
-		use("ZhiyuanLck/smart-pairs") -- autopairs, integrates with both cmp and treesitter
+		use("windwp/nvim-autopairs") -- autopairs
 
 		-- Snippets
 		use("L3MON4D3/LuaSnip") --snippet engine

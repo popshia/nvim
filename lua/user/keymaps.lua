@@ -1,7 +1,8 @@
-local opts = { noremap = true, silent = true }
-
 -- Shorten function name
 local map = vim.keymap.set
+-- Silent keymap option
+local opts = { silent = true }
+-- local opts = { noremap = true, silent = true }
 
 --Remap space as leader key
 map("", "<Space>", "<Nop>", opts)
@@ -24,10 +25,10 @@ map("n", "<C-k>", "<C-w>k", opts)
 map("n", "<C-l>", "<C-w>l", opts)
 
 -- Resize with arrows
--- map("n", "<C-Up>", ":resize +2<CR>", opts)
--- map("n", "<C-Down>", ":resize -2<CR>", opts)
--- map("n", "<C-Left>", ":vertical resize -2<CR>", opts)
--- map("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+map("n", "<C-Up>", ":resize +2<CR>", opts)
+map("n", "<C-Down>", ":resize -2<CR>", opts)
+map("n", "<C-Left>", ":vertical resize -2<CR>", opts)
+map("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
 map("n", "<S-l>", ":bnext<CR>", opts)
@@ -61,8 +62,3 @@ map("n", "f", "<cmd>HopWord<cr>", opts)
 map("n", "F", "<cmd>HopLine<cr>", opts)
 map("v", "f", "<cmd>HopWord<cr>", opts)
 map("v", "F", "<cmd>HopLine<cr>", opts)
-
--- Pick buffers
--- TODO: Add this to whichkey
-map("n", "gb", "<cmd>BufferLinePick<cr>", opts)
-
