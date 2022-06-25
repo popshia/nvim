@@ -15,8 +15,6 @@ local check_backspace = function()
 	return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 end
 
-local kind = cmp.lsp.CompletionItemKind
-
 --   פּ ﯟ   some other good icons
 local kind_icons = {
 	Text = "",
@@ -102,6 +100,7 @@ cmp.setup({
 			vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
 			vim_item.menu = ({
 				nvim_lsp = "[LSP]",
+				nvim_lua = "[Lua]",
 				luasnip = "[Snippet]",
 				buffer = "[Buffer]",
 				path = "[Path]",
@@ -112,9 +111,10 @@ cmp.setup({
 	},
 	sources = {
 		{ name = "nvim_lsp" },
-		{ name = "cmp_tabnine" },
-		{ name = "buffer" },
+		{ name = "nvim_lua" },
 		{ name = "luasnip" },
+		{ name = "buffer" },
+		{ name = "cmp_tabnine" },
 		{ name = "path" },
 	},
 	confirm_opts = {
@@ -144,19 +144,19 @@ cmp.setup({
 })
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline('/', {
+cmp.setup.cmdline("/", {
 	mapping = cmp.mapping.preset.cmdline(),
 	sources = {
-		{ name = 'buffer' }
-	}
+		{ name = "buffer" },
+	},
 })
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline(':', {
+cmp.setup.cmdline(":", {
 	mapping = cmp.mapping.preset.cmdline(),
 	sources = cmp.config.sources({
-		{ name = 'path' }
+		{ name = "path" },
 	}, {
-		{ name = 'cmdline' }
-	})
+		{ name = "cmdline" },
+	}),
 })

@@ -62,3 +62,6 @@ map("n", "f", "<cmd>HopWord<cr>", opts)
 map("n", "F", "<cmd>HopLine<cr>", opts)
 map("v", "f", "<cmd>HopWord<cr>", opts)
 map("v", "F", "<cmd>HopLine<cr>", opts)
+
+-- nohsearch
+map("n", "<esc><esc>", "<cmd>nohlsearch<cr>", opts)

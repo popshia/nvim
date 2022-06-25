@@ -13,7 +13,7 @@ null_ls.setup({
 	debug = false,
 	sources = {
 		-- lua
-		-- formatting.stylua,
+		formatting.stylua,
 
 		-- python
 		diagnostics.flake8,
