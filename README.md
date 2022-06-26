@@ -35,8 +35,8 @@ nvim +PackerSync
 - [smart-pairs](https://github.com/ZhiyuanLck/smart-pairs) -- automate pair insertion, integrates with both cmp and treesitter
 - [nvim-hlslens](https://github.com/kevinhwang91/nvim-hlslens) -- search with count
 - [surround.nvim](https://github.com/ur4ltz/surround.nvim) -- search with count
-- [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim) -- markdown preview
 - [todo-comments.nvim](https://github.com/folke/todo-comments.nvim) -- todo comments highlighting
+- [vimwiki](https://github.com/vimwiki/vimwiki) -- vimwiki
 
 ### Interface
 
@@ -45,6 +45,12 @@ nvim +PackerSync
 - [lualine.nvim](https:github.com/nvim-lualine/lualine.nvim) -- status line
 - [bufferline.nvim](https:github.com/akinsho/bufferline.nvim) -- buffer tab line
 - [nvim-navic](https:github.com/SmiteshP/nvim-navic") -- status line position components
+
+### Markdown
+
+- [tabular](https://github.com/godlygeek/tabular) -- text filtering
+- [vim-markdown](https://github.com/preservim/vim-markdown) -- markdown mode
+- [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim) -- markdown preview
 
 ### Colorschemes
 

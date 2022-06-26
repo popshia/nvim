@@ -38,6 +38,7 @@ local options = {
 	scrolloff = 8, -- is one of my fav
 	sidescrolloff = 8, -- side scrolloff with 8 char
 	guifont = "JetBrainsMono Nerd Font Mono:h18", -- the font used in graphical neovim applications
+	foldenable = false,
 }
 
 for key, value in pairs(options) do
@@ -51,3 +52,6 @@ vim.opt.iskeyword:append("-,_")
 -- neovide configs
 vim.cmd("let g:neovide_refresh_rate=165")
 vim.cmd("let g:neovide_remember_window_size = v:true")
+
+-- vimwiki configs
+vim.cmd("let g:vimwiki_list = [{'path': '~/Notes'}]")

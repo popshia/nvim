@@ -138,14 +138,14 @@ local mappings = {
 		d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Diff" },
 	},
 
-	h = {
-		name = "Hop",
-		w = { "<cmd>HopWord<cr>", "Word Mode" },
-		l = { "<cmd>HopLine<cr>", "Line Mode" },
-		L = { "<cmd>HopLineStart<cr>", "Line Start Mode" },
-		c = { "<cmd>HopChar1<cr>", "1-char Mode" },
-		C = { "<cmd>HopChar2<cr>", "2-char Mode" },
-	},
+	-- h = {
+	-- 	name = "Hop",
+	-- 	w = { "<cmd>HopWord<cr>", "Word Mode" },
+	-- 	l = { "<cmd>HopLine<cr>", "Line Mode" },
+	-- 	L = { "<cmd>HopLineStart<cr>", "Line Start Mode" },
+	-- 	c = { "<cmd>HopChar1<cr>", "1-char Mode" },
+	-- 	C = { "<cmd>HopChar2<cr>", "2-char Mode" },
+	-- },
 
 	l = {
 		name = "LSP",
@@ -180,15 +180,15 @@ local mappings = {
 		r = { "<cmd>luafile %<cr>", "Reload luafile" },
 	},
 
-	-- t = {
-	-- 	name = "Terminal",
-	-- 	n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
-	-- 	g = { "<cmd>lua _GOTOP_TOGGLE()<cr>", "GoTop" },
-	-- 	p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
-	-- 	f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
-	-- 	h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
-	-- 	v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
-	-- },
+	w = {
+		name = "Wiki",
+		w = { "<cmd>VimwikiIndex<cr>", "Index" },
+		d = {
+			"<cmd>VimwikiDeleteFile<cr>",
+			"Delete current wiki",
+		},
+		r = { "<cmd>VimwikiRenameFile<cr>", "Rename current wiki" },
+	},
 }
 
 local vopts = {
