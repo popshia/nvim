@@ -59,7 +59,6 @@ return packer.startup({
 		use("rcarriga/nvim-notify") -- vim notify
 		use("kevinhwang91/nvim-hlslens") -- search with count
 		use("norcalli/nvim-colorizer.lua") -- colorizer
-		use("vimwiki/vimwiki") -- vimwiki
 
 		-- Markdown
 		use("godlygeek/tabular") -- text filtering

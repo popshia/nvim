@@ -138,14 +138,14 @@ local mappings = {
 		d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Diff" },
 	},
 
-	-- h = {
-	-- 	name = "Hop",
-	-- 	w = { "<cmd>HopWord<cr>", "Word Mode" },
-	-- 	l = { "<cmd>HopLine<cr>", "Line Mode" },
-	-- 	L = { "<cmd>HopLineStart<cr>", "Line Start Mode" },
-	-- 	c = { "<cmd>HopChar1<cr>", "1-char Mode" },
-	-- 	C = { "<cmd>HopChar2<cr>", "2-char Mode" },
-	-- },
+	h = {
+		name = "Hop",
+		w = { "<cmd>HopWord<cr>", "Word Mode" },
+		l = { "<cmd>HopLine<cr>", "Line Mode" },
+		L = { "<cmd>HopLineStart<cr>", "Line Start Mode" },
+		c = { "<cmd>HopChar1<cr>", "1-char Mode" },
+		C = { "<cmd>HopChar2<cr>", "2-char Mode" },
+	},
 
 	l = {
 		name = "LSP",
@@ -178,16 +178,6 @@ local mappings = {
 		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
 		C = { "<cmd>Telescope commands<cr>", "Commands" },
 		r = { "<cmd>luafile %<cr>", "Reload luafile" },
-	},
-
-	w = {
-		name = "Wiki",
-		w = { "<cmd>VimwikiIndex<cr>", "Index" },
-		d = {
-			"<cmd>VimwikiDeleteFile<cr>",
-			"Delete current wiki",
-		},
-		r = { "<cmd>VimwikiRenameFile<cr>", "Rename current wiki" },
 	},
 }
 
