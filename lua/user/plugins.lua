@@ -107,7 +107,8 @@ return packer.startup({
 
 		-- Telescope
 		use("nvim-telescope/telescope.nvim") -- highly extendable fuzzy finder over lists
-		use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }) -- treesitter for syntax highlighting
+		use("nvim-treesitter/nvim-treesitter") -- treesitter for syntax highlighting
+		-- use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }) -- treesitter for syntax highlighting
 		use("nvim-treesitter/nvim-treesitter-context") -- show treesitter context
 
 		-- Git
