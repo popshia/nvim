@@ -32,11 +32,8 @@ nvim +PackerSync
 - [impatient.nvim](https://github.com/lewis6991/impatient.nvim) -- improve startup speed
 - [hop.nvim](https://github.com/phaazon/hop.nvim) -- hop to any word you like
 - [nvim-notify](https://github.com/rcarriga/nvim-notify) -- nice interface for notifications
-- [smart-pairs](https://github.com/ZhiyuanLck/smart-pairs) -- automate pair insertion, integrates with both cmp and treesitter
 - [nvim-hlslens](https://github.com/kevinhwang91/nvim-hlslens) -- search with count
-- [surround.nvim](https://github.com/ur4ltz/surround.nvim) -- search with count
-- [todo-comments.nvim](https://github.com/folke/todo-comments.nvim) -- todo comments highlighting
-- [vimwiki](https://github.com/vimwiki/vimwiki) -- vimwiki
+- [nvim-colorizer.lua](https://github.com/norcall/nvim-colorizer.lua) -- search with count
 
 ### Interface
 
@@ -45,6 +42,7 @@ nvim +PackerSync
 - [lualine.nvim](https:github.com/nvim-lualine/lualine.nvim) -- status line
 - [bufferline.nvim](https:github.com/akinsho/bufferline.nvim) -- buffer tab line
 - [nvim-navic](https:github.com/SmiteshP/nvim-navic") -- status line position components
+- [todo-comments.nvim](https://github.com/folke/todo-comments.nvim) -- todo comments highlighting
 
 ### Markdown
 
@@ -63,9 +61,12 @@ nvim +PackerSync
 - [cmp-path](https://github.com/hrsh7th/cmp-path") -- path completions
 - [cmp-cmdline](https://github.com/hrsh7th/cmp-cmdline") -- cmdline completions
 - [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp") -- lsp completions
+- [cmp-nvim-lua](https://github.com/hrsh7th/cmp-nvim-lua") -- lua completions
 - [cmp-luasnip](https://github.com/saadparwaiz1/cmp_luasnip") -- snippet completions
-- [cmp-tabnine](https://github.com/tzachar/cmp-tabnine) -- tabnine completions
 - [cmp-under-comparator](https://github.com/lukas-reineke/cmp-under-comparator") -- sort completions options
+- [cmp-tabnine](https://github.com/tzachar/cmp-tabnine) -- tabnine completions
+- [surround.nvim](https://github.com/ur4ltz/surround.nvim) -- search with count
+- [nvim-autopairs](https://github.com/windwp/nvim-autopairs) automate pair insertion, integrates with both cmp and treesitter
 
 ### Snippets
 
@@ -76,7 +77,6 @@ nvim +PackerSync
 
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig") -- enable LSP
 - [nvim-lsp-installer](https://github.com/williamboman/nvim-lsp-installer") -- simple to use language server installer
-- [nlsp-settings](https://github.com/tamago324/nlsp-settings.nvim") -- language server settings defined in json for
 - [null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 - [vim-illuminate](https://github.com/RRethy/vim-illuminate") -- automatically highlighting other uses of the current word under the cursor
 - [lsp_signature.nvim](https://github.com/ray-x/lsp_signature") -- for lsp signatures
@@ -89,7 +89,7 @@ nvim +PackerSync
 
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) -- treesitter for syntax highlighting
 - [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context") -- show treesitter context
-- [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring") -- set comments based on file type
+- [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) -- comment based on cursor location
 
 ### Git
 

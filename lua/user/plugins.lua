@@ -46,7 +46,6 @@ return packer.startup({
 		use("nvim-lua/plenary.nvim") -- useful lua functions used by lots of plugins
 		use("nvim-lua/popup.nvim") -- vim popup api in neovim
 		use("numToStr/Comment.nvim") -- easily comment stuff
-		use("JoosepAlviste/nvim-ts-context-commentstring") -- comment based on cursor location
 		use("kyazdani42/nvim-web-devicons") -- file icons
 		use("kyazdani42/nvim-tree.lua") -- nvim-tree file explorer
 		use("akinsho/toggleterm.nvim") -- terminal integration
@@ -61,6 +60,14 @@ return packer.startup({
 		use("kevinhwang91/nvim-hlslens") -- search with count
 		use("norcalli/nvim-colorizer.lua") -- colorizer
 
+		-- Interface
+		use("folke/which-key.nvim") -- show available keys after hitting space
+		use("goolord/alpha-nvim") -- startup page
+		use("nvim-lualine/lualine.nvim") -- status line
+		use("akinsho/bufferline.nvim") -- buffer tab line
+		use("SmiteshP/nvim-navic") -- status line components that shows current code context
+		use("folke/todo-comments.nvim") -- todo comments highlighting
+
 		-- Markdown
 		use("godlygeek/tabular") -- text filtering
 		use("preservim/vim-markdown") -- markdown mode
@@ -70,14 +77,6 @@ return packer.startup({
 				vim.fn["mkdp#util#install"]()
 			end,
 		}) -- markdown-preview
-
-		-- Interface
-		use("folke/which-key.nvim") -- show available keys after hitting space
-		use("goolord/alpha-nvim") -- startup page
-		use("nvim-lualine/lualine.nvim") -- status line
-		use("akinsho/bufferline.nvim") -- buffer tab line
-		use("SmiteshP/nvim-navic") -- status line components that shows current code context
-		use("folke/todo-comments.nvim") -- todo comments highlighting
 
 		-- Colorschemes
 		use("sainnhe/gruvbox-material") -- gruvbox
@@ -108,9 +107,12 @@ return packer.startup({
 
 		-- Telescope
 		use("nvim-telescope/telescope.nvim") -- highly extendable fuzzy finder over lists
+
+		-- Treesitter
 		use("nvim-treesitter/nvim-treesitter") -- treesitter for syntax highlighting
 		-- use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }) -- treesitter for syntax highlighting
 		use("nvim-treesitter/nvim-treesitter-context") -- show treesitter context
+		use("JoosepAlviste/nvim-ts-context-commentstring") -- comment based on cursor location
 
 		-- Git
 		use("lewis6991/gitsigns.nvim") -- git integration
