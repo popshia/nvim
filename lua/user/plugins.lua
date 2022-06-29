@@ -46,6 +46,7 @@ return packer.startup({
 		use("nvim-lua/plenary.nvim") -- useful lua functions used by lots of plugins
 		use("nvim-lua/popup.nvim") -- vim popup api in neovim
 		use("numToStr/Comment.nvim") -- easily comment stuff
+		use("JoosepAlviste/nvim-ts-context-commentstring") -- comment based on cursor location
 		use("kyazdani42/nvim-web-devicons") -- file icons
 		use("kyazdani42/nvim-tree.lua") -- nvim-tree file explorer
 		use("akinsho/toggleterm.nvim") -- terminal integration

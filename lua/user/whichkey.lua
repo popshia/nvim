@@ -6,9 +6,9 @@ end
 local setup = {
 	plugins = {
 		marks = true, -- shows a list of your marks on ' and `
-		registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
+		registers = false, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
 		spelling = {
-			enabled = true, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
+			enabled = false, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
 			suggestions = 20, -- how many suggestions should be shown in the list?
 		},
 		-- the presets plugin, adds help for a bunch of default keybindings in Neovim
@@ -46,7 +46,7 @@ local setup = {
 		border = "rounded", -- none, single, double, shadow
 		position = "bottom", -- bottom, top
 		margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
-		padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
+		padding = { 1, 1, 1, 1 }, -- extra window padding [top, right, bottom, left]
 		winblend = 0,
 	},
 	layout = {
@@ -193,6 +193,7 @@ local vopts = {
 local vmappings = {
 	["/"] = { "<esc><cmd>lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<cr>", "Comment" },
 	["f"] = { "<esc><cmd>lua vim.lsp.buf.range_formatting()<cr>", "Format" },
+	["h"] = { "<cmd>HopWord<cr>", "Hop" },
 	["r"] = { "<esc><cmd>lua require'sniprun'.run('v')<cr>", "Run Code" },
 }
 
