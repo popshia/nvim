@@ -13,7 +13,7 @@ null_ls.setup({
 	debug = false,
 	sources = {
 		-- lua
-		formatting.stylua,
+		-- formatting.stylua,
 
 		-- python
 		diagnostics.flake8,
@@ -24,7 +24,7 @@ null_ls.setup({
 		-- formatting.clang_format,
 
 		-- other languages
-		formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
+		-- formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
 	},
 
 	on_attach = function(client)

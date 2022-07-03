@@ -17,6 +17,7 @@ dap_install.setup({
 	installation_path = vim.fn.stdpath("data") .. "/dapinstall/",
 })
 dap_install.config("python", {})
+dap_install.config("codelldb", {})
 -- add other configs here
 
 dapui.setup({
@@ -73,7 +74,7 @@ dapui.setup({
 	},
 })
 
-vim.fn.sign_define('DapBreakpoint', { text = "", texthl = 'DiagnosticSignError', linehl = '', numhl = '' })
+vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticSignError", linehl = "", numhl = "" })
 
 dap.listeners.after.event_initialized["dapui_config"] = function()
 	dapui.open()

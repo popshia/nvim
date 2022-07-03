@@ -67,4 +67,7 @@ nvim_tree.setup({
 		ignore = true,
 		timeout = 500,
 	},
+	filters = {
+		dotfiles = false,
+	},
 })
