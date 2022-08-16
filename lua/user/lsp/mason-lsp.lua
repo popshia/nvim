@@ -1,5 +1,12 @@
-local status_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
+local status_ok, mason_lsp = pcall(require, "mason-lspconfig")
 if not status_ok then
+	return
+end
+
+mason_lsp.setup()
+
+local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
+if not lspconfig_status_ok then
 	return
 end
 
@@ -8,32 +15,6 @@ local servers = {
 	"sumneko_lua",
 	"clangd",
 }
-
-local settings = {
-	ui = {
-		icons = {
-			server_installed = "✓",
-			server_pending = "➜",
-			server_uninstalled = "✗",
-		},
-		keymaps = {
-			toggle_server_expand = "<CR>",
-			install_server = "i",
-			update_server = "u",
-			check_server_version = "c",
-			update_all_servers = "U",
-			check_outdated_servers = "C",
-			uninstall_server = "X",
-		},
-	},
-}
-
-lsp_installer.setup(settings)
-
-local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
-if not lspconfig_status_ok then
-	return
-end
 
 local opts = {}
 

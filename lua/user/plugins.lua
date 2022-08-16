@@ -59,6 +59,8 @@ return packer.startup({
 		use("rcarriga/nvim-notify") -- vim notify
 		use("kevinhwang91/nvim-hlslens") -- search with count
 		use("norcalli/nvim-colorizer.lua") -- colorizer
+		use("williamboman/mason.nvim") -- external tool management
+		use("williamboman/mason-lspconfig.nvim") -- mason lspconfig bridging
 
 		-- Interface
 		use("folke/which-key.nvim") -- show available keys after hitting space
@@ -100,7 +102,6 @@ return packer.startup({
 
 		-- LSP
 		use("neovim/nvim-lspconfig") -- enable LSP
-		use("williamboman/nvim-lsp-installer") -- simple to use language server installer
 		use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 		use("RRethy/vim-illuminate") -- automatically highlighting other uses of the current word under the cursor
 		use("ray-x/lsp_signature.nvim") -- for lsp signatures
@@ -110,7 +111,6 @@ return packer.startup({
 
 		-- Treesitter
 		use("nvim-treesitter/nvim-treesitter") -- treesitter for syntax highlighting
-		-- use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }) -- treesitter for syntax highlighting
 		use("nvim-treesitter/nvim-treesitter-context") -- show treesitter context
 		use("JoosepAlviste/nvim-ts-context-commentstring") -- comment based on cursor location
 
@@ -120,7 +120,6 @@ return packer.startup({
 		-- Dap
 		use("mfussenegger/nvim-dap") -- debugging
 		use("rcarriga/nvim-dap-ui") -- debugging ui
-		use("ravenxrz/DAPInstall.nvim") -- debugger installation
 
 		-- Code runners
 		use("is0n/jaq-nvim") -- code runner
