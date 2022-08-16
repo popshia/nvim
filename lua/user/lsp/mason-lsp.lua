@@ -3,7 +3,9 @@ if not status_ok then
 	return
 end
 
-mason_lsp.setup()
+mason_lsp.setup({
+	ensure_installed = { "pyright", "sumneko_lua", "clangd" },
+})
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status_ok then
