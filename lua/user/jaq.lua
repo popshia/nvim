@@ -4,80 +4,72 @@ if not status_ok then
 end
 
 jaq.setup({
-	-- Commands used with 'Jaq'
 	cmds = {
-		-- Default UI used (see `Usage` for options)
-		default = "toggleterm",
-
-		-- Uses external commands such as 'g++' and 'cargo'
-		external = {
-			typescript = "deno run %",
-			javascript = "node %",
-			markdown = "glow %",
-			python = "python %",
-			rust = "rustc % && ./$fileBase && rm $fileBase",
-			cpp = "g++ % -o $fileBase && ./$fileBase",
-			go = "go run %",
-			sh = "sh %",
-		},
-
-		-- Uses internal commands such as 'source' and 'luafile'
+		-- Uses vim commands
 		internal = {
 			lua = "luafile %",
-			vim = "source %",
+			vim = "source %"
 		},
+
+		-- Uses shell commands
+		external = {
+			markdown = "glow %",
+			python   = "python3 %",
+			go       = "go run %",
+			sh       = "sh %"
+		}
 	},
 
-	-- UI settings
-	ui = {
+	behavior = {
+		-- Default type
+		default = "float",
+
 		-- Start in insert mode
 		startinsert = false,
 
-		-- Switch back to current file
-		-- after using Jaq
+		-- Use `wincmd p` on startup
 		wincmd = false,
 
-		-- Floating Window / FTerm settings
+		-- Auto-save files
+		autosave = false
+	},
+
+	ui = {
 		float = {
-			-- Floating window border (see ':h nvim_open_win')
+			-- See ':h nvim_open_win'
 			border = "none",
 
-			-- Num from `0 - 1` for measurements
+			-- See ':h winhl'
+			winhl    = "Normal",
+			borderhl = "FloatBorder",
+
+			-- See ':h winblend'
+			winblend = 0,
+
+			-- Num from `0-1` for measurements
 			height = 0.8,
-			width = 0.8,
-			x = 0.5,
-			y = 0.5,
-
-			-- Highlight group for floating window/border (see ':h winhl')
-			border_hl = "FloatBorder",
-			float_hl = "Normal",
-
-			-- Floating Window Transparency (see ':h winblend')
-			blend = 0,
+			width  = 0.8,
+			x      = 0.5,
+			y      = 0.5
 		},
 
 		terminal = {
-			-- Position of terminal
+			-- Window position
 			position = "bot",
 
-			-- Size of terminal
+			-- Window size
 			size = 10,
-		},
 
-		toggleterm = {
-			-- Position of terminal, one of "vertical" | "horizontal" | "window" | "float"
-			position = "float",
-
-			-- Size of terminal
-			size = 10,
+			-- Disable line numbers
+			line_no = false
 		},
 
 		quickfix = {
-			-- Position of quickfix window
+			-- Window position
 			position = "bot",
 
-			-- Size of quickfix window
-			size = 10,
-		},
-	},
+			-- Window size
+			size = 10
+		}
+	}
 })
