@@ -178,6 +178,7 @@ local mappings = {
 		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
 		C = { "<cmd>Telescope commands<cr>", "Commands" },
 		r = { "<cmd>luafile %<cr>", "Reload luafile" },
+		m = { "<cmd>Mason<cr>", "Mason" },
 	},
 }
 
