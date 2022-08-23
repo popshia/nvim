@@ -116,6 +116,7 @@ return packer.startup({
 
 		-- Git
 		use("lewis6991/gitsigns.nvim") -- git integration
+		use("f-person/git-blame.nvim") -- git blames
 
 		-- Dap
 		use("mfussenegger/nvim-dap") -- debugging
@@ -123,7 +124,6 @@ return packer.startup({
 
 		-- Code runners
 		use("is0n/jaq-nvim") -- code runner
-		use({ "michaelb/sniprun", run = "bash ./install.sh" }) -- run code within a range
 
 		-- Automatically set up your configuration after cloning packer.nvim
 		-- Put this at the end after all plugins

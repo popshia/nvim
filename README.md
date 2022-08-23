@@ -33,7 +33,9 @@ nvim +PackerSync
 - [hop.nvim](https://github.com/phaazon/hop.nvim) -- hop to any word you like
 - [nvim-notify](https://github.com/rcarriga/nvim-notify) -- nice interface for notifications
 - [nvim-hlslens](https://github.com/kevinhwang91/nvim-hlslens) -- search with count
-- [nvim-colorizer.lua](https://github.com/norcall/nvim-colorizer.lua) -- search with count
+- [nvim-colorizer.lua](https://github.com/norcall/nvim-colorizer.lua) -- show colors in nvim
+- [mason.nvim](https://github.com/williamboman/mason.nvim) -- external editor tooling manager
+- [mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim) -- mason lsp linker
 
 ### Interface
 
@@ -94,14 +96,13 @@ nvim +PackerSync
 ### Git
 
 - [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim") -- git integration
+- [git-blame.nvim](https://github.com/f-person/git-blame.nvim") -- show git blames
 
 ### Debugging
 
 - [nvim-dap](https://github.com/mfussenegger/nvim-dap") -- debugging client
 - [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui") -- debugging interface
-- [DAPInstall.nvim](https://github.com/ravenxrz/DAPInstall.nvim") -- debugger installation
 
 ### Code runners
 
 - [jaq-nvim](https://github.com/is0n/jaq-nvim") -- code runner
-- [sniprun](https://github.com/michaelb/sniprun) -- run code within a range
