@@ -37,7 +37,7 @@ local options = {
 	tabstop = 4, -- insert 4 spaces for a tab
 	scrolloff = 8, -- is one of my fav
 	sidescrolloff = 8, -- side scrolloff with 8 char
-	guifont = "JetBrainsMono Nerd Font Mono:h18", -- the font used in graphical neovim applications
+	guifont = "JetBrainsMono Nerd Font Mono:h16", -- the font used in graphical neovim applications
 	foldenable = false,
 }
 
@@ -53,5 +53,5 @@ vim.opt.iskeyword:append("-,_")
 vim.cmd("let g:neovide_refresh_rate=165")
 vim.cmd("let g:neovide_remember_window_size = v:true")
 
--- vimwiki configs
-vim.cmd("let g:vimwiki_list = [{'path': '~/Notes'}]")
+-- -- vimwiki configs
+-- vim.cmd("let g:vimwiki_list = [{'path': '~/Notes'}]")
