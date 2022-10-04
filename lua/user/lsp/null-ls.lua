@@ -18,7 +18,7 @@ null_ls.setup({
 		formatting.isort,
 
 		-- c, c++
-		formatting.clang_format,
+		-- formatting.clang_format,
 
 		-- other languages
 		-- formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
@@ -26,7 +26,8 @@ null_ls.setup({
 
 	on_attach = function(client)
 		if client.resolved_capabilities.document_formatting then
-			vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync({ async = true })")
+			-- vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync({ async = true })")
+			vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format()")
 		end
 	end,
 })

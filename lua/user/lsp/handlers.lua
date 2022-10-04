@@ -51,7 +51,8 @@ M.setup = function()
 	})
 
 	vim.cmd([[autocmd CursorHold, CursorHoldI * lua vim.diagnostics.open_float(nil, {focus=false})]])
-	vim.cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync({ async = "true" })]])
+	-- vim.cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync({ async = "true" })]])
+	vim.cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]])
 end
 
 local function lsp_highlight_document(client)
@@ -80,7 +81,8 @@ local function lsp_keymaps(bufnr)
 	-- map(bufnr, "n", "g]", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
 	-- map(bufnr, "n", "gq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "gf", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
-	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
+	-- vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
+	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format()' ]])
 end
 
 M.on_attach = function(client, bufnr)

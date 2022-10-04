@@ -90,18 +90,27 @@ lualine.setup({
 		disabled_filetypes = { "alpha", "dashboard", "Outline" },
 		-- disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
 		always_divide_middle = true,
+		refresh = {
+			statusline = 1000,
+			tabline = 1000,
+			winbar = 1000,
+		}
 	},
 	sections = {
 		lualine_a = { "mode" },
-		lualine_b = { branch, diagnostics },
-		lualine_c = {
+		lualine_b = { branch, diff },
+		lualine_c = { diagnostics },
+		lualine_x = { spaces, "encoding", filetype },
+		lualine_y = { location },
+		lualine_z = { "progress" },
+	},
+	tabline = {},
+	winbar = {
+		lualine_b = {
 			{
 				navic.get_location,
 				cond = navic.is_available,
 			},
 		},
-		lualine_x = { diff, spaces, "encoding", filetype },
-		lualine_y = { location },
-		lualine_z = { "progress" },
 	},
 })
