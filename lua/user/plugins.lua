@@ -93,7 +93,7 @@ return packer.startup({
 		use("saadparwaiz1/cmp_luasnip") -- snippet completions
 		use("lukas-reineke/cmp-under-comparator") -- sort completions
 		use({ "tzachar/cmp-tabnine", run = "./install.sh" }) -- tabnine completions
-		use("ur4ltz/surround.nvim") -- surround character manipulation
+		use("kylechui/nvim-surround") -- surround character manipulation
 		use("windwp/nvim-autopairs") -- autopairs
 
 		-- Snippets
