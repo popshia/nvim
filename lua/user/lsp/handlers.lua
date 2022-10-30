@@ -97,11 +97,11 @@ M.on_attach = function(client, bufnr)
 	end
 
 	if client.name == "tsserver" then
-		client.resolved_capabilities.document_formatting = false
+		client.server_capabilities.document_formatting = false
 	end
 
 	if client.name == "clangd" then
-		client.resolved_capabilities.document_formatting = false
+		client.server_capabilities.document_formatting = false
 	end
 
 	M.capabilities.textDocument.completion.completionItem.snippetSupport = true
