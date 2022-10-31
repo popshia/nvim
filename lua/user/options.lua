@@ -37,7 +37,7 @@ local options = {
 	tabstop = 4, -- insert 4 spaces for a tab
 	scrolloff = 8, -- is one of my fav
 	sidescrolloff = 8, -- side scrolloff with 8 char
-	guifont = "JetBrainsMono Nerd Font Mono:h14", -- the font used in graphical neovim applications
+	guifont = "JetBrainsMono Nerd Font Mono:h16", -- the font used in graphical neovim applications
 	foldenable = false,
 }
 

@@ -113,6 +113,7 @@ return packer.startup({
 		use("nvim-treesitter/nvim-treesitter") -- treesitter for syntax highlighting
 		use("nvim-treesitter/nvim-treesitter-context") -- show treesitter context
 		use("JoosepAlviste/nvim-ts-context-commentstring") -- comment based on cursor location
+		use("simrat39/symbols-outline.nvim") -- symbol outlines
 
 		-- Git
 		use("lewis6991/gitsigns.nvim") -- git integration
