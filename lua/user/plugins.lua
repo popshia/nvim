@@ -126,6 +126,9 @@ return packer.startup({
 		-- Code runners
 		use("is0n/jaq-nvim") -- code runner
 
+		-- Games
+		use("ThePrimeagen/vim-be-good") --vim be good
+
 		-- Automatically set up your configuration after cloning packer.nvim
 		-- Put this at the end after all plugins
 		if PACKER_BOOTSTRAP then
