@@ -47,11 +47,9 @@ end
 
 vim.opt.shortmess:append("c")
 vim.opt.whichwrap:append("<,>,[,],h,l")
-vim.opt.iskeyword:append("-,_")
+vim.opt.iskeyword:remove("_")
+-- vim.opt.iskeyword:append("-")
 
 -- neovide configs
 vim.cmd("let g:neovide_refresh_rate=165")
 vim.cmd("let g:neovide_remember_window_size = v:true")
-
--- -- vimwiki configs
--- vim.cmd("let g:vimwiki_list = [{'path': '~/Notes'}]")
