@@ -52,4 +52,4 @@ vim.opt.iskeyword:remove("_")
 
 -- neovide configs
 vim.cmd("let g:neovide_refresh_rate=165")
-vim.cmd("let g:neovide_remember_window_size = v:true")
+vim.cmd("let g:neovide_remember_window_size=v:true")
