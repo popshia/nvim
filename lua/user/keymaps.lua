@@ -16,6 +16,7 @@ vim.g.maplocalleader = " "
 --   visual_block_mode = "x",
 --   term_mode = "t",
 --   command_mode = "c",
+--   operator_mode = "c",
 
 -- Normal --
 -- Better window navigation
@@ -58,10 +59,14 @@ map("x", "J", ":move '>+1<CR>gv-gv", opts)
 map("x", "K", ":move '<-2<CR>gv-gv", opts)
 
 -- Hop.nvim
-map("n", "f", "<cmd>HopWord<cr>", opts)
-map("n", "F", "<cmd>HopLine<cr>", opts)
-map("v", "f", "<cmd>HopWord<cr>", opts)
-map("v", "F", "<cmd>HopLine<cr>", opts)
+map("n", "f", "<cmd>HopChar1<cr>", opts)
+map("n", "F", "<cmd>HopLineStart<cr>", opts)
+map("v", "f", "<cmd>HopChar1<cr>", opts)
+map("v", "F", "<cmd>HopLineStart<cr>", opts)
+map("x", "f", "<cmd>HopChar1<cr>", opts)
+map("x", "F", "<cmd>HopLineStart<cr>", opts)
+map("o", "f", "<cmd>HopChar1<cr>", opts)
+map("o", "F", "<cmd>HopLineStart<cr>", opts)
 
 -- nohsearch
 map("n", "<esc><esc>", "<cmd>nohlsearch<cr>", opts)
