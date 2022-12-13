@@ -129,6 +129,9 @@ return packer.startup({
 		-- Games
 		use("ThePrimeagen/vim-be-good") --vim be good
 
+		-- LaTeX
+		use("lervag/vimtex") -- vimtex plugin
+
 		-- Automatically set up your configuration after cloning packer.nvim
 		-- Put this at the end after all plugins
 		if PACKER_BOOTSTRAP then
