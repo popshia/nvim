@@ -59,8 +59,6 @@ return packer.startup({
 		use("rcarriga/nvim-notify") -- vim notify
 		use("kevinhwang91/nvim-hlslens") -- search with count
 		use("norcalli/nvim-colorizer.lua") -- colorizer
-		use("williamboman/mason.nvim") -- external tool management
-		use("williamboman/mason-lspconfig.nvim") -- mason lspconfig bridging
 
 		-- Interface
 		use("folke/which-key.nvim") -- show available keys after hitting space
@@ -105,6 +103,8 @@ return packer.startup({
 		use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 		use("RRethy/vim-illuminate") -- automatically highlighting other uses of the current word under the cursor
 		use("ray-x/lsp_signature.nvim") -- for lsp signatures
+		use("williamboman/mason.nvim") -- external tool management
+		use("williamboman/mason-lspconfig.nvim") -- mason lspconfig bridging
 
 		-- Telescope
 		use("nvim-telescope/telescope.nvim") -- highly extendable fuzzy finder over lists
