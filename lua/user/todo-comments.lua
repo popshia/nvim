@@ -8,17 +8,14 @@ todo_comments.setup({
 	sign_priority = 8, -- sign priority
 	-- keywords recognized as todo comments
 	keywords = {
-		FIX = {
+		FIXME = {
 			icon = " ", -- icon used for the sign, and in search results
 			color = "#f2594b", -- can be a hex color, or a named color (see below)
-			alt = { "FIXME", "BUG", "FIXIT", "ISSUE" }, -- a set of other keywords that all map to this FIX keywords
-			-- signs = false, -- configure signs for some keywords individually
 		},
-		TODO = { icon = " ", color = "#80aa9e" },
-		HACK = { icon = " ", color = "#e9b143" },
-		WARN = { icon = " ", color = "#e9b143", alt = { "WARNING", "XXX" } },
-		PERF = { icon = " ", color = "#d3869b", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
-		NOTE = { icon = " ", color = "#b0b846", alt = { "INFO" } },
+		INFO = { icon = "🛈 ", color = "#d3869b" },
+		NOTE = { icon = " ", color = "#80aa9e", alt = {} },
+		TODO = { icon = " ", color = "#e9b143" },
+		REVIEW = { icon = "🕮 ", color = "#b0b846" },
 	},
 	merge_keywords = true, -- when true, custom keywords will be merged with the defaults
 	-- highlighting of the line containing the todo comment
@@ -26,9 +23,9 @@ todo_comments.setup({
 	-- * keyword: highlights of the keyword
 	-- * after: highlights after the keyword (todo text)
 	highlight = {
-		before = "", -- "fg" or "bg" or empty
+		before = "bg", -- "fg" or "bg" or empty
 		keyword = "wide", -- "fg", "bg", "wide" or empty. (wide is the same as bg, but will also highlight surrounding characters)
-		after = "", -- "fg" or "bg" or empty
+		after = "bg", -- "fg" or "bg" or empty
 		pattern = [[.*<(KEYWORDS)\s*:]], -- pattern or table of patterns, used for highlightng (vim regex)
 		comments_only = true, -- uses treesitter to match keywords in comments only
 		max_line_len = 400, -- ignore lines longer than this
@@ -60,7 +57,7 @@ todo_comments.setup({
 })
 -- little demo:
 -- TODO:
--- HACK:
--- BUG:
--- PERF:
+-- REVIEW:
+-- FIXME:
 -- NOTE:
+-- INFO:
