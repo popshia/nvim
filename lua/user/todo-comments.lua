@@ -12,10 +12,10 @@ todo_comments.setup({
 			icon = " ", -- icon used for the sign, and in search results
 			color = "#f2594b", -- can be a hex color, or a named color (see below)
 		},
-		INFO = { icon = "🛈 ", color = "#d3869b" },
+		INFO = { icon = "ℹ ", color = "#d3869b" },
 		NOTE = { icon = " ", color = "#80aa9e", alt = {} },
 		TODO = { icon = " ", color = "#e9b143" },
-		REVIEW = { icon = "🕮 ", color = "#b0b846" },
+		REVIEW = { icon = "✎ ", color = "#b0b846" },
 	},
 	merge_keywords = true, -- when true, custom keywords will be merged with the defaults
 	-- highlighting of the line containing the todo comment
@@ -55,7 +55,7 @@ todo_comments.setup({
 		-- pattern = [[\b(KEYWORDS)\b]], -- match without the extra colon. You'll likely get false positives
 	},
 })
--- little demo:
+
 -- TODO:
 -- REVIEW:
 -- FIXME:
