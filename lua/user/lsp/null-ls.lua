@@ -14,8 +14,8 @@ null_ls.setup({
 	sources = {
 		-- python
 		-- diagnostics.flake8,
-		formatting.black,
-		formatting.isort,
+		-- formatting.black,
+		-- formatting.isort,
 
 		-- c, c++
 		-- formatting.clang_format,
