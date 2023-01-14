@@ -105,6 +105,7 @@ cmp.setup({
 				buffer = "[Buffer]",
 				path = "[Path]",
 				cmp_tabnine = "[T9]",
+				latex_symbols = "[TEX]",
 			})[entry.source.name]
 			return vim_item
 		end,
@@ -116,6 +117,7 @@ cmp.setup({
 		{ name = "buffer" },
 		{ name = "cmp_tabnine" },
 		{ name = "path" },
+		{ name = "latex_symbols", option = { strategy = 0 } },
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
