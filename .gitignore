@@ -31,5 +31,6 @@ Temporary Items
 .apdisk
 
 packer_compiled.lua
+lazy-lock.json
 
 # End of https://www.toptal.com/developers/gitignore/api/macos

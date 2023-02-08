@@ -105,12 +105,4 @@ lualine.setup({
 		lualine_z = { "progress" },
 	},
 	tabline = {},
-	winbar = {
-		lualine_b = {
-			{
-				navic.get_location,
-				cond = navic.is_available,
-			},
-		},
-	},
 })

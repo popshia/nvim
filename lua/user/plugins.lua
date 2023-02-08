@@ -98,6 +98,14 @@ lazy.setup({
 			"williamboman/mason-lspconfig.nvim", -- mason lspconfig bridging
 		}
 	},
+	{
+		"utilyre/barbecue.nvim",
+		name = "barbecue",
+		version = "*",
+		opts = {
+			-- configurations go here
+		},
+	},
 
 	-- Telescope
 	"nvim-telescope/telescope.nvim", -- highly extendable fuzzy finder over lists
