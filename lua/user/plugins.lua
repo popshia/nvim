@@ -42,6 +42,7 @@ lazy.setup({
 	"norcalli/nvim-colorizer.lua", -- colorizer
 	"nguyenvukhang/nvim-toggler", -- toggle texts
 	"sitiom/nvim-numbertoggle", -- toggle between relative and absolute numbers
+	"mizlan/iswap.nvim", -- swap nodes using treesitter
 
 	-- Interface
 	"folke/which-key.nvim", -- show available keys after hitting space
