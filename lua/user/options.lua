@@ -54,6 +54,7 @@ vim.opt.iskeyword:remove("_")
 -- neovide configs
 vim.cmd("let g:neovide_refresh_rate=165")
 vim.cmd("let g:neovide_remember_window_size=v:true")
+
 -- LaTeX
 vim.cmd("let g:tex_flavor = 'latex'") -- Default tex file format
 vim.cmd("let g:vimtex_view_method = 'skim'") -- Choose which program to use to view PDF file
