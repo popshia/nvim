@@ -40,6 +40,9 @@ lazy.setup({
 	"rcarriga/nvim-notify", -- vim notify
 	"kevinhwang91/nvim-hlslens", -- search with count
 	"norcalli/nvim-colorizer.lua", -- colorizer
+	"nguyenvukhang/nvim-toggler", -- toggle texts
+	"sitiom/nvim-numbertoggle", -- toggle between relative and absolute numbers
+	"mizlan/iswap.nvim", -- swap nodes using treesitter
 
 	-- Interface
 	"folke/which-key.nvim", -- show available keys after hitting space
@@ -92,6 +95,7 @@ lazy.setup({
 	"neovim/nvim-lspconfig", -- enable LSP
 	"jose-elias-alvarez/null-ls.nvim", -- for formatters and linters
 	"ray-x/lsp_signature.nvim", -- for lsp signatures
+	"utilyre/barbecue.nvim", -- winbar components
 	{
 		"williamboman/mason.nvim", -- external tool management
 		dependencies = {

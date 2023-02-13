@@ -39,6 +39,7 @@ local options = {
 	sidescrolloff = 8, -- side scrolloff with 8 char
 	guifont = "JetBrainsMono Nerd Font Mono:h16", -- the font used in graphical neovim applications
 	foldenable = false,
+	mousemoveevent = true,
 }
 
 for key, value in pairs(options) do

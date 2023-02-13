@@ -3,42 +3,6 @@ if not status_ok then
 	return
 end
 
-local navic = require("nvim-navic")
-navic.setup({
-	icons = {
-		File          = " ",
-		Module        = " ",
-		Namespace     = " ",
-		Package       = " ",
-		Class         = " ",
-		Method        = " ",
-		Property      = " ",
-		Field         = " ",
-		Constructor   = " ",
-		Enum          = "練",
-		Interface     = "練",
-		Function      = " ",
-		Variable      = " ",
-		Constant      = " ",
-		String        = " ",
-		Number        = " ",
-		Boolean       = "◩ ",
-		Array         = " ",
-		Object        = " ",
-		Key           = " ",
-		Null          = "ﳠ ",
-		EnumMember    = " ",
-		Struct        = " ",
-		Event         = " ",
-		Operator      = " ",
-		TypeParameter = " ",
-	},
-	highlight = false,
-	separator = " > ",
-	depth_limit = 0,
-	depth_limit_indicator = "..",
-})
-
 local hide_in_width = function()
 	return vim.fn.winwidth(0) > 80
 end
@@ -48,21 +12,21 @@ local diagnostics = {
 	sources = { "nvim_diagnostic" },
 	sections = { "error", "warn" },
 	symbols = { error = " ", warn = " " },
-	colored = false,
+	colored = true,
 	update_in_insert = false,
 	always_visible = true,
 }
 
 local diff = {
 	"diff",
-	colored = false,
-	symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
+	colored = true,
+	symbols = { added = "+", modified = "~", removed = "-" }, -- changes diff symbols
 	cond = hide_in_width,
 }
 
 local filetype = {
 	"filetype",
-	icons_enabled = false,
+	icons_enabled = true,
 }
 
 local branch = {
@@ -73,7 +37,7 @@ local branch = {
 
 local location = {
 	"location",
-	padding = 0,
+	padding = 1,
 }
 
 local spaces = function()
@@ -98,19 +62,11 @@ lualine.setup({
 	},
 	sections = {
 		lualine_a = { "mode" },
-		lualine_b = { branch, diff },
-		lualine_c = { diagnostics },
+		lualine_b = { branch },
+		lualine_c = { diff, diagnostics },
 		lualine_x = { spaces, "encoding", filetype },
 		lualine_y = { location },
 		lualine_z = { "progress" },
 	},
 	tabline = {},
-	winbar = {
-		lualine_b = {
-			{
-				navic.get_location,
-				cond = navic.is_available,
-			},
-		},
-	},
 })
