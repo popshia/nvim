@@ -9,9 +9,9 @@ M.setup = function()
 
 	local signs = {
 		{ name = "DiagnosticSignError", text = " " },
-		{ name = "DiagnosticSignWarn", text = " " },
-		{ name = "DiagnosticSignHint", text = " " },
-		{ name = "DiagnosticSignInfo", text = " " },
+		{ name = "DiagnosticSignWarn",  text = " " },
+		{ name = "DiagnosticSignHint",  text = " " },
+		{ name = "DiagnosticSignInfo",  text = " " },
 	}
 
 	for _, sign in ipairs(signs) do
@@ -94,10 +94,6 @@ M.on_attach = function(client, bufnr)
 	local navic_ok, navic = pcall(require, "nvim-navic")
 	if not navic_ok then
 		return
-	end
-
-	if client.name == "tsserver" then
-		client.server_capabilities.document_formatting = false
 	end
 
 	if client.name == "clangd" then

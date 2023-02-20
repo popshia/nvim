@@ -43,6 +43,12 @@ lazy.setup({
 	"nguyenvukhang/nvim-toggler", -- toggle texts
 	"sitiom/nvim-numbertoggle", -- toggle between relative and absolute numbers
 	"mizlan/iswap.nvim", -- swap nodes using treesitter
+	{
+		"keaising/im-select.nvim", -- auto switch input method
+		config = function()
+			require('im_select').setup()
+		end,
+	},
 
 	-- Interface
 	"folke/which-key.nvim", -- show available keys after hitting space
