@@ -37,9 +37,9 @@ local options = {
 	tabstop = 4, -- insert 4 spaces for a tab
 	scrolloff = 8, -- is one of my fav
 	sidescrolloff = 8, -- side scrolloff with 8 char
-	guifont = "JetBrainsMono Nerd Font Mono:h16", -- the font used in graphical neovim applications
 	foldenable = false,
 	mousemoveevent = true,
+	-- guifont = "JetBrainsMono Nerd Font Mono:h16", -- the font used in graphical neovim applications
 }
 
 for key, value in pairs(options) do
@@ -52,11 +52,8 @@ vim.opt.iskeyword:remove("_")
 -- vim.opt.iskeyword:append("-")
 
 -- neovide configs
-vim.cmd("let g:neovide_refresh_rate=165")
-vim.cmd("let g:neovide_remember_window_size=v:true")
-
--- LaTeX
-vim.cmd("let g:tex_flavor = 'latex'") -- Default tex file format
-vim.cmd("let g:vimtex_view_method = 'skim'") -- Choose which program to use to view PDF file
-vim.cmd("let g:vimtex_view_skim_sync = 1") -- Value 1 allows forward search after every successful compilation
-vim.cmd("let g:vimtex_view_skim_activate = 1") -- Value 1 allows change focus to skim after command `:VimtexView` is given
+if vim.g.neovide then
+	vim.cmd("let g:neovide_refresh_rate=165")
+	vim.cmd("let g:neovide_remember_window_size=v:true")
+	vim.opt.guifont = {"JetBrainsMono Nerd Font Mono", "h16"} -- the font used in graphical neovim applications
+end
