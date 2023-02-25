@@ -39,7 +39,6 @@ local options = {
 	sidescrolloff = 8, -- side scrolloff with 8 char
 	foldenable = false,
 	mousemoveevent = true,
-	-- guifont = "JetBrainsMono Nerd Font Mono:h16", -- the font used in graphical neovim applications
 }
 
 for key, value in pairs(options) do
@@ -53,7 +52,8 @@ vim.opt.iskeyword:remove("_")
 
 -- neovide configs
 if vim.g.neovide then
-	vim.cmd("let g:neovide_refresh_rate=165")
-	vim.cmd("let g:neovide_remember_window_size=v:true")
-	vim.opt.guifont = {"JetBrainsMono Nerd Font Mono", "h16"} -- the font used in graphical neovim applications
+	vim.g.neovide_refresh_rate=165
+	vim.g.neovide_remember_window_size = true
+	vim.o.guifont = "JetBrainsMono Nerd Font Mono:h16" -- the font used in graphical neovim applications
+	vim.g.neovide_cursor_animation_length = 0.08
 end
