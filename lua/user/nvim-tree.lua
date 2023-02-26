@@ -6,68 +6,50 @@ if not status_ok then
 	return
 end
 
+-- disable netrw at the very start of your init.lua (strongly advised)
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 nvim_tree.setup({
-	hijack_directories = {
-		enable = true,
-		auto_open = true,
+	sync_root_with_cwd = true,
+	view = {
+		width = 30,
+		mappings = {
+			list = {
+				{ key = "u", action = "dir_up" },
+			},
+		},
 	},
-	update_cwd = true,
 	renderer = {
-		root_folder_modifier = ":t",
-		icons = {
-			webdev_colors = true,
-			git_placement = "before",
-			padding = " ",
-			symlink_arrow = " ➛ ",
-			show = {
-				file = true,
-				folder = true,
-				folder_arrow = true,
-				git = true,
-			},
-			glyphs = {
-				default = "",
-				symlink = "",
-				git = {
-					unstaged = "",
-					staged = "S",
-					unmerged = "",
-					renamed = "➜",
-					deleted = "",
-					untracked = "U",
-					ignored = "◌",
-				},
-				folder = {
-					arrow_open = "",
-					arrow_closed = "",
-					default = "",
-					open = "",
-					empty = "",
-					empty_open = "",
-					symlink = "",
-				},
-			},
-		},
-	},
-	diagnostics = {
-		enable = true,
-		icons = {
-			hint = "",
-			info = "",
-			warning = "",
-			error = "",
-		},
+		group_empty = true,
 	},
 	update_focused_file = {
 		enable = true,
-		update_cwd = true,
-	},
-	git = {
-		enable = true,
-		ignore = false,
-		timeout = 500,
 	},
 	filters = {
-		dotfiles = true,
-	},
+		dotfiles = true
+	}
 })
+
+-- autocommands
+local function open_nvim_tree(data)
+	-- buffer is a [No Name]
+	local no_name = data.file == "" and vim.bo[data.buf].buftype == ""
+
+	-- buffer is a directory
+	local directory = vim.fn.isdirectory(data.file) == 1
+
+	if not no_name and not directory then
+		return
+	end
+
+	-- change to the directory
+	if directory then
+		vim.cmd.cd(data.file)
+	end
+
+	-- open the tree
+	require("nvim-tree.api").tree.open()
+end
+
+vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
