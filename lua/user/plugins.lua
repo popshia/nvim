@@ -141,7 +141,4 @@ lazy.setup({
 
 	-- Code runners
 	"is0n/jaq-nvim", -- code runner
-
-	-- LaTeX
-	"lervag/vimtex", -- vimtex plugin
 })
