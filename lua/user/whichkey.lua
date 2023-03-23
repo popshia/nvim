@@ -97,6 +97,7 @@ local mappings = {
 		r = { "<cmd>Telescope oldfiles<cr>", "Recent fils" },
 		p = { "<cmd>Telescope projects<cr>", "Projects" },
 		b = { "<cmd>Telescope buffers<cr>", "Buffers" },
+		m = { "<cmd>Telescope vim_bookmarks current_file<cr>", "Bookmarks" },
 	},
 
 	d = {
