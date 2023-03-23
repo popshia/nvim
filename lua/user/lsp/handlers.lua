@@ -1,8 +1,22 @@
+local status_ok, illuminate = pcall(require, "illuminate")
+if not status_ok then
+	return
+end
+
+local cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+if not cmp_ok then
+	return
+end
+
+local navic_ok, navic = pcall(require, "nvim-navic")
+if not navic_ok then
+	return
+end
+
 local M = {}
 
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
 
--- TODO: backfill this to template
 M.setup = function()
 	vim.cmd([[autocmd ColorScheme * highlight NormalFloat guibg=#1f2335]])
 	vim.cmd([[autocmd ColorScheme * highlight FloatBorder guifg=white guibg=#1f2335]])
@@ -49,20 +63,6 @@ M.setup = function()
 	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
 		border = "rounded",
 	})
-
-	vim.cmd([[autocmd CursorHold, CursorHoldI * lua vim.diagnostics.open_float(nil, {focus=false})]])
-	-- vim.cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync({ async = "true" })]])
-	vim.cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]])
-end
-
-local function lsp_highlight_document(client)
-	-- if client.server_capabilities.document_highlight then
-	local status_ok, illuminate = pcall(require, "illuminate")
-	if not status_ok then
-		return
-	end
-	illuminate.on_attach(client)
-	-- end
 end
 
 local function lsp_keymaps(bufnr)
@@ -75,7 +75,7 @@ local function lsp_keymaps(bufnr)
 	map(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 	map(bufnr, "n", "gk", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 	map(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-	-- map(bufnr, "n", "gK", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+	-- map(bufnr, "n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 	-- map(bufnr, "n", "ga", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 	-- map(bufnr, "n", "g[", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
 	-- map(bufnr, "n", "g]", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
@@ -86,26 +86,23 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-	local cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-	if not cmp_ok then
-		return
-	end
-
-	local navic_ok, navic = pcall(require, "nvim-navic")
-	if not navic_ok then
-		return
+	if client.server_capabilities.document_formatting then
+		vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format()")
 	end
 
 	if client.name == "clangd" then
 		client.server_capabilities.document_formatting = false
 	end
 
+	if client.server_capabilities.documentSymbolProvider then
+		navic.attach(client, bufnr)
+	end
+
 	M.capabilities.textDocument.completion.completionItem.snippetSupport = true
 	M.capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
 
-	navic.attach(client, bufnr)
 	lsp_keymaps(bufnr)
-	lsp_highlight_document(client)
+	illuminate.on_attach(client)
 end
 
 return M
