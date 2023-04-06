@@ -12,8 +12,8 @@ todo_comments.setup({
 			icon = " ", -- icon used for the sign, and in search results
 			color = "#f2594b", -- can be a hex color, or a named color (see below)
 		},
+		NOTE = { icon = " ", color = "#80aa9e", alt = {} },
 		INFO = { icon = "ℹ ", color = "#d3869b" },
-		NOTE = { icon = " ", color = "#80aa9e" },
 		TODO = { icon = " ", color = "#e9b143" },
 		REVIEW = { icon = "✎ ", color = "#b0b846" },
 	},
@@ -28,11 +28,11 @@ todo_comments.setup({
 	-- * keyword: highlights of the keyword
 	-- * after: highlights after the keyword (todo text)
 	highlight = {
-		multiline = false,         -- enable multine todo comments
+		multiline = true,         -- enable multine todo comments
 		multiline_pattern = "^.",  -- lua pattern to match the next multiline from the start of the matched keyword
 		multiline_context = 10,    -- extra lines that will be re-evaluated when changing a line
 		before = "fg",             -- "fg" or "bg" or empty
-		keyword = "wide",          -- "fg", "bg", "wide" or empty. (wide is the same as bg, but will also highlight surrounding characters)
+		keyword = "fg",          -- "fg", "bg", "wide" or empty. (wide is the same as bg, but will also highlight surrounding characters)
 		after = "fg",              -- "fg" or "bg" or empty
 		pattern = [[.*<(KEYWORDS)\s*:]], -- pattern or table of patterns, used for highlightng (vim regex)
 		comments_only = true,      -- uses treesitter to match keywords in comments only

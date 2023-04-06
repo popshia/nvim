@@ -57,3 +57,6 @@ if vim.g.neovide then
 	vim.o.guifont = "JetBrainsMono Nerd Font Mono:h16" -- the font used in graphical neovim applications
 	vim.g.neovide_cursor_animation_length = 0.08
 end
+
+-- remove default todo highlight
+vim.cmd("hi! link Todo Comment")

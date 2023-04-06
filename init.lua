@@ -2,9 +2,9 @@
 require("user.plugins")
 
 -- user configuration
+require("user.keymaps")
 require("user.autocommands")
 require("user.colorscheme")
-require("user.keymaps")
 require("user.options")
 
 -- plugins
