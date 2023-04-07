@@ -8,6 +8,11 @@ if not snip_status_ok then
 	return
 end
 
+local autopair_status_ok, cmp_autopairs = pcall(require, "nvim-autopairs.completion.cmp")
+if not autopair_status_ok then
+	return
+end
+
 require("luasnip/loaders/from_vscode").lazy_load()
 
 local check_backspace = function()
@@ -100,24 +105,22 @@ cmp.setup({
 			vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
 			vim_item.menu = ({
 					nvim_lsp = "[LSP]",
-					nvim_lua = "[Lua]",
-					luasnip = "[Snippet]",
-					buffer = "[Buffer]",
 					path = "[Path]",
-					cmp_tabnine = "[T9]",
-					latex_symbols = "[TEX]",
+					buffer = "[Buffer]",
+					luasnip = "[Snippet]",
+					-- nvim_lua = "[Lua]",
+					-- cmp_tabnine = "[T9]",
 				})[entry.source.name]
 			return vim_item
 		end,
 	},
 	sources = {
 		{ name = "nvim_lsp" },
-		{ name = "nvim_lua" },
-		{ name = "luasnip" },
-		{ name = "buffer" },
-		{ name = "cmp_tabnine" },
 		{ name = "path" },
-		{ name = "latex_symbols", option = { strategy = 0 } },
+		{ name = "buffer" },
+		{ name = "luasnip" },
+		-- { name = "nvim_lua" },
+		-- { name = "cmp_tabnine" },
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
@@ -129,7 +132,7 @@ cmp.setup({
 	},
 	experimental = {
 		ghost_text = true,
-		native_menu = false,
+		-- native_menu = true,
 	},
 	sorting = {
 		comparators = {
@@ -171,14 +174,8 @@ cmp.setup.filetype('gitcommit', {
 	})
 })
 
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
--- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
--- require('lspconfig')['texlab'].setup {
--- 	capabilities = capabilities
--- }
--- require('lspconfig')['pyright'].setup {
--- 	capabilities = capabilities
--- }
--- require('lspconfig')['clangd'].setup {
--- 	capabilities = capabilities
--- }
+-- FIXME: not sure why auto paranthesis not working 
+cmp.event:on(
+	'confirm_done',
+	cmp_autopairs.on_confirm_done()
+)

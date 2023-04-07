@@ -13,14 +13,6 @@ npairs.setup({
 	fast_wrap = {} -- use alt-e to fast_wrap
 })
 
-local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-local cmp_status_ok, cmp = pcall(require, "cmp")
-if not cmp_status_ok then
-	return
-end
-
-cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({}))
-
 -- smart space
 local brackets = { { '(', ')' }, { '[', ']' }, { '{', '}' } }
 npairs.add_rules {
