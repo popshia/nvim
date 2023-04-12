@@ -83,10 +83,10 @@ lazy.setup({
 			"hrsh7th/cmp-nvim-lua",      -- lua completions
 			"saadparwaiz1/cmp_luasnip",  -- snippet completions
 			"lukas-reineke/cmp-under-comparator", -- sort completions
-			{
-				"tzachar/cmp-tabnine",   -- tabnine completions
-				build = "./install.sh"
-			},
+			-- {
+			-- 	"tzachar/cmp-tabnine",   -- tabnine completions
+			-- 	build = "./install.sh"
+			-- },
 			-- Snippets
 			"L3MON4D3/LuaSnip",    --snippet engine
 			"rafamadriz/friendly-snippets", -- a bunch of snippets to use
@@ -111,6 +111,10 @@ lazy.setup({
 	-- Telescope
 	"nvim-telescope/telescope.nvim", -- highly extendable fuzzy finder over lists
 	"tom-anders/telescope-vim-bookmarks.nvim", -- bookmarks integration
+	{
+		"nvim-telescope/telescope-fzf-native.nvim", -- fzf syntax support for telescope
+		build = "make"
+	},
 
 	-- Treesitter
 	{
