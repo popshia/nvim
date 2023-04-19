@@ -111,6 +111,10 @@ lazy.setup({
 	-- Telescope
 	"nvim-telescope/telescope.nvim", -- highly extendable fuzzy finder over lists
 	"tom-anders/telescope-vim-bookmarks.nvim", -- bookmarks integration
+	{
+		"nvim-telescope/telescope-fzf-native.nvim", -- fzf syntax support for telescope
+		build = "make"
+	},
 
 	-- Treesitter
 	{
