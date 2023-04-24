@@ -38,18 +38,18 @@ lazy.setup({
 	"norcalli/nvim-colorizer.lua",      -- colorizer
 
 	-- File explorer
-	"kyazdani42/nvim-tree.lua",         -- nvim-tree file explorer
+	"kyazdani42/nvim-tree.lua", -- nvim-tree file explorer
 
 	-- Editing support
-	"nguyenvukhang/nvim-toggler",       -- toggle texts
-	"sitiom/nvim-numbertoggle",         -- toggle between relative and absolute numbers
-	"mizlan/iswap.nvim",                -- swap nodes using treesitter
-	"kylechui/nvim-surround", -- surround character manipulation
-	"windwp/nvim-autopairs", -- autopairs
-	"numToStr/Comment.nvim",            -- easily comment stuff
+	"nguyenvukhang/nvim-toggler", -- toggle texts
+	"sitiom/nvim-numbertoggle", -- toggle between relative and absolute numbers
+	"mizlan/iswap.nvim",       -- swap nodes using treesitter
+	"kylechui/nvim-surround",  -- surround character manipulation
+	"windwp/nvim-autopairs",   -- autopairs
+	"numToStr/Comment.nvim",   -- easily comment stuff
 
-	-- Motion 
-	"phaazon/hop.nvim",                 -- hop to any word you like
+	-- Motion
+	"phaazon/hop.nvim", -- hop to any word you like
 
 	-- Interface
 	"folke/which-key.nvim",   -- show available keys after hitting space
@@ -98,6 +98,7 @@ lazy.setup({
 	"neovim/nvim-lspconfig",            -- enable LSP
 	"ray-x/lsp_signature.nvim",         -- for lsp signatures
 	"utilyre/barbecue.nvim",            -- winbar components
+	"jose-elias-alvarez/null-ls.nvim",  -- null-ls
 	{
 		"williamboman/mason.nvim",      -- external tool management
 		dependencies = {
@@ -109,7 +110,7 @@ lazy.setup({
 	"MattesGroeger/vim-bookmarks", -- bookmarks
 
 	-- Telescope
-	"nvim-telescope/telescope.nvim", -- highly extendable fuzzy finder over lists
+	"nvim-telescope/telescope.nvim",          -- highly extendable fuzzy finder over lists
 	"tom-anders/telescope-vim-bookmarks.nvim", -- bookmarks integration
 	{
 		"nvim-telescope/telescope-fzf-native.nvim", -- fzf syntax support for telescope

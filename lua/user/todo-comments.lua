@@ -32,7 +32,7 @@ todo_comments.setup({
 		multiline_pattern = "^.",  -- lua pattern to match the next multiline from the start of the matched keyword
 		multiline_context = 10,    -- extra lines that will be re-evaluated when changing a line
 		before = "fg",             -- "fg" or "bg" or empty
-		keyword = "fg",          -- "fg", "bg", "wide" or empty. (wide is the same as bg, but will also highlight surrounding characters)
+		keyword = "fg",            -- "fg", "bg", "wide" or empty. (wide is the same as bg, but will also highlight surrounding characters)
 		after = "fg",              -- "fg" or "bg" or empty
 		pattern = [[.*<(KEYWORDS)\s*:]], -- pattern or table of patterns, used for highlightng (vim regex)
 		comments_only = true,      -- uses treesitter to match keywords in comments only

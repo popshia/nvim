@@ -4,6 +4,7 @@ if not status_ok then
 end
 
 require("user.lsp.lsp-signature")
+require("user.lsp.null-ls")
 require("user.lsp.mason")
 require("user.lsp.mason-lsp")
 require("user.lsp.handlers").setup()
