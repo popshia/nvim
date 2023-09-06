@@ -3,7 +3,7 @@ if not status_ok then
 	return
 end
 
-local icons = require("icons")
+local icons = require("user.icons")
 
 todo_comments.setup({
 	signs = true, -- show icons in the signs column

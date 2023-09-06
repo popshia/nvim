@@ -4,7 +4,8 @@ if not status_ok then
 end
 
 local dashboard = require("alpha.themes.dashboard")
-local icons = require("icons")
+local icons = require("user.icons")
+
 dashboard.section.header.val = {
 	[[                                                 ]],
 	[[                                                 ]],
