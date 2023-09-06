@@ -3,6 +3,8 @@ if not status_ok then
 	return
 end
 
+local icons = require("icons")
+
 notify.setup({
 	-- Minimum level to show
 	level = "info",
@@ -36,10 +38,10 @@ notify.setup({
 
 	-- Icons for the different levels
 	icons = {
-		ERROR = "",
-		WARN = "",
-		INFO = "",
-		DEBUG = "",
-		TRACE = "✎",
+		ERROR = icons.diagnostics.Error,
+		WARN = icons.diagnostics.Warning,
+		INFO = icons.diagnostics.Information,
+		DEBUG = icons.ui.Bug,
+		TRACE = icons.ui.Pencil,
 	},
 })

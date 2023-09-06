@@ -7,11 +7,13 @@ local hide_in_width = function()
 	return vim.fn.winwidth(0) > 80
 end
 
+local icons = require("icons")
+
 local diagnostics = {
 	"diagnostics",
 	sources = { "nvim_diagnostic" },
 	sections = { "error", "warn" },
-	symbols = { error = " ", warn = " " },
+	symbols = { error = icons.diagnostics.Error .. " ", warn = icons.diagnostics.Warning .. " " },
 	colored = true,
 	update_in_insert = false,
 	always_visible = true,
@@ -58,7 +60,7 @@ lualine.setup({
 			statusline = 1000,
 			tabline = 1000,
 			winbar = 1000,
-		}
+		},
 	},
 	sections = {
 		lualine_a = { "mode" },

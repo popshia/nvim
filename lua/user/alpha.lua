@@ -4,6 +4,7 @@ if not status_ok then
 end
 
 local dashboard = require("alpha.themes.dashboard")
+local icons = require("icons")
 dashboard.section.header.val = {
 	[[                                                 ]],
 	[[                                                 ]],
@@ -26,14 +27,14 @@ dashboard.section.header.val = {
 	-- [[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
 }
 dashboard.section.buttons.val = {
-	dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
-	dashboard.button("n", "  New file", ":ene <BAR> startinsert <CR>"),
-	dashboard.button("p", "  Find project", ":Telescope projects <CR>"),
-	dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
-	dashboard.button("t", "󰊄  Find text", ":Telescope live_grep <CR>"),
-	dashboard.button("c", "  Configuration", ":e ~/.config/nvim/init.lua <CR>"),
-	dashboard.button("u", "  Update plugins", ":Lazy sync<CR>"),
-	dashboard.button("q", "󰩈  Quit Neovim", ":qa<CR>"),
+	dashboard.button("f", icons.documents.Files .. " Find file", ":Telescope find_files <CR>"),
+	dashboard.button("n", icons.ui.NewFile .. " New file", ":ene <BAR> startinsert <CR>"),
+	dashboard.button("p", icons.git.Repo .. " Find project", ":Telescope projects <CR>"),
+	dashboard.button("r", icons.ui.History .. " Recently used files", ":Telescope oldfiles <CR>"),
+	dashboard.button("t", icons.ui.List .. " Find text", ":Telescope live_grep <CR>"),
+	dashboard.button("c", icons.ui.Gear .. " Configuration", ":e ~/.config/nvim/init.lua <CR>"),
+	dashboard.button("u", icons.ui.CloudDownload .. " Update plugins", ":Lazy sync<CR>"),
+	dashboard.button("q", icons.ui.SignOut .. " Quit Neovim", ":qa<CR>"),
 }
 
 dashboard.section.footer.val = {

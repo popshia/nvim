@@ -3,12 +3,13 @@ if not status_ok then
 	return
 end
 
-local actions = require "telescope.actions"
+local actions = require("telescope.actions")
+local icons = require("icons")
 
-telescope.setup {
+telescope.setup({
 	defaults = {
-		prompt_prefix = " ",
-		selection_caret = " ",
+		prompt_prefix = icons.ui.Telescope,
+		selection_caret = icons.ui.Forward,
 		path_display = { "smart" },
 		mappings = {
 			i = {
@@ -72,14 +73,14 @@ telescope.setup {
 	},
 	extensions = {
 		fzf = {
-			fuzzy = true,          -- false will only do exact matching
+			fuzzy = true, -- false will only do exact matching
 			override_generic_sorter = true, -- override the generic sorter
 			override_file_sorter = true, -- override the file sorter
 			case_mode = "smart_case", -- or "ignore_case" or "respect_case"
 			-- the default case_mode is "smart_case"
-		}
+		},
 	},
-}
+})
 
 telescope.load_extension("fzf")
 telescope.load_extension("vim_bookmarks")

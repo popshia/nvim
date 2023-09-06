@@ -3,26 +3,26 @@ if not status_ok then
 	return
 end
 
-iswap.setup {
+iswap.setup({
 	-- The keys that will be used as a selection, in order
 	-- ('asdfghjklqwertyuiopzxcvbnm' by default)
-	keys = 'qwertyuiop',
+	keys = "qwertyuiop",
 
 	-- Grey out the rest of the text when making a selection
 	-- (enabled by default)
-	grey = 'disable',
+	grey = "disable",
 
 	-- Highlight group for the sniping value (asdf etc.)
 	-- default 'Search'
-	hl_snipe = 'ErrorMsg',
+	hl_snipe = "ErrorMsg",
 
 	-- Highlight group for the visual selection of terms
 	-- default 'Visual'
-	hl_selection = 'WarningMsg',
+	hl_selection = "WarningMsg",
 
 	-- Highlight group for the greyed background
 	-- default 'Comment'
-	hl_grey = 'LineNr',
+	hl_grey = "LineNr",
 
 	-- Post-operation flashing highlight style,
 	-- either 'simultaneous' or 'sequential', or false to disable
@@ -31,7 +31,7 @@ iswap.setup {
 
 	-- Highlight group for flashing highlight afterward
 	-- default 'IncSearch'
-	hl_flash = 'ModeMsg',
+	hl_flash = "ModeMsg",
 
 	-- Move cursor to the other element in ISwap*With commands
 	-- default false
@@ -43,5 +43,5 @@ iswap.setup {
 
 	-- Other default options you probably should not change:
 	debug = nil,
-	hl_grey_priority = '1000',
-}
+	hl_grey_priority = "1000",
+})

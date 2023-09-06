@@ -14,7 +14,7 @@ local servers = {
 }
 
 mason_lsp.setup({
-	ensure_installed = { "pyright", "lua_ls" }
+	ensure_installed = { "pyright", "lua_ls" },
 })
 
 for _, server in pairs(servers) do
