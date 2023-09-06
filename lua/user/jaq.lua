@@ -8,15 +8,15 @@ jaq.setup({
 		-- Uses vim commands
 		internal = {
 			lua = "luafile %",
-			vim = "source %"
+			vim = "source %",
 		},
 		-- Uses shell commands
 		external = {
 			markdown = "glow %",
-			python   = "python3 %",
-			go       = "go run %",
-			sh       = "sh %"
-		}
+			python = "python3 %",
+			go = "go run %",
+			sh = "sh %",
+		},
 	},
 	behavior = {
 		-- Default type
@@ -26,22 +26,22 @@ jaq.setup({
 		-- Use `wincmd p` on startup
 		wincmd = false,
 		-- Auto-save files
-		autosave = false
+		autosave = false,
 	},
 	ui = {
 		float = {
 			-- See ':h nvim_open_win'
-			border   = "none",
+			border = "none",
 			-- See ':h winhl'
-			winhl    = "Normal",
+			winhl = "Normal",
 			borderhl = "FloatBorder",
 			-- See ':h winblend'
 			winblend = 0,
 			-- Num from `0-1` for measurements
-			height   = 0.8,
-			width    = 0.8,
-			x        = 0.5,
-			y        = 0.5
+			height = 0.8,
+			width = 0.8,
+			x = 0.5,
+			y = 0.5,
 		},
 		terminal = {
 			-- Window position
@@ -49,13 +49,13 @@ jaq.setup({
 			-- Window size
 			size = 10,
 			-- Disable line numbers
-			line_no = false
+			line_no = false,
 		},
 		quickfix = {
 			-- Window position
 			position = "bot",
 			-- Window size
-			size = 10
-		}
-	}
+			size = 10,
+		},
+	},
 })

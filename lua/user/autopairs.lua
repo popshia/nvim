@@ -4,25 +4,25 @@ if not status_ok then
 	return
 end
 
-local Rule = require 'nvim-autopairs.rule'
-local cond = require 'nvim-autopairs.conds'
+local Rule = require("nvim-autopairs.rule")
+local cond = require("nvim-autopairs.conds")
 
 npairs.setup({
 	check_ts = true, -- treesitter integration
 	disable_filetype = { "TelescopePrompt" },
-	fast_wrap = {} -- use alt-e to fast_wrap
+	fast_wrap = {}, -- use alt-e to fast_wrap
 })
 
 -- smart space
-local brackets = { { '(', ')' }, { '[', ']' }, { '{', '}' } }
-npairs.add_rules {
-	Rule(' ', ' ')
+local brackets = { { "(", ")" }, { "[", "]" }, { "{", "}" } }
+npairs.add_rules({
+	Rule(" ", " ")
 		:with_pair(function(opts)
 			local pair = opts.line:sub(opts.col - 1, opts.col)
 			return vim.tbl_contains({
 				brackets[1][1] .. brackets[1][2],
 				brackets[2][1] .. brackets[2][2],
-				brackets[3][1] .. brackets[3][2]
+				brackets[3][1] .. brackets[3][2],
 			}, pair)
 		end)
 		:with_move(cond.none())
@@ -31,16 +31,18 @@ npairs.add_rules {
 			local col = vim.api.nvim_win_get_cursor(0)[2]
 			local context = opts.line:sub(col - 1, col + 2)
 			return vim.tbl_contains({
-				brackets[1][1] .. '  ' .. brackets[1][2],
-				brackets[2][1] .. '  ' .. brackets[2][2],
-				brackets[3][1] .. '  ' .. brackets[3][2]
+				brackets[1][1] .. "  " .. brackets[1][2],
+				brackets[2][1] .. "  " .. brackets[2][2],
+				brackets[3][1] .. "  " .. brackets[3][2],
 			}, context)
-		end)
-}
+		end),
+})
 for _, bracket in pairs(brackets) do
-	Rule('', ' ' .. bracket[2])
+	Rule("", " " .. bracket[2])
 		:with_pair(cond.none())
-		:with_move(function(opts) return opts.char == bracket[2] end)
+		:with_move(function(opts)
+			return opts.char == bracket[2]
+		end)
 		:with_cr(cond.none())
 		:with_del(cond.none())
 		:use_key(bracket[2])

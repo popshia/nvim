@@ -14,4 +14,4 @@ if not tele_status_ok then
 	return
 end
 
-telescope.load_extension('projects')
+telescope.load_extension("projects")

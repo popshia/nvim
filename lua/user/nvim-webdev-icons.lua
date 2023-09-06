@@ -3,7 +3,7 @@ if not status_ok then
 	return
 end
 
-nvim_web_devicons.set_icon {
+nvim_web_devicons.set_icon({
 	sh = {
 		icon = "",
 		color = "#1DC123",
@@ -46,4 +46,4 @@ nvim_web_devicons.set_icon {
 		cterm_color = "59",
 		name = "Diff",
 	},
-}
+})
