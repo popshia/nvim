@@ -7,9 +7,9 @@ local dashboard = require("alpha.themes.dashboard")
 local icons = require("user.icons")
 
 dashboard.section.header.val = {
-	[[                                                 ]],
-	[[                                                 ]],
-	[[                                                 ]],
+	-- [[                                                 ]],
+	-- [[                                                 ]],
+	-- [[                                                 ]],
 	[[                                                 ]],
 	[[                                                 ]],
 	[[                                                 ]],
