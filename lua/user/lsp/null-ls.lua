@@ -9,11 +9,15 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup {
 	debug = false,
 	sources = {
-		formatting.black,
-		-- formatting.black.with { extra_args = { "--fast" } },
-		-- formatting.stylua,
-		-- formatting.shfmt,
-		-- diagnostics.flake8,
-		-- diagnostics.shellcheck,
+		-- lua
+		formatting.stylua,
+		-- formatting.lua_format,
+
+		-- python
+		-- formatting.black,
+		formatting.black.with { extra_args = { "--fast" } },
+		formatting.isort,
+
+		diagnostics.shellcheck,
 	},
 }

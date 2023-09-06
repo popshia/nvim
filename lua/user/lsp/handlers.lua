@@ -1,31 +1,29 @@
-local status_ok, illuminate = pcall(require, "illuminate")
-if not status_ok then
-	return
-end
-
-local cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-if not cmp_ok then
-	return
-end
-
-local navic_ok, navic = pcall(require, "nvim-navic")
-if not navic_ok then
-	return
-end
-
 local M = {}
 
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
 
+local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+if not status_cmp_ok then
+	return
+end
+M.capabilities.textDocument.completion.completionItem.snippetSupport = true
+M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)
+
+-- local lspformat_ok, lsp_format = pcall(require, "lsp-format")
+-- if not lspformat_ok then
+-- 	return
+-- end
+
 M.setup = function()
+	local icons = require("user.icons")
 	vim.cmd([[autocmd ColorScheme * highlight NormalFloat guibg=#1f2335]])
 	vim.cmd([[autocmd ColorScheme * highlight FloatBorder guifg=white guibg=#1f2335]])
 
 	local signs = {
-		{ name = "DiagnosticSignError", text = " " },
-		{ name = "DiagnosticSignWarn",  text = " " },
-		{ name = "DiagnosticSignHint",  text = " " },
-		{ name = "DiagnosticSignInfo",  text = " " },
+		{ name = "DiagnosticSignError", text = icons.diagnostics.Error },
+		{ name = "DiagnosticSignWarn",  text = icons.diagnostics.Warning },
+		{ name = "DiagnosticSignHint",  text = icons.diagnostics.Hint },
+		{ name = "DiagnosticSignInfo",  text = icons.diagnostics.Information },
 	}
 
 	for _, sign in ipairs(signs) do
@@ -65,6 +63,18 @@ M.setup = function()
 	})
 end
 
+local function attach_navic(client, bufnr)
+	vim.g.navic_silence = true
+	local navic_ok, navic = pcall(require, "nvim-navic")
+	if not navic_ok then
+		return
+	end
+	if client.server_capabilities.documentSymbolProvider then
+		navic.attach(client, bufnr)
+	end
+end
+
+
 local function lsp_keymaps(bufnr)
 	local opts = { noremap = true, silent = true }
 	local map = vim.api.nvim_buf_set_keymap
@@ -80,29 +90,51 @@ local function lsp_keymaps(bufnr)
 	-- map(bufnr, "n", "g[", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
 	-- map(bufnr, "n", "g]", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
 	-- map(bufnr, "n", "gq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
-	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "gf", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
-	-- vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
-	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format()' ]])
+	-- map(bufnr, "n", "gf", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 end
 
 M.on_attach = function(client, bufnr)
-	if client.server_capabilities.document_formatting then
-		vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format()")
-	end
+	lsp_keymaps(bufnr)
+	attach_navic(client, bufnr)
+
+	-- if client.server_capabilities.document_formatting then
+	-- 	vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format()")
+	-- end
 
 	if client.name == "clangd" then
 		client.server_capabilities.document_formatting = false
 	end
-
-	if client.server_capabilities.documentSymbolProvider then
-		navic.attach(client, bufnr)
-	end
-
-	M.capabilities.textDocument.completion.completionItem.snippetSupport = true
-	M.capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
-
-	lsp_keymaps(bufnr)
-	illuminate.on_attach(client)
 end
+
+function M.enable_format_on_save()
+	vim.cmd [[
+    augroup format_on_save
+      autocmd!
+      autocmd BufWritePre * lua vim.lsp.buf.format({ async = false })
+    augroup end
+	]]
+	vim.notify "Enabled format on save"
+end
+
+function M.disable_format_on_save()
+	M.remove_augroup "format_on_save"
+	vim.notify "Disabled format on save"
+end
+
+function M.toggle_format_on_save()
+	if vim.fn.exists "#format_on_save#BufWritePre" == 0 then
+		M.enable_format_on_save()
+	else
+		M.disable_format_on_save()
+	end
+end
+
+function M.remove_augroup(name)
+	if vim.fn.exists("#" .. name) == 1 then
+		vim.cmd("au! " .. name)
+	end
+end
+
+vim.cmd [[ command! LspToggleAutoFormat execute 'lua require("user.lsp.handlers").toggle_format_on_save()' ]]
 
 return M
