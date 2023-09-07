@@ -94,12 +94,10 @@ lazy.setup({
 	},
 
 	-- LSP
-	"neovim/nvim-lspconfig",            -- enable LSP
-	"ray-x/lsp_signature.nvim",         -- for lsp signatures
-	"utilyre/barbecue.nvim",            -- winbar components
-	"jose-elias-alvarez/null-ls.nvim",  -- null-ls
-	"lukas-reineke/lsp-format.nvim",    -- lsp-format
-	"~whynothugo/lsp_lines.nvim",       -- lsp-lines
+	"neovim/nvim-lspconfig", -- enable LSP
+	"ray-x/lsp_signature.nvim", -- for lsp signatures
+	"utilyre/barbecue.nvim", -- winbar components
+	"jose-elias-alvarez/null-ls.nvim", -- null-ls
 	{
 		"williamboman/mason.nvim", -- external tool management
 		dependencies = {

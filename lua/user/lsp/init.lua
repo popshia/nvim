@@ -30,11 +30,4 @@ require("user.lsp.mason")
 require("user.lsp.handlers").setup()
 require("user.lsp.null-ls")
 
-local lspline_ok, lsp_lines = pcall(require, "lsp_lines")
-if lspline_ok then
-	return
-end
-
-lsp_lines.setup()
-
 return M

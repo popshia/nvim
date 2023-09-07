@@ -3,7 +3,7 @@ if not status_ok then
 	return
 end
 
-local status_ok_1, mason_lspconfig = pcall(require, "mason_lspconfig")
+local status_ok_1, mason_lspconfig = pcall(require, "mason-lspconfig")
 if not status_ok_1 then
 	return
 end

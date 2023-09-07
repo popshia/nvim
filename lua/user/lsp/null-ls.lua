@@ -11,11 +11,10 @@ null_ls.setup({
 	sources = {
 		-- lua
 		formatting.stylua,
-		-- formatting.lua_format,
 
-		-- python
 		-- formatting.black,
-		formatting.black.with { extra_args = { "--fast" } },
+		-- python
+		formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.isort,
 
 		diagnostics.shellcheck,
