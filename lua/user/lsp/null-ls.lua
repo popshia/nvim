@@ -10,7 +10,7 @@ null_ls.setup({
 	debug = false,
 	sources = {
 		-- lua
-		formatting.stylua,
+		-- formatting.stylua,
 
 		-- formatting.black,
 		-- python

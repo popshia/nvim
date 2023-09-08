@@ -82,7 +82,6 @@ local mappings = {
 	["a"] = { "<cmd>Alpha<cr>", "Alpha" },
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "File Explorer" },
 	["r"] = { "<cmd>Jaq<cr>", "Run File" },
-	["c"] = { "<cmd>lua require('Comment.api').call('toggle_current_linewise_op')<cr>g@$", "Comment" },
 	b = {
 		name = "Buffer",
 		b = { "<cmd>BufferLinePick<cr>", "Pick Buffer" },
@@ -186,7 +185,6 @@ local vopts = {
 }
 
 local vmappings = {
-	["/"] = { "<esc><cmd>lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<cr>", "Comment" },
 	["f"] = { "<esc><cmd>lua vim.lsp.buf.range_formatting()<cr>", "Format" },
 	["h"] = { "<cmd>HopWord<cr>", "Hop" },
 	["r"] = { "<esc><cmd>lua require'sniprun'.run('v')<cr>", "Run Code" },

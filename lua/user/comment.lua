@@ -62,5 +62,4 @@ comment.setup({
 		---Includes `g>`, `g<`, `g>[count]{motion}` and `g<[count]{motion}`
 		extended = false,
 	},
-	prehook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
 })

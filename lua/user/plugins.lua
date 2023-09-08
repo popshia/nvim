@@ -124,16 +124,18 @@ lazy.setup({
 		end,
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter-context", -- show treesitter context
-			"JoosepAlviste/nvim-ts-context-commentstring", -- comment based on cursor location
-			"simrat39/symbols-outline.nvim",      -- symbol outlines
-			"RRethy/vim-illuminate",              -- automatically highlighting other uses of the current word under the cursor
-			"SmiteshP/nvim-navic",                -- status line components that shows current code context
+			"simrat39/symbols-outline.nvim",  -- symbol outlines
+			"RRethy/vim-illuminate",          -- automatically highlighting other uses of the current word under the cursor
+			"SmiteshP/nvim-navic",            -- status line components that shows current code context
 		},
 	},
 
 	-- Git
 	"lewis6991/gitsigns.nvim", -- git integration
 	"f-person/git-blame.nvim", -- git blames
+
+	-- mini.nvim
+	{ "echasnovski/mini.nvim", version = false },
 
 	-- Graveyard
 	-- Dap
