@@ -14,9 +14,9 @@ null_ls.setup({
 
 		-- formatting.black,
 		-- python
-		formatting.black.with({ extra_args = { "--fast" } }),
-		formatting.isort,
+		-- formatting.black.with({ extra_args = { "--fast" } }),
+		-- formatting.isort,
 
-		diagnostics.shellcheck,
+		-- diagnostics.shellcheck,
 	},
 })

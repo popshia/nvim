@@ -8,9 +8,26 @@ if not status_ok_1 then
 	return
 end
 
-local servers = {
+local ls_servers = {
+	-- python
 	"pyright",
+	-- lua
 	"lua_ls",
+	-- bash
+	"bashls",
+}
+
+local ensure_installed = {
+	-- python
+	"pyright",
+	"isort",
+	"black",
+	-- lua
+	"lua_ls",
+	-- bash
+	"bashls",
+	"shellcheck",
+	"shfmt",
 }
 
 local settings = {
@@ -28,7 +45,7 @@ local settings = {
 
 mason.setup(settings)
 mason_lspconfig.setup({
-	ensure_installed = servers,
+	ensure_installed = ensure_installed,
 	automatic_installation = true,
 })
 
@@ -39,7 +56,7 @@ end
 
 local opts = {}
 
-for _, server in pairs(servers) do
+for _, server in pairs(ls_servers) do
 	opts = {
 		on_attach = require("user.lsp.handlers").on_attach,
 		capabilities = require("user.lsp.handlers").capabilities,
