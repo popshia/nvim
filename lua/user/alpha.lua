@@ -41,6 +41,16 @@ dashboard.section.buttons.val = {
 dashboard.section.footer.val = {
 	[[                              ]],
 	[[  stay hungry, stay foolish.  ]],
+	[[                              ]],
+	[[                              ]],
+	[[                              ]],
+	[[                              ]],
+	[[                              ]],
+	[[                              ]],
+	[[                              ]],
+	[[                              ]],
+	[[                              ]],
+	[[                              ]],
 }
 
 dashboard.section.footer.opts.hl = "Type"
