@@ -5,7 +5,7 @@ end
 
 indent_blankline.setup({
 	exclude = {
-		buftypes = { "terminal", "nofile" },
-		filetypes = { "help", "Lazy", "NvimTree" },
+		buftypes = { "terminal", "nofile", "alpha" },
+		filetypes = { "help", "Lazy", "NvimTree", "alpha" },
 	}
 })

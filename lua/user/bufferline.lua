@@ -10,7 +10,7 @@ bufferline.setup({
 		right_mouse_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
 		left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
 		show_close_icon = false,
-		offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
+		offsets = { { filetype = "NvimTree", text = "File Explorer", highlight = "Directory", seprator = true } },
 		separator_style = "thin", -- | "thick" | "thin" | "slant" | "padded_slant"
 		indicator = {
 			icon = "▎", -- this should be omitted if indicator style is not 'icon'
