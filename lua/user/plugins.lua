@@ -25,17 +25,17 @@ end
 -- Install your plugins here
 lazy.setup({
 	-- Utility
-	"nvim-lua/plenary.nvim",            -- useful lua functions used by lots of plugins
-	"nvim-lua/popup.nvim",              -- vim popup api in neovim
-	"kyazdani42/nvim-web-devicons",     -- file icons
-	"akinsho/toggleterm.nvim",          -- terminal integration
-	"ahmedkhalf/project.nvim",          -- project file search
-	"lukas-reineke/indent-blankline.nvim", -- show tab and indents
-	"famiu/bufdelete.nvim",             -- better buffer manipulation
-	"karb94/neoscroll.nvim",            -- smooth scroll
-	"rcarriga/nvim-notify",             -- vim notify
-	"kevinhwang91/nvim-hlslens",        -- search with count
-	"norcalli/nvim-colorizer.lua",      -- colorizer
+	"nvim-lua/plenary.nvim",                              -- useful lua functions used by lots of plugins
+	"nvim-lua/popup.nvim",                                -- vim popup api in neovim
+	"kyazdani42/nvim-web-devicons",                       -- file icons
+	"akinsho/toggleterm.nvim",                            -- terminal integration
+	"ahmedkhalf/project.nvim",                            -- project file search
+	{ "lukas-reineke/indent-blankline.nvim", main = "ibl" }, -- show tab and indents
+	"famiu/bufdelete.nvim",                               -- better buffer manipulation
+	"karb94/neoscroll.nvim",                              -- smooth scroll
+	"rcarriga/nvim-notify",                               -- vim notify
+	"kevinhwang91/nvim-hlslens",                          -- search with count
+	"norcalli/nvim-colorizer.lua",                        -- colorizer
 
 	-- File explorer
 	"kyazdani42/nvim-tree.lua", -- nvim-tree file explorer
@@ -135,7 +135,7 @@ lazy.setup({
 	"f-person/git-blame.nvim", -- git blames
 
 	-- mini.nvim
-	{ "echasnovski/mini.nvim", version = false },
+	{ "echasnovski/mini.nvim",               version = false },
 
 	-- Graveyard
 	-- Dap
