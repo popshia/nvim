@@ -27,7 +27,7 @@ lazy.setup({
 	-- Utility
 	"nvim-lua/plenary.nvim",                              -- useful lua functions used by lots of plugins
 	"nvim-lua/popup.nvim",                                -- vim popup api in neovim
-	"kyazdani42/nvim-web-devicons",                       -- file icons
+	"nvim-tree/nvim-web-devicons",                        -- file icons
 	"akinsho/toggleterm.nvim",                            -- terminal integration
 	"ahmedkhalf/project.nvim",                            -- project file search
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl" }, -- show tab and indents
@@ -136,6 +136,43 @@ lazy.setup({
 
 	-- mini.nvim
 	{ "echasnovski/mini.nvim",               version = false },
+
+	-- leetcode
+	{
+		"Dhanus3133/LeetBuddy.nvim",
+	},
+	{
+		"kawre/leetcode.nvim",
+		build = ":TSUpdate html",
+		lazy = "leetcode" ~= vim.fn.argv()[1],
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+		},
+		opts = {
+			arg = "leetcode",
+			lang = "python3",
+			console = {
+				open_on_runcode = true, ---@type boolean
+				dir = "row", ---@type "col" | "row"
+				size = {
+					width = "90%", ---@type string | integer
+					height = "75%", ---@type string | integer
+				},
+				result = {
+					size = "60%", ---@type string | integer
+				},
+				testcase = {
+					virt_text = true, ---@type boolean
+					size = "40%", ---@type string | integer
+				},
+			},
+			description = {
+				position = "left", ---@type "top" | "right" | "bottom" | "left"
+				width = "40%", ---@type string | integer
+			},
+		},
+	},
+
 
 	-- Graveyard
 	-- Dap
