@@ -5,7 +5,7 @@ end
 
 buddy.setup({
 	domain = "com",
-	language = "py",
+	language = "cpp",
 	limit = 30, -- Number of problems displayed in telescope
 	keys = {
 		select = "<CR>",

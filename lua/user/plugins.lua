@@ -152,7 +152,7 @@ lazy.setup({
 		},
 		opts = {
 			arg = "leetcode",
-			lang = "python3",
+			lang = "cpp",
 			console = {
 				open_on_runcode = true, ---@type boolean
 				dir = "row", ---@type "col" | "row"
