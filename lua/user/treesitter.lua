@@ -4,8 +4,8 @@ if not status_ok then
 end
 
 configs.setup({
-	ensure_installed = { "bash", "fish", "lua", "markdown", "python", "vim" }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-	sync_install = true,                                                    -- install languages synchronously (only applied to `ensure_installed`)
+	ensure_installed = { "bash", "fish", "lua", "markdown", "python", "vim", "html" }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+	sync_install = true,                                                            -- install languages synchronously (only applied to `ensure_installed`)
 	-- ignore_install = { "phpdoc" }, -- List of parsers to ignore installing
 	autopairs = {
 		enable = true,
