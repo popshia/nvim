@@ -15,6 +15,7 @@ null_ls.setup({
 		formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.isort,
 		formatting.shfmt,
+		formatting.clang_format,
 
 		diagnostics.shellcheck,
 	},

@@ -15,9 +15,14 @@ local servers = {
 	"lua_ls",
 	-- bash
 	"bashls",
+	-- c++
+	"clangd",
 }
 
 local ensure_installed = {
+	-- c++
+	"clangd",
+	"clang-format",
 	-- python
 	"pyright",
 	"isort",
@@ -72,6 +77,11 @@ for _, server in pairs(servers) do
 	if server == "pyright" then
 		local pyright_opts = require("user.lsp.server-configs.pyright")
 		opts = vim.tbl_deep_extend("force", pyright_opts, opts)
+	end
+
+	if server == "clangd" then
+		local clangd_opts = require("user.lsp.server-configs.clangd")
+		opts = vim.tbl_deep_extend("force", clangd_opts, opts)
 	end
 
 	lspconfig[server].setup(opts)

@@ -96,7 +96,7 @@ nvim_tree.setup({
 		enable = true,
 	},
 	filters = {
-		dotfiles = true,
+		dotfiles = false,
 	},
 	on_attach = on_attach,
 })
@@ -123,3 +123,9 @@ local function open_nvim_tree(data)
 end
 
 vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
+
+-- automatically open file upon creation
+local api = require("nvim-tree.api")
+api.events.subscribe(api.events.Event.FileCreated, function(file)
+	vim.cmd("edit " .. file.fname)
+end)
