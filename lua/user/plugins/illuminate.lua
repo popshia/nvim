@@ -12,7 +12,7 @@ function M.config()
 			"NvimTree",
 			"toggleterm",
 			"TelescopePrompt",
-		}
+		},
 	})
 end
 

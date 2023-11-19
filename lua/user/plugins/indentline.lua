@@ -1,11 +1,11 @@
 local M = {
-  	"lukas-reineke/indent-blankline.nvim",
+	"lukas-reineke/indent-blankline.nvim",
 	main = "ibl",
-  	event = "VeryLazy",
+	event = "VeryLazy",
 }
 
 function M.config()
-	local icons = require "user.utils.icons"
+	local icons = require("user.utils.icons")
 
 	require("ibl").setup({
 		scope = {
@@ -15,7 +15,7 @@ function M.config()
 			buftypes = {
 				"terminal",
 				"nofile",
-				"alpha"
+				"alpha",
 			},
 			filetypes = {
 				"help",

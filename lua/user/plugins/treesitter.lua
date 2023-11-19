@@ -4,24 +4,24 @@ local M = {
 	build = ":TSUpdate",
 	dependencies = {
 		{
-		  "nvim-treesitter/nvim-treesitter-context",
-		  event = "VeryLazy",
+			"nvim-treesitter/nvim-treesitter-context",
+			event = "VeryLazy",
 		},
 		{
-		  "nvim-treesitter/nvim-treesitter-textobjects",
-		  event = "VeryLazy",
+			"nvim-treesitter/nvim-treesitter-textobjects",
+			event = "VeryLazy",
 		},
 		{
-		  "JoosepAlviste/nvim-ts-context-commentstring",
-		  event = "VeryLazy",
+			"JoosepAlviste/nvim-ts-context-commentstring",
+			event = "VeryLazy",
 		},
 		{
-		  "windwp/nvim-ts-autotag",
-		  event = "VeryLazy",
+			"windwp/nvim-ts-autotag",
+			event = "VeryLazy",
 		},
 		{
-		  "windwp/nvim-autopairs",
-		  event = "InsertEnter",
+			"windwp/nvim-autopairs",
+			event = "InsertEnter",
 		},
 	},
 }
@@ -29,7 +29,7 @@ local M = {
 function M.config()
 	require("nvim-treesitter.configs").setup({
 		ensure_installed = { "bash", "fish", "lua", "markdown", "python", "vim", "cpp", "html" }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-		sync_install = true,                                                                   -- install languages synchronously (only applied to `ensure_installed`)
+		sync_install = true, -- install languages synchronously (only applied to `ensure_installed`)
 		autopairs = {
 			enable = true,
 		},

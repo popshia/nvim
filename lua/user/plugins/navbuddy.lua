@@ -13,7 +13,7 @@ function M.config()
 		},
 		icons = require("user.utils.icons").kind,
 		lsp = {
-			auto_attach = true
+			auto_attach = true,
 		},
 	})
 end

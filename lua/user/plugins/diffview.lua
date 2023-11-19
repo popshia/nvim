@@ -5,7 +5,7 @@ local M = {
 		"DiffviewOpen",
 		"DiffviewClose",
 		"DiffviewToggleFiles",
-		"DiffviewFocusFiles"
+		"DiffviewFocusFiles",
 	},
 }
 

@@ -22,18 +22,13 @@ local function lsp_keymaps(bufnr)
 end
 
 local function attach_navic(client, bufnr)
-	vim.g.navic_silence = true
-	local navic_ok, navic = pcall(require, "nvim-navic")
-	if not navic_ok then
-		return
-	end
 	if client.server_capabilities.documentSymbolProvider then
-		navic.attach(client, bufnr)
+		require("navic").attach(client, bufnr)
 	end
 end
 
 M.on_attach = function(client, bufnr)
-	-- attach_navic(client, bufnr)
+	attach_navic(client, bufnr)
 	lsp_keymaps(bufnr)
 
 	if client.name == "clangd" then
@@ -106,7 +101,8 @@ function M.config()
 	end
 
 	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
-	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
+	vim.lsp.handlers["textDocument/signatureHelp"] =
+		vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
 	require("lspconfig.ui.windows").default_options.border = "rounded"
 
 	for _, server in pairs(servers) do

@@ -23,7 +23,7 @@ function M.config()
 			tried = "<C-t>",
 			page_next = "<C-l>",
 			page_prev = "<C-h>",
-		}
+		},
 	})
 end
 

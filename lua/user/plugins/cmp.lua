@@ -1,45 +1,45 @@
 local M = {
 	"hrsh7th/nvim-cmp", -- the completion plugin
-    dependencies = {
-        -- cmp sources
+	dependencies = {
+		-- cmp sources
 		{
-			"hrsh7th/cmp-buffer",        -- buffer completions
+			"hrsh7th/cmp-buffer", -- buffer completions
 			event = "InsertEnter",
 		},
 		{
-			"hrsh7th/cmp-path",          -- path completions
+			"hrsh7th/cmp-path", -- path completions
 			event = "InsertEnter",
 		},
 		{
-			"hrsh7th/cmp-cmdline",       -- cmdline completions
+			"hrsh7th/cmp-cmdline", -- cmdline completions
 			event = "InsertEnter",
 		},
 		{
-			"hrsh7th/cmp-nvim-lsp",      -- lsp completions
+			"hrsh7th/cmp-nvim-lsp", -- lsp completions
 			event = "InsertEnter",
 		},
 		{
-			"hrsh7th/cmp-nvim-lua",      -- lua completions
+			"hrsh7th/cmp-nvim-lua", -- lua completions
 			event = "InsertEnter",
 		},
 		{
-			"saadparwaiz1/cmp_luasnip",  -- snippet completions
+			"saadparwaiz1/cmp_luasnip", -- snippet completions
 			event = "InsertEnter",
 		},
 		{
 			"lukas-reineke/cmp-under-comparator", -- sort completions
 			event = "InsertEnter",
 		},
-        -- Snippets
+		-- Snippets
 		{
-			"L3MON4D3/LuaSnip",    --snippet engine
+			"L3MON4D3/LuaSnip", --snippet engine
 			event = "InsertEnter",
 		},
 		{
 			"rafamadriz/friendly-snippets", -- a bunch of snippets to use
 			event = "InsertEnter",
 		},
-    },
+	},
 	event = "InsertEnter",
 }
 

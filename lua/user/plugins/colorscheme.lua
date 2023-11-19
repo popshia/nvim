@@ -12,7 +12,7 @@ function M.config()
 	  let g:gruvbox_material_enable_bold = 1
 	  let g:gruvbox_material_better_performance = 1
 	]])
-	vim.cmd.colorscheme "gruvbox-material"
+	vim.cmd.colorscheme("gruvbox-material")
 end
 
 return M

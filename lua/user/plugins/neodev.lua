@@ -3,7 +3,7 @@ local M = {
 }
 
 function M.config()
-	require("neodev").setup {}
+	require("neodev").setup({})
 end
 
 return M
