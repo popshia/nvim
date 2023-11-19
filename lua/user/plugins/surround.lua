@@ -1,12 +1,9 @@
 local M = {
-	-- "kylechui/nvim-surround",
-	"echasnovski/mini.nvim",
-	version = false,
-	event = "BufEnter",
+	"kylechui/nvim-surround",
 }
 
 function M.config()
-	require("mini.surround").setup()
+	require("nvim-surround").setup()
 end
 
 return M
