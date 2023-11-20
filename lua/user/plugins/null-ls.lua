@@ -12,18 +12,14 @@ function M.config()
 	null_ls.setup({
 		-- appple
 		sources = {
-			-- formatters
 			formatting.stylua,
 			formatting.isort,
 			formatting.black.with({ extra_args = { "--fast" } }),
 			formatting.shfmt,
-			formatting.fish_indent,
 			formatting.clang_format,
 			formatting.trim_whitespace,
-			-- diagnostics
 			-- diagnostics.codespell,
 			-- diagnostics.shellcheck,
-			-- completions
 			-- completion.spell,
 		},
 		on_attach = function(client, bufnr)

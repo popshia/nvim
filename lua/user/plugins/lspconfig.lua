@@ -24,12 +24,8 @@ end
 M.on_attach = function(client, bufnr)
 	lsp_keymaps(bufnr)
 
-	if client.name == "clangd" then
+	if client.name == "clangd" or client.name == "lua_ls" then
 		client.server_capabilities.document_formatting = false
-	end
-
-	if client.server_capabilities.documentFormattingProvider then
-		vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format()")
 	end
 end
 
@@ -68,9 +64,9 @@ function M.config()
 			active = true,
 			values = {
 				{ name = "DiagnosticSignError", text = icons.diagnostics.Error },
-				{ name = "DiagnosticSignWarn", text = icons.diagnostics.Warning },
-				{ name = "DiagnosticSignHint", text = icons.diagnostics.Hint },
-				{ name = "DiagnosticSignInfo", text = icons.diagnostics.Information },
+				{ name = "DiagnosticSignWarn",  text = icons.diagnostics.Warning },
+				{ name = "DiagnosticSignHint",  text = icons.diagnostics.Hint },
+				{ name = "DiagnosticSignInfo",  text = icons.diagnostics.Information },
 			},
 		},
 		virtual_text = true,

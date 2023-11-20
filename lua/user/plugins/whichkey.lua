@@ -51,15 +51,15 @@ function M.config()
 			winblend = 0,
 		},
 		layout = {
-			height = { min = 4, max = 25 },                                     -- min and max height of the columns
-			width = { min = 20, max = 50 },                                     -- min and max width of the columns
-			spacing = 10,                                                       -- spacing between columns
-			align = "center",                                                   -- align columns left, center or right
+			height = { min = 4, max = 25 }, -- min and max height of the columns
+			width = { min = 20, max = 50 }, -- min and max width of the columns
+			spacing = 10, -- spacing between columns
+			align = "center", -- align columns left, center or right
 		},
-		ignore_missing = true,                                                  -- enable this to hide mappings for which you didn't specify a label
+		ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
 		hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
-		show_help = true,                                                       -- show help message on the command line when the popup is visible
-		triggers = "auto",                                                      -- automatically setup triggers
+		show_help = true, -- show help message on the command line when the popup is visible
+		triggers = "auto", -- automatically setup triggers
 		-- triggers = { "<leader>" }, -- or specify a list manually
 		triggers_blacklist = {
 			-- list of mode / prefixes that should never be hooked by WhichKey
@@ -131,19 +131,20 @@ function M.config()
 			I = { "<cmd>lua vim.lsp.buf.implementation<cr>", "Implementation" },
 			k = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover Doc" },
 			l = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Open float" },
-			f = {
-				function()
-					require("conform").format({ async = false, lsp_fallback = true })
-				end,
-				"Format file",
-			},
+			-- f = {
+			-- 	function()
+			-- 		require("conform").format({ async = false, lsp_fallback = true })
+			-- 	end,
+			-- 	"Format file",
+			-- },
+			f = { "<cmd>lua vim.lsp.buf.format({ async = false })<cr>", "Format" },
 			s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document symbols" },
+			S = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature help" },
 			-- j = { "<cmd>lua vim.diagnostic.goto_next({ buffer=0 })<CR>", "Next Diagnostic" },
 			-- k = { "<cmd>lua vim.diagnostic.goto_prev({ buffer=0 })<CR>", "Previous Diagnostic" },
 			-- S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
 			-- q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "QuickFix" },
 			-- a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Actions" },
-			-- s = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature help" },
 			-- t = { "<cmd>lua vim.lsp.buf.type_definition()<CR>", "Type definition" },
 			-- d = { "<cmd>Telescope lsp_document_diagnostics<cr>", "Document Diagnostics" },
 			-- w = { "<cmd>Telescope lsp_workspace_diagnostics<cr>", "Workspace Diagnostics" },

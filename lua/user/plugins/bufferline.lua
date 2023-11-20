@@ -1,7 +1,7 @@
 local M = {
 	"akinsho/bufferline.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
-	event = "VimEnter",
+	event = "BufEnter",
 }
 
 function M.config()
@@ -12,7 +12,7 @@ function M.config()
 			right_mouse_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
 			left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
 			show_close_icon = false,
-			offsets = { { filetype = "NvimTree", text = "File Explorer", highlight = "Directory", seprator = true } },
+			offsets = { { filetype = "NvimTree", text = "File Explorer", highlight = "Directory", separator = true } },
 			separator_style = "thin", -- | "thick" | "thin" | "slant" | "padded_slant"
 			indicator = {
 				icon = "▎", -- this should be omitted if indicator style is not 'icon'
