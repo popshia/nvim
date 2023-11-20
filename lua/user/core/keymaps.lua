@@ -1,8 +1,9 @@
--- Shorten function name
+local discipline = require("user.utils.discipline")
+
+discipline.cowboy()
+
 local map = vim.keymap.set
--- Silent keymap option
-local opts = { silent = true }
--- local opts = { noremap = true, silent = true }
+local opts = { noremap = true, silent = true }
 
 --Remap space as leader key
 map("", "<Space>", "<Nop>", opts)
