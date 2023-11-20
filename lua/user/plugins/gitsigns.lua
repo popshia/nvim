@@ -5,8 +5,6 @@ local M = {
 }
 
 function M.config()
-	local icons = require("user.utils.icons")
-
 	require("gitsigns").setup({
 		signs = {
 			add = { text = "│" },

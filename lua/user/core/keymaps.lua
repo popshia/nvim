@@ -60,4 +60,4 @@ map("x", "J", ":move '>+1<CR>gv-gv", opts)
 map("x", "K", ":move '<-2<CR>gv-gv", opts)
 
 -- nohsearch
-map("n", "<esc><esc>", "<cmd>nohlsearch<cr>", opts)
+map("n", "<C-[><C-[>", "<cmd>nohlsearch<cr>", opts)

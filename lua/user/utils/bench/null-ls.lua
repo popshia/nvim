@@ -22,9 +22,9 @@ function M.config()
 			formatting.trim_whitespace,
 			-- diagnostics
 			-- diagnostics.codespell,
-			diagnostics.shellcheck,
+			-- diagnostics.shellcheck,
 			-- completions
-			completion.spell,
+			-- completion.spell,
 		},
 		on_attach = function(client, bufnr)
 			if client.supports_method("textDocument/formatting") then

@@ -2,7 +2,7 @@ return {
 	settings = {
 		Lua = {
 			format = {
-				enable = true,
+				enable = false,
 				defaultConfig = {
 					indent_style = "tab",
 					tab_size = "4",
