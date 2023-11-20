@@ -151,11 +151,12 @@ function M.config()
 		},
 		p = {
 			name = "Lazy",
-			s = { "<cmd>Lazy show<cr>", "Show" },
-			p = { "<cmd>Lazy profile<cr>", "Profile" },
+			i = { "<cmd>Lazy show<cr>", "Info" },
+			s = { "<cmd>Lazy sync<cr>", "Sync" },
 			l = { "<cmd>Lazy log<cr>", "Log" },
+			p = { "<cmd>Lazy profile<cr>", "Profile" },
+			u = { "<cmd>Lazy update<cr>", "Update" },
 			c = { "<cmd>Lazy clean<cr>", "Clean" },
-			u = { "<cmd>Lazy sync<cr>", "Update" },
 		},
 		-- u = {
 		-- 	name = "Utility",
