@@ -21,14 +21,7 @@ local function lsp_keymaps(bufnr)
 	keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 end
 
-local function attach_navic(client, bufnr)
-	if client.server_capabilities.documentSymbolProvider then
-		require("navic").attach(client, bufnr)
-	end
-end
-
 M.on_attach = function(client, bufnr)
-	attach_navic(client, bufnr)
 	lsp_keymaps(bufnr)
 
 	if client.name == "clangd" then
@@ -112,6 +105,7 @@ function M.config()
 		}
 
 		local require_ok, settings = pcall(require, "user.server-configs" .. server)
+
 		if require_ok then
 			opts = vim.tbl_deep_extend("force", settings, opts)
 		end

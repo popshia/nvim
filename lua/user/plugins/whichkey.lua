@@ -6,7 +6,7 @@ local M = {
 function M.config()
 	local setup = {
 		plugins = {
-			marks = true, -- shows a list of your marks on ' and `
+			marks = false, -- shows a list of your marks on ' and `
 			registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
 			spelling = {
 				enabled = false, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
@@ -20,8 +20,8 @@ function M.config()
 				text_objects = true, -- help for text objects triggered after entering an operator
 				windows = true, -- default bindings on <c-w>
 				nav = true, -- misc bindings to work with windows
-				z = true, -- bindings for folds, spelling and others prefixed with z
-				g = true, -- bindings for prefixed with g
+				z = false, -- bindings for folds, spelling and others prefixed with z
+				g = false, -- bindings for prefixed with g
 			},
 		},
 		-- add operators that will trigger motion and text object completion
@@ -124,15 +124,18 @@ function M.config()
 			name = "LSP",
 			m = { "<cmd>Mason<cr>", "Mason" },
 			i = { "<cmd>LspInfo<cr>", "LSP Info" },
-			I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
-			s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
+			d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Definition" },
+			D = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Declaration" },
 			r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
+			R = { "<cmd>lua vim.lsp.buf.references()<CR>", "References" },
+			I = { "<cmd>lua vim.lsp.buf.implementation<cr>", "Implementation" },
+			k = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover Doc" },
+			l = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Open float" },
 			f = { "<cmd>lua vim.lsp.buf.format({async = false})<CR>", "Format file" },
-			n = { "<cmd>ISwapNode<CR>", "Swap Node" },
-			j = { "<cmd>lua vim.diagnostic.goto_next({ buffer=0 })<CR>", "Next Diagnostic" },
-			k = { "<cmd>lua vim.diagnostic.goto_prev({ buffer=0 })<CR>", "Previous Diagnostic" },
+			s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document symbols" },
+			-- j = { "<cmd>lua vim.diagnostic.goto_next({ buffer=0 })<CR>", "Next Diagnostic" },
+			-- k = { "<cmd>lua vim.diagnostic.goto_prev({ buffer=0 })<CR>", "Previous Diagnostic" },
 			-- S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
-			-- k = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover Doc" },
 			-- q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "QuickFix" },
 			-- a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Actions" },
 			-- s = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature help" },

@@ -8,14 +8,9 @@ local M = {
 
 M.servers = {
 	"clangd",
-	"clang-format",
 	"pyright",
-	"isort",
-	"black",
 	"lua_ls",
 	"bashls",
-	"shellcheck",
-	"shfmt",
 }
 
 function M.config()

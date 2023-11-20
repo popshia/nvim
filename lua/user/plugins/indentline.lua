@@ -5,8 +5,6 @@ local M = {
 }
 
 function M.config()
-	local icons = require("user.utils.icons")
-
 	require("ibl").setup({
 		scope = {
 			show_exact_scope = true,
