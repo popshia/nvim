@@ -10,7 +10,13 @@ function M.config()
 			cpp = { "clang_format" },
 			lua = { "stylua" },
 			python = { "isort", "black" },
-			shell = { "shfmt" },
+			shell = { "shfmt", "shellcheck" },
+			fish = { "fish_indent" },
+			-- Use the "*" filetype to run formatters on all filetypes.
+			["*"] = { "codespell" },
+			-- Use the "_" filetype to run formatters on filetypes that don't
+			-- have other formatters configured.
+			["_"] = { "trim_whitespace" },
 		},
 		formatters = {
 			black = {
