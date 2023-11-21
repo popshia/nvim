@@ -30,14 +30,14 @@ function M.config()
 	require("nvim-treesitter.configs").setup({
 		ensure_installed = {
 			"bash",
+			"cpp",
 			"fish",
+			"gitignore",
+			"html",
 			"lua",
 			"markdown",
 			"python",
-			"vim",
-			"cpp",
-			"html",
-			"gitignore",
+			"vimdoc",
 		},
 		sync_install = true, -- install languages synchronously (only applied to `ensure_installed`)
 		autopairs = {
