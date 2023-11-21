@@ -42,6 +42,10 @@ vim.opt.shortmess:append("c")
 vim.opt.whichwrap:append("<,>,[,],h,l")
 vim.opt.iskeyword:remove("_")
 
+-- disable netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- neovide configs
 if vim.g.neovide then
 	vim.g.neovide_refresh_rate = 165

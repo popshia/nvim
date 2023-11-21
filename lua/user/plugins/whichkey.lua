@@ -81,7 +81,7 @@ function M.config()
 
 	local mappings = {
 		["a"] = { "<cmd>Alpha<cr>", "Alpha" },
-		["e"] = { "<cmd>NvimTreeToggle<cr>", "File Explorer" },
+		["e"] = { ":lua require('oil').toggle_float()<cr>", "Oil" },
 		b = {
 			name = "Buffer",
 			b = { "<cmd>BufferLinePick<cr>", "Pick Buffer" },
@@ -131,12 +131,6 @@ function M.config()
 			I = { "<cmd>lua vim.lsp.buf.implementation<cr>", "Implementation" },
 			k = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover Doc" },
 			l = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Open float" },
-			-- f = {
-			-- 	function()
-			-- 		require("conform").format({ async = false, lsp_fallback = true })
-			-- 	end,
-			-- 	"Format file",
-			-- },
 			f = { "<cmd>lua vim.lsp.buf.format({ async = false })<cr>", "Format" },
 			s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document symbols" },
 			S = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature help" },
