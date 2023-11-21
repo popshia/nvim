@@ -1,5 +1,4 @@
-local discipline = require("user.utils.discipline")
-
+-- local discipline = require("user.utils.discipline")
 -- discipline.cowboy()
 
 local map = vim.keymap.set
@@ -61,3 +60,7 @@ map("x", "K", ":move '<-2<CR>gv-gv", opts)
 
 -- nohsearch
 map("n", "<C-[><C-[>", "<cmd>nohlsearch<cr>", opts)
+
+-- search results remain on center of the screen
+map("n", "n", "nzzzv")
+map("n", "N", "Nzzzv")
