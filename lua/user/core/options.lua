@@ -33,8 +33,8 @@ vim.opt.signcolumn = "yes" -- always show the sign column, otherwise it would sh
 vim.opt.wrap = false -- display lines as one long line
 vim.opt.shiftwidth = 4 -- the number of spaces inserted for each indentation
 vim.opt.tabstop = 4 -- insert 4 spaces for a tab
-vim.opt.scrolloff = 8 -- side scrolloff with 8 char
-vim.opt.sidescrolloff = 8 -- side scrolloff with 8 char
+vim.opt.scrolloff = 8 -- vertical scrolloff with 8 char
+vim.opt.sidescrolloff = 8 -- horizontal scrolloff with 8 char
 vim.opt.foldenable = false
 vim.opt.mousemoveevent = true
 
