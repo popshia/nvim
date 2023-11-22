@@ -1,11 +1,12 @@
 -- local discipline = require("user.utils.discipline")
 -- discipline.cowboy()
 
-local map = vim.keymap.set
-local opts = { noremap = true, silent = true }
+local map = function(mode, keys, func)
+	vim.keymap.set(mode, keys, func, { noremap = true, silent = true })
+end
 
 --Remap space as leader key
-map("", "<Space>", "<Nop>", opts)
+map("", "<Space>", "<Nop>")
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -20,46 +21,42 @@ vim.g.maplocalleader = " "
 
 -- Normal --
 -- Better window navigation
-map("n", "<C-h>", "<C-w>h", opts)
-map("n", "<C-j>", "<C-w>j", opts)
-map("n", "<C-k>", "<C-w>k", opts)
-map("n", "<C-l>", "<C-w>l", opts)
+map("n", "<C-h>", "<C-w>h")
+map("n", "<C-j>", "<C-w>j")
+map("n", "<C-k>", "<C-w>k")
+map("n", "<C-l>", "<C-w>l")
 
 -- Resize with arrows
-map("n", "<C-Up>", ":resize +2<CR>", opts)
-map("n", "<C-Down>", ":resize -2<CR>", opts)
-map("n", "<C-->", ":vertical resize -2<CR>", opts)
-map("n", "<C-+>", ":vertical resize +2<CR>", opts)
+map("n", "<C-Up>", ":resize +2<CR>")
+map("n", "<C-Down>", ":resize -2<CR>")
+map("n", "<C-->", ":vertical resize -2<CR>")
+map("n", "<C-+>", ":vertical resize +2<CR>")
 
 -- Navigate buffers
-map("n", "<S-l>", ":bnext<CR>", opts)
-map("n", "<S-h>", ":bprevious<CR>", opts)
+map("n", "<S-l>", ":bnext<CR>")
+map("n", "<S-h>", ":bprevious<CR>")
 
 -- Paste without yanking
-map("v", "p", '"_dp', opts)
-
--- Insert --
--- Press lk fast to enter
-map("i", "lk", "<ESC>", opts)
+map("v", "p", '"_dp')
 
 -- Visual --
 -- Stay in indent mode
-map("v", "<", "<gv", opts)
-map("v", ">", ">gv", opts)
+map("v", "<", "<gv")
+map("v", ">", ">gv")
 
 -- Move text up and down
-map("v", "J", ":m .+1<CR>==", opts)
-map("v", "K", ":m .-2<CR>==", opts)
-map("n", "J", ":m .+1<CR>==", opts)
-map("n", "K", ":m .-2<CR>==", opts)
+map("v", "J", ":m .+1<CR>==")
+map("v", "K", ":m .-2<CR>==")
+map("n", "J", ":m .+1<CR>==")
+map("n", "K", ":m .-2<CR>==")
 
 -- Visual Block --
 -- Move text up and down
-map("x", "J", ":move '>+1<CR>gv-gv", opts)
-map("x", "K", ":move '<-2<CR>gv-gv", opts)
+map("x", "J", ":move '>+1<CR>gv-gv")
+map("x", "K", ":move '<-2<CR>gv-gv")
 
 -- nohsearch
-map("n", "<C-[><C-[>", "<cmd>nohlsearch<cr>", opts)
+map("n", "<C-[><C-[>", "<cmd>nohlsearch<cr>")
 
 -- substitute
 map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
