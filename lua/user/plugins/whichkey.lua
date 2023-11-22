@@ -103,6 +103,7 @@ function M.config()
 			r = { "<cmd>Telescope oldfiles<cr>", "Recent Files" },
 			p = { "<cmd>Telescope projects<cr>", "Projects" },
 			b = { "<cmd>Telescope buffers<cr>", "Buffers" },
+			k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
 		},
 		g = {
 			name = "Git",
@@ -157,7 +158,6 @@ function M.config()
 		-- 	c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
 		-- 	h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
 		-- 	M = { "<cmd>Telescope man_pages<cr>", "Manual Pages" },
-		-- 	k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
 		-- 	C = { "<cmd>Telescope commands<cr>", "Commands" },
 		-- 	r = { "<cmd>luafile %<cr>", "Reload luafile" },
 		-- },
