@@ -24,8 +24,9 @@ end
 M.on_attach = function(client, bufnr)
 	lsp_keymaps(bufnr)
 
+	-- disable some lsp's formatter
 	if client.name == "clangd" or client.name == "lua_ls" then
-		client.server_capabilities.document_formatting = false
+		client.server_capabilities.documentFormattingProvider = false
 	end
 end
 

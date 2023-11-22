@@ -47,7 +47,10 @@ function M.config()
 	local cmp = require("cmp")
 	local luasnip = require("luasnip")
 	local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+	cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+
 	require("luasnip/loaders/from_vscode").lazy_load()
+
 	local check_backspace = function()
 		local col = vim.fn.col(".") - 1
 		return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
@@ -179,9 +182,6 @@ function M.config()
 			{ name = "buffer" },
 		}),
 	})
-
-	-- FIXME: not sure why auto paranthesis not working
-	cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 end
 
 return M

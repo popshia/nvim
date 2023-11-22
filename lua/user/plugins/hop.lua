@@ -29,7 +29,7 @@ function M.config()
 	-- 	hop.hint_char2()
 	-- end, { remap = true })
 
-	map("", "S", function()
+	map("", "s<leader>", function()
 		hop.hint_lines()
 	end, { remap = true })
 end
