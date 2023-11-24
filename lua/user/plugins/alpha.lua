@@ -28,7 +28,6 @@ function M.config()
 		dashboard.button("f", icons.ui.Files .. " Find file", ":Telescope find_files<CR>"),
 		dashboard.button("p", icons.ui.Project .. " Find project", ":Telescope projects<CR>"),
 		dashboard.button("t", icons.ui.List .. " Find text", ":Telescope live_grep<CR>"),
-		-- dashboard.button("c", icons.ui.Gear .. " Configuration", ":e ~/.config/nvim/init.lua <CR>"),
 		dashboard.button("u", icons.ui.CloudDownload .. " Update plugins", ":Lazy sync<CR>"),
 		dashboard.button("q", icons.ui.SignOut .. " Quit Neovim", ":qa<CR>"),
 	}
