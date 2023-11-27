@@ -7,6 +7,8 @@ local M = {
 }
 
 function M.config()
+	-- g:gruvbox_material_background: hard, medium, soft
+	-- g:gruvbox_material_foreground & gruvbox_material_statusline_style: material, mix, original
 	vim.cmd([[
 		let g:gruvbox_material_background = "medium"
 		let g:gruvbox_material_foreground = "mix"
