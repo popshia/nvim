@@ -1,3 +1,5 @@
+-- gitsigns integration in nvim
+
 local M = {
 	"lewis6991/gitsigns.nvim",
 	event = "BufEnter",

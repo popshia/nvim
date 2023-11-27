@@ -1,3 +1,5 @@
+-- gruvbox-material colorscheme
+
 local M = {
 	"sainnhe/gruvbox-material",
 	lazy = false,

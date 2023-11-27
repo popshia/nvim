@@ -1,3 +1,5 @@
+-- treesitter for syntax highlighting and symbol recongnition
+
 local M = {
 	"nvim-treesitter/nvim-treesitter",
 	event = { "BufReadPost", "BufNewFile" },

@@ -1,3 +1,5 @@
+-- animate neovim animations
+
 local M = {
 	"echasnovski/mini.nvim",
 	-- "echasnovski/mini.nvim",

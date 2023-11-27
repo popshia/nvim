@@ -1,3 +1,5 @@
+-- add multiple ui decorations
+
 local M = {
 	"folke/noice.nvim",
 	event = "VeryLazy",

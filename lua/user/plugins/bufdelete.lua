@@ -1,3 +1,5 @@
+-- better buffer delete
+
 local M = {
 	"famiu/bufdelete.nvim",
 	event = "VeryLazy",

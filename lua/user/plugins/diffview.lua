@@ -1,3 +1,5 @@
+-- diffview plugin
+
 local M = {
 	"sindrets/diffview.nvim",
 	event = "VeryLazy",

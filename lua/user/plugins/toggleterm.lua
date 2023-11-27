@@ -1,3 +1,5 @@
+-- toggle terminal using ctrl+\
+
 local M = {
 	"akinsho/toggleterm.nvim",
 	event = "VeryLazy",

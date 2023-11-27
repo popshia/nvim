@@ -1,3 +1,5 @@
+-- add extensions to cpp files
+
 local M = {
 	"p00f/clangd_extensions.nvim",
 }

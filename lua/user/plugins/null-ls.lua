@@ -1,3 +1,5 @@
+-- easy to use formatter, diagnostics and completions
+
 local M = {
 	"nvimtools/none-ls.nvim",
 }

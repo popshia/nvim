@@ -1,3 +1,5 @@
+-- statusline plugin
+
 local M = {
 	"nvim-lualine/lualine.nvim",
 	event = "BufEnter",

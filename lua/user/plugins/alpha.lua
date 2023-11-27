@@ -1,3 +1,5 @@
+-- startup screen plugin
+
 local M = {
 	"goolord/alpha-nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },

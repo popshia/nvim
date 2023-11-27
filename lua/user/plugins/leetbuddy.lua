@@ -1,3 +1,5 @@
+-- leetcode plugin
+
 local M = {
 	"Dhanus3133/LeetBuddy.nvim",
 	dependencies = {

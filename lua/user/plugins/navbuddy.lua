@@ -1,3 +1,5 @@
+-- navic buddy with symbol outline
+
 local M = {
 	"SmiteshP/nvim-navbuddy",
 	dependencies = {

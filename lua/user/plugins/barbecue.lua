@@ -1,3 +1,5 @@
+-- show document symbols in winbar
+
 local M = {
 	"utilyre/barbecue.nvim",
 	dependencies = {

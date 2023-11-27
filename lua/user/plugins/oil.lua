@@ -1,3 +1,5 @@
+-- GOAT of file manager
+
 local M = {
 	"stevearc/oil.nvim",
 	event = "VeryLazy",

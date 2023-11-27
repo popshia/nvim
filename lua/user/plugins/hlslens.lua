@@ -1,3 +1,5 @@
+-- show search count using "/"
+
 local M = {
 	"kevinhwang91/nvim-hlslens",
 }

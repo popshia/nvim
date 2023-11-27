@@ -1,3 +1,5 @@
+-- another leetcode plugin
+
 local M = {
 	"kawre/leetcode.nvim",
 	build = ":TSUpdate html",

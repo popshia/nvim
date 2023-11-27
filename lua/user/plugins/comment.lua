@@ -1,3 +1,5 @@
+-- better commenting
+
 local M = {
 	"numToStr/Comment.nvim",
 	event = "VeryLazy",

@@ -1,3 +1,5 @@
+-- lsp keymaps and on_attach function and all other configs
+
 local M = {
 	"neovim/nvim-lspconfig",
 	event = {

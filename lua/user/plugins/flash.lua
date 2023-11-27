@@ -1,3 +1,5 @@
+-- quickly jump to text
+
 local M = {
 	"folke/flash.nvim",
 	event = "VeryLazy",

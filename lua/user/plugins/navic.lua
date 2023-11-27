@@ -1,3 +1,5 @@
+-- show symbol in winbar
+
 local M = {
 	"SmiteshP/nvim-navic",
 }

@@ -1,3 +1,5 @@
+-- hop between lines
+
 local M = {
 	"phaazon/hop.nvim",
 	event = "VeryLazy",

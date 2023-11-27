@@ -1,3 +1,5 @@
+-- lsp, dap, linter, formatter manager
+
 local M = {
 	"williamboman/mason-lspconfig.nvim",
 	dependencies = {

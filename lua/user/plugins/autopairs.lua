@@ -1,3 +1,5 @@
+-- auto insert paranthesis or quote
+
 local M = {
 	"windwp/nvim-autopairs",
 	event = "InsertEnter",

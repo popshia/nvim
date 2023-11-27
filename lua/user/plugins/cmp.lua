@@ -1,3 +1,5 @@
+-- autocompletion plugins
+
 local M = {
 	"hrsh7th/nvim-cmp", -- the completion plugin
 	dependencies = {

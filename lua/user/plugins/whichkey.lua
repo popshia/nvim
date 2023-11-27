@@ -1,3 +1,5 @@
+-- keybinding menus when typing leader key
+
 local M = {
 	"folke/which-key.nvim",
 	event = "VeryLazy",

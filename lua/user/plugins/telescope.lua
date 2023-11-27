@@ -1,3 +1,5 @@
+-- GOAT of fuzzy finder
+
 local M = {
 	"nvim-telescope/telescope.nvim", -- highly extendable fuzzy finder over lists
 	dependencies = {

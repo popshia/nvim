@@ -1,3 +1,5 @@
+-- several ui dressings
+
 local M = {
 	"stevearc/dressing.nvim",
 	lazy = true,

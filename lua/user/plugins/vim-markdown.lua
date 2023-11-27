@@ -1,3 +1,5 @@
+-- vim markdown mode
+
 local M = {
 	"preservim/vim-markdown",
 	dependencies = {

@@ -1,3 +1,5 @@
+-- highlight same word in buffer
+
 local M = {
 	"RRethy/vim-illuminate",
 	event = "VeryLazy",
