@@ -104,6 +104,8 @@ function M.config()
 			p = { "<cmd>Telescope projects<cr>", "Projects" },
 			b = { "<cmd>Telescope buffers<cr>", "Buffers" },
 			k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+			c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+			h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
 		},
 		g = {
 			name = "Git",
@@ -153,14 +155,6 @@ function M.config()
 			u = { "<cmd>Lazy update<cr>", "Update" },
 			c = { "<cmd>Lazy clean<cr>", "Clean" },
 		},
-		-- u = {
-		-- 	name = "Utility",
-		-- 	c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-		-- 	h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
-		-- 	M = { "<cmd>Telescope man_pages<cr>", "Manual Pages" },
-		-- 	C = { "<cmd>Telescope commands<cr>", "Commands" },
-		-- 	r = { "<cmd>luafile %<cr>", "Reload luafile" },
-		-- },
 	}
 
 	local vopts = {
