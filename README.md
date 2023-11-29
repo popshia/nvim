@@ -7,5 +7,5 @@
 ## Installation
 
 ```
-git clone https://github.com/popshia/nvim ~/.config/
+git clone https://github.com/popshia/nvim ~/.config/nvim
 ```
