@@ -2,7 +2,6 @@
 
 local M = {
 	"echasnovski/mini.nvim",
-	-- "echasnovski/mini.nvim",
 	version = false,
 }
 

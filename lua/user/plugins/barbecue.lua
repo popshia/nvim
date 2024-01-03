@@ -9,6 +9,6 @@ local M = {
 	event = "VimEnter",
 }
 
-M.config = true
+-- M.config = true
 
 return M
