@@ -6,8 +6,10 @@ local M = {
 }
 
 function M.config()
-	require("mini.animate").setup()
+	-- require("mini.animate").setup()
 	-- require("mini.surround").setup()
+   require("mini.ai").setup()
+   require("mini.bracketed").setup()
 end
 
 return M
