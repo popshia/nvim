@@ -21,7 +21,6 @@ function M.config()
 				"help",
 				"dashboard",
 				"lazy",
-				"NvimTree",
 				"Trouble",
 				"text",
 			},
