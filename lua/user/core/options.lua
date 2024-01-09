@@ -40,6 +40,7 @@ vim.opt.mousemoveevent = true
 
 vim.opt.shortmess:append("c")
 vim.opt.whichwrap:append("<,>,[,],h,l")
+vim.opt.iskeyword:append("-")
 -- vim.opt.iskeyword:remove("_")
 
 -- disable netrw
