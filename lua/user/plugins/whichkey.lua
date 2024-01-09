@@ -111,6 +111,7 @@ function M.config()
 		},
 		g = {
 			name = "Git",
+			g = { "<cmd>Neogit<cr>", "Neogit" },
 			n = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
 			p = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
 			b = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
