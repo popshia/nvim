@@ -13,8 +13,8 @@ function M.config()
 		vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" }),
 
 		keymaps = {
-			["H"] = "actions.parent",
-			["L"] = "actions.select",
+			["h"] = "actions.parent",
+			["l"] = "actions.select",
 		},
 		view_options = {
 			show_hidden = true,
