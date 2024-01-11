@@ -60,9 +60,3 @@ map("n", "<C-[><C-[>", "<cmd>nohlsearch<cr>")
 
 -- substitute
 map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-
--- everything stays in center
--- map("n", "<C-d>", "<C-d>zz")
--- map("n", "<C-u>", "<C-u>zz")
--- map("n", "n", "nzzzv")
--- map("n", "N", "Nzzzv")
