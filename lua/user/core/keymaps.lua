@@ -5,7 +5,7 @@ local map = function(mode, keys, func)
 	vim.keymap.set(mode, keys, func, { noremap = true, silent = true })
 end
 
---Remap space as leader key
+-- Remap space as leader key
 map("", "<Space>", "<Nop>")
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
