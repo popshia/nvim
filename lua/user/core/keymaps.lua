@@ -37,7 +37,7 @@ map("n", "<S-l>", ":bnext<CR>")
 map("n", "<S-h>", ":bprevious<CR>")
 
 -- Paste without yanking
-map("v", "p", '"_dp')
+map("v", "p", [["_dp]])
 
 -- Visual --
 -- Stay in indent mode
@@ -55,8 +55,15 @@ map("n", "K", ":m .-2<CR>==")
 map("x", "J", ":move '>+1<CR>gv-gv")
 map("x", "K", ":move '<-2<CR>gv-gv")
 
--- nohsearch
-map("n", "<C-[><C-[>", "<cmd>nohlsearch<cr>")
-
--- substitute
+-- Substitute
 map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- Mousemenu
+vim.cmd([[:amenu 10.100 mousemenu.Goto\ Definition <cmd>lua vim.lsp.buf.definition()<CR>]])
+vim.cmd([[:amenu 10.110 mousemenu.References <cmd>lua vim.lsp.buf.references()<CR>]])
+map("n", "<RightMouse>", "<cmd>:popup mousemenu<CR>")
+map("n", "<Tab>", "<cmd>:popup mousemenu<CR>")
+
+-- Move cursor to the start or the end
+map({ "n", "o", "x" }, "<C-h>", "^")
+map({ "n", "o", "x" }, "<C-l>", "g_")
