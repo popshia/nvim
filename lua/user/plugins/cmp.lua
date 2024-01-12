@@ -67,13 +67,12 @@ function M.config()
 				luasnip.lsp_expand(args.body) -- For `luasnip` users.
 			end,
 		},
-		mapping = {
+		mapping = cmp.mapping.preset.insert({
 			["<Up>"] = cmp.mapping.select_prev_item(),
 			["<Down>"] = cmp.mapping.select_next_item(),
-			["<C-p>"] = cmp.mapping(cmp.mapping.scroll_docs(-2), { "i", "c" }),
-			["<C-n>"] = cmp.mapping(cmp.mapping.scroll_docs(2), { "i", "c" }),
-			["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-			["<C-e>"] = cmp.mapping({
+			["<C-k>"] = cmp.mapping(cmp.mapping.scroll_docs(-4)),
+			["<C-j>"] = cmp.mapping(cmp.mapping.scroll_docs(4)),
+			["<C-a>"] = cmp.mapping({
 				i = cmp.mapping.abort(),
 				c = cmp.mapping.close(),
 			}),
@@ -108,7 +107,7 @@ function M.config()
 				"i",
 				"s",
 			}),
-		},
+		}),
 		formatting = {
 			fields = { "kind", "abbr", "menu" },
 			format = function(entry, vim_item)
@@ -120,7 +119,6 @@ function M.config()
 					buffer = "[Buffer]",
 					luasnip = "[Snippet]",
 					-- nvim_lua = "[Lua]",
-					-- cmp_tabnine = "[T9]",
 				})[entry.source.name]
 				return vim_item
 			end,

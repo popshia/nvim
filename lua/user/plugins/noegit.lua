@@ -5,8 +5,7 @@ local M = {
 		"sindrets/diffview.nvim", -- optional - Diff integration
 		"nvim-telescope/telescope.nvim", -- optional
 	},
+	opts = {},
 }
-
-M.config = true
 
 return M
