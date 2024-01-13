@@ -3,7 +3,7 @@
 local M = {
 	"nguyenvukhang/nvim-toggler",
 	event = "VeryLazy",
-	opt = {},
+	opts = {},
 }
 
 return M
