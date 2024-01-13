@@ -15,6 +15,9 @@ local M = {
 
 function M.config()
 	require("flash").setup({
+		search = {
+			multi_window = false,
+		},
 		jump = {
 			nohlsearch = true,
 			autojump = true,
