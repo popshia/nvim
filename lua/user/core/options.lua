@@ -57,3 +57,4 @@ end
 
 -- remove default todo highlight
 vim.cmd("hi! link Todo Comment")
+vim.api.nvim_set_hl(0, "@lsp.type.comment", {})
