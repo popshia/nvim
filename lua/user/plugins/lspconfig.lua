@@ -15,13 +15,20 @@ local function lsp_keymaps(bufnr)
 	local map = function(key, func)
 		vim.api.nvim_buf_set_keymap(bufnr, "n", key, func, { noremap = true, silent = true })
 	end
-	map("gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
-	map("gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
+	-- nvim builtin
+	-- map("gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
+	-- map("gR", "<cmd>lua vim.lsp.buf.references()<CR>")
+	-- map("gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
+	-- map("gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
+	-- trouble.nvim
+	map("gd", "<cmd>Trouble lsp_definitions<CR>")
+	map("gR", "<cmd>Trouble lsp_references<CR>")
+	map("gi", "<cmd>Trouble lsp_implementations<CR>")
+	map("gD", "<cmd>Trouble document_diagnostics<CR>")
+	map("gw", "<cmd>Trouble workspace_diagnostics<CR>")
 	map("gr", "<cmd>lua vim.lsp.buf.rename()<CR>")
 	map("gk", "<cmd>lua vim.lsp.buf.hover()<CR>")
 	map("gl", "<cmd>lua vim.diagnostic.open_float()<CR>")
-	map("gR", "<cmd>lua vim.lsp.buf.references()<CR>")
-	map("gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
 end
 
 M.on_attach = function(client, bufnr)

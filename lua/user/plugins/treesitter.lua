@@ -14,10 +14,6 @@ local M = {
 			event = "VeryLazy",
 		},
 		{
-			"windwp/nvim-ts-autotag",
-			event = "VeryLazy",
-		},
-		{
 			"windwp/nvim-autopairs",
 			event = "InsertEnter",
 		},
