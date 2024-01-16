@@ -2,7 +2,7 @@
 
 local M = {
 	"preservim/vim-markdown",
-	ft = "md",
+	ft = "markdown",
 	dependencies = {
 		{
 			"godlygeek/tabular",
