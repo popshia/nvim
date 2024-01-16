@@ -132,6 +132,7 @@ function M.config()
 			f = { "<cmd>lua vim.lsp.buf.format({ async = false })<cr>", "Format" },
 			s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document symbols" },
 			S = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature help" },
+			d = { "<cmd>Neogen<CR>", "Generate Docstring" },
 			-- j = { "<cmd>lua vim.diagnostic.goto_next({ buffer=0 })<CR>", "Next Diagnostic" },
 			-- k = { "<cmd>lua vim.diagnostic.goto_prev({ buffer=0 })<CR>", "Previous Diagnostic" },
 		},
