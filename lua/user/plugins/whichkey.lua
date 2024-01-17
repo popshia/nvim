@@ -83,11 +83,12 @@ function M.config()
 
 	local mappings = {
 		["a"] = { "<cmd>Alpha<cr>", "Alpha" },
-		["e"] = { ":lua require('oil').toggle_float()<cr>", "Oil" },
+		["e"] = { "<cmd>lua require('oil').toggle_float()<cr>", "Oil" },
+		["/"] = { "<cmd>lua require('Comment.api').toggle.linewise.current()<cr>", "Comment" },
 		b = {
 			name = "Buffer",
 			b = { "<cmd>BufferLinePick<cr>", "Pick Buffer" },
-			d = { ":lua require('bufdelete').bufdelete(0, false)<cr>", "Close Buffer" },
+			d = { "<cmd>lua require('bufdelete').bufdelete(0, false)<cr>", "Close Buffer" },
 		},
 		-- c = {
 		-- 	name = "Leetcode",
@@ -167,6 +168,7 @@ function M.config()
 
 	local vmappings = {
 		["f"] = { "<esc><cmd>lua vim.lsp.buf.range_formatting()<cr>", "Format" },
+		["/"] = { "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", "Comment" },
 	}
 
 	require("which-key").setup(setup)
