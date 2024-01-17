@@ -33,8 +33,8 @@ map("n", "<C-->", ":vertical resize -2<CR>")
 map("n", "<C-+>", ":vertical resize +2<CR>")
 
 -- Navigate buffers
-map("n", "<S-l>", ":bnext<CR>")
-map("n", "<S-h>", ":bprevious<CR>")
+map("n", "<Tab>", ":bnext<CR>")
+map("n", "<S-Tab>", ":bprevious<CR>")
 
 -- Paste without yanking
 map("v", "p", [["_dp]])
@@ -62,8 +62,8 @@ map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.cmd([[:amenu 10.100 mousemenu.Goto\ Definition <cmd>lua vim.lsp.buf.definition()<CR>]])
 vim.cmd([[:amenu 10.110 mousemenu.References <cmd>lua vim.lsp.buf.references()<CR>]])
 map("n", "<RightMouse>", "<cmd>:popup mousemenu<CR>")
-map("n", "<Tab>", "<cmd>:popup mousemenu<CR>")
+-- map("n", "<Tab>", "<cmd>:popup mousemenu<CR>")
 
 -- Move cursor to the start or the end
-map({ "n", "o", "x" }, "<C-h>", "^")
-map({ "n", "o", "x" }, "<C-l>", "g_")
+map({ "n", "o", "x" }, "H", "^")
+map({ "n", "o", "x" }, "L", "g_")
