@@ -82,12 +82,11 @@ function M.config()
 	}
 
 	local mappings = {
-		["a"] = { "<cmd>Alpha<cr>", "Alpha" },
 		["e"] = { "<cmd>lua require('oil').toggle_float()<cr>", "Oil" },
 		["/"] = { "<cmd>lua require('Comment.api').toggle.linewise.current()<cr>", "Comment" },
 		b = {
 			name = "Buffer",
-			b = { "<cmd>BufferLinePick<cr>", "Pick Buffer" },
+			p = { "<cmd>BufferLinePick<cr>", "Pick Buffer" },
 			d = { "<cmd>lua require('bufdelete').bufdelete(0, false)<cr>", "Close Buffer" },
 		},
 		-- c = {
@@ -134,8 +133,8 @@ function M.config()
 			s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document symbols" },
 			S = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature help" },
 			d = { "<cmd>Neogen<CR>", "Generate Docstring" },
-			-- j = { "<cmd>lua vim.diagnostic.goto_next({ buffer=0 })<CR>", "Next Diagnostic" },
-			-- k = { "<cmd>lua vim.diagnostic.goto_prev({ buffer=0 })<CR>", "Previous Diagnostic" },
+			p = { "<cmd>lua vim.diagnostic.goto_prev({ buffer=0 })<CR>", "Previous Diagnostic" },
+			n = { "<cmd>lua vim.diagnostic.goto_next({ buffer=0 })<CR>", "Next Diagnostic" },
 		},
 		p = {
 			name = "Lazy",
