@@ -45,5 +45,6 @@ Temporary Items
 .nfs*
 
 # lazy.nvim
-./lazy-lock.json
+lazy-lock.json
+
 # End of https://www.toptal.com/developers/gitignore/api/macos
