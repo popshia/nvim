@@ -44,4 +44,6 @@ Temporary Items
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
 
+# lazy.nvim
+./lazy-lock.json
 # End of https://www.toptal.com/developers/gitignore/api/macos
