@@ -21,10 +21,6 @@ local M = {
 			event = "InsertEnter",
 		},
 		{
-			"hrsh7th/cmp-nvim-lua", -- lua completions
-			event = "InsertEnter",
-		},
-		{
 			"saadparwaiz1/cmp_luasnip", -- snippet completions
 			event = "InsertEnter",
 		},
@@ -118,7 +114,6 @@ function M.config()
 					path = "[Path]",
 					buffer = "[Buffer]",
 					luasnip = "[Snippet]",
-					-- nvim_lua = "[Lua]",
 				})[entry.source.name]
 				return vim_item
 			end,
@@ -126,10 +121,8 @@ function M.config()
 		sources = {
 			{ name = "nvim_lsp" },
 			{ name = "path" },
-			{ name = "buffer" },
 			{ name = "luasnip" },
-			-- { name = "nvim_lua" },
-			-- { name = "cmp_tabnine" },
+			-- { name = "buffer" },
 		},
 		confirm_opts = {
 			behavior = cmp.ConfirmBehavior.Replace,
