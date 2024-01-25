@@ -148,6 +148,8 @@ function M.config()
 		t = {
 			name = "Trouble",
 			t = { "<cmd>TroubleToggle<cr>", "Toggle" },
+			p = { "<cmd>lua require('trouble').previous({skip_groups = true, jump = true})<cr>", "Previous" },
+			n = { "<cmd>lua require('trouble').next({skip_groups = true, jump = true})<cr>", "Next" },
 			l = { "<cmd>TroubleToggle loclist<cr>", "Loclist" },
 			q = { "<cmd>TroubleToggle quickfix<cr>", "Quickfix" },
 			r = { "<cmd>TroubleToggle lsp_references<cr>", "References" },

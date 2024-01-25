@@ -29,6 +29,8 @@ local function lsp_keymaps(bufnr)
 	map("gr", "<cmd>lua vim.lsp.buf.rename()<CR>")
 	map("gk", "<cmd>lua vim.lsp.buf.hover()<CR>")
 	map("gl", "<cmd>lua vim.diagnostic.open_float()<CR>")
+	map("[d", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<CR>")
+	map("]d", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<CR>")
 end
 
 M.on_attach = function(client, bufnr)
