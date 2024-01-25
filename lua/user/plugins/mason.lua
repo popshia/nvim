@@ -1,13 +1,9 @@
 -- lsp, dap, linter, formatter manager
 
 local M = {
-	"williamboman/mason-lspconfig.nvim",
-	event = {
-		"BufReadPre",
-		"BufNewFile",
-	},
+	"williamboman/mason.nvim",
 	dependencies = {
-		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
 		"nvim-lua/plenary.nvim",
 		"jay-babu/mason-null-ls.nvim",
 	},
