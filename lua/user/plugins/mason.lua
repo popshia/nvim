@@ -14,7 +14,7 @@ local M = {
 }
 
 M.lsp_servers = {
-	"clangd",
+	-- "clangd",
 	"pyright",
 	"lua_ls",
 	"bashls",
@@ -22,7 +22,7 @@ M.lsp_servers = {
 
 M.formatter = {
 	"black",
-	"clang-format",
+	-- "clang-format",
 	"isort",
 	"shfmt",
 	"stylua",
