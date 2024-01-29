@@ -33,8 +33,8 @@ map("n", "<C-->", ":vertical resize -2<CR>")
 map("n", "<C-+>", ":vertical resize +2<CR>")
 
 -- Navigate buffers
-map("n", "<Tab>", ":bnext<CR>")
-map("n", "<S-Tab>", ":bprevious<CR>")
+map("n", "L", ":bnext<CR>")
+map("n", "H", ":bprevious<CR>")
 
 -- Paste without yanking
 map("v", "p", [["_dp]])
@@ -65,5 +65,5 @@ map("n", "<RightMouse>", "<cmd>:popup mousemenu<CR>")
 -- map("n", "<Tab>", "<cmd>:popup mousemenu<CR>")
 
 -- Move cursor to the start or the end
-map({ "n", "o", "x" }, "H", "^")
-map({ "n", "o", "x" }, "L", "g_")
+-- map({ "n", "o", "x" }, "H", "^")
+-- map({ "n", "o", "x" }, "L", "g_")
