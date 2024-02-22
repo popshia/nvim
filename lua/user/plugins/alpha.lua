@@ -56,6 +56,8 @@ function M.config()
 
 	dashboard.opts.opts.noautocmd = true
 	require("alpha").setup(dashboard.opts)
+	local fortune = require("alpha.fortune")
+	dashboard.section.footer.val = { "", unpack(fortune()) }
 end
 
 return M
