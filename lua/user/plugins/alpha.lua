@@ -22,7 +22,6 @@ function M.config()
 		[[      / __ \ / _ \ / __ \| | / / / / / __ `__ \   ]],
 		[[     / / / //  __// /_/ /| |/ / / / / / / / / /   ]],
 		[[    /_/ /_/ \___/ \____/ |___/ /_/ /_/ /_/ /_/    ]],
-		[[                                                  ]],
 	}
 	dashboard.section.buttons.val = {
 		-- dashboard.button("n", icons.ui.NewFile .. " New file", ":ene <BAR> startinsert<CR>"),
@@ -57,7 +56,7 @@ function M.config()
 	dashboard.opts.opts.noautocmd = true
 	require("alpha").setup(dashboard.opts)
 	local fortune = require("alpha.fortune")
-	dashboard.section.footer.val = { "", unpack(fortune()) }
+	dashboard.section.footer.val = { unpack(fortune()) }
 end
 
 return M

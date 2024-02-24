@@ -18,7 +18,6 @@ function M.config()
 			formatting.isort,
 			formatting.black.with({ extra_args = { "--fast" } }),
 			formatting.shfmt,
-			formatting.trim_whitespace,
 			-- formatting.clang_format,
 			-- diagnostics.codespell,
 			-- diagnostics.shellcheck,
