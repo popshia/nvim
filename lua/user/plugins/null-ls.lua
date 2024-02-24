@@ -18,7 +18,7 @@ function M.config()
 			formatting.isort,
 			formatting.black.with({ extra_args = { "--fast" } }),
 			formatting.shfmt,
-			-- formatting.clang_format,
+			-- formatting.clangd,
 			-- diagnostics.codespell,
 			-- diagnostics.shellcheck,
 			-- completion.spell,
