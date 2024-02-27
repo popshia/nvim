@@ -9,6 +9,9 @@ local M = {
 			build = "make",
 			lazy = true,
 		},
+		-- {
+		-- 	"nvim-telescope/telescope-ui-select.nvim",
+		-- },
 	},
 	lazy = true,
 	cmd = "Telescope",
@@ -74,16 +77,10 @@ function M.config()
 				},
 			},
 		},
-		pickers = {
-			-- Default configuration for builtin pickers goes here:
-			-- picker_name = {
-			--   picker_config_key = value,
-			--   ...
-			-- }
-			-- Now the picker_config_key will be applied every time you call this
-			-- builtin picker
-		},
 		extensions = {
+			-- ["ui-select"] = {
+			-- 	require("telescope.themes").get_dropdown(),
+			-- },
 			fzf = {
 				fuzzy = true, -- false will only do exact matching
 				override_generic_sorter = true, -- override the generic sorter
@@ -95,6 +92,7 @@ function M.config()
 	})
 
 	require("telescope").load_extension("fzf")
+	-- require("telescope").load_extension("ui-select")
 end
 
 return M
