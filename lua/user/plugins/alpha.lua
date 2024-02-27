@@ -10,6 +10,22 @@ function M.config()
 	local dashboard = require("alpha.themes.dashboard")
 	local icons = require("user.utils.icons")
 
+	local function footer()
+		local datetime = os.date(" %Y-%m-%d    %H:%M ")
+
+		local nvim_version = vim.version()
+		local nvim_version_info = "    v"
+			.. nvim_version.major
+			.. "."
+			.. nvim_version.minor
+			.. "."
+			.. nvim_version.patch
+
+		local total_plugins = #vim.tbl_keys(require("lazy").plugins())
+		local plugin_info = "   " .. total_plugins .. " plugins"
+		return datetime .. plugin_info .. nvim_version_info
+	end
+
 	dashboard.section.header.val = {
 		[[                                                  ]],
 		[[                                                  ]],
@@ -22,7 +38,8 @@ function M.config()
 		[[      / __ \ / _ \ / __ \| | / / / / / __ `__ \   ]],
 		[[     / / / //  __// /_/ /| |/ / / / / / / / / /   ]],
 		[[    /_/ /_/ \___/ \____/ |___/ /_/ /_/ /_/ /_/    ]],
-		[[                                                  ]],
+		-- [[                                                  ]],
+		-- [[                                                  ]],
 	}
 	dashboard.section.buttons.val = {
 		-- dashboard.button("n", icons.ui.NewFile .. " New file", ":ene <BAR> startinsert<CR>"),
@@ -36,10 +53,11 @@ function M.config()
 	}
 
 	dashboard.section.footer.val = {
+		-- [[                              ]],
 		[[                              ]],
+		[[          "stay hungry, stay foolish."  ]],
 		[[                              ]],
-		[[  stay hungry, stay foolish.  ]],
-		[[                              ]],
+		footer(),
 		[[                              ]],
 		[[                              ]],
 		[[                              ]],
