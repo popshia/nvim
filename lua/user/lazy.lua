@@ -30,3 +30,11 @@ require("lazy").setup({ { import = "user.plugins" } }, {
 		notify = true,
 	},
 })
+
+-- keymaps
+map("n", "<leader>pi", "<cmd>Lazy show<cr>", "Info")
+map("n", "<leader>ps", "<cmd>Lazy sync<cr>", "Sync")
+map("n", "<leader>pl", "<cmd>Lazy log<cr>", "Log")
+map("n", "<leader>pp", "<cmd>Lazy profile<cr>", "Profile")
+map("n", "<leader>pu", "<cmd>Lazy update<cr>", "Update")
+map("n", "<leader>pc", "<cmd>Lazy clean<cr>", "Clean")

@@ -10,6 +10,17 @@ local M = {
 }
 
 function M.config()
+	--keymaps
+	-- c = {
+	-- 	name = "Leetcode",
+	-- 	d = { "<cmd>LBQuestion<cr>", "Question Description" },
+	-- 	l = { "<cmd>LBQuestions<cr>", "List Questions" },
+	-- 	r = { "<cmd>LBReset<cr>", "Reset Question" },
+	-- 	t = { "<cmd>LBTest<cr>", "Test Code" },
+	-- 	s = { "<cmd>LBSubmit<cr>", "Submit Code" },
+	-- 	c = { "<cmd>LBChangeLanguage<cr>", "Change Language" },
+	-- },
+
 	require("leetbuddy").setup({
 		domain = "com",
 		language = "cpp",

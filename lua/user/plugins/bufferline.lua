@@ -7,6 +7,10 @@ local M = {
 }
 
 function M.config()
+	-- keymaps
+	map("n", "<leader>bp", "<cmd>BufferLinePick<cr>", "Pick Buffer")
+	map("n", "<leader>bd", "<cmd>lua require('bufdelete').bufdelete(0, false)<cr>", "Close Buffer")
+
 	require("bufferline").setup({
 		options = {
 			numbers = "none", -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,

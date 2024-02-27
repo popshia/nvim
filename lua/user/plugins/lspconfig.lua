@@ -34,8 +34,20 @@ local function lsp_keymaps(bufnr)
 	map("]d", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<CR>")
 end
 
+local function lsp_global_keymaps()
+	map("n", "<leader>lm", "<cmd>Mason<cr>", "Mason")
+	map("n", "<leader>li", "<cmd>LspInfo<cr>", "LSP Info")
+	map("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format({ async = false })<cr>", "Format")
+	map("n", "<leader>ls", "<cmd>Telescope lsp_document_symbols theme=ivy<cr>", "Document symbols")
+	map("n", "<leader>lS", "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature help")
+	map("n", "<leader>ld", "<cmd>Neogen<CR>", "Generate Docstring")
+	map("n", "<leader>lp", "<cmd>lua vim.diagnostic.goto_prev({ buffer=0 })<CR>", "Previous Diagnostic")
+	map("n", "<leader>ln", "<cmd>lua vim.diagnostic.goto_next({ buffer=0 })<CR>", "Next Diagnostic")
+end
+
 M.on_attach = function(client, bufnr)
 	lsp_keymaps(bufnr)
+	lsp_global_keymaps()
 
 	-- disable some lsp's formatter
 	if client.name == "clangd" or client.name == "lua_ls" then

@@ -9,9 +9,10 @@ local M = {
 }
 
 function M.config()
-	require("oil").setup({
-		vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" }),
+	-- keymaps
+	map("n", "<leader>e", "<cmd>lua require('oil').toggle_float()<cr>", "Oil")
 
+	require("oil").setup({
 		keymaps = {
 			["h"] = "actions.parent",
 			["l"] = "actions.select",

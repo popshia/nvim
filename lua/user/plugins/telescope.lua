@@ -18,7 +18,19 @@ local M = {
 }
 
 function M.config()
-	local actions = require("telescope.actions")
+	-- keymaps
+	-- theme=ivy (bottom panel overlay)
+	-- theme=cursor (cursor relative list)
+	-- theme=dropdown (list like centered list)
+	map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", "Find Files")
+	map("n", "<leader>ft", "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text")
+	map("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", "Recent Files")
+	map("n", "<leader>fp", "<cmd>Telescope projects<cr>", "Projects")
+	map("n", "<leader>fb", "<cmd>Telescope buffers<cr>", "Buffers")
+	map("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", "Keymaps")
+	map("n", "<leader>fc", "<cmd>Telescope colorscheme<cr>", "Colorscheme")
+	map("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", "Find Help")
+
 	local icons = require("user.utils.icons")
 
 	require("telescope").setup({
@@ -26,56 +38,6 @@ function M.config()
 			prompt_prefix = icons.ui.Telescope,
 			selection_caret = icons.ui.Forward,
 			path_display = { "smart" },
-			mappings = {
-				i = {
-					["<C-n>"] = actions.cycle_history_next,
-					["<C-p>"] = actions.cycle_history_prev,
-					["<C-j>"] = actions.move_selection_next,
-					["<C-k>"] = actions.move_selection_previous,
-					["<C-c>"] = actions.close,
-					["<Down>"] = actions.move_selection_next,
-					["<Up>"] = actions.move_selection_previous,
-					["<CR>"] = actions.select_default,
-					["<C-x>"] = actions.select_horizontal,
-					["<C-v>"] = actions.select_vertical,
-					["<C-t>"] = actions.select_tab,
-					["<C-u>"] = actions.preview_scrolling_up,
-					["<C-d>"] = actions.preview_scrolling_down,
-					["<PageUp>"] = actions.results_scrolling_up,
-					["<PageDown>"] = actions.results_scrolling_down,
-					["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
-					["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
-					["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
-					["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
-					["<C-l>"] = actions.complete_tag,
-					["<C-_>"] = actions.which_key, -- keys from pressing <C-/>
-				},
-				n = {
-					["<esc>"] = actions.close,
-					["<CR>"] = actions.select_default,
-					["<C-x>"] = actions.select_horizontal,
-					["<C-v>"] = actions.select_vertical,
-					["<C-t>"] = actions.select_tab,
-					["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
-					["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
-					["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
-					["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
-					["j"] = actions.move_selection_next,
-					["k"] = actions.move_selection_previous,
-					["H"] = actions.move_to_top,
-					["M"] = actions.move_to_middle,
-					["L"] = actions.move_to_bottom,
-					["<Down>"] = actions.move_selection_next,
-					["<Up>"] = actions.move_selection_previous,
-					["gg"] = actions.move_to_top,
-					["G"] = actions.move_to_bottom,
-					["<C-u>"] = actions.preview_scrolling_up,
-					["<C-d>"] = actions.preview_scrolling_down,
-					["<PageUp>"] = actions.results_scrolling_up,
-					["<PageDown>"] = actions.results_scrolling_down,
-					["?"] = actions.which_key,
-				},
-			},
 		},
 		extensions = {
 			-- ["ui-select"] = {

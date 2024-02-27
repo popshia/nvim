@@ -100,6 +100,9 @@ function M.config()
 		-- },
 		f = {
 			name = "Telescope",
+			-- theme=ivy (bottom panel overlay)
+			-- theme=cursor (cursor relative list)
+			-- theme=dropdown (list like centered list)
 			f = { "<cmd>Telescope find_files<cr>", "Find Files" },
 			t = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
 			r = { "<cmd>Telescope oldfiles<cr>", "Recent Files" },
@@ -130,7 +133,7 @@ function M.config()
 			m = { "<cmd>Mason<cr>", "Mason" },
 			i = { "<cmd>LspInfo<cr>", "LSP Info" },
 			f = { "<cmd>lua vim.lsp.buf.format({ async = false })<cr>", "Format" },
-			s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document symbols" },
+			s = { "<cmd>Telescope lsp_document_symbols theme=ivy<cr>", "Document symbols" },
 			S = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature help" },
 			d = { "<cmd>Neogen<CR>", "Generate Docstring" },
 			p = { "<cmd>lua vim.diagnostic.goto_prev({ buffer=0 })<CR>", "Previous Diagnostic" },
