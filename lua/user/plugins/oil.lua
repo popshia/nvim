@@ -6,12 +6,18 @@ local M = {
 	dependencies = {
 		"nvim-tree/nvim-web-devicons",
 	},
+	keys = {
+		{
+			"<leader>e",
+			function()
+				require("oil").toggle_float()
+			end,
+			desc = "Oil File Explorer",
+		},
+	},
 }
 
 function M.config()
-	-- keymaps
-	map("n", "<leader>e", "<cmd>lua require('oil').toggle_float()<cr>", "Oil")
-
 	require("oil").setup({
 		keymaps = {
 			["h"] = "actions.parent",

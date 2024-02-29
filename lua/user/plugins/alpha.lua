@@ -38,11 +38,8 @@ function M.config()
 		[[      / __ \ / _ \ / __ \| | / / / / / __ `__ \   ]],
 		[[     / / / //  __// /_/ /| |/ / / / / / / / / /   ]],
 		[[    /_/ /_/ \___/ \____/ |___/ /_/ /_/ /_/ /_/    ]],
-		-- [[                                                  ]],
-		-- [[                                                  ]],
 	}
 	dashboard.section.buttons.val = {
-		-- dashboard.button("n", icons.ui.NewFile .. " New file", ":ene <BAR> startinsert<CR>"),
 		dashboard.button("r", icons.ui.History .. " Recent files", ":Telescope oldfiles<CR>"),
 		dashboard.button("f", icons.ui.Files .. " Find file", ":Telescope find_files<CR>"),
 		dashboard.button("p", icons.ui.Project .. " Find project", ":Telescope projects<CR>"),
@@ -53,29 +50,25 @@ function M.config()
 	}
 
 	dashboard.section.footer.val = {
-		-- [[                              ]],
-		[[                              ]],
+		[[                                        ]],
 		[[          "stay hungry, stay foolish."  ]],
-		[[                              ]],
+		[[                                        ]],
 		footer(),
-		[[                              ]],
-		[[                              ]],
-		[[                              ]],
-		[[                              ]],
-		[[                              ]],
-		[[                              ]],
-		[[                              ]],
-		[[                              ]],
+		[[                                        ]],
+		[[                                        ]],
+		[[                                        ]],
+		[[                                        ]],
+		[[                                        ]],
+		[[                                        ]],
+		[[                                        ]],
+		[[                                        ]],
 	}
 
 	dashboard.section.footer.opts.hl = "Type"
 	dashboard.section.header.opts.hl = "Include"
 	dashboard.section.buttons.opts.hl = "Keyword"
-
 	dashboard.opts.opts.noautocmd = true
 	require("alpha").setup(dashboard.opts)
-	-- local fortune = require("alpha.fortune")
-	-- dashboard.section.footer.val = { unpack(fortune()) }
 end
 
 return M

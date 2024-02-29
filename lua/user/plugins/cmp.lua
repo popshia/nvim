@@ -1,42 +1,17 @@
 -- autocompletion plugins
 
 local M = {
-	"hrsh7th/nvim-cmp", -- the completion plugin
+	"hrsh7th/nvim-cmp",
 	dependencies = {
 		-- cmp sources
-		{
-			"hrsh7th/cmp-buffer", -- buffer completions
-			event = "InsertEnter",
-		},
-		{
-			"hrsh7th/cmp-path", -- path completions
-			event = "InsertEnter",
-		},
-		{
-			"hrsh7th/cmp-cmdline", -- cmdline completions
-			event = "InsertEnter",
-		},
-		{
-			"hrsh7th/cmp-nvim-lsp", -- lsp completions
-			event = "InsertEnter",
-		},
-		{
-			"saadparwaiz1/cmp_luasnip", -- snippet completions
-			event = "InsertEnter",
-		},
-		{
-			"lukas-reineke/cmp-under-comparator", -- sort completions
-			event = "InsertEnter",
-		},
+		{ "hrsh7th/cmp-path" }, -- path completions
+		{ "hrsh7th/cmp-cmdline" }, -- cmdline completions
+		{ "hrsh7th/cmp-nvim-lsp" }, -- lsp completions
+		{ "saadparwaiz1/cmp_luasnip" }, -- snippet completions
+		{ "lukas-reineke/cmp-under-comparator" }, -- sort completions
 		-- Snippets
-		{
-			"L3MON4D3/LuaSnip", --snippet engine
-			event = "InsertEnter",
-		},
-		{
-			"rafamadriz/friendly-snippets", -- a bunch of snippets to use
-			event = "InsertEnter",
-		},
+		{ "L3MON4D3/LuaSnip" }, --snippet engine
+		{ "rafamadriz/friendly-snippets" }, -- a bunch of snippets to use
 	},
 	event = "InsertEnter",
 }
@@ -44,16 +19,8 @@ local M = {
 function M.config()
 	local cmp = require("cmp")
 	local luasnip = require("luasnip")
-	local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-	cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
-
+	luasnip.config.setup()
 	require("luasnip/loaders/from_vscode").lazy_load()
-
-	local check_backspace = function()
-		local col = vim.fn.col(".") - 1
-		return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
-	end
-
 	local icons = require("user.utils.icons")
 	local kind_icons = icons.kind
 
@@ -66,8 +33,6 @@ function M.config()
 		mapping = cmp.mapping.preset.insert({
 			["<C-p>"] = cmp.mapping.select_prev_item(),
 			["<C-n>"] = cmp.mapping.select_next_item(),
-			-- ["<C-p>"] = cmp.mapping(cmp.mapping.scroll_docs(-4)),
-			-- ["<C-n>"] = cmp.mapping(cmp.mapping.scroll_docs(4)),
 			["<C-a>"] = cmp.mapping({
 				i = cmp.mapping.abort(),
 				c = cmp.mapping.close(),
@@ -75,34 +40,17 @@ function M.config()
 			-- Accept currently selected item. If none selected, `select` first item.
 			-- Set `select` to `false` to only confirm explicitly selected items.
 			["<CR>"] = cmp.mapping.confirm({ select = true }),
-			["<Tab>"] = cmp.mapping(function(fallback)
-				if cmp.visible() then
-					cmp.select_next_item()
-				elseif luasnip.expandable() then
-					luasnip.expand()
-				elseif luasnip.expand_or_jumpable() then
+
+			["<C-l>"] = cmp.mapping(function()
+				if luasnip.expand_or_locally_jumpable() then
 					luasnip.expand_or_jump()
-				elseif check_backspace() then
-					fallback()
-				else
-					fallback()
 				end
-			end, {
-				"i",
-				"s",
-			}),
-			["<S-Tab>"] = cmp.mapping(function(fallback)
-				if cmp.visible() then
-					cmp.select_prev_item()
-				elseif luasnip.jumpable(-1) then
+			end, { "i", "s" }),
+			["<C-h>"] = cmp.mapping(function()
+				if luasnip.locally_jumpable(-1) then
 					luasnip.jump(-1)
-				else
-					fallback()
 				end
-			end, {
-				"i",
-				"s",
-			}),
+			end, { "i", "s" }),
 		}),
 		formatting = {
 			fields = { "kind", "abbr", "menu" },
@@ -120,9 +68,8 @@ function M.config()
 		},
 		sources = {
 			{ name = "nvim_lsp" },
-			{ name = "path" },
 			{ name = "luasnip" },
-			-- { name = "buffer" },
+			{ name = "path" },
 		},
 		confirm_opts = {
 			behavior = cmp.ConfirmBehavior.Replace,
@@ -134,7 +81,6 @@ function M.config()
 		},
 		experimental = {
 			ghost_text = true,
-			-- native_menu = true,
 		},
 		sorting = {
 			comparators = {
@@ -170,7 +116,7 @@ function M.config()
 
 	cmp.setup.filetype("gitcommit", {
 		sources = cmp.config.sources({
-			{ name = "cmp_git" }, -- You can specify the `cmp_git` source if you were installed it.
+			{ name = "git" }, -- You can specify the `cmp_git` source if you were installed it.
 		}, {
 			{ name = "buffer" },
 		}),

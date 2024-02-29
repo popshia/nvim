@@ -2,9 +2,24 @@
 
 local M = {
 	"nvimtools/none-ls.nvim",
+	dependencies = {
+		"jay-babu/mason-null-ls.nvim",
+	},
+}
+
+M.formatter = {
+	"black",
+	-- "clang-format",
+	"isort",
+	"shfmt",
+	"stylua",
 }
 
 function M.config()
+	require("mason-null-ls").setup({
+		ensure_installed = M.formatter,
+	})
+
 	local null_ls = require("null-ls")
 	local formatting = null_ls.builtins.formatting
 	local diagnostics = null_ls.builtins.diagnostics

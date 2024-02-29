@@ -6,18 +6,18 @@ local M = {
 	keys = {
 		{
 			"s",
-			mode = { "n", "x", "o" },
 			function()
 				require("flash").jump()
 			end,
-			desc = "Flash",
+			mode = { "n", "x", "o" },
+			desc = "Search Flash",
 		},
 		{
 			"r",
-			mode = "o",
 			function()
 				require("flash").remote()
 			end,
+			mode = "o",
 			desc = "Remote Flash",
 		},
 	},

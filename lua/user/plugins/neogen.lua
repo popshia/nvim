@@ -2,8 +2,13 @@ local M = {
 	"danymat/neogen",
 	dependencies = "nvim-treesitter/nvim-treesitter",
 	opts = {},
-	-- Uncomment next line if you want to follow only stable versions
-	-- version = "*"
+	keys = {
+		{
+			"<leader>gd",
+			"<cmd>Neogen<CR>",
+			desc = "Documentation Comment",
+		},
+	},
 }
 
 return M

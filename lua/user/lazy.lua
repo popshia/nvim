@@ -32,9 +32,9 @@ require("lazy").setup({ { import = "user.plugins" } }, {
 })
 
 -- keymaps
-map("n", "<leader>pi", "<cmd>Lazy show<cr>", "Info")
-map("n", "<leader>ps", "<cmd>Lazy sync<cr>", "Sync")
-map("n", "<leader>pl", "<cmd>Lazy log<cr>", "Log")
-map("n", "<leader>pp", "<cmd>Lazy profile<cr>", "Profile")
-map("n", "<leader>pu", "<cmd>Lazy update<cr>", "Update")
-map("n", "<leader>pc", "<cmd>Lazy clean<cr>", "Clean")
+vim.keymap.set("n", "<leader>li", "<cmd>Lazy show<cr>", { desc = "Lazy: Info" })
+vim.keymap.set("n", "<leader>ls", "<cmd>Lazy sync<cr>", { desc = "Lazy: Sync" })
+vim.keymap.set("n", "<leader>ll", "<cmd>Lazy log<cr>", { desc = "Lazy: Log" })
+vim.keymap.set("n", "<leader>lp", "<cmd>Lazy profile<cr>", { desc = "Lazy: Profile" })
+vim.keymap.set("n", "<leader>lu", "<cmd>Lazy update<cr>", { desc = "Lazy: Update" })
+vim.keymap.set("n", "<leader>lc", "<cmd>Lazy clean<cr>", { desc = "Lazy: Clean" })

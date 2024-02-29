@@ -5,25 +5,22 @@ local M = {
 		"sindrets/diffview.nvim", -- optional - Diff integration
 		"nvim-telescope/telescope.nvim", -- optional
 	},
+	opts = {},
+	keys = {
+		{ "<leader>gg", "<cmd>Neogit<cr>", desc = "Neogit" },
+		{ "<leader>gn", "<cmd>Gitsigns next_hunk<cr>", desc = "Next Hunk" },
+		{ "<leader>gp", "<cmd>Gitsigns prev_hunk<cr>", desc = "Prev Hunk" },
+		{ "<leader>gb", "<cmd>Gitsigns blame_line<cr>", desc = "Blame" },
+		{ "<leader>gh", "<cmd>Gitsigns preview_hunk<cr>", desc = "Preview Hunk" },
+		{ "<leader>gr", "<cmd>Gitsigns reset_hunk<cr>", desc = "Reset Hunk" },
+		{ "<leader>gR", "<cmd>Gitsigns reset_buffer<cr>", desc = "Reset Buffer" },
+		{ "<leader>gs", "<cmd>Gitsigns stage_hunk<cr>", desc = "Stage Hunk" },
+		{ "<leader>gu", "<cmd>Gitsigns undo_stage_hunk<cr>", desc = "Undo Stage Hunk" },
+		{ "<leader>go", "<cmd>Telescope git_status<cr>", desc = "Open changed file" },
+		{ "<leader>gB", "<cmd>Telescope git_branches<cr>", desc = "Checkout branch" },
+		{ "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Checkout commit" },
+		-- { "<leader>gd", "<cmd>Gitsigns diffthis HEAD<cr>", desc = "Diff" },
+	},
 }
-
-function M.config()
-	-- keymaps
-	map("n", "<leader>gg", "<cmd>Neogit<cr>", "Neogit")
-	map("n", "<leader>gn", "<cmd>Gitsigns next_hunk<cr>", "Next Hunk")
-	map("n", "<leader>gp", "<cmd>Gitsigns prev_hunk<cr>", "Prev Hunk")
-	map("n", "<leader>gb", "<cmd>Gitsigns blame_line<cr>", "Blame")
-	map("n", "<leader>gh", "<cmd>Gitsigns preview_hunk<cr>", "Preview Hunk")
-	map("n", "<leader>gr", "<cmd>Gitsigns reset_hunk<cr>", "Reset Hunk")
-	map("n", "<leader>gR", "<cmd>Gitsigns reset_buffer<cr>", "Reset Buffer")
-	map("n", "<leader>gs", "<cmd>Gitsigns stage_hunk<cr>", "Stage Hunk")
-	map("n", "<leader>gu", "<cmd>Gitsigns undo_stage_hunk<cr>", "Undo Stage Hunk")
-	map("n", "<leader>go", "<cmd>Telescope git_status<cr>", "Open changed file")
-	map("n", "<leader>gB", "<cmd>Telescope git_branches<cr>", "Checkout branch")
-	map("n", "<leader>gc", "<cmd>Telescope git_commits<cr>", "Checkout commit")
-	map("n", "<leader>gd", "<cmd>Gitsigns diffthis HEAD<cr>", "Diff")
-
-	require("neogit").setup({})
-end
 
 return M
