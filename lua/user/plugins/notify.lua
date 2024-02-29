@@ -1,3 +1,5 @@
+-- prettier notifications
+
 local M = {
 	"rcarriga/nvim-notify",
 }

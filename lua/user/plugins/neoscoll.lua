@@ -1,3 +1,5 @@
+-- smooth scroll
+
 local M = {
 	"karb94/neoscroll.nvim",
 	event = "BufEnter",

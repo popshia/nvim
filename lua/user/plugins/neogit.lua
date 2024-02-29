@@ -1,3 +1,5 @@
+-- git within nvim
+
 local M = {
 	"NeogitOrg/neogit",
 	dependencies = {

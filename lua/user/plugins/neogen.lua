@@ -1,3 +1,5 @@
+-- generate docstring
+
 local M = {
 	"danymat/neogen",
 	dependencies = "nvim-treesitter/nvim-treesitter",

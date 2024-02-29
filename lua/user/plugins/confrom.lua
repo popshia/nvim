@@ -1,3 +1,5 @@
+-- document formatting
+
 local M = {
 	"stevearc/conform.nvim",
 	event = "BufWritePre",

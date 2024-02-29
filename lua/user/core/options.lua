@@ -35,14 +35,14 @@ vim.opt.shiftwidth = 4 -- the number of spaces inserted for each indentation
 vim.opt.tabstop = 4 -- insert 4 spaces for a tab
 vim.opt.scrolloff = 8 -- vertical scrolloff with 8 char
 vim.opt.sidescrolloff = 8 -- horizontal scrolloff with 8 char
-vim.opt.inccommand = "split" -- preview substitutions live, as you type!
 vim.opt.foldenable = false
 vim.opt.mousemoveevent = true
+-- vim.opt.inccommand = "split" -- preview substitutions live, as you type!
 
 vim.opt.shortmess:append("c")
 vim.opt.whichwrap:append("<,>,[,],h,l")
 vim.opt.iskeyword:append("-")
--- vim.opt.iskeyword:remove("_")
+vim.opt.iskeyword:remove("_")
 
 -- disable netrw
 vim.g.loaded_netrw = 1
