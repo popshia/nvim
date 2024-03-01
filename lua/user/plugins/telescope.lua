@@ -2,19 +2,20 @@
 
 local M = {
 	"nvim-telescope/telescope.nvim", -- highly extendable fuzzy finder over lists
+	branch = "0.1.x",
+	event = "VeryLazy",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		{
 			"nvim-telescope/telescope-fzf-native.nvim", -- fzf syntax support for telescope
 			build = "make",
 			lazy = true,
+			cond = function()
+				return vim.fn.executable("make") == 1
+			end,
 		},
-		-- {
-		-- 	"nvim-telescope/telescope-ui-select.nvim",
-		-- },
+		-- { "nvim-telescope/telescope-ui-select.nvim" },
 	},
-	lazy = true,
-	cmd = "Telescope",
 	keys = {
 		{ "<leader>ds", "<cmd>Telescope lsp_document_symbols theme=ivy<CR>", desc = "Document Symbols" },
 		{ "<leader>sf", "<cmd>Telescope find_files<cr>", desc = "Search Files" },
