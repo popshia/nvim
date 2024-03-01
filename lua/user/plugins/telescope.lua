@@ -17,16 +17,16 @@ local M = {
 	cmd = "Telescope",
 	keys = {
 		{ "<leader>ds", "<cmd>Telescope lsp_document_symbols theme=ivy<CR>", desc = "Document Symbols" },
-		{ "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
-		{ "<leader>ft", "<cmd>Telescope live_grep theme=ivy<cr>", desc = "Find Text" },
-		{ "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Find Recent Files" },
-		{ "<leader>fp", "<cmd>Telescope projects<cr>", desc = "Find Projects" },
-		{ "<leader>fb", "<cmd>Telescope buffers theme=dropdown<cr>", desc = "Find Buffers" },
-		{ "<leader>fk", "<cmd>Telescope keymaps<cr>", desc = "Find Keymaps" },
-		{ "<leader>fc", "<cmd>Telescope colorscheme<cr>", desc = "Find Colorscheme" },
-		{ "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Find Help" },
+		{ "<leader>sf", "<cmd>Telescope find_files<cr>", desc = "Search Files" },
+		{ "<leader>st", "<cmd>Telescope live_grep theme=ivy<cr>", desc = "Search Text" },
+		{ "<leader>sr", "<cmd>Telescope oldfiles<cr>", desc = "Search Recent Files" },
+		{ "<leader>sp", "<cmd>Telescope projects<cr>", desc = "Search Projects" },
+		{ "<leader>sb", "<cmd>Telescope buffers theme=dropdown<cr>", desc = "Search Buffers" },
+		{ "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "Search Keymaps" },
+		{ "<leader>sc", "<cmd>Telescope colorscheme<cr>", desc = "Search Colorscheme" },
+		{ "<leader>sh", "<cmd>Telescope help_tags<cr>", desc = "Search Help" },
 		{
-			"<leader>f/",
+			"<leader>s/",
 			function()
 				require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
 					winblend = 10,
@@ -36,7 +36,7 @@ local M = {
 			desc = "Find In Current Buffer",
 		},
 		{
-			"<leader>fn",
+			"<leader>sn",
 			function()
 				require("telescope.builtin").find_files({ cwd = vim.fn.stdpath("config") })
 			end,

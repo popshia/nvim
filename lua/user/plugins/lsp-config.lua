@@ -28,7 +28,7 @@ local M = {
 		{ "<leader>td", "<cmd>Trouble lsp_type_definitions<CR>", desc = "Type Definition" },
 		{ "<leader>sh", "<cmd>lua vim.lsp.buf.signature_help()<CR>", desc = "Signature Help" },
 		{ "<leader>li", "<cmd>LspInfo<cr>", desc = "LSP Info" },
-		{ "<leader>lm", "<cmd>Mason<cr>", desc = "Mason" },
+		{ "<leader>ms", "<cmd>Mason<cr>", desc = "Mason" },
 	},
 }
 
@@ -91,35 +91,23 @@ function M.config()
 		lua_ls = {
 			settings = {
 				Lua = {
-					format = {
-						enable = false,
-						defaultConfig = {
-							indent_style = "tab",
-							tab_size = "4",
-							quote_style = "double",
-							call_arg_parenthesis = "keep",
-							local_assign_continuation_align_to_first_expression = true,
-							align_call_args = true,
-							align_function_define_params = true,
-							keep_one_space_between_table_and_bracket = true,
-							align_table_field_to_first_field = true,
-							keep_one_space_between_namedef_and_attribute = true,
-							continuous_assign_statement_align_to_equal_sign = true,
-							continuous_assign_table_field_align_to_equal_sign = true,
-						},
-					},
+					runtime = { version = "LuaJIT" },
+					format = { enable = false },
 					diagnostics = {
 						globals = { "vim" },
+						disable = { "missing-fields" },
 					},
 					workspace = {
+						checkThirdParty = false,
 						library = {
-							[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-							[vim.fn.stdpath("config") .. "/lua"] = true,
+							-- [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+							-- [vim.fn.stdpath("config") .. "/lua"] = true,
+							"${3rd}/luv/library",
+							unpack(vim.api.nvim_get_runtime_file("", true)),
 						},
 					},
-					telemetry = {
-						enable = false,
-					},
+					completion = { callSnippet = "Replace" },
+					telemetry = { enable = false },
 				},
 			},
 		},
@@ -164,15 +152,11 @@ function M.config()
 		handlers = {
 			function(server_name)
 				local server = servers[server_name] or {}
-				require("lspconfig")[server_name].setup({
-					cmd = server.cmd,
-					settings = server.settings,
-					filetypes = server.filetypes,
-					-- This handles overriding only values explicitly passed
-					-- by the server configuration above. Useful when disabling
-					-- certain features of an LSP (for example, turning off formatting for tsserver)
-					capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {}),
-				})
+				-- This handles overriding only values explicitly passed
+				-- by the server configuration above. Useful when disabling
+				-- certain features of an LSP (for example, turning off formatting for tsserver)
+				server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
+				require("lspconfig")[server_name].setup(server)
 			end,
 		},
 		automatic_installation = true,

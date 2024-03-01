@@ -1,9 +1,18 @@
--- document formatting
+-- file formatting
 
 local M = {
 	"stevearc/conform.nvim",
 	event = "BufWritePre",
 	cmd = "ConformInfo",
+	keys = {
+		{
+			"<leader>ff",
+			function()
+				require("conform").format()
+			end,
+			desc = "File Format",
+		},
+	},
 }
 
 function M.config()
