@@ -8,11 +8,14 @@ return {
 		{ "hrsh7th/cmp-path" }, -- path completions
 		{ "hrsh7th/cmp-cmdline" }, -- cmdline completions
 		{ "hrsh7th/cmp-nvim-lsp" }, -- lsp completions
+		{ "petertriho/cmp-git" }, -- git completions
 		{ "saadparwaiz1/cmp_luasnip" }, -- snippet completions
 		{ "lukas-reineke/cmp-under-comparator" }, -- sort completions
 		-- Snippets
-		{ "L3MON4D3/LuaSnip" }, --snippet engine
-		{ "rafamadriz/friendly-snippets" }, -- a bunch of snippets to use
+		{
+			"L3MON4D3/LuaSnip",
+			dependencies = { "rafamadriz/friendly-snippets" },
+		},
 	},
 	event = "InsertEnter",
 	config = function()
@@ -57,10 +60,10 @@ return {
 					-- Kind icons
 					vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
 					vim_item.menu = ({
-						nvim_lsp = "[LSP]",
-						path = "[Path]",
-						buffer = "[Buffer]",
-						luasnip = "[Snippet]",
+						nvim_lsp = "(LSP)",
+						path = "(Path)",
+						buffer = "(Buffer)",
+						luasnip = "(Snippet)",
 					})[entry.source.name]
 					return vim_item
 				end,
@@ -73,16 +76,9 @@ return {
 			{
 				{ name = "buffer" },
 			},
-			confirm_opts = {
-				behavior = cmp.ConfirmBehavior.Replace,
-				select = false,
-			},
 			window = {
 				completion = cmp.config.window.bordered(),
 				documentation = cmp.config.window.bordered(),
-			},
-			experimental = {
-				ghost_text = true,
 			},
 			sorting = {
 				comparators = {
