@@ -11,7 +11,6 @@ function M.config()
 			"alpha",
 			"mason",
 			"lazy",
-			"NvimTree",
 			"toggleterm",
 			"TelescopePrompt",
 		},

@@ -29,7 +29,7 @@ return {
 			},
 			formatters = {
 				black = {
-					prepend_args = "--fast",
+					prepend_args = { "--fast" },
 				},
 			},
 			format_on_save = {

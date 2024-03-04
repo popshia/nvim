@@ -1,7 +1,8 @@
--- gruvbox-material colorscheme
+-- colorscheme
 
 return {
 	"sainnhe/gruvbox-material",
+	-- "ellisonleao/gruvbox.nvim",
 	lazy = false,
 	priority = 1000,
 	config = function()

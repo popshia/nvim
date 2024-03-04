@@ -7,11 +7,8 @@ return {
 		"BufNewFile",
 	},
 	dependencies = {
-		{
-			"folke/neodev.nvim",
-			ft = "lua",
-			opts = {},
-		},
+		{ "folke/neodev.nvim", ft = "lua", opts = {} },
+		{ "j-hui/fidget.nvim", opts = {} },
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
@@ -58,24 +55,6 @@ return {
 
 		vim.diagnostic.config(default_diagnostic_config)
 
-		vim.api.nvim_create_autocmd("LspAttach", {
-			group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
-			callback = function(event)
-				local client = vim.lsp.get_client_by_id(event.data.client_id)
-				if client and client.server_capabilities.documentHighlightProvider then
-					vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-						buffer = event.buf,
-						callback = vim.lsp.buf.document_highlight,
-					})
-
-					vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
-						buffer = event.buf,
-						callback = vim.lsp.buf.clear_references,
-					})
-				end
-			end,
-		})
-
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
@@ -96,7 +75,6 @@ return {
 							disable = { "missing-fields" },
 						},
 						workspace = {
-							checkThirdParty = false,
 							library = {
 								"${3rd}/luv/library",
 								unpack(vim.api.nvim_get_runtime_file("", true)),

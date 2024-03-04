@@ -19,9 +19,6 @@ vim.g.maplocalleader = " "
 
 -- Install your plugins here
 require("lazy").setup({ { import = "user.plugins" } }, {
-	install = {
-		colorscheme = { "gruvbox-material" },
-	},
 	ui = {
 		border = "rounded",
 	},
