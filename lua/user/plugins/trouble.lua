@@ -1,8 +1,10 @@
 -- A pretty list for showing diagnostics, references, telescope results, quickfix and location lists
-local M = {
+
+return {
 	"folke/trouble.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	cmd = "Trouble",
+	opts = {},
 	keys = {
 		{ "<leader>tt", "<cmd>TroubleToggle<cr>", desc = "Trouble: Toggle" },
 		{
@@ -21,9 +23,3 @@ local M = {
 		{ "<leader>wd", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Trouble: Workspace Diagnostics" },
 	},
 }
-
-function M.config()
-	require("trouble").setup({})
-end
-
-return M

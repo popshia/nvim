@@ -1,9 +1,7 @@
 -- toggle text like true false etc...
 
-local M = {
+return {
 	"nguyenvukhang/nvim-toggler",
 	event = "VeryLazy",
 	opts = {},
 }
-
-return M

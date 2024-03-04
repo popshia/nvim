@@ -1,6 +1,6 @@
 -- git within nvim
 
-local M = {
+return {
 	"NeogitOrg/neogit",
 	dependencies = {
 		"nvim-lua/plenary.nvim", -- required
@@ -24,5 +24,3 @@ local M = {
 		-- { "<leader>gd", "<cmd>Gitsigns diffthis HEAD<cr>", desc = "Diff" },
 	},
 }
-
-return M

@@ -1,6 +1,6 @@
 -- several ui dressings
 
-local M = {
+return {
 	"stevearc/dressing.nvim",
 	lazy = true,
 	init = function()
@@ -16,5 +16,3 @@ local M = {
 		end
 	end,
 }
-
-return M

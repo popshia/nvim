@@ -1,23 +1,20 @@
 -- navic buddy with symbol outline
 
-local M = {
+return {
 	"SmiteshP/nvim-navbuddy",
 	dependencies = {
 		"SmiteshP/nvim-navic",
 		"MunifTanjim/nui.nvim",
 	},
+	config = function()
+		require("nvim-navbuddy").setup({
+			window = {
+				border = "rounded",
+			},
+			icons = require("user.utils.icons").kind,
+			lsp = {
+				auto_attach = true,
+			},
+		})
+	end,
 }
-
-function M.config()
-	require("nvim-navbuddy").setup({
-		window = {
-			border = "rounded",
-		},
-		icons = require("user.utils.icons").kind,
-		lsp = {
-			auto_attach = true,
-		},
-	})
-end
-
-return M

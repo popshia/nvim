@@ -1,6 +1,6 @@
 -- better buffer delete
 
-local M = {
+return {
 	"famiu/bufdelete.nvim",
 	event = "VeryLazy",
 	keys = {
@@ -13,5 +13,3 @@ local M = {
 		},
 	},
 }
-
-return M

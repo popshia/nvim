@@ -38,10 +38,10 @@ map("v", "p", [["_dp]])
 map("v", "<", "<gv")
 map("v", ">", ">gv")
 
--- map("n", "J", ":m .+1<CR>==", "Move Line Down")
--- map("n", "K", ":m .-2<CR>==", "Move Line Up")
--- map("v", "J", ":m .+1<CR>==", "Move Line Down")
--- map("v", "K", ":m .-2<CR>==", "Move Line Up")
+map("n", "J", ":m .+1<CR>==", "Move Line Down")
+map("n", "K", ":m .-2<CR>==", "Move Line Up")
+map("v", "J", ":m .+1<CR>==", "Move Line Down")
+map("v", "K", ":m .-2<CR>==", "Move Line Up")
 
 map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], "Substitute Current Word")
 

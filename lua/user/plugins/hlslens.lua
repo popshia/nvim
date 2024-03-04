@@ -1,6 +1,6 @@
 -- show search count using "/"
 
-local M = {
+return {
 	"kevinhwang91/nvim-hlslens",
 	keys = {
 		{ "n", [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR>zz<Cmd>lua require('hlslens').start()<CR>]] },
@@ -10,14 +10,11 @@ local M = {
 		{ "g*", [[g*zz<Cmd>lua require('hlslens').start()<CR>]] },
 		{ "g#", [[g#zz<Cmd>lua require('hlslens').start()<CR>]] },
 	},
+	config = function()
+		require("hlslens").setup({
+			calm_down = true,
+			nearest_only = true,
+			nearest_float_when = "auto",
+		})
+	end,
 }
-
-function M.config()
-	require("hlslens").setup({
-		calm_down = true,
-		nearest_only = true,
-		nearest_float_when = "auto",
-	})
-end
-
-return M

@@ -1,6 +1,6 @@
 -- generate docstring
 
-local M = {
+return {
 	"danymat/neogen",
 	dependencies = "nvim-treesitter/nvim-treesitter",
 	opts = {},
@@ -12,5 +12,3 @@ local M = {
 		},
 	},
 }
-
-return M

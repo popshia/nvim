@@ -1,6 +1,6 @@
 -- better commenting
 
-local M = {
+return {
 	"numToStr/Comment.nvim",
 	event = "VeryLazy",
 	lazy = false,
@@ -21,5 +21,3 @@ local M = {
 		},
 	},
 }
-
-return M

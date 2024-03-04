@@ -1,8 +1,6 @@
 -- add surroundings for text
 
-local M = {
+return {
 	"kylechui/nvim-surround",
 	opts = {},
 }
-
-return M

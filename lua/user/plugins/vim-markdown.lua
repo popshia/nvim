@@ -1,6 +1,6 @@
 -- vim markdown mode
 
-local M = {
+return {
 	"preservim/vim-markdown",
 	ft = "markdown",
 	dependencies = {
@@ -15,5 +15,3 @@ local M = {
 		},
 	},
 }
-
-return M

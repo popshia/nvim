@@ -1,6 +1,6 @@
 -- hop between lines
 
-local M = {
+return {
 	"phaazon/hop.nvim",
 	event = "VeryLazy",
 	opts = {},
@@ -14,5 +14,3 @@ local M = {
 		},
 	},
 }
-
-return M

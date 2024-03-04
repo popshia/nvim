@@ -1,6 +1,6 @@
 -- GOAT of fuzzy finder
 
-local M = {
+return {
 	"nvim-telescope/telescope.nvim", -- highly extendable fuzzy finder over lists
 	branch = "0.1.x",
 	event = "VeryLazy",
@@ -18,6 +18,7 @@ local M = {
 	},
 	keys = {
 		{ "<leader>ds", "<cmd>Telescope lsp_document_symbols theme=ivy<CR>", desc = "Document Symbols" },
+		{ "<leader>ss", "<cmd>Telescope lsp_dynamic_document_symbols theme=ivy<CR>", desc = "Workspace Symbols" },
 		{ "<leader>sf", "<cmd>Telescope find_files<cr>", desc = "Search Files" },
 		{ "<leader>st", "<cmd>Telescope live_grep theme=ivy<cr>", desc = "Search Text" },
 		{ "<leader>sr", "<cmd>Telescope oldfiles<cr>", desc = "Search Recent Files" },
@@ -44,37 +45,34 @@ local M = {
 			desc = "Find Neovim Files",
 		},
 	},
-}
+	config = function()
+		-- keymaps
+		-- theme=ivy (bottom panel overlay)
+		-- theme=cursor (cursor relative list)
+		-- theme=dropdown (list like centered list)
 
-function M.config()
-	-- keymaps
-	-- theme=ivy (bottom panel overlay)
-	-- theme=cursor (cursor relative list)
-	-- theme=dropdown (list like centered list)
+		local icons = require("user.utils.icons")
 
-	local icons = require("user.utils.icons")
-
-	require("telescope").setup({
-		defaults = {
-			prompt_prefix = icons.ui.Telescope,
-			selection_caret = icons.ui.Forward,
-			path_display = { "smart" },
-		},
-		extensions = {
-			-- ["ui-select"] = {
-			-- 	require("telescope.themes").get_dropdown(),
-			-- },
-			fzf = {
-				fuzzy = true, -- false will only do exact matching
-				override_generic_sorter = true, -- override the generic sorter
-				override_file_sorter = true, -- override the file sorter
-				case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+		require("telescope").setup({
+			defaults = {
+				prompt_prefix = icons.ui.Telescope,
+				selection_caret = icons.ui.Forward,
+				path_display = { "smart" },
 			},
-		},
-	})
+			extensions = {
+				-- ["ui-select"] = {
+				-- 	require("telescope.themes").get_dropdown(),
+				-- },
+				fzf = {
+					fuzzy = true, -- false will only do exact matching
+					override_generic_sorter = true, -- override the generic sorter
+					override_file_sorter = true, -- override the file sorter
+					case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+				},
+			},
+		})
 
-	require("telescope").load_extension("fzf")
-	-- require("telescope").load_extension("ui-select")
-end
-
-return M
+		require("telescope").load_extension("fzf")
+		-- require("telescope").load_extension("ui-select")
+	end,
+}
