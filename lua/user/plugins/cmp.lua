@@ -8,7 +8,6 @@ return {
 		{ "hrsh7th/cmp-path" }, -- path completions
 		{ "hrsh7th/cmp-cmdline" }, -- cmdline completions
 		{ "hrsh7th/cmp-nvim-lsp" }, -- lsp completions
-		{ "petertriho/cmp-git" }, -- git completions
 		{ "saadparwaiz1/cmp_luasnip" }, -- snippet completions
 		{ "lukas-reineke/cmp-under-comparator" }, -- sort completions
 		-- Snippets
@@ -96,8 +95,6 @@ return {
 		-- Set configuration for specific filetype.
 		cmp.setup.filetype("gitcommit", {
 			sources = cmp.config.sources({
-				{ name = "git" }, -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
-			}, {
 				{ name = "buffer" },
 			}),
 		})
