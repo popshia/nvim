@@ -2,7 +2,7 @@
 
 return {
 	"famiu/bufdelete.nvim",
-	event = "VeryLazy",
+	lazy = true,
 	keys = {
 		{
 			"<leader>bd",

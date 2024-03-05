@@ -22,8 +22,9 @@ return {
 		{ "[d", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<CR>", desc = "Previous Diagnostic" },
 		{ "]d", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<CR>", desc = "Next Diagnostics" },
 		{ "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", desc = "Rename" },
-		{ "<leader>td", "<cmd>Trouble lsp_type_definitions<CR>", desc = "Type Definition" },
 		{ "<leader>sh", "<cmd>lua vim.lsp.buf.signature_help()<CR>", desc = "Signature Help" },
+		{ "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", desc = "Code Actions" },
+		{ "<leader>td", "<cmd>Trouble lsp_type_definitions<CR>", desc = "Type Definition" },
 		{ "<leader>li", "<cmd>LspInfo<cr>", desc = "LSP Info" },
 		{ "<leader>ms", "<cmd>Mason<cr>", desc = "Mason" },
 	},
@@ -32,11 +33,11 @@ return {
 		local default_diagnostic_config = {
 			signs = {
 				active = true,
-				values = {
-					{ name = "DiagnosticSignError", text = icons.diagnostics.Error },
-					{ name = "DiagnosticSignWarn", text = icons.diagnostics.Warning },
-					{ name = "DiagnosticSignHint", text = icons.diagnostics.Hint },
-					{ name = "DiagnosticSignInfo", text = icons.diagnostics.Information },
+				text = {
+					[vim.diagnostic.severity.ERROR] = icons.diagnostics.Error,
+					[vim.diagnostic.severity.WARN] = icons.diagnostics.Warn,
+					[vim.diagnostic.severity.HINT] = icons.diagnostics.Hint,
+					[vim.diagnostic.severity.INFO] = icons.diagnostics.Info,
 				},
 			},
 			virtual_text = true,
@@ -54,6 +55,9 @@ return {
 		}
 
 		vim.diagnostic.config(default_diagnostic_config)
+		vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
+		vim.lsp.handlers["textDocument/signatureHelp"] =
+			vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
 
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())

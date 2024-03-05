@@ -5,18 +5,19 @@ return {
 	event = { "BufReadPost", "BufNewFile" },
 	build = ":TSUpdate",
 	dependencies = {
-		{ "windwp/nvim-autopairs", event = "InsertEnter" },
 		-- { "nvim-treesitter/nvim-treesitter-context", event = "VeryLazy" },
 	},
 	config = function()
 		require("nvim-treesitter.configs").setup({
 			ensure_installed = {
 				"bash",
+				"cpp",
 				"comment",
 				"fish",
 				"gitignore",
 				"lua",
 				"markdown",
+				"markdown_inline",
 				"python",
 				"vimdoc",
 			},

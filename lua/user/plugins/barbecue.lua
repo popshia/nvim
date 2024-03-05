@@ -10,13 +10,12 @@ return {
 	config = function()
 		require("barbecue").setup({
 			exclude_filetypes = {
-				"netrw",
 				"toggleterm",
 				"oil",
 				"alpha",
 				"lazy",
 			},
-			show_dirname = false,
+			create_autocmd = false,
 			show_basename = false,
 		})
 	end,

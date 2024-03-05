@@ -18,7 +18,7 @@ return {
 	},
 	keys = {
 		{ "<leader>ds", "<cmd>Telescope lsp_document_symbols theme=ivy<CR>", desc = "Document Symbols" },
-		{ "<leader>ss", "<cmd>Telescope lsp_dynamic_document_symbols theme=ivy<CR>", desc = "Workspace Symbols" },
+		{ "<leader>ws", "<cmd>Telescope lsp_dynamic_workspace_symbols theme=ivy<CR>", desc = "Workspace Symbols" },
 		{ "<leader>sf", "<cmd>Telescope find_files<cr>", desc = "Search Files" },
 		{ "<leader>st", "<cmd>Telescope live_grep theme=ivy<cr>", desc = "Search Text" },
 		{ "<leader>sr", "<cmd>Telescope oldfiles<cr>", desc = "Search Recent Files" },

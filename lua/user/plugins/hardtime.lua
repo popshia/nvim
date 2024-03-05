@@ -10,6 +10,20 @@ return {
 			disable_mouse = false,
 			max_count = 5,
 			allow_different_key = true,
+			disabled_filetypes = {
+				"alpha",
+				"help",
+				"lazy",
+				"NeogitStatus",
+				"NeogitLogView",
+				"markdown",
+				"mason",
+				"minifiles",
+				"notify",
+				"sagaoutline",
+				"prompt",
+				"oil",
+			},
 		})
 	end,
 }
