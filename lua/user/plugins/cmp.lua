@@ -16,7 +16,7 @@ return {
 			dependencies = { "rafamadriz/friendly-snippets" },
 		},
 	},
-	event = "VeryLazy",
+	event = "BufEnter",
 	config = function()
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
