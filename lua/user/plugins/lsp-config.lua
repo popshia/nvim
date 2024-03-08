@@ -1,4 +1,4 @@
--- lsp keymaps and on_attach function and all other configs
+-- lsp keymaps and other configs
 
 return {
 	"neovim/nvim-lspconfig",
@@ -9,6 +9,7 @@ return {
 	dependencies = {
 		{ "folke/neodev.nvim", ft = "lua", opts = {} },
 		{ "j-hui/fidget.nvim", opts = {} },
+		{ "ray-x/lsp_signature.nvim", opts = {} },
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
@@ -35,9 +36,9 @@ return {
 				active = true,
 				text = {
 					[vim.diagnostic.severity.ERROR] = icons.diagnostics.Error,
-					[vim.diagnostic.severity.WARN] = icons.diagnostics.Warn,
+					[vim.diagnostic.severity.WARN] = icons.diagnostics.Warning,
 					[vim.diagnostic.severity.HINT] = icons.diagnostics.Hint,
-					[vim.diagnostic.severity.INFO] = icons.diagnostics.Info,
+					[vim.diagnostic.severity.INFO] = icons.diagnostics.Information,
 				},
 			},
 			virtual_text = true,
@@ -130,6 +131,12 @@ return {
 			handlers = {
 				function(server_name)
 					local server = servers[server_name] or {}
+					server.on_attach = function(client, bufnr)
+						require("lsp_signature").on_attach({
+							floating_window = false,
+							hint_prefix = icons.diagnostics.BoldInformation .. " ",
+						}, bufnr)
+					end
 					require("lspconfig")[server_name].setup(server)
 				end,
 			},
