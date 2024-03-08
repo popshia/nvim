@@ -10,6 +10,7 @@ return {
 		{ "hrsh7th/cmp-nvim-lsp" }, -- lsp completions
 		{ "saadparwaiz1/cmp_luasnip" }, -- snippet completions
 		{ "lukas-reineke/cmp-under-comparator" }, -- sort completions
+		{ "windwp/nvim-autopairs" }, -- autopairs completions
 		-- Snippets
 		{
 			"L3MON4D3/LuaSnip",
@@ -20,6 +21,8 @@ return {
 	config = function()
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
+		local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+		cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 		luasnip.config.setup()
 		require("luasnip/loaders/from_vscode").lazy_load()
 		local icons = require("user.utils.icons")
@@ -38,10 +41,7 @@ return {
 					i = cmp.mapping.abort(),
 					c = cmp.mapping.close(),
 				}),
-				-- Accept currently selected item. If none selected, `select` first item.
-				-- Set `select` to `false` to only confirm explicitly selected items.
 				["<CR>"] = cmp.mapping.confirm({ select = true }),
-
 				["<C-l>"] = cmp.mapping(function()
 					if luasnip.expand_or_locally_jumpable() then
 						luasnip.expand_or_jump()
@@ -73,7 +73,7 @@ return {
 				{ name = "path" },
 			},
 			{
-				{ name = "buffer" },
+				-- { name = "buffer" },
 			},
 			window = {
 				completion = cmp.config.window.bordered(),
@@ -90,6 +90,14 @@ return {
 					cmp.config.compare.length,
 					cmp.config.compare.order,
 				},
+			},
+			view = {
+				docs = {
+					auto_open = true,
+				},
+			},
+			experimental = {
+				ghost_text = true,
 			},
 		})
 		-- Set configuration for specific filetype.
