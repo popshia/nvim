@@ -37,9 +37,9 @@ opt.shiftwidth = 4 -- the number of spaces inserted for each indentation
 opt.tabstop = 4 -- insert 4 spaces for a tab
 opt.scrolloff = 8 -- vertical scrolloff with 8 char
 opt.sidescrolloff = 8 -- horizontal scrolloff with 8 char
-opt.foldenable = false
-opt.mousemoveevent = true
-opt.background = "dark"
+opt.foldenable = false -- code folding
+opt.mousemoveevent = true -- mouse scrolling
+opt.background = "dark" -- dark mode theme
 
 opt.shortmess:append("c")
 opt.whichwrap:append("<,>,[,],h,l")
