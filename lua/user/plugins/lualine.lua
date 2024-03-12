@@ -55,17 +55,17 @@ return {
 			options = {
 				globalstatus = true,
 				theme = "auto",
-				-- section_separators = {},
+				section_separators = {},
 				component_separators = { left = "|", right = "|" },
 				disabled_filetypes = { "alpha", "dashboard", "Outline" },
 			},
 			sections = {
 				lualine_a = { "mode" },
-				lualine_b = { branch, diff, diagnostics },
+				lualine_b = { branch, diff },
 				lualine_c = { "filename" },
-				lualine_x = { spaces, "encoding", filetype },
-				lualine_y = { datetime },
-				lualine_z = {},
+				lualine_x = { spaces, filetype },
+				lualine_y = { diagnostics },
+				lualine_z = { datetime },
 			},
 		})
 	end,

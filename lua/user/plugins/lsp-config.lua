@@ -119,6 +119,7 @@ return {
 			"clang-format",
 			"codespell",
 			"isort",
+			"jq",
 			"pyright",
 			"shellcheck",
 			"shfmt",

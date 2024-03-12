@@ -3,7 +3,7 @@
 return {
 	"nvim-telescope/telescope.nvim", -- highly extendable fuzzy finder over lists
 	branch = "0.1.x",
-	event = "VeryLazy",
+	cmd = "Telescope",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		{
@@ -14,7 +14,6 @@ return {
 				return vim.fn.executable("make") == 1
 			end,
 		},
-		-- { "nvim-telescope/telescope-ui-select.nvim" },
 	},
 	keys = {
 		{ "<leader>ds", "<cmd>Telescope lsp_document_symbols theme=ivy<CR>", desc = "Document Symbols" },
@@ -60,9 +59,6 @@ return {
 				path_display = { "smart" },
 			},
 			extensions = {
-				-- ["ui-select"] = {
-				-- 	require("telescope.themes").get_dropdown(),
-				-- },
 				fzf = {
 					fuzzy = true, -- false will only do exact matching
 					override_generic_sorter = true, -- override the generic sorter
@@ -72,7 +68,6 @@ return {
 			},
 		})
 
-		require("telescope").load_extension("fzf")
-		-- require("telescope").load_extension("ui-select")
+		pcall(require("telescope").load_extension, "fzf")
 	end,
 }
