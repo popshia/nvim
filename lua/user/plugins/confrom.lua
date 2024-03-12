@@ -21,6 +21,7 @@ return {
 				python = { "isort", "black" },
 				shell = { "shfmt", "shellcheck" },
 				fish = { "fish_indent" },
+				json = { "jq" },
 				-- Use the "*" filetype to run formatters on all filetypes.
 				["*"] = { "codespell" },
 				-- Use the "_" filetype to run formatters on filetypes that don't

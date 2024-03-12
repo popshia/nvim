@@ -19,14 +19,14 @@ return {
 	keys = {
 		{ "<leader>ds", "<cmd>Telescope lsp_document_symbols theme=ivy<CR>", desc = "Document Symbols" },
 		{ "<leader>ws", "<cmd>Telescope lsp_dynamic_workspace_symbols theme=ivy<CR>", desc = "Workspace Symbols" },
-		{ "<leader>sf", "<cmd>Telescope find_files<cr>", desc = "Search Files" },
-		{ "<leader>st", "<cmd>Telescope live_grep theme=ivy<cr>", desc = "Search Text" },
-		{ "<leader>sr", "<cmd>Telescope oldfiles<cr>", desc = "Search Recent Files" },
-		{ "<leader>sp", "<cmd>Telescope projects<cr>", desc = "Search Projects" },
-		{ "<leader>sb", "<cmd>Telescope buffers theme=dropdown<cr>", desc = "Search Buffers" },
-		{ "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "Search Keymaps" },
-		{ "<leader>sc", "<cmd>Telescope colorscheme<cr>", desc = "Search Colorscheme" },
-		{ "<leader>sh", "<cmd>Telescope help_tags<cr>", desc = "Search Help" },
+		{ "<leader>sf", "<cmd>Telescope find_files<CR>", desc = "Search Files" },
+		{ "<leader>st", "<cmd>Telescope live_grep theme=ivy<CR>", desc = "Search Text" },
+		{ "<leader>sr", "<cmd>Telescope oldfiles<CR>", desc = "Search Recent Files" },
+		{ "<leader>sp", "<cmd>Telescope projects<CR>", desc = "Search Projects" },
+		{ "<leader>sb", "<cmd>Telescope buffers theme=dropdown<CR>", desc = "Search Buffers" },
+		{ "<leader>sk", "<cmd>Telescope keymaps<CR>", desc = "Search Keymaps" },
+		{ "<leader>sc", "<cmd>Telescope colorscheme<CR>", desc = "Search Colorscheme" },
+		{ "<leader>sh", "<cmd>Telescope help_tags<CR>", desc = "Search Help" },
 		{
 			"<leader>s/",
 			function()

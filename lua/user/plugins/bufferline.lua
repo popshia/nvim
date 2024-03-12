@@ -7,7 +7,7 @@ return {
 	keys = {
 		{
 			"<leader>bp",
-			"<cmd>BufferLinePick<cr>",
+			"<cmd>BufferLinePick<CR>",
 			desc = "Buffer Pick",
 		},
 	},
