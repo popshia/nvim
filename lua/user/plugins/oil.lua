@@ -28,6 +28,7 @@ return {
 				max_width = 100,
 				max_height = 50,
 			},
+			skip_confirm_for_simple_edits = true,
 		})
 	end,
 }
