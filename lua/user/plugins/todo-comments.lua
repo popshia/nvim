@@ -13,7 +13,7 @@ return {
 				NOTE = { icon = icons.ui.Note, color = "#80aa9e" },
 				INFO = { icon = icons.diagnostics.Information, color = "#d3869b" },
 				TODO = { icon = icons.ui.Check, color = "#e9b143" },
-				REVIEW = { icon = icons.ui.Pencil, color = "#b0b846" },
+				REVIEW = { icon = icons.ui.BookMark, color = "#b0b846" },
 			},
 			gui_style = {
 				fg = "BOLD", -- The gui style to use for the fg highlight group.
@@ -25,12 +25,10 @@ return {
 				after = "fg", -- "fg" or "bg" or empty
 			},
 		})
-
-		-- Preview below:
-		-- TODO:
-		-- REVIEW:
-		-- FIXME:
-		-- NOTE:
-		-- INFO:
+		-- TODO: this has to be done.
+		-- REVIEW: review this line.
+		-- FIXME: fix me pls.
+		-- NOTE: that's a note for myself.
+		-- INFO: small information for you.
 	end,
 }

@@ -21,5 +21,6 @@ return {
 		{ "<leader>tq", "<cmd>TroubleToggle quickfix<CR>", desc = "Trouble: Quickfix" },
 		{ "<leader>dd", "<cmd>TroubleToggle document_diagnostics<CR>", desc = "Trouble: Document Diagnostics" },
 		{ "<leader>wd", "<cmd>TroubleToggle workspace_diagnostics<CR>", desc = "Trouble: Workspace Diagnostics" },
+		{ "<leader>td", "<cmd>TodoTrouble<CR>", desc = "Trouble: Todos" },
 	},
 }

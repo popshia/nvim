@@ -25,9 +25,9 @@ return {
 		{ "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", desc = "Rename" },
 		{ "<leader>sh", "<cmd>lua vim.lsp.buf.signature_help()<CR>", desc = "Signature Help" },
 		{ "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", desc = "Code Actions" },
-		{ "<leader>td", "<cmd>Trouble lsp_type_definitions<CR>", desc = "Type Definition" },
 		{ "<leader>li", "<cmd>LspInfo<CR>", desc = "LSP Info" },
 		{ "<leader>ms", "<cmd>Mason<CR>", desc = "Mason" },
+		-- { "<leader>td", "<cmd>Trouble lsp_type_definitions<CR>", desc = "Type Definition" },
 	},
 	config = function()
 		local icons = require("user.utils.icons")

@@ -26,6 +26,7 @@ return {
 		{ "<leader>sk", "<cmd>Telescope keymaps<CR>", desc = "Search Keymaps" },
 		{ "<leader>sc", "<cmd>Telescope colorscheme<CR>", desc = "Search Colorscheme" },
 		{ "<leader>sh", "<cmd>Telescope help_tags<CR>", desc = "Search Help" },
+		{ "<leader>sd", "<cmd>TodoTelescope<CR>", desc = "Search Todos" },
 		{
 			"<leader>s/",
 			function()
