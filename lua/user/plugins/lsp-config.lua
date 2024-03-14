@@ -132,7 +132,7 @@ return {
 			handlers = {
 				function(server_name)
 					local server = servers[server_name] or {}
-					server.on_attach = function(client, bufnr)
+					server.on_attach = function(bufnr)
 						require("lsp_signature").on_attach({
 							floating_window = false,
 							hint_prefix = icons.diagnostics.BoldInformation .. " ",
