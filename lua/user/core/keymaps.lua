@@ -27,8 +27,8 @@ map("n", "<C-Down>", ":resize -2<CR>", "Horizontal-")
 map("n", "<C-->", ":vertical resize -2<CR>", "Vertical-")
 map("n", "<C-+>", ":vertical resize +2<CR>", "Vertical+")
 
-map("n", "L", ":bnext<CR>", "Next Buffer")
-map("n", "H", ":bprevious<CR>", "Previous Buffer")
+map("n", "]b", ":bnext<CR>", "Next Buffer")
+map("n", "[b", ":bprevious<CR>", "Previous Buffer")
 
 map("v", "p", [["_dp]])
 

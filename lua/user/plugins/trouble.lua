@@ -8,12 +8,12 @@ return {
 	keys = {
 		{ "<leader>tt", "<cmd>TroubleToggle<CR>", desc = "Trouble: Toggle" },
 		{
-			"<leader>tp",
+			"[t",
 			"<cmd>lua require('trouble').previous({skip_groups = true, jump = true})<CR>",
 			desc = "Trouble: Previous",
 		},
 		{
-			"<leader>tn",
+			"]t",
 			"<cmd>lua require('trouble').next({skip_groups = true, jump = true})<CR>",
 			desc = "Trouble: Next",
 		},

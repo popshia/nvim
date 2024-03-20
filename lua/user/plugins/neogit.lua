@@ -11,8 +11,8 @@ return {
 	cmd = "Neogit",
 	keys = {
 		{ "<leader>gg", "<cmd>Neogit<CR>", desc = "Neogit" },
-		{ "<leader>gn", "<cmd>Gitsigns next_hunk<CR>", desc = "Next Hunk" },
-		{ "<leader>gp", "<cmd>Gitsigns prev_hunk<CR>", desc = "Prev Hunk" },
+		{ "]g", "<cmd>Gitsigns next_hunk<CR>", desc = "Next Hunk" },
+		{ "[g", "<cmd>Gitsigns prev_hunk<CR>", desc = "Prev Hunk" },
 		{ "<leader>gb", "<cmd>Gitsigns blame_line<CR>", desc = "Blame" },
 		{ "<leader>gh", "<cmd>Gitsigns preview_hunk<CR>", desc = "Preview Hunk" },
 		{ "<leader>gr", "<cmd>Gitsigns reset_hunk<CR>", desc = "Reset Hunk" },

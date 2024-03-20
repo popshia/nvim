@@ -1,20 +1,33 @@
 -- highlight same word in buffer
 
-local M = {
+return {
 	"RRethy/vim-illuminate",
 	event = "VeryLazy",
-}
-
-function M.config()
-	require("illuminate").configure({
-		filetypes_denylist = {
-			"alpha",
-			"mason",
-			"lazy",
-			"toggleterm",
-			"TelescopePrompt",
+	config = function()
+		require("illuminate").configure({
+			filetypes_denylist = {
+				"alpha",
+				"mason",
+				"lazy",
+				"toggleterm",
+				"TelescopePrompt",
+			},
+		})
+	end,
+	keys = {
+		{
+			"[[",
+			function()
+				require("illuminate")["goto_prev_reference"](false)
+			end,
+			desc = "Previous Reference",
 		},
-	})
-end
-
-return M
+		{
+			"]]",
+			function()
+				require("illuminate")["goto_next_reference"](false)
+			end,
+			desc = "Next Reference",
+		},
+	},
+}
