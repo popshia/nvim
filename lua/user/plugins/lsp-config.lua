@@ -1,4 +1,5 @@
 -- lsp keymaps and other configs
+local m = 1
 
 return {
 	"neovim/nvim-lspconfig",
@@ -31,7 +32,7 @@ return {
 	},
 	config = function()
 		local icons = require("user.utils.icons")
-		local default_diagnostic_config = {
+		local diagnostic_configs = {
 			signs = {
 				active = true,
 				text = {
@@ -55,7 +56,7 @@ return {
 			},
 		}
 
-		vim.diagnostic.config(default_diagnostic_config)
+		vim.diagnostic.config(diagnostic_configs)
 		vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
 		vim.lsp.handlers["textDocument/signatureHelp"] =
 			vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
@@ -90,14 +91,21 @@ return {
 					},
 				},
 			},
-			pyright = {
+			basedpyright = {
 				settings = {
-					python = {
+					basedpyright = {
 						analysis = {
+							autoImportCompletions = true,
 							typeCheckingMode = "off",
 						},
 					},
 				},
+				on_attach = function(bufnr)
+					require("lsp_signature").on_attach({
+						floating_window = false,
+						hint_prefix = icons.diagnostics.BoldInformation .. " ",
+					}, bufnr)
+				end,
 			},
 			bashls = {},
 		}
@@ -120,7 +128,7 @@ return {
 			"codespell",
 			"isort",
 			"jq",
-			"pyright",
+			"basedpyright",
 			"shellcheck",
 			"shfmt",
 			"stylua",
@@ -143,5 +151,7 @@ return {
 			},
 			automatic_installation = true,
 		})
+
+		require("lspconfig").basedpyright.setup(servers["basedpyright"])
 	end,
 }
