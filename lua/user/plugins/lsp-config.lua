@@ -101,18 +101,13 @@ return {
 					basedpyright = {
 						analysis = {
 							autoImportCompletions = true,
-							typeCheckingMode = "off",
+							typeCheckingMode = "basic",
 						},
 					},
 				},
-				on_attach = function(bufnr)
-					require("lsp_signature").on_attach({
-						floating_window = false,
-						hint_prefix = icons.diagnostics.BoldInformation .. " ",
-					}, bufnr)
-				end,
 			},
 			bashls = {},
+			typos_lsp = {},
 		}
 
 		require("mason").setup({
@@ -130,7 +125,6 @@ return {
 		vim.list_extend(ensure_installed, {
 			"black",
 			"clang-format",
-			"codespell",
 			"isort",
 			"jq",
 			"basedpyright",
@@ -156,7 +150,5 @@ return {
 			},
 			automatic_installation = true,
 		})
-
-		require("lspconfig").basedpyright.setup(servers["basedpyright"])
 	end,
 }
