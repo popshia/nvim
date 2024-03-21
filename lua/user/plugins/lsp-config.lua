@@ -98,6 +98,7 @@ return {
 			basedpyright = {
 				settings = {
 					basedpyright = {
+						disableOrganizeImports = true,
 						analysis = {
 							autoImportCompletions = true,
 							typeCheckingMode = "basic",
