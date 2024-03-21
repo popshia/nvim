@@ -3,7 +3,6 @@
 return {
 	"nvim-telescope/telescope.nvim", -- highly extendable fuzzy finder over lists
 	branch = "0.1.x",
-	cmd = "Telescope",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		{

@@ -3,7 +3,6 @@
 return {
 	"folke/trouble.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
-	cmd = "Trouble",
 	opts = {},
 	keys = {
 		{ "<leader>tt", "<cmd>TroubleToggle<CR>", desc = "Trouble: Toggle" },
