@@ -1,5 +1,4 @@
 -- lsp keymaps and other configs
-local m = 1
 
 return {
 	"neovim/nvim-lspconfig",
