@@ -14,6 +14,7 @@ return {
 			end,
 		},
 	},
+	cmd = "Telescope",
 	keys = {
 		{ "<leader>ds", "<cmd>Telescope lsp_document_symbols theme=ivy<CR>", desc = "Document Symbols" },
 		{ "<leader>ws", "<cmd>Telescope lsp_dynamic_workspace_symbols theme=ivy<CR>", desc = "Workspace Symbols" },
