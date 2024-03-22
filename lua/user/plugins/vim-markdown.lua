@@ -13,5 +13,9 @@ return {
 				vim.fn["mkdp#util#install"]()
 			end,
 		},
+		{
+			"lukas-reineke/headlines.nvim",
+			opts = {},
+		},
 	},
 }

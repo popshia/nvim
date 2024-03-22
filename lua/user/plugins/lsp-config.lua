@@ -108,6 +108,7 @@ return {
 			},
 			bashls = {},
 			typos_lsp = {},
+			marksman = {},
 		}
 
 		require("mason").setup({
