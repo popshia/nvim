@@ -8,7 +8,7 @@ return {
 		vim.notify = require("notify")
 		require("hardtime").setup({
 			disable_mouse = false,
-			max_count = 5,
+			max_count = 10,
 			allow_different_key = true,
 			disabled_filetypes = {
 				"alpha",
