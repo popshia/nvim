@@ -4,6 +4,13 @@ return {
 	"nvim-treesitter/nvim-treesitter",
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter-textobjects",
+		{
+			"nvim-treesitter/nvim-treesitter-context",
+			config = function()
+				vim.cmd([[hi TreesitterContextBottom gui=underline guisp=Grey]])
+				vim.cmd([[hi TreesitterContextLineNumberBottom gui=underline guisp=Grey]])
+			end,
+		},
 	},
 	event = { "BufReadPost", "BufNewFile" },
 	build = ":TSUpdate",

@@ -49,11 +49,3 @@ opt.iskeyword:remove("_")
 -- disable netrw
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-
--- neovide configs
-if vim.g.neovide then
-	vim.g.neovide_refresh_rate = 165
-	vim.g.neovide_remember_window_size = true
-	vim.o.guifont = "JetBrainsMono Nerd Font Mono:h16" -- the font used in graphical neovim applications
-	vim.g.neovide_cursor_animation_length = 0.08
-end
