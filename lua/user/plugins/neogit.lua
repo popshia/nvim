@@ -8,6 +8,7 @@ return {
 		"nvim-telescope/telescope.nvim", -- optional
 	},
 	opts = {},
+	cmd = "Neogit",
 	keys = {
 		{ "<leader>gg", "<cmd>Neogit<CR>", desc = "Neogit" },
 		{ "]g", "<cmd>Gitsigns next_hunk<CR>", desc = "Next Hunk" },
