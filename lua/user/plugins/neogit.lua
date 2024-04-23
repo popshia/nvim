@@ -10,7 +10,7 @@ return {
 	opts = {},
 	cmd = "Neogit",
 	keys = {
-		{ "<leader>gg", "<cmd>Neogit<CR>", desc = "Neogit" },
+		{ "<leader>gt", "<cmd>Neogit<CR>", desc = "Neogit" },
 		{ "]g", "<cmd>Gitsigns next_hunk<CR>", desc = "Next Hunk" },
 		{ "[g", "<cmd>Gitsigns prev_hunk<CR>", desc = "Prev Hunk" },
 		{ "<leader>gb", "<cmd>Gitsigns blame_line<CR>", desc = "Blame" },
@@ -21,7 +21,7 @@ return {
 		{ "<leader>gu", "<cmd>Gitsigns undo_stage_hunk<CR>", desc = "Undo Stage Hunk" },
 		{ "<leader>go", "<cmd>Telescope git_status<CR>", desc = "Open changed file" },
 		{ "<leader>gB", "<cmd>Telescope git_branches<CR>", desc = "Checkout branch" },
-		{ "<leader>gc", "<cmd>Telescope git_commits<CR>", desc = "Checkout commit" },
+		{ "<leader>gC", "<cmd>Telescope git_commits<CR>", desc = "Checkout commit" },
 		-- { "<leader>gd", "<cmd>Gitsigns diffthis HEAD<CR>", desc = "Diff" },
 	},
 }
