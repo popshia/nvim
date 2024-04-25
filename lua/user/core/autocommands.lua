@@ -43,6 +43,18 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 	end,
 })
 
+-- Toggle relative number between normal and insert mode
+vim.api.nvim_create_autocmd({ "InsertEnter" }, {
+	callback = function()
+		vim.opt.relativenumber = false
+	end,
+})
+vim.api.nvim_create_autocmd({ "InsertLeave" }, {
+	callback = function()
+		vim.opt.relativenumber = true
+	end,
+})
+
 -- better winbar symbol performance
 -- vim.api.nvim_create_autocmd({
 -- 	"WinScrolled", -- or WinResized on NVIM-v0.9 and higher

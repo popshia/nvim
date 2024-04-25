@@ -6,6 +6,7 @@ return {
 	config = function()
 		require("toggleterm").setup({
 			size = 20,
+			autochdir = true,
 			open_mapping = [[<c-\>]],
 			hide_numbers = true,
 			shade_filetypes = {},
