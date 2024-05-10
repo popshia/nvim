@@ -8,15 +8,6 @@ vim.g.maplocalleader = " "
 
 map("n", "<Esc>", "<cmd>nohlsearch<CR>", "Clear Highlighting")
 
--- Modes
--- normal_mode = "n",
--- insert_mode = "i",
--- visual_mode = "v",
--- visual_block_mode = "x",
--- term_mode = "t",
--- command_mode = "c",
--- operator_mode = "c",
-
 map("n", "<C-h>", "<C-w>h", "Focus Left")
 map("n", "<C-j>", "<C-w>j", "Focus Down")
 map("n", "<C-k>", "<C-w>k", "Focus Up")
