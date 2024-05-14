@@ -31,9 +31,6 @@ return {
 				autojump = true,
 			},
 			modes = {
-				search = {
-					enabled = false,
-				},
 				char = {
 					enabled = false,
 				},
