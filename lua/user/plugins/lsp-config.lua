@@ -107,7 +107,6 @@ return {
 				},
 			},
 			bashls = {},
-			typos_lsp = {},
 			marksman = {},
 		}
 
