@@ -132,6 +132,7 @@ return {
 			"shellcheck",
 			"shfmt",
 			"stylua",
+			"codespell",
 		})
 
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
