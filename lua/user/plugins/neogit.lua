@@ -22,6 +22,6 @@ return {
 		{ "<leader>go", "<cmd>Telescope git_status<CR>", desc = "Open changed file" },
 		{ "<leader>gB", "<cmd>Telescope git_branches<CR>", desc = "Checkout branch" },
 		{ "<leader>gC", "<cmd>Telescope git_commits<CR>", desc = "Checkout commit" },
-		-- { "<leader>gd", "<cmd>Gitsigns diffthis HEAD<CR>", desc = "Diff" },
+		{ "<leader>gd", "<cmd>Gitsigns diffthis HEAD<CR>", desc = "Diff" },
 	},
 }

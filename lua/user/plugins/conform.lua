@@ -22,7 +22,7 @@ return {
 				fish = { "fish_indent" },
 				json = { "jq" },
 				-- Use the "*" filetype to run formatters on all filetypes.
-				["*"] = { "trim_whitespace" },
+				["*"] = { "trim_whitespace", "codespell" },
 				-- Use the "_" filetype to run formatters on filetypes that don't
 				-- have other formatters configured.
 				["_"] = {},

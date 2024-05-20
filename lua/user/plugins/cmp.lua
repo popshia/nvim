@@ -17,7 +17,7 @@ return {
 			dependencies = { "rafamadriz/friendly-snippets" },
 		},
 	},
-	event = "InsertEnter",
+	-- event = "InsertEnter",
 	config = function()
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
@@ -71,10 +71,6 @@ return {
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
 				{ name = "path" },
-			},
-			window = {
-				completion = cmp.config.window.bordered(),
-				documentation = cmp.config.window.bordered(),
 			},
 			sorting = {
 				comparators = {
