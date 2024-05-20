@@ -102,6 +102,7 @@ return {
 						analysis = {
 							autoImportCompletions = true,
 							typeCheckingMode = "basic",
+							diagnosticMode = "workspace",
 						},
 					},
 				},
@@ -121,20 +122,19 @@ return {
 			},
 		})
 
-		local ensure_installed = vim.tbl_keys(servers or {})
-		vim.list_extend(ensure_installed, {
+		local ensure_install_servers = vim.tbl_keys(servers or {})
+		vim.list_extend(ensure_install_servers, {
 			"black",
 			"clang-format",
 			"isort",
 			"jq",
-			"basedpyright",
 			"shellcheck",
 			"shfmt",
 			"stylua",
 			"codespell",
 		})
 
-		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
+		require("mason-tool-installer").setup({ ensure_installed = ensure_install_servers })
 
 		require("mason-lspconfig").setup({
 			handlers = {
