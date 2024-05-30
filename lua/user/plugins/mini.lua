@@ -8,9 +8,7 @@ return {
 		require("mini.ai").setup()
 		-- Jump to next/previous single character
 		require("mini.jump").setup({ delay = { highlight = 10 ^ 7 } })
-		-- move text
-		require("mini.move").setup({
-			mappings = { left = "H", down = "J", up = "K", right = "L" },
-		})
+		-- Go forward/backward with square brackets
+		require("mini.bracketed").setup({ file = { suffix = "", options = {} } })
 	end,
 }

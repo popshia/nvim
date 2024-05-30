@@ -30,6 +30,9 @@ return {
 				nohlsearch = true,
 				autojump = true,
 			},
+			label = {
+				uppercase = false,
+			},
 			modes = {
 				char = {
 					enabled = false,

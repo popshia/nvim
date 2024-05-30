@@ -18,16 +18,17 @@ return {
 		{ "gd", "<cmd>Trouble lsp_definitions<CR>", desc = "Goto Definition" },
 		{ "gr", "<cmd>Trouble lsp_references<CR>", desc = "Goto Reference" },
 		{ "gi", "<cmd>Trouble lsp_implementations<CR>", desc = "Goto Implementation" },
+		-- { "<leader>td", "<cmd>Trouble lsp_type_definitions<CR>", desc = "Type Definition" },
 		{ "gk", "<cmd>lua vim.lsp.buf.hover()<CR>", desc = "Hover Documentation" },
 		{ "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", desc = "Open Float" },
-		{ "[d", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<CR>", desc = "Previous Diagnostic" },
-		{ "]d", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<CR>", desc = "Next Diagnostics" },
+		-- mini.bracketed has covered these two
+		-- { "[d", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<CR>", desc = "Previous Diagnostic" },
+		-- { "]d", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<CR>", desc = "Next Diagnostics" },
 		{ "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", desc = "Rename" },
 		{ "<leader>sh", "<cmd>lua vim.lsp.buf.signature_help()<CR>", desc = "Signature Help" },
 		{ "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", desc = "Code Actions" },
 		{ "<leader>li", "<cmd>LspInfo<CR>", desc = "LSP Info" },
 		{ "<leader>ms", "<cmd>Mason<CR>", desc = "Mason" },
-		-- { "<leader>td", "<cmd>Trouble lsp_type_definitions<CR>", desc = "Type Definition" },
 	},
 	config = function()
 		local diagnostic_configs = {

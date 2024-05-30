@@ -18,9 +18,6 @@ map("n", "<C-Down>", ":resize -2<CR>", "Horizontal-")
 map("n", "<C-->", ":vertical resize -2<CR>", "Vertical-")
 map("n", "<C-+>", ":vertical resize +2<CR>", "Vertical+")
 
-map("n", "]b", ":bnext<CR>", "Next Buffer")
-map("n", "[b", ":bprevious<CR>", "Previous Buffer")
-
 map("v", "p", [["_dp]])
 
 map("v", "<", "<gv")
@@ -35,4 +32,3 @@ map("x", "K", ":move '<-2<CR>gv-gv")
 
 map({ "n", "o", "x" }, "<C-m>", "^", "Move Cursor to Line Start")
 map({ "n", "o", "x" }, "<C-/>", "g_", "Move Cursor to Line End")
--- map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], "Substitute Current Word")
