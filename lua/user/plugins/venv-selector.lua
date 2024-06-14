@@ -8,11 +8,11 @@ return {
 		},
 		settings = {
 			search = {
-				anaconda_base = {
+				conda_base = {
 					command = "$FD '/python$' /home/noah/miniconda3/bin --full-path --color never -E /proc",
 					type = "anaconda",
 				},
-				anaconda_envs = {
+				conda_envs = {
 					command = "$FD '/bin/python$' /home/noah/miniconda3/envs/ --full-path --color never -E /proc",
 					type = "anaconda",
 				},
