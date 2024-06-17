@@ -14,16 +14,14 @@ return {
 		{ "<leader>gu", "<cmd>Gitsigns undo_stage_hunk<CR>", desc = "Undo Stage Hunk" },
 		{ "<leader>gd", "<cmd>Gitsigns diffthis HEAD<CR>", desc = "Diff" },
 	},
-	config = function()
-		require("gitsigns").setup({
-			signs = {
-				add = { text = "│" }, -- "+"
-				change = { text = "│" }, -- "~"
-				delete = { text = "_" }, -- "-"
-				topdelete = { text = "‾" },
-				changedelete = { text = "~" },
-				untracked = { text = "┆" },
-			},
-		})
-	end,
+	opts = {
+		signs = {
+			add = { text = "│" }, -- "+"
+			change = { text = "│" }, -- "~"
+			delete = { text = "_" }, -- "-"
+			topdelete = { text = "‾" },
+			changedelete = { text = "~" },
+			untracked = { text = "┆" },
+		},
+	},
 }

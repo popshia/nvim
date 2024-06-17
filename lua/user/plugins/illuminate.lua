@@ -3,17 +3,6 @@
 return {
 	"RRethy/vim-illuminate",
 	event = "VeryLazy",
-	config = function()
-		require("illuminate").configure({
-			filetypes_denylist = {
-				"alpha",
-				"mason",
-				"lazy",
-				"toggleterm",
-				"TelescopePrompt",
-			},
-		})
-	end,
 	keys = {
 		{
 			"[[",
@@ -30,4 +19,15 @@ return {
 			desc = "Next Reference",
 		},
 	},
+	config = function()
+		require("illuminate").configure({
+			filetypes_denylist = {
+				"alpha",
+				"mason",
+				"lazy",
+				"toggleterm",
+				"TelescopePrompt",
+			},
+		})
+	end,
 }

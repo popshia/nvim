@@ -15,21 +15,19 @@ return {
 			desc = "Oil File Explorer",
 		},
 	},
-	config = function()
-		require("oil").setup({
-			default_file_explorer = true,
-			keymaps = {
-				["h"] = "actions.parent",
-				["l"] = "actions.select",
-			},
-			view_options = {
-				show_hidden = true,
-			},
-			float = {
-				max_width = 100,
-				max_height = 50,
-			},
-			skip_confirm_for_simple_edits = true,
-		})
-	end,
+	opts = {
+		default_file_explorer = true,
+		keymaps = {
+			["h"] = "actions.parent",
+			["l"] = "actions.select",
+		},
+		view_options = {
+			show_hidden = true,
+		},
+		float = {
+			max_width = 100,
+			max_height = 50,
+		},
+		skip_confirm_for_simple_edits = true,
+	},
 }

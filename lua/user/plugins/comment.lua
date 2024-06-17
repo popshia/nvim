@@ -4,7 +4,6 @@ return {
 	"numToStr/Comment.nvim",
 	event = "VeryLazy",
 	lazy = false,
-	opts = {},
 	keys = {
 		{
 			"<leader>c",
@@ -20,4 +19,5 @@ return {
 			desc = "Comment Block",
 		},
 	},
+	opts = {},
 }

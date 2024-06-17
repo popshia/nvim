@@ -7,9 +7,9 @@ return {
 		"sindrets/diffview.nvim", -- optional - Diff integration
 		"nvim-telescope/telescope.nvim", -- optional
 	},
-	opts = {},
 	cmd = "Neogit",
 	keys = {
 		{ "<leader>ng", "<cmd>Neogit<CR>", desc = "Neogit" },
 	},
+	opts = {},
 }

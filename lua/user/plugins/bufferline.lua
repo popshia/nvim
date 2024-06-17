@@ -11,17 +11,15 @@ return {
 			desc = "Buffer Pick",
 		},
 	},
-	config = function()
-		require("bufferline").setup({
-			options = {
-				numbers = "none", -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
-				show_close_icon = false,
-				separator_style = "thin", -- | "thick" | "thin" | "slant" | "padded_slant"
-				indicator = {
-					icon = "▎", -- this should be omitted if indicator style is not 'icon'
-					-- style = 'icon' | 'underline' | 'none',
-				},
+	opts = {
+		options = {
+			numbers = "none", -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
+			show_close_icon = false,
+			separator_style = "thin", -- | "thick" | "thin" | "slant" | "padded_slant"
+			indicator = {
+				icon = "▎", -- this should be omitted if indicator style is not 'icon'
+				-- style = 'icon' | 'underline' | 'none',
 			},
-		})
-	end,
+		},
+	},
 }

@@ -21,23 +21,21 @@ return {
 			desc = "Remote Flash",
 		},
 	},
-	config = function()
-		require("flash").setup({
-			search = {
-				multi_window = false,
+	opts = {
+		search = {
+			multi_window = false,
+		},
+		jump = {
+			nohlsearch = true,
+			autojump = true,
+		},
+		label = {
+			uppercase = false,
+		},
+		modes = {
+			char = {
+				enabled = false,
 			},
-			jump = {
-				nohlsearch = true,
-				autojump = true,
-			},
-			label = {
-				uppercase = false,
-			},
-			modes = {
-				char = {
-					enabled = false,
-				},
-			},
-		})
-	end,
+		},
+	},
 }
