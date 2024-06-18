@@ -1,3 +1,5 @@
+-- icon picking
+
 return {
 	"ziontee113/icon-picker.nvim",
 	keys = {

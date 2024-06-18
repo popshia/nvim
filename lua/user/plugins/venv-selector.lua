@@ -1,3 +1,5 @@
+-- python virtual env selector
+
 return {
 	"linux-cultist/venv-selector.nvim",
 	branch = "regexp",
