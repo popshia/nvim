@@ -27,11 +27,14 @@ return {
 			["_"] = {},
 		},
 		formatters = {
-			isort = {
-				prepend_args = { "--profile", "black" },
-			},
 			black = {
 				prepend_args = { "--fast" },
+			},
+			clang_foramt = {
+				prepend_args = { "--style=LLVM" },
+			},
+			isort = {
+				prepend_args = { "--profile", "black" },
 			},
 		},
 		format_on_save = {
