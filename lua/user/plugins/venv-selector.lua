@@ -14,11 +14,11 @@ return {
 		local env_path = ""
 
 		if system == "Darwin" then
-			base_path = "$FD '/python$' /opt/homebrew/Caskroom/miniconda/base/bin/ --full-path --color never -E /proc"
-			env_path = "$FD '/python$' /opt/homebrew/Caskroom/miniconda/base/envs/ --full-path --color never -E /proc"
+			base_path = "fd -tl 'python$' /opt/homebrew/Caskroom/miniconda/base/bin/ --full-path --color never -E /proc"
+			env_path = "fd -tl 'python$' /opt/homebrew/Caskroom/miniconda/base/envs/ --full-path --color never -E /proc"
 		elseif system == "Linux" then
-			base_path = "$FD '/python$' /home/noah/miniconda3/bin/ --full-path --color never -E /proc"
-			env_path = "$FD '/python$' /home/noah/miniconda3/envs/ --full-path --color never -E /proc"
+			base_path = "fd -tl 'python$' /home/noah/miniconda3/bin/ --full-path --color never -E /proc"
+			env_path = "fd -tl 'python$' /home/noah/miniconda3/envs/ --full-path --color never -E /proc"
 		end
 
 		require("venv-selector").setup({
