@@ -34,7 +34,7 @@ return {
 		},
 		modes = {
 			char = {
-				enabled = false,
+				enabled = true,
 			},
 		},
 	},
