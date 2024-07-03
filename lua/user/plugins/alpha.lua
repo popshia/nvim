@@ -39,7 +39,7 @@ return {
 			dashboard.button("r", icons.ui.History .. " Recent files", ":Telescope oldfiles<CR>"),
 			dashboard.button("f", icons.ui.Files .. " Find file", ":Telescope find_files<CR>"),
 			dashboard.button("t", icons.ui.List .. " Find text", ":Telescope live_grep<CR>"),
-			dashboard.button("u", icons.ui.CloudDownload .. " Update plugins", ":Lazy sync<CR>"),
+			dashboard.button("s", icons.ui.CloudDownload .. " Sync plugins", ":Lazy sync<CR>"),
 			dashboard.button("g", icons.git.Octoface .. " Neogit", ":Neogit<CR>"),
 			dashboard.button("q", icons.ui.SignOut .. " Quit Neovim", ":qa<CR>"),
 		}

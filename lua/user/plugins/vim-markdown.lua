@@ -3,10 +3,8 @@
 return {
 	"preservim/vim-markdown",
 	ft = "markdown",
+	cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
 	dependencies = {
-		{
-			"godlygeek/tabular",
-		},
 		{
 			"iamcco/markdown-preview.nvim",
 			build = function()
