@@ -35,6 +35,7 @@ return {
 		modes = {
 			char = {
 				enabled = true,
+				keys = { "f", "F" },
 			},
 		},
 	},
