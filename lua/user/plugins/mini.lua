@@ -8,6 +8,8 @@ return {
 		require("mini.ai").setup()
 		-- Go forward/backward with square brackets
 		require("mini.bracketed").setup({ file = { suffix = "", options = {} } })
+		-- Icon providers
+		-- require("mini.icons").setup({ style = "glyph" })
 		-- Jump to next/previous single character
 		-- require("mini.jump").setup({ delay = { highlight = 10 ^ 7 } })
 	end,
