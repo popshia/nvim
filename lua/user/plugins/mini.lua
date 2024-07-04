@@ -7,7 +7,16 @@ return {
 		-- Extend and create a/i textobjects
 		require("mini.ai").setup()
 		-- Go forward/backward with square brackets
-		require("mini.bracketed").setup({ file = { suffix = "", options = {} } })
+		require("mini.bracketed").setup({
+			file = {
+				suffix = "",
+				options = {},
+			},
+		})
+		-- Split/Join arguments
+		require("mini.splitjoin").setup({ mappings = {
+			toggle = "<leader>sj",
+		} })
 		-- Icon providers
 		-- require("mini.icons").setup({ style = "glyph" })
 		-- Jump to next/previous single character
