@@ -7,7 +7,7 @@ return {
 		"BufNewFile",
 	},
 	dependencies = {
-		{ "folke/neodev.nvim", ft = "lua", opts = {} },
+		{ "folke/lazydev.nvim", ft = "lua", opts = {} },
 		{ "j-hui/fidget.nvim", opts = {} },
 		{ "ray-x/lsp_signature.nvim", opts = {} },
 		"williamboman/mason.nvim",
@@ -106,6 +106,9 @@ return {
 			},
 			bashls = {},
 			marksman = {},
+			emmet_language_server = {},
+			tailwindcss = {},
+			eslint = {},
 		}
 
 		require("mason").setup({
@@ -129,6 +132,7 @@ return {
 			"shfmt",
 			"stylua",
 			"codespell",
+			"prettierd",
 		})
 
 		require("mason-tool-installer").setup({ ensure_installed = ensure_install_servers })

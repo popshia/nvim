@@ -11,6 +11,7 @@ return {
 		{ "saadparwaiz1/cmp_luasnip" }, -- snippet completions
 		{ "lukas-reineke/cmp-under-comparator" }, -- sort completions
 		{ "windwp/nvim-autopairs" }, -- autopairs completions
+		{ "onsails/lspkind-nvim" }, -- vscode like formatting
 		-- Snippets
 		{
 			"L3MON4D3/LuaSnip",
@@ -25,8 +26,7 @@ return {
 		cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 		luasnip.config.setup()
 		require("luasnip/loaders/from_vscode").lazy_load()
-		local icons = require("user.utils.icons")
-		local kind_icons = icons.kind
+		local lspkind = require("lspkind")
 
 		cmp.setup({
 			snippet = {
@@ -54,20 +54,18 @@ return {
 				end, { "i", "s" }),
 			}),
 			formatting = {
-				fields = { "kind", "abbr", "menu" },
-				format = function(entry, vim_item)
-					-- Kind icons
-					vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-					vim_item.menu = ({
-						nvim_lsp = "(LSP)",
-						path = "(Path)",
-						buffer = "(Buffer)",
-						luasnip = "(Snippet)",
-					})[entry.source.name]
-					return vim_item
-				end,
+				format = lspkind.cmp_format({
+					mode = "symbol_text", -- show only symbol annotations
+					maxwidth = function()
+						return math.floor(0.45 * vim.o.columns)
+					end,
+					ellipsis_char = "...",
+					show_labelDetails = true, -- show labelDetails in menu. Disabled by default
+					before = require("tailwind-tools.cmp").lspkind_format,
+				}),
 			},
 			sources = {
+				{ name = "lazydev" },
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
 				{ name = "path" },
@@ -112,9 +110,9 @@ return {
 		cmp.setup.cmdline(":", {
 			mapping = cmp.mapping.preset.cmdline(),
 			sources = cmp.config.sources({
-				{ name = "path" },
-			}, {
 				{ name = "cmdline" },
+			}, {
+				{ name = "path" },
 			}),
 		})
 	end,

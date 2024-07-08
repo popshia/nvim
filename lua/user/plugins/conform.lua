@@ -20,6 +20,11 @@ return {
 			shell = { "shfmt", "shellcheck" },
 			fish = { "fish_indent" },
 			json = { "jq" },
+			html = { "djlint" },
+			htmldjango = { "djlint" },
+			-- html = { "prettierd", "djlint" },
+			-- javascript = { "prettierd" },
+			-- css = { "prettierd" },
 			-- Use the "*" filetype to run formatters on all filetypes.
 			["*"] = { "trim_whitespace", "codespell" },
 			-- Use the "_" filetype to run formatters on filetypes that don't
@@ -35,6 +40,9 @@ return {
 			},
 			isort = {
 				prepend_args = { "--profile", "black" },
+			},
+			djlint = {
+				prepend_args = { "--max-line-length", "120", "--max-attribute-length", "10" },
 			},
 		},
 		format_on_save = {
