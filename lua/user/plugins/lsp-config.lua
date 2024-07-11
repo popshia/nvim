@@ -10,6 +10,7 @@ return {
 		{ "folke/lazydev.nvim", ft = "lua", opts = {} },
 		{ "j-hui/fidget.nvim", opts = {} },
 		{ "ray-x/lsp_signature.nvim", opts = {} },
+		{ "https://git.sr.ht/~whynothugo/lsp_lines.nvim", opts = {} },
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
@@ -28,7 +29,7 @@ return {
 	},
 	config = function()
 		local diagnostic_configs = {
-			virtual_text = true,
+			virtual_text = false,
 			update_in_insert = true,
 			underline = true,
 			severity_sort = true,
@@ -104,11 +105,12 @@ return {
 					},
 				},
 			},
+			html = {
+				filetypes = { "html", "htmldjango" },
+			},
 			bashls = {},
 			marksman = {},
-			emmet_language_server = {},
 			tailwindcss = {},
-			eslint = {},
 		}
 
 		require("mason").setup({
@@ -132,7 +134,7 @@ return {
 			"shfmt",
 			"stylua",
 			"codespell",
-			"prettierd",
+			"djlint",
 		})
 
 		require("mason-tool-installer").setup({ ensure_installed = ensure_install_servers })

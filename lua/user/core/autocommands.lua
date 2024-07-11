@@ -67,3 +67,11 @@ vim.api.nvim_create_autocmd({
 		require("barbecue.ui").update()
 	end,
 })
+
+-- htmldjango files
+-- vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+-- 	pattern = { "*.html" },
+-- 	callback = function()
+-- 		vim.cmd("setfiletype htmldjango")
+-- 	end,
+-- })

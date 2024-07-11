@@ -22,13 +22,7 @@ return {
 			json = { "jq" },
 			html = { "djlint" },
 			htmldjango = { "djlint" },
-			-- html = { "prettierd", "djlint" },
-			-- javascript = { "prettierd" },
-			-- css = { "prettierd" },
-			-- Use the "*" filetype to run formatters on all filetypes.
 			["*"] = { "trim_whitespace", "codespell" },
-			-- Use the "_" filetype to run formatters on filetypes that don't
-			-- have other formatters configured.
 			["_"] = {},
 		},
 		formatters = {

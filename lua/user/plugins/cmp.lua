@@ -9,30 +9,37 @@ return {
 		{ "hrsh7th/cmp-cmdline" }, -- cmdline completions
 		{ "hrsh7th/cmp-nvim-lsp" }, -- lsp completions
 		{ "saadparwaiz1/cmp_luasnip" }, -- snippet completions
-		{ "lukas-reineke/cmp-under-comparator" }, -- sort completions
 		{ "windwp/nvim-autopairs" }, -- autopairs completions
 		{ "onsails/lspkind-nvim" }, -- vscode like formatting
 		-- Snippets
 		{
 			"L3MON4D3/LuaSnip",
+			build = "make install_jsregexp",
 			dependencies = { "rafamadriz/friendly-snippets" },
 		},
 	},
 	-- event = "InsertEnter",
 	config = function()
 		local cmp = require("cmp")
-		local luasnip = require("luasnip")
+
+		-- cmp-autopair
 		local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 		cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+
+		-- luasnip
+		local luasnip = require("luasnip")
 		luasnip.config.setup()
+		require("luasnip").filetype_extend("html", { "djangohtml" })
+		require("luasnip").filetype_extend("htmldjango", { "html" })
+		require("luasnip").filetype_extend("python", { "django" })
 		require("luasnip/loaders/from_vscode").lazy_load()
-		local lspkind = require("lspkind")
 
 		cmp.setup({
-			snippet = {
-				expand = function(args)
-					luasnip.lsp_expand(args.body) -- For `luasnip` users.
-				end,
+			sources = {
+				{ name = "lazydev" },
+				{ name = "nvim_lsp" },
+				{ name = "luasnip" },
+				{ name = "path" },
 			},
 			mapping = cmp.mapping.preset.insert({
 				["<C-p>"] = cmp.mapping.select_prev_item(),
@@ -53,8 +60,13 @@ return {
 					end
 				end, { "i", "s" }),
 			}),
+			snippet = {
+				expand = function(args)
+					luasnip.lsp_expand(args.body) -- For `luasnip` users.
+				end,
+			},
 			formatting = {
-				format = lspkind.cmp_format({
+				format = require("lspkind").cmp_format({
 					mode = "symbol_text", -- show only symbol annotations
 					maxwidth = function()
 						return math.floor(0.45 * vim.o.columns)
@@ -64,33 +76,10 @@ return {
 					before = require("tailwind-tools.cmp").lspkind_format,
 				}),
 			},
-			sources = {
-				{ name = "lazydev" },
-				{ name = "nvim_lsp" },
-				{ name = "luasnip" },
-				{ name = "path" },
-			},
-			sorting = {
-				comparators = {
-					cmp.config.compare.offset,
-					cmp.config.compare.exact,
-					cmp.config.compare.score,
-					require("cmp-under-comparator").under,
-					cmp.config.compare.kind,
-					cmp.config.compare.sort_text,
-					cmp.config.compare.length,
-					cmp.config.compare.order,
-				},
-			},
-			view = {
-				docs = {
-					auto_open = true,
-				},
-			},
-			experimental = {
-				ghost_text = true,
-			},
+			view = { docs = { auto_open = true } },
+			experimental = { ghost_text = true },
 		})
+
 		-- Set configuration for specific filetype.
 		cmp.setup.filetype("gitcommit", {
 			sources = cmp.config.sources({
@@ -110,9 +99,9 @@ return {
 		cmp.setup.cmdline(":", {
 			mapping = cmp.mapping.preset.cmdline(),
 			sources = cmp.config.sources({
-				{ name = "cmdline" },
-			}, {
 				{ name = "path" },
+			}, {
+				{ name = "cmdline" },
 			}),
 		})
 	end,
