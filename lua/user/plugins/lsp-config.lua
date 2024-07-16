@@ -128,13 +128,13 @@ return {
 		vim.list_extend(ensure_install_servers, {
 			"black",
 			"clang-format",
+			"codespell",
+			"djlint",
 			"isort",
 			"jq",
 			"shellcheck",
 			"shfmt",
 			"stylua",
-			"codespell",
-			"djlint",
 		})
 
 		require("mason-tool-installer").setup({ ensure_installed = ensure_install_servers })
