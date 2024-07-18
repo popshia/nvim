@@ -17,9 +17,17 @@ return {
 		require("mini.splitjoin").setup({ mappings = {
 			toggle = "<leader>sj",
 		} })
-		-- Icon providers
-		-- require("mini.icons").setup({ style = "glyph" })
-		-- Jump to next/previous single character
-		-- require("mini.jump").setup({ delay = { highlight = 10 ^ 7 } })
+		-- Surround
+		require("mini.surround").setup({
+			mappings = {
+				add = "ys",
+				delete = "ds",
+				replace = "cs",
+				find = "",
+				find_left = "",
+				highlight = "",
+				update_n_lines = "",
+			},
+		})
 	end,
 }
