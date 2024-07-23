@@ -21,6 +21,8 @@ return {
 	},
 	config = function()
 		require("illuminate").configure({
+			delay = 0,
+			large_file_cutoff = 10000,
 			filetypes_denylist = {
 				"alpha",
 				"mason",
@@ -29,5 +31,9 @@ return {
 				"TelescopePrompt",
 			},
 		})
+		vim.api.nvim_set_hl(0, "IlluminatedWord", { underline = true })
+		vim.api.nvim_set_hl(0, "IlluminatedWordText", { underline = true })
+		vim.api.nvim_set_hl(0, "IlluminatedWordRead", { underline = true })
+		vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { underline = true })
 	end,
 }
