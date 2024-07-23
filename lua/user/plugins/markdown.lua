@@ -1,19 +1,21 @@
 -- vim markdown mode
 
 return {
-	"preservim/vim-markdown",
+	"MeanderingProgrammer/markdown.nvim",
+	main = "render-markdown",
 	ft = "markdown",
-	cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
 	dependencies = {
+		{ "preservim/vim-markdown" },
 		{
 			"iamcco/markdown-preview.nvim",
 			build = function()
 				vim.fn["mkdp#util#install"]()
 			end,
 		},
-		{
-			"lukas-reineke/headlines.nvim",
-			opts = {},
-		},
+		-- {
+		-- 	"lukas-reineke/headlines.nvim",
+		-- 	opts = {},
+		-- },
 	},
+	opts = {},
 }
