@@ -28,50 +28,49 @@ return {
 		{ "<leader>ms", "<cmd>Mason<CR>", desc = "Mason" },
 	},
 	config = function()
-		local diagnostic_configs = {
+		-- diagnostic configs
+		local diagnostic = vim.diagnostic
+		diagnostic.config({
 			virtual_text = false,
 			update_in_insert = true,
-			underline = true,
 			severity_sort = true,
 			float = {
 				focusable = true,
 				style = "minimal",
 				border = "rounded",
-				source = "always",
+				source = true,
 				header = "",
 				prefix = "",
 			},
-		}
+		})
 
-		vim.diagnostic.config(diagnostic_configs)
-
-		local icons = require("user.utils.icons")
+		-- icons configs
+		local icons = require("user.utils.icons").diagnostic
 		local signs = {
-			Error = icons.diagnostics.BoldError,
-			Warn = icons.diagnostics.BoldWarning,
-			Hint = icons.diagnostics.BoldHint,
-			Info = icons.diagnostics.BoldInformation,
+			Error = icons.BoldError,
+			Warn = icons.BoldWarning,
+			Hint = icons.BoldHint,
+			Info = icons.BoldInformation,
 		}
-
 		for type, icon in pairs(signs) do
 			local diagnostic_type = "DiagnosticSign" .. type
 			vim.fn.sign_define(diagnostic_type, { text = icon, texthl = diagnostic_type, numhl = diagnostic_type })
 		end
 
-		vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
-		vim.lsp.handlers["textDocument/signatureHelp"] =
-			vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
+		-- lsp configs
+		local lsp = vim.lsp
+		lsp.handlers["textDocument/hover"] = lsp.with(lsp.handlers.hover, { border = "rounded" })
+		lsp.handlers["textDocument/signatureHelp"] = lsp.with(lsp.handlers.signature_help, { border = "rounded" })
 		require("lspconfig.ui.windows").default_options.border = "rounded"
 
+		-- expand capabilities using cmp_nvim_lsp
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
+		-- lsp server configs
 		local servers = {
 			clangd = {
-				cmd = {
-					"clangd",
-					"--offset-encoding=utf-16",
-				},
+				cmd = { "clangd", "--offset-encoding=utf-16" },
 			},
 			lua_ls = {
 				settings = {
@@ -116,15 +115,11 @@ return {
 		require("mason").setup({
 			ui = {
 				border = "rounded",
-				icons = {
-					package_installed = "✓",
-					package_pending = "➜",
-					package_uninstalled = "✗",
-				},
+				icons = { package_installed = "✓", package_pending = "➜", package_uninstalled = "✗" },
 			},
 		})
 
-		local ensure_install_servers = vim.tbl_keys(servers or {})
+		local ensure_install_servers = vim.tbl_keys(servers)
 		vim.list_extend(ensure_install_servers, {
 			"black",
 			"clang-format",
@@ -143,6 +138,7 @@ return {
 			handlers = {
 				function(server_name)
 					local server = servers[server_name] or {}
+					---@diagnostic disable-next-line: unused-local
 					server.on_attach = function(client, bufnr)
 						require("lsp_signature").on_attach({
 							floating_window = false,
