@@ -8,5 +8,6 @@ return {
 		virtual_symbol = "󱓻",
 		virtual_symbol_suffix = " ",
 		enable_tailwind = true,
+		exclude_filetypes = { "lazy" },
 	},
 }
