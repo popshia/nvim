@@ -29,8 +29,7 @@ return {
 	},
 	config = function()
 		-- diagnostic configs
-		local diagnostic = vim.diagnostic
-		diagnostic.config({
+		vim.diagnostic.config({
 			virtual_text = false,
 			update_in_insert = true,
 			severity_sort = true,
@@ -45,12 +44,12 @@ return {
 		})
 
 		-- icons configs
-		local icons = require("user.utils.icons").diagnostic
+		local icons = require("user.utils.icons")
 		local signs = {
-			Error = icons.BoldError,
-			Warn = icons.BoldWarning,
-			Hint = icons.BoldHint,
-			Info = icons.BoldInformation,
+			Error = icons.diagnostics.BoldError,
+			Warn = icons.diagnostics.BoldWarning,
+			Hint = icons.diagnostics.BoldHint,
+			Info = icons.diagnostics.BoldInformation,
 		}
 		for type, icon in pairs(signs) do
 			local diagnostic_type = "DiagnosticSign" .. type
@@ -138,13 +137,14 @@ return {
 			handlers = {
 				function(server_name)
 					local server = servers[server_name] or {}
-					---@diagnostic disable-next-line: unused-local
+					---@diagnostic disable-next-line
 					server.on_attach = function(client, bufnr)
 						require("lsp_signature").on_attach({
 							floating_window = false,
 							hint_prefix = icons.diagnostics.BoldInformation .. " ",
 						}, bufnr)
 					end
+					server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
 					require("lspconfig")[server_name].setup(server)
 				end,
 			},
