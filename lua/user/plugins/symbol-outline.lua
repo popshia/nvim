@@ -7,5 +7,17 @@ return {
 	keys = { -- Example mapping to toggle outline
 		{ "<leader>so", "<cmd>Outline<CR>", desc = "Symbol Outline" },
 	},
-	opts = {},
+	opts = {
+		outline_window = {
+			auto_close = true,
+			show_cursorline = true,
+			hide_cursor = true,
+		},
+		keymaps = {
+			hover_symbol = "H",
+		},
+		preview_window = {
+			live = true,
+		},
+	},
 }
