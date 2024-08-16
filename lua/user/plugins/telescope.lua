@@ -29,16 +29,6 @@ return {
 		{ "<leader>gc", "<cmd>Telescope git_commits<CR>", desc = "Checkout commit" },
 		{ "<leader>sd", "<cmd>TodoTelescope<CR>", desc = "Search Todos" },
 		{
-			"<leader>s/",
-			function()
-				require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
-					winblend = 10,
-					previewer = false,
-				}))
-			end,
-			desc = "Find In Current Buffer",
-		},
-		{
 			"<leader>sn",
 			function()
 				require("telescope.builtin").find_files({ cwd = vim.fn.stdpath("config") })

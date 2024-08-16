@@ -7,7 +7,7 @@ return {
 		"BufNewFile",
 	},
 	dependencies = {
-		{ "folke/lazydev.nvim", ft = "lua", opts = {} },
+		-- { "folke/lazydev.nvim", ft = "lua", opts = {} },
 		{ "j-hui/fidget.nvim", opts = {} },
 		{ "ray-x/lsp_signature.nvim", opts = {} },
 		{ "https://git.sr.ht/~whynothugo/lsp_lines.nvim", opts = {} },
@@ -106,6 +106,10 @@ return {
 			html = {
 				filetypes = { "html", "htmldjango" },
 			},
+			tsserver = {
+				filetypes = { "typescript", "svelte" },
+			},
+			svelte = {},
 			bashls = {},
 			marksman = {},
 			tailwindcss = {},
