@@ -18,7 +18,7 @@ return {
 			desc = "Harpoon: Add",
 		},
 		{
-			"<leader>hr",
+			"<leader>hd",
 			function()
 				require("harpoon"):list():remove()
 			end,

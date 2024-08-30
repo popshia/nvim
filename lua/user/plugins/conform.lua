@@ -22,6 +22,7 @@ return {
 			json = { "jq" },
 			html = { "djlint" },
 			htmldjango = { "djlint" },
+			svelte = { "prettierd" },
 			["*"] = { "trim_whitespace", "codespell" },
 			["_"] = {},
 		},
