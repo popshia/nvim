@@ -106,7 +106,7 @@ return {
 			html = {
 				filetypes = { "html", "htmldjango" },
 			},
-			tsserver = {
+			ts_ls = {
 				filetypes = { "typescript", "svelte" },
 			},
 			svelte = {},
