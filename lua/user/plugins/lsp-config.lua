@@ -70,6 +70,13 @@ return {
 		local servers = {
 			clangd = {
 				cmd = { "clangd", "--offset-encoding=utf-16" },
+				InlayHints = {
+					Designators = true,
+					Enabled = true,
+					ParameterNames = true,
+					DeducedTypes = true,
+				},
+				fallbackFlags = { "-std=c++20" },
 			},
 			lua_ls = {
 				settings = {
@@ -88,6 +95,7 @@ return {
 						},
 						completion = { callSnippet = "Replace" },
 						telemetry = { enable = false },
+						hint = { enable = true },
 					},
 				},
 			},
@@ -97,8 +105,10 @@ return {
 						disableOrganizeImports = true,
 						analysis = {
 							autoImportCompletions = true,
-							typeCheckingMode = "basic",
-							diagnosticMode = "workspace",
+							typeCheckingMode = "off",
+							diagnosticMode = "openFilesOnly",
+							autoSearchPaths = true,
+							useLibraryCodeForTypes = true,
 						},
 					},
 				},
@@ -107,9 +117,48 @@ return {
 				filetypes = { "html", "htmldjango" },
 			},
 			ts_ls = {
-				filetypes = { "typescript", "svelte" },
+				filetypes = { "typescript" },
+				settings = {
+					typescript = {
+						inlayHints = {
+							includeInlayParameterNameHints = "all",
+							includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+							includeInlayFunctionParameterTypeHints = true,
+							includeInlayVariableTypeHints = true,
+							includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+							includeInlayPropertyDeclarationTypeHints = true,
+							includeInlayFunctionLikeReturnTypeHints = true,
+							includeInlayEnumMemberValueHints = true,
+						},
+					},
+					javascript = {
+						inlayHints = {
+							includeInlayParameterNameHints = "all",
+							includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+							includeInlayFunctionParameterTypeHints = true,
+							includeInlayVariableTypeHints = true,
+							includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+							includeInlayPropertyDeclarationTypeHints = true,
+							includeInlayFunctionLikeReturnTypeHints = true,
+							includeInlayEnumMemberValueHints = true,
+						},
+					},
+				},
 			},
-			svelte = {},
+			svelte = {
+				settings = {
+					typescript = {
+						inlayHints = {
+							parameterNames = { enabled = "all" },
+							parameterTypes = { enabled = true },
+							variableTypes = { enabled = true },
+							propertyDeclarationTypes = { enabled = true },
+							functionLikeReturnTypes = { enabled = true },
+							enumMemberValues = { enabled = true },
+						},
+					},
+				},
+			},
 			bashls = {},
 			marksman = {},
 			tailwindcss = {},
@@ -147,6 +196,9 @@ return {
 							floating_window = false,
 							hint_prefix = icons.diagnostics.BoldInformation .. " ",
 						}, bufnr)
+						if client.server_capabilities.inlayHintProvider then
+							vim.lsp.inlay_hint.enable(true)
+						end
 					end
 					server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
 					require("lspconfig")[server_name].setup(server)
