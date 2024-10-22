@@ -48,7 +48,7 @@ return {
 		end
 
 		local spaces = function()
-			return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
+			return "spaces: " .. vim.api.nvim_buf_get_option_value(0, "shiftwidth")
 		end
 
 		require("lualine").setup({
