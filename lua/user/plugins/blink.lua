@@ -22,7 +22,11 @@ return {
 		},
 		signature = { enabled = true },
 		completion = {
+			keyword = { range = "full" },
 			menu = {
+				auto_show = function(ctx)
+					return ctx.mode ~= "cmdline"
+				end,
 				draw = {
 					columns = { { "label", "label_description", gap = 1 }, { "kind_icon", "kind", gap = 1 } },
 				},
