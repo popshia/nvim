@@ -44,7 +44,7 @@ return {
 			mapping = cmp.mapping.preset.insert({
 				["<C-p>"] = cmp.mapping.select_prev_item(),
 				["<C-n>"] = cmp.mapping.select_next_item(),
-				["<C-a>"] = cmp.mapping({
+				["<C-e>"] = cmp.mapping({
 					i = cmp.mapping.abort(),
 					c = cmp.mapping.close(),
 				}),
