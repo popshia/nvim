@@ -117,52 +117,8 @@ return {
 			html = {
 				filetypes = { "html", "htmldjango" },
 			},
-			ts_ls = {
-				filetypes = { "typescript" },
-				settings = {
-					typescript = {
-						inlayHints = {
-							includeInlayParameterNameHints = "all",
-							includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-							includeInlayFunctionParameterTypeHints = true,
-							includeInlayVariableTypeHints = true,
-							includeInlayVariableTypeHintsWhenTypeMatchesName = true,
-							includeInlayPropertyDeclarationTypeHints = true,
-							includeInlayFunctionLikeReturnTypeHints = true,
-							includeInlayEnumMemberValueHints = true,
-						},
-					},
-					javascript = {
-						inlayHints = {
-							includeInlayParameterNameHints = "all",
-							includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-							includeInlayFunctionParameterTypeHints = true,
-							includeInlayVariableTypeHints = true,
-							includeInlayVariableTypeHintsWhenTypeMatchesName = true,
-							includeInlayPropertyDeclarationTypeHints = true,
-							includeInlayFunctionLikeReturnTypeHints = true,
-							includeInlayEnumMemberValueHints = true,
-						},
-					},
-				},
-			},
-			svelte = {
-				settings = {
-					typescript = {
-						inlayHints = {
-							parameterNames = { enabled = "all" },
-							parameterTypes = { enabled = true },
-							variableTypes = { enabled = true },
-							propertyDeclarationTypes = { enabled = true },
-							functionLikeReturnTypes = { enabled = true },
-							enumMemberValues = { enabled = true },
-						},
-					},
-				},
-			},
-			bashls = {},
-			marksman = {},
 			tailwindcss = {},
+			bashls = {},
 		}
 
 		require("mason").setup({
