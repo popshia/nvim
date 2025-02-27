@@ -10,13 +10,18 @@ return {
 			dependencies = { "rafamadriz/friendly-snippets" },
 		},
 	},
-	version = "v0.*",
+	version = "*",
+	---@module 'blink.cmp'
+	---@type blink.cmp.Config
 	opts = {
 		keymap = {
 			preset = "enter",
 		},
 		cmdline = {
 			keymap = { ["<CR>"] = { "accept_and_enter", "fallback" } },
+			completion = {
+				menu = { auto_show = true },
+			},
 		},
 		appearance = {
 			use_nvim_cmp_as_default = true,
@@ -24,21 +29,30 @@ return {
 		},
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer" },
+			providers = {
+				cmdline = {
+					min_keyword_length = function(ctx)
+						-- when typing a command, only show when the keyword is 3 characters or longer
+						if ctx.mode == "cmdline" and string.find(ctx.line, " ") == nil then
+							return 3
+						end
+						return 0
+					end,
+				},
+			},
 		},
 		signature = { enabled = true },
 		completion = {
 			keyword = { range = "full" },
 			menu = {
-				-- auto_show = function(ctx)
-				-- 	return ctx.mode ~= "cmdline"
-				-- end,
 				draw = {
-					columns = { { "label", "label_description", gap = 1 }, { "kind_icon", "kind", gap = 1 } },
+					columns = {
+						{ "label", "label_description", gap = 1 },
+						{ "kind_icon", "kind", gap = 1 },
+					},
 				},
 			},
-			documentation = {
-				auto_show = true,
-			},
+			documentation = { auto_show = true },
 		},
 		snippets = {
 			expand = function(snippet)
@@ -54,6 +68,7 @@ return {
 				require("luasnip").jump(direction)
 			end,
 		},
+		fuzzy = { implementation = "prefer_rust_with_warning" },
 	},
 	opts_extend = { "sources.default" },
 }
