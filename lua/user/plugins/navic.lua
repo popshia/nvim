@@ -2,18 +2,42 @@
 
 return {
 	"SmiteshP/nvim-navic",
-	config = function()
-		local icons = require("user.utils.icons")
-		require("nvim-navic").setup({
-			icons = icons.kind,
-			highlight = true,
-			lsp = {
-				auto_attach = true,
-			},
-			click = true,
-			separator = " " .. icons.ui.ChevronRight .. " ",
-			depth_limit = 0,
-			depth_limit_indicator = "..",
-		})
-	end,
+	opts = {
+		icons = {
+			File = "󰈙 ",
+			Module = " ",
+			Namespace = "󰌗 ",
+			Package = " ",
+			Class = "󰌗 ",
+			Method = "󰆧 ",
+			Property = " ",
+			Field = " ",
+			Constructor = " ",
+			Enum = "󰕘",
+			Interface = "󰕘",
+			Function = "󰊕 ",
+			Variable = "󰆧 ",
+			Constant = "󰏿 ",
+			String = "󰀬 ",
+			Number = "󰎠 ",
+			Boolean = "◩ ",
+			Array = "󰅪 ",
+			Object = "󰅩 ",
+			Key = "󰌋 ",
+			Null = "󰟢 ",
+			EnumMember = " ",
+			Struct = "󰌗 ",
+			Event = " ",
+			Operator = "󰆕 ",
+			TypeParameter = "󰊄 ",
+		},
+		highlight = true,
+		lsp = {
+			auto_attach = true,
+		},
+		click = true,
+		separator = "  ",
+		depth_limit = 0,
+		depth_limit_indicator = "..",
+	},
 }

@@ -44,12 +44,11 @@ return {
 		})
 
 		-- icons configs
-		local icons = require("user.utils.icons")
 		local signs = {
-			Error = icons.diagnostics.BoldError,
-			Warn = icons.diagnostics.BoldWarning,
-			Hint = icons.diagnostics.BoldHint,
-			Info = icons.diagnostics.BoldInformation,
+			Error = "",
+			Warn = "",
+			Hint = "󰌵",
+			Info = "",
 		}
 		for type, icon in pairs(signs) do
 			local diagnostic_type = "DiagnosticSign" .. type
@@ -151,7 +150,7 @@ return {
 					server.on_attach = function(client, bufnr)
 						require("lsp_signature").on_attach({
 							floating_window = false,
-							hint_prefix = icons.diagnostics.BoldInformation .. " ",
+							hint_prefix = "󰋼 ",
 						}, bufnr)
 						if client.server_capabilities.inlayHintProvider then
 							vim.lsp.inlay_hint.enable(true)

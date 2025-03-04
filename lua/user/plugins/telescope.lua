@@ -23,7 +23,7 @@ return {
 		{ "<leader>sr", "<cmd>Telescope oldfiles<CR>", desc = "Search Recent Files" },
 		{ "<leader>sb", "<cmd>Telescope buffers theme=dropdown<CR>", desc = "Search Buffers" },
 		{ "<leader>sk", "<cmd>Telescope keymaps<CR>", desc = "Search Keymaps" },
-		{ "<leader>sc", "<cmd>Telescope colorscheme<CR>", desc = "Search Colorscheme" },
+		{ "<leader>sc", "<cmd>Telescope registers theme=cursor<CR>", desc = "Search Clipboard" },
 		{ "<leader>go", "<cmd>Telescope git_status<CR>", desc = "Open changed file" },
 		{ "<leader>gB", "<cmd>Telescope git_branches<CR>", desc = "Checkout branch" },
 		{ "<leader>gc", "<cmd>Telescope git_commits<CR>", desc = "Checkout commit" },
@@ -37,17 +37,10 @@ return {
 		},
 	},
 	config = function()
-		-- keymaps
-		-- theme=ivy (bottom panel overlay)
-		-- theme=cursor (cursor relative list)
-		-- theme=dropdown (list like centered list)
-
-		local icons = require("user.utils.icons")
-
 		require("telescope").setup({
 			defaults = {
-				prompt_prefix = icons.ui.Telescope,
-				selection_caret = icons.ui.Forward,
+				prompt_prefix = " ",
+				selection_caret = " ",
 				path_display = { "smart" },
 			},
 			extensions = {

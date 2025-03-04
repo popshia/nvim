@@ -6,7 +6,6 @@ return {
 	event = "VimEnter",
 	config = function()
 		local dashboard = require("alpha.themes.dashboard")
-		local icons = require("user.utils.icons")
 		local function footer()
 			local datetime = os.date(" %Y-%m-%d    %H:%M ")
 			local nvim_version = vim.version()
@@ -36,13 +35,13 @@ return {
 		}
 
 		dashboard.section.buttons.val = {
-			dashboard.button("r", icons.ui.History .. " Recent files", ":Telescope oldfiles<CR>"),
-			dashboard.button("f", icons.ui.Files .. " Find file", ":Telescope find_files<CR>"),
-			dashboard.button("t", icons.ui.List .. " Find text", ":Telescope live_grep<CR>"),
-			dashboard.button("s", icons.ui.CloudDownload .. " Sync plugins", ":Lazy sync<CR>"),
+			dashboard.button("r", "  Recent files", ":Telescope oldfiles<CR>"),
+			dashboard.button("f", "  Find file", ":Telescope find_files<CR>"),
+			dashboard.button("t", "  Find text", ":Telescope live_grep<CR>"),
+			dashboard.button("s", "󰓦  Sync plugins", ":Lazy sync<CR>"),
+			dashboard.button("m", "󰏓  Mason", ":Mason<CR>"),
 			-- dashboard.button("l", icons.ui.Project .. " Leetcode", ":Leet list<CR>"),
-			dashboard.button("g", icons.git.Octoface .. " Neogit", ":Neogit<CR>"),
-			dashboard.button("q", icons.ui.SignOut .. " Quit Neovim", ":qa<CR>"),
+			dashboard.button("q", "󰩈  Quit Neovim", ":qa<CR>"),
 		}
 
 		dashboard.section.footer.val = {

@@ -18,9 +18,14 @@ return {
 			preset = "enter",
 		},
 		cmdline = {
-			keymap = { ["<CR>"] = { "accept_and_enter", "fallback" } },
+			keymap = {
+				["<CR>"] = { "accept_and_enter", "fallback" },
+			},
 			completion = {
 				menu = { auto_show = true },
+				list = {
+					selection = { preselect = false, auto_insert = true },
+				},
 			},
 		},
 		appearance = {
