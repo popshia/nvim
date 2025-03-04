@@ -35,6 +35,7 @@ return {
 		modes = {
 			char = {
 				enabled = true,
+				jump_labels = true,
 				keys = { "f", "F" },
 			},
 		},
