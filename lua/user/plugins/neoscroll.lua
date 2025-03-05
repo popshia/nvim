@@ -6,6 +6,7 @@ return {
 	opts = {
 		stop_eof = false,
 		respect_scrolloff = false,
+		perfomance_mode = true,
 		post_hook = function()
 			vim.cmd("norm! zz")
 		end,

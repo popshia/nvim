@@ -29,5 +29,7 @@ return {
 				update_n_lines = "",
 			},
 		})
+		-- Indentation
+		-- require("mini.indentscope").setup()
 	end,
 }
