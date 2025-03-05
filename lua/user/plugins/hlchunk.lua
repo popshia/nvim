@@ -1,4 +1,4 @@
--- indentation
+-- indentation indicator
 
 return {
 	"shellRaining/hlchunk.nvim",
@@ -7,9 +7,7 @@ return {
 		require("hlchunk").setup({
 			chunk = {
 				enable = true,
-				style = {
-					{ fg = "#d3869b" },
-				},
+				style = { { fg = "#d3869b" } },
 				delay = 100,
 				duration = 200,
 				exclude_filetypes = {
@@ -36,12 +34,8 @@ return {
 					text = true,
 				},
 			},
-			line_num = {
-				enable = false,
-			},
-			blank = {
-				enable = true,
-			},
+			line_num = { enable = false },
+			blank = { enable = false },
 		})
 	end,
 }
