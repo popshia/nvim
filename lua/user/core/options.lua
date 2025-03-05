@@ -43,7 +43,7 @@ opt.background = "dark" -- dark mode theme
 
 opt.shortmess:append("c")
 opt.whichwrap:append("<,>,[,],h,l")
-opt.iskeyword:append("-")
+-- opt.iskeyword:append("-")
 opt.iskeyword:remove("_")
 
 -- disable netrw
