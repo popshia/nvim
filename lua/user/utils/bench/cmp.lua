@@ -11,12 +11,14 @@ return {
 		{ "saadparwaiz1/cmp_luasnip" }, -- snippet completions
 		{ "windwp/nvim-autopairs" }, -- autopairs completions
 		{ "onsails/lspkind-nvim" }, -- vscode like formatting
-		-- Snippets
+		-- snippets
 		{
 			"L3MON4D3/LuaSnip",
 			build = "make install_jsregexp",
 			dependencies = { "rafamadriz/friendly-snippets" },
 		},
+		-- sorting
+		{ "lukas-reineke/cmp-under-comparator" },
 	},
 	-- event = "InsertEnter",
 	config = function()
@@ -29,9 +31,9 @@ return {
 		-- luasnip
 		local luasnip = require("luasnip")
 		luasnip.config.setup()
-		require("luasnip").filetype_extend("html", { "djangohtml" })
-		require("luasnip").filetype_extend("htmldjango", { "html" })
-		require("luasnip").filetype_extend("python", { "django" })
+		-- require("luasnip").filetype_extend("html", { "djangohtml" })
+		-- require("luasnip").filetype_extend("htmldjango", { "html" })
+		-- require("luasnip").filetype_extend("python", { "django" })
 		require("luasnip/loaders/from_vscode").lazy_load()
 
 		cmp.setup({
@@ -40,6 +42,7 @@ return {
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
 				{ name = "path" },
+				{ name = "buffer" },
 			},
 			mapping = cmp.mapping.preset.insert({
 				["<C-p>"] = cmp.mapping.select_prev_item(),
@@ -78,6 +81,18 @@ return {
 			},
 			view = { docs = { auto_open = true } },
 			experimental = { ghost_text = true },
+			sorting = {
+				comparators = {
+					cmp.config.compare.offset,
+					cmp.config.compare.exact,
+					cmp.config.compare.score,
+					require("cmp-under-comparator").under,
+					cmp.config.compare.kind,
+					cmp.config.compare.sort_text,
+					cmp.config.compare.length,
+					cmp.config.compare.order,
+				},
+			},
 		})
 
 		-- Set configuration for specific filetype.

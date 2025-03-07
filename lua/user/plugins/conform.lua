@@ -21,6 +21,7 @@ return {
 			fish = { "fish_indent" },
 			json = { "jq" },
 			html = { "prettier" },
+			javascript = { "prettier" },
 			htmldjango = { "djlint" },
 			svelte = { "prettier" },
 			["*"] = { "trim_whitespace", "codespell" },

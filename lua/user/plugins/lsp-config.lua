@@ -7,7 +7,7 @@ return {
 		"BufNewFile",
 	},
 	dependencies = {
-		-- { "folke/lazydev.nvim", ft = "lua", opts = {} },
+		{ "folke/lazydev.nvim", ft = "lua", opts = {} },
 		{ "j-hui/fidget.nvim", opts = {} },
 		{ "ray-x/lsp_signature.nvim", opts = {} },
 		{ "https://git.sr.ht/~whynothugo/lsp_lines.nvim", opts = {} },
@@ -64,7 +64,7 @@ return {
 		-- expand capabilities using cmp_nvim_lsp
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		-- capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
-		capabilities = vim.tbl_deep_extend("force", capabilities, require("blink.cmp").get_lsp_capabilities())
+		-- capabilities = vim.tbl_deep_extend("force", capabilities, require("blink.cmp").get_lsp_capabilities())
 
 		-- lsp server configs
 		local servers = {
