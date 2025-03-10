@@ -15,7 +15,7 @@ return {
 			symbols = { error = " ", warn = " " },
 			colored = true,
 			update_in_insert = false,
-			always_visible = true,
+			always_visible = false,
 		}
 
 		local diff = {
@@ -36,17 +36,12 @@ return {
 			icon = "",
 		}
 
-		local location = {
-			"location",
-			padding = 1,
-		}
-
 		local datetime = function()
 			return os.date("%H:%M")
 		end
 
 		local spaces = function()
-			return "spaces: " .. vim.api.nvim_buf_get_option_value(0, "shiftwidth")
+			return "Tab: " .. vim.api.nvim_get_option_value("shiftwidth", {})
 		end
 
 		require("lualine").setup({
@@ -65,6 +60,7 @@ return {
 				lualine_y = { diagnostics },
 				lualine_z = { datetime },
 			},
+			extensions = { "lazy", "mason", "oil", "quickfix", "toggleterm", "trouble" },
 		})
 	end,
 }
