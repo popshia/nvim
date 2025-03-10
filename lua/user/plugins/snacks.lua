@@ -13,9 +13,28 @@ return {
       { "<leader>sf", function() Snacks.picker.smart() end, desc = "Search Files" },
       { "<leader>st", function() Snacks.picker.grep() end, desc = "Search Text" },
       { "<leader>sr", function() Snacks.picker.recent() end, desc = "Search Recent Files" },
-      { "<leader>sb", function() Snacks.picker.buffers({ layout = "select" }) end, desc = "Search Buffers" },
       { "<leader>sk", function() Snacks.picker.keymaps({ layout = "select" }) end, desc = "Search Keymaps" },
-      { "<leader>sc", function() Snacks.picker.registers({ layout = "dropdown" }) end, desc = "Search Clipboard History" },
+      {
+         "<leader>sb",
+         function()
+            Snacks.picker.buffers({
+               layout = "select",
+               on_show = function() vim.cmd.stopinsert() end,
+               win = {
+                  input = { keys = { ["d"] = "bufdelete" } },
+                  list = { keys = { ["d"] = "bufdelete" } },
+               },
+            })
+         end,
+         desc = "Search Buffers",
+      },
+      {
+         "<leader>sc",
+         function()
+            Snacks.picker.registers({ layout = "dropdown", on_show = function() vim.cmd.stopinsert() end })
+         end,
+         desc = "Search Clipboard History",
+      },
       { "<leader>si", function() Snacks.picker.icons({ layout = "select" }) end, desc = "Icons" },
       -- git
       { "<leader>lg", function() Snacks.lazygit() end, desc = "Lazygit" },
@@ -36,8 +55,34 @@ return {
       image = { enabled = true },
       notifier = { enabled = true },
       words = { enabled = true },
-      picker = {
-         enabled = true,
+      picker = { enabled = true },
+      dashboard = {
+         enabled = false,
+         preset = {
+            ---@diagnostic disable: undefined-doc-name
+            ---@type snacks.dashboard.Item[]
+            keys = {
+               { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
+               { icon = " ", key = "t", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
+               { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
+               { icon = " ", key = "s", desc = "Restore Session", section = "session" },
+               { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
+               { icon = "󰏓 ", key = "m", desc = "Mason", action = ":Mason" },
+               { icon = " ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
+               { icon = "󰩈 ", key = "q", desc = "Quit", action = ":qa" },
+            },
+            header = [[
+                      _
+   ____   ___   ____  _   _   (_) ____ ___
+   / __ \ / _ \ / __ \| | / / / / / __ `__ \
+  / / / //  __// /_/ /| |/ / / / / / / / / /
+/_/ /_/ \___/ \____/ |___/ /_/ /_/ /_/ /_/]],
+         },
+         sections = {
+            { section = "header", padding = 3 },
+            { section = "keys", gap = 1 },
+            { section = "startup" },
+         },
       },
       styles = {
          input = {

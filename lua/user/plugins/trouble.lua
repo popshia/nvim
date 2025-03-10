@@ -1,4 +1,4 @@
--- A pretty list for showing diagnostics, references, telescope results, quickfix and location lists
+-- A pretty list for showing diagnostics, references, quickfix and location lists
 
 return {
    "folke/trouble.nvim",
