@@ -3,6 +3,7 @@
 return {
    "neovim/nvim-lspconfig",
    event = {
+      "VimEnter",
       "BufReadPre",
       "BufNewFile",
    },
