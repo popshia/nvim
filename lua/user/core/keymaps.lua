@@ -32,3 +32,6 @@ map("x", "K", ":move '<-2<CR>gv-gv")
 
 map({ "n", "o", "x" }, "<C-m>", "^", "Move Cursor to Line Start")
 map({ "n", "o", "x" }, "<C-/>", "g_", "Move Cursor to Line End")
+
+map("n", "H", ":bprev<CR>", "Previous buffer")
+map("n", "L", ":bnext<CR>", "Next buffer")

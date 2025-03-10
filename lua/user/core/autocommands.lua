@@ -57,7 +57,7 @@ vim.api.nvim_create_autocmd({ "InsertLeave" }, {
 
 -- better winbar symbol performance
 vim.api.nvim_create_autocmd({
-	"WinScrolled", -- or WinResized on NVIM-v0.9 and higher
+	"WinResized", -- or WinResized on NVIM-v0.9 and higher
 	"BufWinEnter",
 	"CursorHold",
 	"InsertLeave",
