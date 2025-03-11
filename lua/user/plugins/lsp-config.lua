@@ -3,7 +3,6 @@
 return {
    "neovim/nvim-lspconfig",
    event = {
-      "VimEnter",
       "BufReadPre",
       "BufNewFile",
    },
@@ -11,7 +10,7 @@ return {
       { "folke/lazydev.nvim", ft = "lua", opts = {} },
       { "ray-x/lsp_signature.nvim", opts = {} },
       { "https://git.sr.ht/~whynothugo/lsp_lines.nvim", opts = {} },
-      "williamboman/mason.nvim",
+      { "williamboman/mason.nvim", opts = {}, cmd = "Mason" },
       "williamboman/mason-lspconfig.nvim",
       "WhoIsSethDaniel/mason-tool-installer.nvim",
    },
