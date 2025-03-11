@@ -1,8 +1,8 @@
 # nvim/
 
-<a href="https://dotfyle.com/popshia/nvim"><img src="https://dotfyle.com/popshia/nvim/badges/plugins?style=flat" /></a>
-<a href="https://dotfyle.com/popshia/nvim"><img src="https://dotfyle.com/popshia/nvim/badges/leaderkey?style=flat" /></a>
-<a href="https://dotfyle.com/popshia/nvim"><img src="https://dotfyle.com/popshia/nvim/badges/plugin-manager?style=flat" /></a>
+<a href="https://dotfyle.com/popshia/nvim"><img src="https://dotfyle.com/popshia/nvim/badges/plugins?style=social" /></a>
+<a href="https://dotfyle.com/popshia/nvim"><img src="https://dotfyle.com/popshia/nvim/badges/leaderkey?style=social" /></a>
+<a href="https://dotfyle.com/popshia/nvim"><img src="https://dotfyle.com/popshia/nvim/badges/plugin-manager?style=social" /></a>
 
 
 ## Install Instructions
@@ -128,12 +128,12 @@ NVIM_APPNAME=popshia/nvim/ nvim
 ## Language Servers
 
 + basedpyright
-+ bash-language-server bashls
++ bashls
 + clangd
-+ eslint-lsp eslint
-+ html-lsp html
-+ lua-language-server lua_ls
++ eslint
++ html
++ lua_ls
 + marksman
-+ svelte-language-server svelte
-+ tailwindcss-language-server tailwindcss
-+ typescript-language-server ts_ls
++ svelte
++ tailwindcss
++ ts_ls
