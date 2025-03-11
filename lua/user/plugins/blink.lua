@@ -15,6 +15,10 @@ return {
    opts = {
       keymap = {
          preset = "enter",
+         ["<Tab>"] = {},
+         ["<S-Tab>"] = {},
+         ["<C-l>"] = { "snippet_forward", "fallback" },
+         ["<C-h>"] = { "snippet_backward", "fallback" },
       },
       cmdline = {
          keymap = {
