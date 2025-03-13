@@ -2,11 +2,43 @@
 
 return {
    "numToStr/Comment.nvim",
-   event = "VeryLazy",
-   lazy = false,
-   keys = {
-      { "<leader>c", function() require("Comment.api").toggle.linewise.current() end, desc = "Comment Line" },
-      { "<leader>c", "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", mode = { "v" }, desc = "Comment Block" },
+   event = {
+      "BufReadPre",
+      "BufNewFile",
    },
-   opts = {},
+   dependencies = {
+      {
+         "folke/ts-comments.nvim",
+         opts = true,
+         enabled = vim.fn.has("nvim-0.10.0") == 1,
+      },
+      {
+         "folke/todo-comments.nvim",
+         opts = {
+            signs = true,
+            keywords = {
+               -- TODO: this is a todo.
+               TODO = { icon = "", color = "#E9B143" },
+               -- REVIEW: review this line.
+               REVIEW = { icon = "", color = "#B0B846" },
+               -- FIXME: fix me plz.
+               FIXME = { icon = "", color = "#F2594B" },
+               -- NOTE: a note for myself.
+               NOTE = { icon = "󰎚", color = "#80AA9E" },
+               -- TEST: testing info.
+               TEST = { icon = "󰋼", color = "#D3869B" },
+            },
+            gui_style = {
+               fg = "BOLD", -- The gui style to use for the fg highlight group.
+               bg = "BOLD", -- The gui style to use for the bg highlight group.
+            },
+            highlight = {
+               before = "", -- "fg" or "bg" or empty
+               keyword = "wide", -- "fg", "bg", "wide" or empty. (wide is the same as bg, but will also highlight surrounding characters)
+               after = "fg", -- "fg" or "bg" or empty
+            },
+         },
+      },
+   },
+   opts = true,
 }

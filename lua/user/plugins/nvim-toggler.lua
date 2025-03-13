@@ -2,6 +2,9 @@
 
 return {
    "nguyenvukhang/nvim-toggler",
-   event = "VeryLazy",
+   event = {
+      "BufReadPre",
+      "BufNewFile",
+   },
    opts = {},
 }
