@@ -5,8 +5,17 @@ return {
    dependencies = {
       {
          "L3MON4D3/LuaSnip",
+         version = "v2.*",
          build = "make install_jsregexp",
-         dependencies = { "rafamadriz/friendly-snippets" },
+         dependencies = {
+            {
+               "rafamadriz/friendly-snippets",
+               config = function()
+                  require("luasnip.loaders.from_vscode").lazy_load()
+                  require("luasnip.loaders.from_vscode").lazy_load({ paths = { vim.fn.stdpath("config") .. "/snippets" } })
+               end,
+            },
+         },
       },
    },
    version = "*",
@@ -48,7 +57,6 @@ return {
             lazydev = {
                name = "LazyDev",
                module = "lazydev.integrations.blink",
-               -- make lazydev completions top priority (see `:h blink.cmp`)
                score_offset = 100,
             },
             lsp = { score_offset = 80 },

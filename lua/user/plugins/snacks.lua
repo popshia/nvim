@@ -52,10 +52,10 @@ return {
       bigfile = { enabled = true },
       input = { enabled = true },
       rename = { enabled = true },
-      image = { enabled = false },
       notifier = { enabled = true },
-      words = { enabled = true },
       picker = { enabled = true },
+      words = { enabled = false },
+      image = { enabled = false },
       dashboard = {
          enabled = true,
          preset = {

@@ -6,5 +6,5 @@ return {
       "BufReadPre",
       "BufNewFile",
    },
-   config = true,
+   config = {},
 }
