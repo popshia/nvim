@@ -157,15 +157,26 @@ return {
 
       local ensure_install_servers = vim.tbl_keys(servers)
       vim.list_extend(ensure_install_servers, {
+         "basedpyright",
+         "bash-language-server",
          "black",
          "clang-format",
+         "clangd",
          "codespell",
          "djlint",
+         "eslint-lsp",
+         "html-lsp",
          "isort",
          "jq",
+         "lua-language-server",
+         "marksman",
+         "prettier",
          "shellcheck",
          "shfmt",
          "stylua",
+         "svelte-language-server",
+         "tailwindcss-language-server",
+         "typescript-language-server",
       })
 
       require("mason-tool-installer").setup({ ensure_installed = ensure_install_servers })
