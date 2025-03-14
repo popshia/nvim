@@ -61,7 +61,7 @@ return {
             },
             lsp = { score_offset = 80 },
             snippets = { score_offset = 80 },
-            path = { score_offset = 80 },
+            path = { score_offset = 60 },
             buffer = { score_offset = 40 },
          },
       },
