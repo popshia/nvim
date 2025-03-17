@@ -2,6 +2,11 @@
 
 return {
    "saghen/blink.cmp",
+   event = {
+      "CmdlineEnter",
+      "BufReadPost",
+      "BufNewFile",
+   },
    dependencies = {
       {
          "L3MON4D3/LuaSnip",

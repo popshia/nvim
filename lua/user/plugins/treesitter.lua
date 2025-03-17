@@ -5,7 +5,11 @@ return {
    dependencies = {
       "nvim-treesitter/nvim-treesitter-textobjects",
    },
-   event = { "BufReadPost", "BufNewFile" },
+   event = {
+      "CmdlineEnter",
+      "BufReadPost",
+      "BufNewFile",
+   },
    build = ":TSUpdate",
    opts = {
       ensure_installed = {
