@@ -2,7 +2,7 @@ return {
    "jiaoshijie/undotree",
    dependencies = "nvim-lua/plenary.nvim",
    keys = {
-      { "<leader>u", "<cmd>lua require('undotree').toggle()<cr>" },
+      { "<leader>u", function() require("undotree").toggle() end, desc = "Undotree" },
    },
    opts = {},
 }

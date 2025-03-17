@@ -47,17 +47,6 @@ vim.api.nvim_create_autocmd({ "InsertLeave" }, {
    callback = function() vim.opt.relativenumber = true end,
 })
 
--- better winbar symbol performance
-vim.api.nvim_create_autocmd({
-   "WinResized", -- or WinResized on NVIM-v0.9 and higher
-   "BufWinEnter",
-   "CursorHold",
-   "InsertLeave",
-}, {
-   group = vim.api.nvim_create_augroup("barbecue.updater", {}),
-   callback = function() require("barbecue.ui").update() end,
-})
-
 -- lsp progress
 ---@type table<number, {token:lsp.ProgressToken, msg:string, done:boolean}[]>
 local progress = vim.defaulttable()

@@ -3,12 +3,52 @@
 return {
    "kevinhwang91/nvim-hlslens",
    keys = {
-      { "n", [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR>zz<Cmd>lua require('hlslens').start()<CR>]] },
-      { "N", [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR>zz<Cmd>lua require('hlslens').start()<CR>]] },
-      { "*", [[*zz<Cmd>lua require('hlslens').start()<CR>]] },
-      { "#", [[#zz<Cmd>lua require('hlslens').start()<CR>]] },
-      { "g*", [[g*zz<Cmd>lua require('hlslens').start()<CR>]] },
-      { "g#", [[g#zz<Cmd>lua require('hlslens').start()<CR>]] },
+      {
+         "n",
+         function()
+            vim.cmd("normal!" .. vim.v.count1 .. "n")
+            vim.api.nvim_feedkeys("zz", "n", false)
+            require("hlslens").start()
+         end,
+         desc = "Next hlslens search",
+      },
+      {
+         "N",
+         function()
+            vim.cmd("normal!" .. vim.v.count1 .. "N")
+            vim.api.nvim_feedkeys("zz", "n", false)
+            require("hlslens").start()
+         end,
+         desc = "Previous hlslens search",
+      },
+      {
+         "*",
+         function()
+            vim.api.nvim_feedkeys("*zz", "n", false)
+            require("hlslens").start()
+         end,
+      },
+      {
+         "#",
+         function()
+            vim.api.nvim_feedkeys("#zz", "n", false)
+            require("hlslens").start()
+         end,
+      },
+      {
+         "g*",
+         function()
+            vim.api.nvim_feedkeys("g*zz", "n", false)
+            require("hlslens").start()
+         end,
+      },
+      {
+         "g#",
+         function()
+            vim.api.nvim_feedkeys("g3zz", "n", false)
+            require("hlslens").start()
+         end,
+      },
    },
    opts = {
       calm_down = true,
