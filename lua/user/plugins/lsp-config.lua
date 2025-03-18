@@ -19,7 +19,7 @@ return {
       { "gr", "<cmd>Trouble lsp_references<CR>", desc = "Goto Reference" },
       { "gi", "<cmd>Trouble lsp_implementations<CR>", desc = "Goto Implementation" },
       { "gk", "<cmd>lua vim.lsp.buf.hover()<CR>", desc = "Hover Documentation" },
-      { "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", desc = "Open Float" },
+      { "gj", "<cmd>lua vim.diagnostic.open_float()<CR>", desc = "Open Float" },
       { "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", desc = "Rename" },
       { "<leader>sh", "<cmd>lua vim.lsp.buf.signature_help()<CR>", desc = "Signature Help" },
       { "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", desc = "Code Actions" },

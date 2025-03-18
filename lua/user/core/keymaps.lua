@@ -1,6 +1,4 @@
-local function map(mode, keys, func, desc)
-	vim.keymap.set(mode, keys, func, { desc = desc, noremap = true, silent = true })
-end
+local function map(mode, keys, func, desc) vim.keymap.set(mode, keys, func, { desc = desc, noremap = true, silent = true }) end
 
 map("", "<Space>", "<Nop>", "Clear Space Keymapping")
 vim.g.mapleader = " "
@@ -30,8 +28,10 @@ map("v", "K", ":m .-2<CR>==", "Move Line Up")
 map("x", "J", ":move '>+1<CR>gv-gv")
 map("x", "K", ":move '<-2<CR>gv-gv")
 
-map({ "n", "o", "x" }, "<C-m>", "^", "Move Cursor to Line Start")
-map({ "n", "o", "x" }, "<C-/>", "g_", "Move Cursor to Line End")
+map({ "n", "o", "x" }, "gh", "^", "Move Cursor to Line Start")
+map({ "n", "o", "x" }, "gl", "g_", "Move Cursor to Line End")
 
 map("n", "H", ":bprev<CR>", "Previous buffer")
 map("n", "L", ":bnext<CR>", "Next buffer")
+
+map("n", "U", "<C-r>", "Redo")
