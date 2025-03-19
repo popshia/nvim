@@ -1,23 +1,19 @@
 -- symbol outline
 
 return {
-   "hedyhli/outline.nvim",
+   "oskarrrrrrr/symbols.nvim",
    lazy = true,
-   cmd = { "Outline", "OutlineOpen" },
-   keys = { -- Example mapping to toggle outline
-      { "<leader>so", "<cmd>Outline<CR>", desc = "Symbol Outline" },
+   keys = {
+      { "<leader>so", "<cmd>SymbolsToggle<CR>", desc = "Symbol Outline" },
    },
-   opts = {
-      outline_window = {
-         auto_close = true,
-         show_cursorline = true,
-         hide_cursor = true,
-      },
-      keymaps = {
-         hover_symbol = "H",
-      },
-      preview_window = {
-         live = true,
-      },
-   },
+   config = function()
+      local r = require("symbols.recipes")
+      require("symbols").setup(r.DefaultFilters, r.AsciiSymbols, {
+         sidebar = {
+            open_direction = "right",
+            auto_peek = true,
+            close_on_goto = true,
+         },
+      })
+   end,
 }
