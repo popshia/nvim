@@ -164,6 +164,7 @@ return {
          "codespell",
          "djlint",
          "eslint-lsp",
+         "harper-ls",
          "html-lsp",
          "isort",
          "jq",
