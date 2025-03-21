@@ -181,7 +181,6 @@ return {
          handlers = {
             function(server_name)
                local server = servers[server_name] or {}
-               ---@diagnostic disable-next-line
                server.on_attach = function(client, bufnr)
                   require("lsp_signature").on_attach({
                      floating_window = false,
