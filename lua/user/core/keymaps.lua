@@ -16,7 +16,8 @@ map("n", "<C-Down>", ":resize -2<CR>", "Horizontal-")
 map("n", "<C-->", ":vertical resize -2<CR>", "Vertical-")
 map("n", "<C-+>", ":vertical resize +2<CR>", "Vertical+")
 
-map("v", "p", [["_dp]])
+map("v", "p", [["_dp]], "Paste without yanking")
+map("n", "cp", "p`[v`]", "Paste and reindent")
 
 map("v", "<", "<gv")
 map("v", ">", ">gv")
