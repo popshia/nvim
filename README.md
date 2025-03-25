@@ -1,8 +1,8 @@
 # nvim/
 
-<a href="https://dotfyle.com/popshia/nvim"><img src="https://dotfyle.com/popshia/nvim/badges/plugins?style=social" /></a>
-<a href="https://dotfyle.com/popshia/nvim"><img src="https://dotfyle.com/popshia/nvim/badges/leaderkey?style=social" /></a>
-<a href="https://dotfyle.com/popshia/nvim"><img src="https://dotfyle.com/popshia/nvim/badges/plugin-manager?style=social" /></a>
+<a href="https://dotfyle.com/popshia/nvim"><img src="https://dotfyle.com/popshia/nvim/badges/plugins?style=for-the-badge" /></a>
+<a href="https://dotfyle.com/popshia/nvim"><img src="https://dotfyle.com/popshia/nvim/badges/leaderkey?style=for-the-badge" /></a>
+<a href="https://dotfyle.com/popshia/nvim"><img src="https://dotfyle.com/popshia/nvim/badges/plugin-manager?style=for-the-badge" /></a>
 
 
 ## Install Instructions
@@ -26,6 +26,7 @@ NVIM_APPNAME=popshia/nvim/ nvim
 ### bars-and-lines
 
 + [utilyre/barbecue.nvim](https://dotfyle.com/plugins/utilyre/barbecue.nvim)
++ [Bekaboo/dropbar.nvim](https://dotfyle.com/plugins/Bekaboo/dropbar.nvim)
 + [SmiteshP/nvim-navic](https://dotfyle.com/plugins/SmiteshP/nvim-navic)
 ### color
 
@@ -36,8 +37,8 @@ NVIM_APPNAME=popshia/nvim/ nvim
 ### comment
 
 + [folke/ts-comments.nvim](https://dotfyle.com/plugins/folke/ts-comments.nvim)
-+ [folke/todo-comments.nvim](https://dotfyle.com/plugins/folke/todo-comments.nvim)
 + [numToStr/Comment.nvim](https://dotfyle.com/plugins/numToStr/Comment.nvim)
++ [folke/todo-comments.nvim](https://dotfyle.com/plugins/folke/todo-comments.nvim)
 ### completion
 
 + [hrsh7th/nvim-cmp](https://dotfyle.com/plugins/hrsh7th/nvim-cmp)
@@ -68,26 +69,31 @@ NVIM_APPNAME=popshia/nvim/ nvim
 ### indent
 
 + [shellRaining/hlchunk.nvim](https://dotfyle.com/plugins/shellRaining/hlchunk.nvim)
+### keybinding
+
++ [folke/which-key.nvim](https://dotfyle.com/plugins/folke/which-key.nvim)
 ### lsp
 
-+ [neovim/nvim-lspconfig](https://dotfyle.com/plugins/neovim/nvim-lspconfig)
 + [ray-x/lsp_signature.nvim](https://dotfyle.com/plugins/ray-x/lsp_signature.nvim)
-+ [hedyhli/outline.nvim](https://dotfyle.com/plugins/hedyhli/outline.nvim)
++ [neovim/nvim-lspconfig](https://dotfyle.com/plugins/neovim/nvim-lspconfig)
 ### lsp-installer
 
 + [williamboman/mason.nvim](https://dotfyle.com/plugins/williamboman/mason.nvim)
+### lua-colorscheme
+
++ [ellisonleao/gruvbox.nvim](https://dotfyle.com/plugins/ellisonleao/gruvbox.nvim)
 ### markdown-and-latex
 
-+ [MeanderingProgrammer/markdown.nvim](https://dotfyle.com/plugins/MeanderingProgrammer/markdown.nvim)
 + [iamcco/markdown-preview.nvim](https://dotfyle.com/plugins/iamcco/markdown-preview.nvim)
++ [MeanderingProgrammer/markdown.nvim](https://dotfyle.com/plugins/MeanderingProgrammer/markdown.nvim)
 ### motion
 
-+ [folke/flash.nvim](https://dotfyle.com/plugins/folke/flash.nvim)
 + [sphamba/smear-cursor.nvim](https://dotfyle.com/plugins/sphamba/smear-cursor.nvim)
++ [folke/flash.nvim](https://dotfyle.com/plugins/folke/flash.nvim)
 ### nvim-dev
 
-+ [folke/lazydev.nvim](https://dotfyle.com/plugins/folke/lazydev.nvim)
 + [nvim-lua/plenary.nvim](https://dotfyle.com/plugins/nvim-lua/plenary.nvim)
++ [folke/lazydev.nvim](https://dotfyle.com/plugins/folke/lazydev.nvim)
 ### plugin-manager
 
 + [folke/lazy.nvim](https://dotfyle.com/plugins/folke/lazy.nvim)
@@ -131,7 +137,7 @@ NVIM_APPNAME=popshia/nvim/ nvim
 + bashls
 + clangd
 + eslint
-+ html
++ html-lsp html
 + lua_ls
 + marksman
 + svelte
