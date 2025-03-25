@@ -6,5 +6,7 @@ return {
       "BufReadPre",
       "BufNewFile",
    },
-   opts = {},
+   keys = {
+      { "<leader>i", function() require("nvim-toggler").toggle() end, desc = "Toggle variable" },
+   },
 }
