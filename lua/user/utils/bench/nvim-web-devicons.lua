@@ -3,14 +3,16 @@
 return {
    "nvim-tree/nvim-web-devicons",
    lazy = true,
-   config = function()
-      require("nvim-web-devicons").set_icon({
+   opts = {
+      override = {
          sh = {
             icon = "",
             color = "#1DC123",
             cterm_color = "59",
             name = "Sh",
          },
+      },
+      override_by_filename = {
          [".gitattributes"] = {
             icon = "",
             color = "#e24329",
@@ -41,12 +43,14 @@ return {
             cterm_color = "59",
             name = "GitModules",
          },
+      },
+      override_by_extension = {
          ["diff"] = {
             icon = "",
             color = "#e24329",
             cterm_color = "59",
             name = "Diff",
          },
-      })
-   end,
+      },
+   },
 }

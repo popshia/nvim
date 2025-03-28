@@ -33,5 +33,8 @@ return {
             update_n_lines = "",
          },
       })
+      -- Icons
+      require("mini.icons").setup()
+      MiniIcons.mock_nvim_web_devicons()
    end,
 }

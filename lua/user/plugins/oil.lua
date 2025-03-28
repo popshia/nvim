@@ -3,9 +3,6 @@
 return {
    "stevearc/oil.nvim",
    event = "VeryLazy",
-   dependencies = {
-      "nvim-tree/nvim-web-devicons",
-   },
    keys = {
       { "<leader>e", function() require("oil").toggle_float() end, desc = "File Explorer" },
    },

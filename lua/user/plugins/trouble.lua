@@ -2,7 +2,6 @@
 
 return {
    "folke/trouble.nvim",
-   dependencies = { "nvim-tree/nvim-web-devicons" },
    cmd = "Trouble",
    keys = {
       { "<leader>ls", "<cmd>Trouble lsp toggle <CR>", desc = "Trouble: LSP" },

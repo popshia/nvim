@@ -9,7 +9,6 @@ return {
    dependencies = {
       { "folke/lazydev.nvim", ft = "lua", opts = {} },
       { "ray-x/lsp_signature.nvim", opts = {} },
-      { "https://git.sr.ht/~whynothugo/lsp_lines.nvim", opts = {} },
       { "williamboman/mason.nvim", opts = {}, cmd = "Mason" },
       "williamboman/mason-lspconfig.nvim",
       "WhoIsSethDaniel/mason-tool-installer.nvim",
@@ -20,8 +19,8 @@ return {
       { "gi", "<cmd>Trouble lsp_implementations<CR>", desc = "Goto Implementation" },
       { "gk", "<cmd>lua vim.lsp.buf.hover()<CR>", desc = "Hover Documentation" },
       { "gj", "<cmd>lua vim.diagnostic.open_float()<CR>", desc = "Open Float" },
+      { "gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", desc = "Signature Help" },
       { "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", desc = "Rename" },
-      { "<leader>sh", "<cmd>lua vim.lsp.buf.signature_help()<CR>", desc = "Signature Help" },
       { "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", desc = "Code Actions" },
       { "<leader>li", "<cmd>LspInfo<CR>", desc = "LSP Info" },
       { "<leader>ms", "<cmd>Mason<CR>", desc = "Mason" },
@@ -29,6 +28,7 @@ return {
    config = function()
       -- diagnostic configs
       vim.diagnostic.config({
+         virtual_lines = true,
          virtual_text = false,
          update_in_insert = true,
          severity_sort = true,
@@ -54,13 +54,7 @@ return {
          vim.fn.sign_define(diagnostic_type, { text = icon, texthl = diagnostic_type, numhl = diagnostic_type })
       end
 
-      -- lsp configs
-      local lsp = vim.lsp
-      lsp.handlers["textDocument/hover"] = lsp.with(lsp.handlers.hover, { border = "rounded" })
-      lsp.handlers["textDocument/signatureHelp"] = lsp.with(lsp.handlers.signature_help, { border = "rounded" })
-      require("lspconfig.ui.windows").default_options.border = "rounded"
-
-      -- expand capabilities using cmp_nvim_lsp
+      -- expand capabilities using blink.cmp
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = vim.tbl_deep_extend("force", capabilities, require("blink.cmp").get_lsp_capabilities())
 
