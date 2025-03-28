@@ -28,7 +28,7 @@ return {
    config = function()
       -- diagnostic configs
       vim.diagnostic.config({
-         virtual_lines = true,
+         virtual_lines = { current_line = true },
          virtual_text = false,
          update_in_insert = true,
          severity_sort = true,
@@ -53,10 +53,6 @@ return {
          local diagnostic_type = "DiagnosticSign" .. type
          vim.fn.sign_define(diagnostic_type, { text = icon, texthl = diagnostic_type, numhl = diagnostic_type })
       end
-
-      -- expand capabilities using blink.cmp
-      local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities = vim.tbl_deep_extend("force", capabilities, require("blink.cmp").get_lsp_capabilities())
 
       -- lsp server configs
       local servers = {
@@ -191,7 +187,7 @@ return {
                      })
                   end
                end
-               server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
+               -- server.capabilities = require("blink.cmp").get_lsp_capabilities(server.capabilities)
                require("lspconfig")[server_name].setup(server)
             end,
          },
