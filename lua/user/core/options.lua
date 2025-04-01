@@ -40,7 +40,6 @@ opt.sidescrolloff = 8 -- horizontal scrolloff with 8 char
 opt.foldenable = false -- code folding
 opt.mousemoveevent = true -- mouse scrolling
 opt.background = "dark" -- dark mode theme
--- opt.winborder = "rounded" -- use rounded borders on all floating windows
 
 opt.shortmess:append("c")
 opt.whichwrap:append("<,>,[,],h,l")

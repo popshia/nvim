@@ -14,7 +14,7 @@ return {
       { "gd", "<cmd>Trouble lsp_definitions<CR>", desc = "Goto Definition" },
       { "gr", "<cmd>Trouble lsp_references<CR>", desc = "Goto Reference" },
       { "gi", "<cmd>Trouble lsp_implementations<CR>", desc = "Goto Implementation" },
-      { "gk", "<cmd>lua vim.lsp.buf.hover()<CR>", desc = "Hover Documentation" },
+      { "gk", '<cmd>lua vim.lsp.buf.hover({ border = "rounded" })<CR>', desc = "Hover Documentation" },
       {
          "gj",
          function()

@@ -1,3 +1,5 @@
+-- mason
+
 return {
    "williamboman/mason.nvim",
    event = {
@@ -146,6 +148,7 @@ return {
                      })
                   end
                end
+               server.capabilities = require("blink.cmp").get_lsp_capabilities()
                require("lspconfig")[server_name].setup(server)
             end,
          },
