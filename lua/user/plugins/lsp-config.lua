@@ -49,19 +49,21 @@ return {
             header = "",
             prefix = "",
          },
+         signs = {
+            text = {
+               [vim.diagnostic.severity.ERROR] = "",
+               [vim.diagnostic.severity.WARN] = "",
+               [vim.diagnostic.severity.HINT] = "󰌵",
+               [vim.diagnostic.severity.INFO] = "",
+            },
+            numhl = {
+               [vim.diagnostic.severity.ERROR] = "DiagnosticError",
+               [vim.diagnostic.severity.WARN] = "DiagnosticWarning",
+               [vim.diagnostic.severity.INFO] = "DiagnosticInfo",
+               [vim.diagnostic.severity.HINT] = "DiagnosticHint",
+            },
+         },
       })
-
-      -- icons configs
-      local signs = {
-         Error = "",
-         Warn = "",
-         Hint = "󰌵",
-         Info = "",
-      }
-      for type, icon in pairs(signs) do
-         local diagnostic_type = "DiagnosticSign" .. type
-         vim.fn.sign_define(diagnostic_type, { text = icon, texthl = diagnostic_type, numhl = diagnostic_type })
-      end
 
       -- highlight colors
       vim.api.nvim_set_hl(0, "VirtualTextError", { link = "DiagnosticError" })
