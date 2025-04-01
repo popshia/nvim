@@ -28,13 +28,6 @@ return {
          end,
          desc = "Search Buffers",
       },
-      {
-         "<leader>sc",
-         function()
-            Snacks.picker.registers({ layout = "dropdown", on_show = function() vim.cmd.stopinsert() end })
-         end,
-         desc = "Search Clipboard History",
-      },
       { "<leader>si", function() Snacks.picker.icons({ layout = "select" }) end, desc = "Icons" },
       -- git
       { "<leader>lg", function() Snacks.lazygit() end, desc = "Lazygit" },

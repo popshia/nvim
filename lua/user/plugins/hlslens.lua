@@ -10,7 +10,7 @@ return {
             vim.api.nvim_feedkeys("zz", "n", false)
             require("hlslens").start()
          end,
-         desc = "Next hlslens search",
+         desc = "Next Hlslens Search",
       },
       {
          "N",
@@ -19,7 +19,7 @@ return {
             vim.api.nvim_feedkeys("zz", "n", false)
             require("hlslens").start()
          end,
-         desc = "Previous hlslens search",
+         desc = "Previous Hlslens Search",
       },
       {
          "*",

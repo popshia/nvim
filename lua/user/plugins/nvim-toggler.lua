@@ -7,6 +7,11 @@ return {
       "BufNewFile",
    },
    keys = {
-      { "<leader>i", function() require("nvim-toggler").toggle() end, desc = "Toggle variable" },
+      { "<leader>i", function() require("nvim-toggler").toggle() end, desc = "Toggle Variable" },
+   },
+   opts = {
+      inverses = {
+         ["before"] = "after",
+      },
    },
 }

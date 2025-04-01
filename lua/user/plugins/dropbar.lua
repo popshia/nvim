@@ -11,9 +11,9 @@ return {
       build = "make",
    },
    keys = {
-      { "<leader>;", function() require("dropbar.api").pick() end, desc = "Pick symbols in winbar" },
-      { "[;", function() require("dropbar.api").goto_context_start() end, desc = "Go to start of current context" },
-      { "];", function() require("dropbar.api").select_next_context() end, desc = "Select next context" },
+      { "<leader>;", function() require("dropbar.api").pick() end, desc = "Pick Symbols In Winbar" },
+      { "[;", function() require("dropbar.api").goto_context_start() end, desc = "Go To Start Of Current Context" },
+      { "];", function() require("dropbar.api").select_next_context() end, desc = "Select Next Context" },
    },
    config = {
       bar = {
