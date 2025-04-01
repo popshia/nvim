@@ -15,7 +15,20 @@ return {
       { "gr", "<cmd>Trouble lsp_references<CR>", desc = "Goto Reference" },
       { "gi", "<cmd>Trouble lsp_implementations<CR>", desc = "Goto Implementation" },
       { "gk", "<cmd>lua vim.lsp.buf.hover()<CR>", desc = "Hover Documentation" },
-      { "gj", "<cmd>lua vim.diagnostic.open_float()<CR>", desc = "Open Float" },
+      {
+         "gj",
+         function()
+            vim.diagnostic.config({ virtual_lines = { current_line = true }, virtual_text = false })
+            vim.api.nvim_create_autocmd("CursorMoved", {
+               group = vim.api.nvim_create_augroup("line-diagnostics", { clear = true }),
+               callback = function()
+                  vim.diagnostic.config({ virtual_lines = false, virtual_text = true })
+                  return true
+               end,
+            })
+         end,
+         desc = "Toggle Diagnostic Message",
+      },
       { "gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", desc = "Signature Help" },
       { "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", desc = "Rename" },
       { "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", desc = "Code Actions" },
@@ -24,17 +37,8 @@ return {
    config = function()
       -- diagnostic configs
       vim.diagnostic.config({
-         virtual_lines = {
-            -- current_line = true,
-            severity = {
-               min = vim.diagnostic.severity.ERROR,
-            },
-         },
-         -- virtual_text = {
-         --    severity = {
-         --       max = vim.diagnostic.severity.WARN,
-         --    },
-         -- },
+         virtual_lines = false,
+         virtual_text = true,
          update_in_insert = true,
          severity_sort = true,
          float = {
@@ -58,5 +62,11 @@ return {
          local diagnostic_type = "DiagnosticSign" .. type
          vim.fn.sign_define(diagnostic_type, { text = icon, texthl = diagnostic_type, numhl = diagnostic_type })
       end
+
+      -- highlight colors
+      vim.api.nvim_set_hl(0, "VirtualTextError", { link = "DiagnosticError" })
+      vim.api.nvim_set_hl(0, "VirtualTextWarning", { link = "DiagnosticWarning" })
+      vim.api.nvim_set_hl(0, "VirtualTextInfo", { link = "DiagnosticInfo" })
+      vim.api.nvim_set_hl(0, "VirtualTextHint", { link = "DiagnosticHint" })
    end,
 }

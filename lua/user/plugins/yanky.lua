@@ -28,15 +28,5 @@ return {
       { "=p", "<Plug>(YankyPutAfterFilter)", mode = { "n" }, desc = "Put After Filter" },
       { "=P", "<Plug>(YankyPutBeforeFilter)", mode = { "n" }, desc = "Put Before Filter" },
    },
-   config = function()
-      require("yanky").setup({
-         highlight = {
-            on_put = true,
-            on_yank = true,
-            timer = 200,
-         },
-      })
-      vim.api.nvim_set_hl(0, "YankyPut", { link = "IncSearch" })
-      vim.api.nvim_set_hl(0, "YankyYanked", { link = "IncSearch" })
-   end,
+   opts = {},
 }

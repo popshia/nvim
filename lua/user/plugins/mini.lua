@@ -12,9 +12,11 @@ return {
       require("mini.ai").setup()
       -- Go forward/backward with square brackets
       require("mini.bracketed").setup({
-         file = {
-            suffix = "",
-            options = {},
+         file = { suffix = "" },
+         diagnostic = {
+            options = {
+               float = false,
+            },
          },
       })
       -- Split/Join arguments
