@@ -31,6 +31,8 @@ return {
          preset = "enter",
          ["<Tab>"] = {},
          ["<S-Tab>"] = {},
+         ["<C-e>"] = {},
+         ["<C-a>"] = { "hide", "fallback" },
          ["<C-l>"] = { "snippet_forward", "fallback" },
          ["<C-h>"] = { "snippet_backward", "fallback" },
       },
@@ -69,7 +71,10 @@ return {
             buffer = { score_offset = 40 },
          },
       },
-      signature = { enabled = true },
+      signature = {
+         enabled = true,
+         window = { show_documentation = false },
+      },
       completion = {
          keyword = { range = "full" },
          menu = {
@@ -85,7 +90,10 @@ return {
                },
             },
          },
-         documentation = { auto_show = true },
+         documentation = {
+            auto_show = true,
+            window = { border = "rounded" },
+         },
       },
       snippets = {
          expand = function(snippet) require("luasnip").lsp_expand(snippet) end,

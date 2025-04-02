@@ -8,7 +8,6 @@ return {
    },
    dependencies = {
       { "folke/lazydev.nvim", ft = "lua", opts = {} },
-      { "ray-x/lsp_signature.nvim", opts = {} },
    },
    keys = {
       { "gd", "<cmd>Trouble lsp_definitions<CR>", desc = "Goto Definition" },
