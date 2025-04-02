@@ -72,7 +72,7 @@ return {
          },
       },
       signature = {
-         enabled = true,
+         enabled = false,
          window = { show_documentation = false },
       },
       completion = {

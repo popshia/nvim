@@ -133,6 +133,11 @@ return {
             function(server_name)
                local server = servers[server_name] or {}
                server.on_attach = function(client, bufnr)
+                  require("lsp_signature").on_attach({
+                     floating_window = false,
+                     hint_prefix = " ",
+                  }, bufnr)
+
                   -- show inlay hint in visual mode and hide in insert mode
                   if client.server_capabilities.inlayHintProvider then
                      vim.api.nvim_create_autocmd({ "InsertEnter" }, {
