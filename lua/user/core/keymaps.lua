@@ -34,8 +34,3 @@ map({ "n", "o", "x" }, "gl", "g_", "Move Cursor to Line End")
 
 map("n", "H", ":bprev<CR>", "Previous buffer")
 map("n", "L", ":bnext<CR>", "Next buffer")
-
-map("n", "U", "<C-r>", "Redo")
-
-map("n", "gco", "o<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", "Add Comment Below")
-map("n", "gcO", "O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", "Add Comment Above")

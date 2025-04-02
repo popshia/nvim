@@ -15,20 +15,6 @@ return {
       { "gr", "<cmd>Trouble lsp_references<CR>", desc = "Goto Reference" },
       { "gi", "<cmd>Trouble lsp_implementations<CR>", desc = "Goto Implementation" },
       { "gk", '<cmd>lua vim.lsp.buf.hover({ border = "rounded" })<CR>', desc = "Hover Documentation" },
-      {
-         "gj",
-         function()
-            vim.diagnostic.config({ virtual_lines = { current_line = true }, virtual_text = false })
-            vim.api.nvim_create_autocmd("CursorMoved", {
-               group = vim.api.nvim_create_augroup("line-diagnostics", { clear = true }),
-               callback = function()
-                  vim.diagnostic.config({ virtual_lines = false, virtual_text = true })
-                  return true
-               end,
-            })
-         end,
-         desc = "Toggle Diagnostic Message",
-      },
       { "gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", desc = "Signature Help" },
       { "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", desc = "Rename" },
       { "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", desc = "Code Actions" },
@@ -38,8 +24,8 @@ return {
       -- diagnostic configs
       vim.diagnostic.config({
          virtual_lines = false,
-         virtual_text = true,
-         update_in_insert = true,
+         virtual_text = false,
+         update_in_insert = false,
          severity_sort = true,
          float = {
             focusable = true,
@@ -53,7 +39,7 @@ return {
             text = {
                [vim.diagnostic.severity.ERROR] = "",
                [vim.diagnostic.severity.WARN] = "",
-               [vim.diagnostic.severity.HINT] = "󰌵",
+               [vim.diagnostic.severity.HINT] = "",
                [vim.diagnostic.severity.INFO] = "",
             },
             numhl = {

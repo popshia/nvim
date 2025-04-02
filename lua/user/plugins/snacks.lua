@@ -14,6 +14,8 @@ return {
       { "<leader>st", function() Snacks.picker.grep() end, desc = "Search Text" },
       { "<leader>sr", function() Snacks.picker.recent() end, desc = "Search Recent Files" },
       { "<leader>sk", function() Snacks.picker.keymaps({ layout = "select" }) end, desc = "Search Keymaps" },
+      { "<leader>si", function() Snacks.picker.icons({ layout = "select" }) end, desc = "Icons" },
+      { "<leader>sm", function() Snacks.picker.notifications() end, desc = "Notification History" },
       {
          "<leader>sb",
          function()
@@ -28,7 +30,6 @@ return {
          end,
          desc = "Search Buffers",
       },
-      { "<leader>si", function() Snacks.picker.icons({ layout = "select" }) end, desc = "Icons" },
       -- git
       { "<leader>lg", function() Snacks.lazygit() end, desc = "Lazygit" },
       { "<leader>gs", function() Snacks.picker.git_status() end, desc = "Open changed file" },
