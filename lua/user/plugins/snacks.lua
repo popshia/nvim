@@ -39,6 +39,7 @@ return {
       { "<leader>sn", function() Snacks.picker.files({ cwd = vim.fn.stdpath("config"), layout = "select" }) end, desc = "Find Neovim Files" },
       -- other
       { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
+      { "Q", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
    },
    --@type snacks.Config
    opts = {
