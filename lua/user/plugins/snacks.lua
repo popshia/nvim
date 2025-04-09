@@ -4,6 +4,9 @@ return {
    "folke/snacks.nvim",
    priority = 1000,
    lazy = false,
+   dependencies = {
+      { "RileyGabrielson/inspire.nvim", opts = {} },
+   },
    ---@diagnostic disable: undefined-global
    keys = {
       -- lsp
@@ -16,6 +19,7 @@ return {
       { "<leader>sk", function() Snacks.picker.keymaps({ layout = "select" }) end, desc = "Search Keymaps" },
       { "<leader>si", function() Snacks.picker.icons({ layout = "select" }) end, desc = "Icons" },
       { "<leader>sm", function() Snacks.picker.notifications() end, desc = "Notification History" },
+      { "<leader>su", function() Snacks.picker.undo() end, desc = "Undo History" },
       {
          "<leader>sb",
          function()
@@ -75,7 +79,7 @@ return {
          sections = {
             { section = "header", padding = 3 },
             { section = "keys", gap = 1, padding = 2 },
-            { section = "startup" },
+            { section = "startup", icon = "  " },
          },
       },
       styles = {

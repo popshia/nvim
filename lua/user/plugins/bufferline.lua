@@ -3,9 +3,6 @@
 return {
    "akinsho/bufferline.nvim",
    event = "BufEnter",
-   keys = {
-      { "<leader>bp", "<cmd>BufferLinePick<CR>", desc = "Buffer Pick" },
-   },
    opts = {
       options = {
          -- diagnostics = "nvim_lsp",
