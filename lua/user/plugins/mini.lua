@@ -10,19 +10,8 @@ return {
    config = function()
       -- Extend and create a/i textobjects
       require("mini.ai").setup()
-      -- Go forward/backward with square brackets
-      require("mini.bracketed").setup({
-         file = { suffix = "" },
-         diagnostic = {
-            options = {
-               float = false,
-            },
-         },
-      })
       -- Split/Join arguments
-      require("mini.splitjoin").setup({ mappings = {
-         toggle = "<leader>sj",
-      } })
+      require("mini.splitjoin").setup({ mappings = { toggle = "<leader>sj" } })
       -- Surround
       require("mini.surround").setup({
          mappings = {
