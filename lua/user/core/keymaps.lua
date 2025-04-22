@@ -40,3 +40,5 @@ map("n", "L", ":bnext<CR>", "Next buffer")
 map("n", "ycc", function()
    return "yy" .. vim.v.count1 .. "gcc']p"
 end, "Duplicate and comment line", true, true)
+
+map("x", "/", "<Esc>/\\%V", "Search within visual selection")
