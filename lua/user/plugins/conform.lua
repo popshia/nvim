@@ -4,7 +4,13 @@ return {
    "stevearc/conform.nvim",
    event = "BufWritePre",
    keys = {
-      { "<leader>ff", function() require("conform").format() end, desc = "File Format" },
+      {
+         "<leader>ff",
+         function()
+            require("conform").format()
+         end,
+         desc = "File Format",
+      },
    },
    opts = {
       formatters_by_ft = {

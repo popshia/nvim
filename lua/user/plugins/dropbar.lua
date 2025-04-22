@@ -11,9 +11,27 @@ return {
       build = "make",
    },
    keys = {
-      { "<leader>;", function() require("dropbar.api").pick() end, desc = "Pick Symbols In Winbar" },
-      { "[;", function() require("dropbar.api").goto_context_start() end, desc = "Go To Start Of Current Context" },
-      { "];", function() require("dropbar.api").select_next_context() end, desc = "Select Next Context" },
+      {
+         "<leader>;",
+         function()
+            require("dropbar.api").pick()
+         end,
+         desc = "Pick Symbols In Winbar",
+      },
+      {
+         "[;",
+         function()
+            require("dropbar.api").goto_context_start()
+         end,
+         desc = "Go To Start Of Current Context",
+      },
+      {
+         "];",
+         function()
+            require("dropbar.api").select_next_context()
+         end,
+         desc = "Select Next Context",
+      },
    },
    config = {
       bar = {
@@ -28,9 +46,11 @@ return {
                   }),
                }
             end
-            if vim.bo[buf].buftype == "terminal" then return {
-               sources.terminal,
-            } end
+            if vim.bo[buf].buftype == "terminal" then
+               return {
+                  sources.terminal,
+               }
+            end
             return {
                -- sources.path,
                utils.source.fallback({

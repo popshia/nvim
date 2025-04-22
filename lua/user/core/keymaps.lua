@@ -1,4 +1,6 @@
-local function map(mode, keys, func, desc) vim.keymap.set(mode, keys, func, { desc = desc, noremap = true, silent = true }) end
+local function map(mode, keys, func, desc, remap, expr)
+   vim.keymap.set(mode, keys, func, { desc = desc, noremap = true, silent = true, remap = remap, expr = expr })
+end
 
 map("", "<Space>", "<Nop>", "Clear Space Keymapping")
 vim.g.mapleader = " "
@@ -34,3 +36,7 @@ map({ "n", "o", "x" }, "gl", "g_", "Move Cursor to Line End")
 
 map("n", "H", ":bprev<CR>", "Previous buffer")
 map("n", "L", ":bnext<CR>", "Next buffer")
+
+map("n", "ycc", function()
+   return "yy" .. vim.v.count1 .. "gcc']p"
+end, "Duplicate and comment line", true, true)

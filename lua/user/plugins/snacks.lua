@@ -10,22 +10,78 @@ return {
    ---@diagnostic disable: undefined-global
    keys = {
       -- lsp
-      { "<leader>ds", function() Snacks.picker.lsp_symbols() end, desc = "Document Symbols" },
-      { "<leader>ws", function() Snacks.picker.lsp_workspace_symbols() end, desc = "Workspace Symbols" },
+      {
+         "<leader>ds",
+         function()
+            Snacks.picker.lsp_symbols()
+         end,
+         desc = "Document Symbols",
+      },
+      {
+         "<leader>ws",
+         function()
+            Snacks.picker.lsp_workspace_symbols()
+         end,
+         desc = "Workspace Symbols",
+      },
       -- search
-      { "<leader>sf", function() Snacks.picker.smart() end, desc = "Search Files" },
-      { "<leader>st", function() Snacks.picker.grep() end, desc = "Search Text" },
-      { "<leader>sr", function() Snacks.picker.recent() end, desc = "Search Recent Files" },
-      { "<leader>sk", function() Snacks.picker.keymaps({ layout = "select" }) end, desc = "Search Keymaps" },
-      { "<leader>si", function() Snacks.picker.icons({ layout = "select" }) end, desc = "Icons" },
-      { "<leader>sm", function() Snacks.picker.notifications() end, desc = "Notification History" },
-      { "<leader>su", function() Snacks.picker.undo() end, desc = "Undo History" },
+      {
+         "<leader>sf",
+         function()
+            Snacks.picker.smart()
+         end,
+         desc = "Search Files",
+      },
+      {
+         "<leader>st",
+         function()
+            Snacks.picker.grep()
+         end,
+         desc = "Search Text",
+      },
+      {
+         "<leader>sr",
+         function()
+            Snacks.picker.recent()
+         end,
+         desc = "Search Recent Files",
+      },
+      {
+         "<leader>sk",
+         function()
+            Snacks.picker.keymaps({ layout = "select" })
+         end,
+         desc = "Search Keymaps",
+      },
+      {
+         "<leader>si",
+         function()
+            Snacks.picker.icons({ layout = "select" })
+         end,
+         desc = "Icons",
+      },
+      {
+         "<leader>sm",
+         function()
+            Snacks.picker.notifications()
+         end,
+         desc = "Notification History",
+      },
+      {
+         "<leader>su",
+         function()
+            Snacks.picker.undo()
+         end,
+         desc = "Undo History",
+      },
       {
          "<leader>sb",
          function()
             Snacks.picker.buffers({
                layout = "select",
-               on_show = function() vim.cmd.stopinsert() end,
+               on_show = function()
+                  vim.cmd.stopinsert()
+               end,
                win = {
                   input = { keys = { ["d"] = "bufdelete" } },
                   list = { keys = { ["d"] = "bufdelete" } },
@@ -35,15 +91,57 @@ return {
          desc = "Search Buffers",
       },
       -- git
-      { "<leader>lg", function() Snacks.lazygit() end, desc = "Lazygit" },
-      { "<leader>gs", function() Snacks.picker.git_status() end, desc = "Open changed file" },
-      { "<leader>gl", function() Snacks.picker.git_log() end, desc = "Checkout commit" },
+      {
+         "<leader>lg",
+         function()
+            Snacks.lazygit()
+         end,
+         desc = "Lazygit",
+      },
+      {
+         "<leader>gs",
+         function()
+            Snacks.picker.git_status()
+         end,
+         desc = "Open changed file",
+      },
+      {
+         "<leader>gl",
+         function()
+            Snacks.picker.git_log()
+         end,
+         desc = "Checkout commit",
+      },
       -- todo
-      { "<leader>sd", function() Snacks.picker.todo_comments() end, desc = "Search Todos" },
-      { "<leader>sn", function() Snacks.picker.files({ cwd = vim.fn.stdpath("config"), layout = "select" }) end, desc = "Find Neovim Files" },
+      {
+         "<leader>sd",
+         function()
+            Snacks.picker.todo_comments()
+         end,
+         desc = "Search Todos",
+      },
+      {
+         "<leader>sn",
+         function()
+            Snacks.picker.files({ cwd = vim.fn.stdpath("config"), layout = "select" })
+         end,
+         desc = "Find Neovim Files",
+      },
       -- other
-      { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
-      { "Q", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
+      {
+         "<leader>bd",
+         function()
+            Snacks.bufdelete()
+         end,
+         desc = "Delete Buffer",
+      },
+      {
+         "Q",
+         function()
+            Snacks.bufdelete()
+         end,
+         desc = "Delete Buffer",
+      },
    },
    --@type snacks.Config
    opts = {

@@ -6,7 +6,12 @@ return {
       {
          "<leader>sy",
          function()
-            Snacks.picker.yanky({ layout = "dropdown", on_show = function() vim.cmd.stopinsert() end })
+            Snacks.picker.yanky({
+               layout = "dropdown",
+               on_show = function()
+                  vim.cmd.stopinsert()
+               end,
+            })
          end,
          mode = { "n", "x" },
          desc = "Open Yank History",

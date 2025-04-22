@@ -20,20 +20,28 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 
 -- Fixes Autocomment
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
-   callback = function() vim.cmd("set formatoptions-=cro") end,
+   callback = function()
+      vim.cmd("set formatoptions-=cro")
+   end,
 })
 
 -- Highlight Yanked Text
 vim.api.nvim_create_autocmd({ "TextYankPost" }, {
-   callback = function() vim.highlight.on_yank() end,
+   callback = function()
+      vim.highlight.on_yank()
+   end,
 })
 
 -- Toggle relative number between normal and insert mode
 vim.api.nvim_create_autocmd({ "InsertEnter" }, {
-   callback = function() vim.opt.relativenumber = false end,
+   callback = function()
+      vim.opt.relativenumber = false
+   end,
 })
 vim.api.nvim_create_autocmd({ "InsertLeave" }, {
-   callback = function() vim.opt.relativenumber = true end,
+   callback = function()
+      vim.opt.relativenumber = true
+   end,
 })
 
 -- lsp progress
@@ -44,7 +52,9 @@ vim.api.nvim_create_autocmd("LspProgress", {
    callback = function(ev)
       local client = vim.lsp.get_client_by_id(ev.data.client_id)
       local value = ev.data.params.value --[[@as {percentage?: number, title?: string, message?: string, kind: "begin" | "report" | "end"}]]
-      if not client or type(value) ~= "table" then return end
+      if not client or type(value) ~= "table" then
+         return
+      end
       local p = progress[client.id]
 
       for i = 1, #p + 1 do
@@ -59,13 +69,17 @@ vim.api.nvim_create_autocmd("LspProgress", {
       end
 
       local msg = {} ---@type string[]
-      progress[client.id] = vim.tbl_filter(function(v) return table.insert(msg, v.msg) or not v.done end, p)
+      progress[client.id] = vim.tbl_filter(function(v)
+         return table.insert(msg, v.msg) or not v.done
+      end, p)
 
       local spinner = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" }
       vim.notify(table.concat(msg, "\n"), "info", {
          id = "lsp_progress",
          title = client.name,
-         opts = function(notif) notif.icon = #progress[client.id] == 0 and " " or spinner[math.floor(vim.uv.hrtime() / (1e6 * 80)) % #spinner + 1] end,
+         opts = function(notif)
+            notif.icon = #progress[client.id] == 0 and " " or spinner[math.floor(vim.uv.hrtime() / (1e6 * 80)) % #spinner + 1]
+         end,
       })
    end,
 })
@@ -74,6 +88,8 @@ vim.api.nvim_create_autocmd("LspProgress", {
 vim.api.nvim_create_autocmd("User", {
    pattern = "OilActionsPost",
    callback = function(event)
-      if event.data.actions.type == "move" then Snacks.rename.on_rename_file(event.data.actions.src_url, event.data.actions.dest_url) end
+      if event.data.actions.type == "move" then
+         Snacks.rename.on_rename_file(event.data.actions.src_url, event.data.actions.dest_url)
+      end
    end,
 })

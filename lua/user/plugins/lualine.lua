@@ -4,7 +4,9 @@ return {
    "nvim-lualine/lualine.nvim",
    event = "BufEnter",
    config = function()
-      local hide_in_width = function() return vim.fn.winwidth(0) > 80 end
+      local hide_in_width = function()
+         return vim.fn.winwidth(0) > 80
+      end
 
       local diagnostics = {
          "diagnostics",
@@ -34,9 +36,13 @@ return {
          icon = "",
       }
 
-      local datetime = function() return os.date("%H:%M") end
+      local datetime = function()
+         return os.date("%H:%M")
+      end
 
-      local spaces = function() return "Tab: " .. vim.api.nvim_get_option_value("shiftwidth", {}) end
+      local spaces = function()
+         return "Tab: " .. vim.api.nvim_get_option_value("shiftwidth", {})
+      end
 
       require("lualine").setup({
          options = {

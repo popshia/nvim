@@ -56,7 +56,9 @@ return {
          providers = {
             cmdline = {
                min_keyword_length = function(ctx)
-                  if ctx.mode == "cmdline" and string.find(ctx.line, " ") == nil then return 3 end
+                  if ctx.mode == "cmdline" and string.find(ctx.line, " ") == nil then
+                     return 3
+                  end
                   return 0
                end,
             },
@@ -84,8 +86,12 @@ return {
                columns = { { "kind_icon" }, { "label", gap = 1 } },
                components = {
                   label = {
-                     text = function(ctx) return require("colorful-menu").blink_components_text(ctx) end,
-                     highlight = function(ctx) return require("colorful-menu").blink_components_highlight(ctx) end,
+                     text = function(ctx)
+                        return require("colorful-menu").blink_components_text(ctx)
+                     end,
+                     highlight = function(ctx)
+                        return require("colorful-menu").blink_components_highlight(ctx)
+                     end,
                   },
                },
             },
@@ -96,12 +102,18 @@ return {
          },
       },
       snippets = {
-         expand = function(snippet) require("luasnip").lsp_expand(snippet) end,
+         expand = function(snippet)
+            require("luasnip").lsp_expand(snippet)
+         end,
          active = function(filter)
-            if filter and filter.direction then return require("luasnip").jumpable(filter.direction) end
+            if filter and filter.direction then
+               return require("luasnip").jumpable(filter.direction)
+            end
             return require("luasnip").in_snippet()
          end,
-         jump = function(direction) require("luasnip").jump(direction) end,
+         jump = function(direction)
+            require("luasnip").jump(direction)
+         end,
       },
       fuzzy = { implementation = "prefer_rust_with_warning" },
    },

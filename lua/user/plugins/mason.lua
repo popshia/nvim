@@ -141,10 +141,14 @@ return {
                   -- show inlay hint in visual mode and hide in insert mode
                   if client.server_capabilities.inlayHintProvider then
                      vim.api.nvim_create_autocmd({ "InsertEnter" }, {
-                        callback = function() vim.lsp.inlay_hint.enable(true) end,
+                        callback = function()
+                           vim.lsp.inlay_hint.enable(true)
+                        end,
                      })
                      vim.api.nvim_create_autocmd({ "InsertLeave" }, {
-                        callback = function() vim.lsp.inlay_hint.enable(false) end,
+                        callback = function()
+                           vim.lsp.inlay_hint.enable(false)
+                        end,
                      })
                   end
                end

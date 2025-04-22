@@ -4,7 +4,13 @@ return {
    "stevearc/oil.nvim",
    event = "VeryLazy",
    keys = {
-      { "<leader>e", function() require("oil").toggle_float() end, desc = "File Explorer" },
+      {
+         "<leader>e",
+         function()
+            require("oil").toggle_float()
+         end,
+         desc = "File Explorer",
+      },
    },
    opts = {
       default_file_explorer = true,
