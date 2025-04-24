@@ -2,7 +2,6 @@
 
 return {
    "stevearc/oil.nvim",
-   event = "VeryLazy",
    keys = {
       {
          "<leader>e",

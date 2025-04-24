@@ -53,7 +53,7 @@ return {
             theme = "auto",
             section_separators = {},
             component_separators = { left = "|", right = "|" },
-            disabled_filetypes = { "alpha", "dashboard", "Outline" },
+            disabled_filetypes = { "snacks_dashboard", "Outline" },
          },
          sections = {
             lualine_a = { "mode" },
