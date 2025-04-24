@@ -11,7 +11,10 @@
 
 return {
    "rachartier/tiny-inline-diagnostic.nvim",
-   event = "VeryLazy",
+   event = {
+      "BufReadPre",
+      "BufNewFile",
+   },
    priority = 1000,
    opts = {
       preset = "classic", -- modern, classic, minimal, simple, nonerdfont, powerline

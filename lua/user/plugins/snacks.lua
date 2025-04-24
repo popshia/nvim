@@ -4,9 +4,6 @@ return {
    "folke/snacks.nvim",
    priority = 1000,
    lazy = false,
-   dependencies = {
-      { "RileyGabrielson/inspire.nvim", opts = {} },
-   },
    ---@diagnostic disable: undefined-global
    keys = {
       -- lsp
