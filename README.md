@@ -15,7 +15,6 @@ A modern, feature-rich Neovim configuration focused on productivity and a smooth
 - [Key Features](#-key-features)
 - [Directory Structure](#-directory-structure)
 - [Plugins](#-plugins)
-- [Language Servers](#-language-servers)
 - [Customization](#️-customization)
 - [Feedback and Contributions](#-feedback-and-contributions)
 - [License](#-license)
@@ -161,25 +160,6 @@ This configuration uses [lazy.nvim](https://github.com/folke/lazy.nvim) as the p
 + [folke/lazydev.nvim](https://dotfyle.com/plugins/folke/lazydev.nvim) - Development helper for lazy.nvim
 + [nvim-lua/plenary.nvim](https://dotfyle.com/plugins/nvim-lua/plenary.nvim) - Lua functions library
 + [folke/lazy.nvim](https://dotfyle.com/plugins/folke/lazy.nvim) - Plugin manager
-
-## 🌐 Language Servers
-
-This configuration includes support for the following language servers, which are automatically installed and configured via [Mason](https://github.com/williamboman/mason.nvim):
-
-| Language Server | Language/Framework |
-|-----------------|-------------------|
-| basedpyright    | Python            |
-| bashls          | Bash              |
-| clangd          | C/C++             |
-| eslint          | JavaScript/TypeScript |
-| html-lsp        | HTML              |
-| lua_ls          | Lua               |
-| marksman        | Markdown          |
-| svelte          | Svelte            |
-| tailwindcss     | Tailwind CSS      |
-| ts_ls           | TypeScript        |
-
-Each language server is configured with sensible defaults in the `lsp/` directory.
 
 ## 🛠️ Customization
 
