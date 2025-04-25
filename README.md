@@ -15,7 +15,16 @@ A modern, feature-rich Neovim configuration focused on productivity and a smooth
 - [Key Features](#-key-features)
 - [Directory Structure](#-directory-structure)
 - [Plugins](#-plugins)
+  - [UI Components](#ui-components)
+  - [Code Intelligence](#code-intelligence)
+  - [Editing Experience](#editing-experience)
+  - [Navigation and Search](#navigation-and-search)
+  - [Integrations](#integrations)
+  - [Utilities](#utilities)
 - [Customization](#️-customization)
+- [Keybindings](#-keybindings)
+- [Language Support](#-language-support)
+- [Performance](#-performance)
 - [Feedback and Contributions](#-feedback-and-contributions)
 - [License](#-license)
 
@@ -42,6 +51,10 @@ git clone git@github.com:popshia/nvim ~/.config/popshia/nvim
 NVIM_APPNAME=popshia/nvim nvim
 ```
 
+3. Wait for the initial plugin installation to complete.
+
+4. Restart Neovim to ensure all plugins are properly loaded.
+
 ## ✨ Key Features
 
 - **Modern UI**: Beautiful [Gruvbox](https://github.com/sainnhe/gruvbox-material) theme with clean statusline
@@ -56,16 +69,26 @@ NVIM_APPNAME=popshia/nvim nvim
 - **Productivity**:
   - Intuitive keybindings with [which-key](https://github.com/folke/which-key.nvim)
   - Terminal integration with [toggleterm](https://github.com/akinsho/toggleterm.nvim)
+  - Enhanced motions with [flash.nvim](https://github.com/folke/flash.nvim)
 
 ## 📁 Directory Structure
 
 ```
 nvim/
 ├── ftplugin/         # Filetype-specific settings
-├── lsp/              # Language server configurations
+│   ├── cpp.lua       # C++ specific settings
+│   ├── html.lua      # HTML specific settings
+│   ├── htmldjango.lua # Django template settings
+│   └── markdown.lua  # Markdown specific settings
 ├── lua/
 │   └── user/
-│       ├── core/     # Core configuration (options, keymaps, etc.)
+│       ├── bench/    # Benchmarking utilities
+│       ├── core/     # Core configuration
+│       │   ├── autocommands.lua # Automatic commands
+│       │   ├── init.lua        # Core initialization
+│       │   ├── keymaps.lua     # Key mappings
+│       │   └── options.lua     # Editor options
+│       ├── lazy.lua  # Plugin manager setup
 │       └── plugins/  # Plugin-specific configurations
 └── init.lua          # Entry point
 ```
@@ -175,6 +198,9 @@ You can customize this configuration by editing the files in the `~/.config/pops
 - **Plugin Settings**:
   - `lua/user/plugins/` - Individual plugin configurations
 
+- **Filetype-Specific Settings**:
+  - `ftplugin/` - Settings that apply only to specific file types
+
 ### Adding New Plugins
 
 To add a new plugin, create a new file in the `lua/user/plugins/` directory following the lazy.nvim format:
@@ -189,6 +215,39 @@ return {
 ```
 
 For more information, check out the [Lazy.nvim](https://github.com/folke/lazy.nvim) documentation.
+
+## ⌨️ Keybindings
+
+This configuration uses Space as the leader key. Here are some of the most important keybindings:
+
+| Keybinding | Description |
+|------------|-------------|
+| `<Space>lz` | Open Lazy plugin manager |
+| `gd` | Go to definition |
+| `gr` | Go to references |
+| `gi` | Go to implementation |
+| `gk` | Show hover documentation |
+| `<Space>rn` | Rename symbol |
+| `<Space>ca` | Code actions |
+| `<Space>li` | LSP info |
+
+For a complete list of keybindings, press `<Space>` to see the which-key menu.
+
+## 🌐 Language Support
+
+This configuration includes support for many programming languages through Treesitter and LSP:
+
+- **Built-in Language Support**: Lua, Python, JavaScript, HTML, CSS, C/C++, and more
+- **Filetype-Specific Settings**: Custom settings for C++, HTML, Django templates, and Markdown
+- **Extensible**: Easily add support for additional languages through Mason and Treesitter
+
+## 🚀 Performance
+
+This configuration is designed to be fast and responsive:
+
+- **Lazy Loading**: Plugins are loaded only when needed
+- **Efficient Startup**: Core functionality is prioritized during startup
+- **Optimized Settings**: Performance-focused settings for a smooth experience
 
 ## 🤝 Feedback and Contributions
 
