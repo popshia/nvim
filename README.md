@@ -38,13 +38,12 @@ NVIM_APPNAME=popshia/nvim nvim
 
 ### bars-and-lines
 
-+ [utilyre/barbecue.nvim](https://dotfyle.com/plugins/utilyre/barbecue.nvim)
 + [Bekaboo/dropbar.nvim](https://dotfyle.com/plugins/Bekaboo/dropbar.nvim)
-+ [SmiteshP/nvim-navic](https://dotfyle.com/plugins/SmiteshP/nvim-navic)
 
 ### color
 
 + [brenoprata10/nvim-highlight-colors](https://dotfyle.com/plugins/brenoprata10/nvim-highlight-colors)
++ [xzbdmw/colorful-menu.nvim](https://dotfyle.com/plugins/xzbdmw/colorful-menu.nvim)
 
 ### colorscheme
 
@@ -52,14 +51,9 @@ NVIM_APPNAME=popshia/nvim nvim
 
 ### comment
 
-+ [folke/ts-comments.nvim](https://dotfyle.com/plugins/folke/ts-comments.nvim)
-+ [numToStr/Comment.nvim](https://dotfyle.com/plugins/numToStr/Comment.nvim)
 + [folke/todo-comments.nvim](https://dotfyle.com/plugins/folke/todo-comments.nvim)
-
-### completion
-
-+ [hrsh7th/nvim-cmp](https://dotfyle.com/plugins/hrsh7th/nvim-cmp)
-+ [lukas-reineke/cmp-under-comparator](https://dotfyle.com/plugins/lukas-reineke/cmp-under-comparator)
++ [numToStr/Comment.nvim](https://dotfyle.com/plugins/numToStr/Comment.nvim)
++ [folke/ts-comments.nvim](https://dotfyle.com/plugins/folke/ts-comments.nvim)
 
 ### cursorline
 
@@ -74,6 +68,7 @@ NVIM_APPNAME=popshia/nvim nvim
 + [windwp/nvim-autopairs](https://dotfyle.com/plugins/windwp/nvim-autopairs)
 + [folke/snacks.nvim](https://dotfyle.com/plugins/folke/snacks.nvim)
 + [windwp/nvim-ts-autotag](https://dotfyle.com/plugins/windwp/nvim-ts-autotag)
++ [gbprod/yanky.nvim](https://dotfyle.com/plugins/gbprod/yanky.nvim)
 
 ### file-explorer
 
@@ -87,10 +82,6 @@ NVIM_APPNAME=popshia/nvim nvim
 
 + [lewis6991/gitsigns.nvim](https://dotfyle.com/plugins/lewis6991/gitsigns.nvim)
 
-### icon
-
-+ [nvim-tree/nvim-web-devicons](https://dotfyle.com/plugins/nvim-tree/nvim-web-devicons)
-
 ### indent
 
 + [shellRaining/hlchunk.nvim](https://dotfyle.com/plugins/shellRaining/hlchunk.nvim)
@@ -101,16 +92,13 @@ NVIM_APPNAME=popshia/nvim nvim
 
 ### lsp
 
-+ [ray-x/lsp_signature.nvim](https://dotfyle.com/plugins/ray-x/lsp_signature.nvim)
++ [rachartier/tiny-inline-diagnostic.nvim](https://dotfyle.com/plugins/rachartier/tiny-inline-diagnostic.nvim)
 + [neovim/nvim-lspconfig](https://dotfyle.com/plugins/neovim/nvim-lspconfig)
++ [ray-x/lsp_signature.nvim](https://dotfyle.com/plugins/ray-x/lsp_signature.nvim)
 
 ### lsp-installer
 
 + [williamboman/mason.nvim](https://dotfyle.com/plugins/williamboman/mason.nvim)
-
-### lua-colorscheme
-
-+ [ellisonleao/gruvbox.nvim](https://dotfyle.com/plugins/ellisonleao/gruvbox.nvim)
 
 ### markdown-and-latex
 
@@ -119,13 +107,14 @@ NVIM_APPNAME=popshia/nvim nvim
 
 ### motion
 
-+ [sphamba/smear-cursor.nvim](https://dotfyle.com/plugins/sphamba/smear-cursor.nvim)
 + [folke/flash.nvim](https://dotfyle.com/plugins/folke/flash.nvim)
++ [sphamba/smear-cursor.nvim](https://dotfyle.com/plugins/sphamba/smear-cursor.nvim)
 
 ### nvim-dev
 
-+ [nvim-lua/plenary.nvim](https://dotfyle.com/plugins/nvim-lua/plenary.nvim)
++ [MunifTanjim/nui.nvim](https://dotfyle.com/plugins/MunifTanjim/nui.nvim)
 + [folke/lazydev.nvim](https://dotfyle.com/plugins/folke/lazydev.nvim)
++ [nvim-lua/plenary.nvim](https://dotfyle.com/plugins/nvim-lua/plenary.nvim)
 
 ### plugin-manager
 
@@ -150,8 +139,8 @@ NVIM_APPNAME=popshia/nvim nvim
 
 ### syntax
 
-+ [nvim-treesitter/nvim-treesitter-textobjects](https://dotfyle.com/plugins/nvim-treesitter/nvim-treesitter-textobjects)
 + [nvim-treesitter/nvim-treesitter](https://dotfyle.com/plugins/nvim-treesitter/nvim-treesitter)
++ [nvim-treesitter/nvim-treesitter-textobjects](https://dotfyle.com/plugins/nvim-treesitter/nvim-treesitter-textobjects)
 
 ### tabline
 
@@ -164,15 +153,12 @@ NVIM_APPNAME=popshia/nvim nvim
 ### utility
 
 + [nguyenvukhang/nvim-toggler](https://dotfyle.com/plugins/nguyenvukhang/nvim-toggler)
++ [mcauley-penney/visual-whitespace.nvim](https://dotfyle.com/plugins/mcauley-penney/visual-whitespace.nvim)
 + [echasnovski/mini.nvim](https://dotfyle.com/plugins/echasnovski/mini.nvim)
 
 ### web-development
 
 + [luckasRanarison/tailwind-tools.nvim](https://dotfyle.com/plugins/luckasRanarison/tailwind-tools.nvim)
-
-### workflow
-
-+ [jiaoshijie/undotree](https://dotfyle.com/plugins/jiaoshijie/undotree)
 
 ## Language Servers
 
