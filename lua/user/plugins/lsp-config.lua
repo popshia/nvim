@@ -50,11 +50,5 @@ return {
             },
          },
       })
-
-      -- highlight colors
-      vim.api.nvim_set_hl(0, "VirtualTextError", { link = "DiagnosticError" })
-      vim.api.nvim_set_hl(0, "VirtualTextWarning", { link = "DiagnosticWarning" })
-      vim.api.nvim_set_hl(0, "VirtualTextInfo", { link = "DiagnosticInfo" })
-      vim.api.nvim_set_hl(0, "VirtualTextHint", { link = "DiagnosticHint" })
    end,
 }
