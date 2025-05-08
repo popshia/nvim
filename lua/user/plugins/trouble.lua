@@ -9,6 +9,8 @@ return {
       { "<leader>wd", "<cmd>Trouble diagnostics toggle<CR>", desc = "Trouble: Workspace Diagnostics" },
       { "<leader>qf", "<cmd>Trouble quickfix toggle<CR>", desc = "Trouble: Quickfix" },
    },
+   ---@module "trouble"
+   ---@type trouble.Config
    opts = {
       focus = true,
    },

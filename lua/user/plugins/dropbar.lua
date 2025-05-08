@@ -33,7 +33,7 @@ return {
          desc = "Select Next Context",
       },
    },
-   config = {
+   opts = {
       bar = {
          sources = function(buf, _)
             local sources = require("dropbar.sources")

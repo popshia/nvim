@@ -6,6 +6,9 @@ return {
    keys = {
       { "<c-\\>", "<cmd>ToggleTerm<CR>", desc = "Toggle Terminal" },
    },
+   ---@diagnostic disable: missing-fields
+   ---@module "toggleterm"
+   ---@type ToggleTermConfig
    opts = {
       size = 20,
       autochdir = true,

@@ -2,6 +2,10 @@
 
 return {
    "williamboman/mason.nvim",
+   event = {
+      "BufReadPre",
+      "BufNewFile",
+   },
    cmd = "Mason",
    keys = {
       { "<leader>ms", "<cmd>Mason<CR>", desc = "Mason" },
@@ -94,6 +98,8 @@ return {
          },
       }
 
+      ---@module "mason"
+      ---@type MasonSettings
       require("mason").setup({
          ui = {
             border = "rounded",
@@ -124,6 +130,7 @@ return {
 
       require("mason-tool-installer").setup({ ensure_installed = ensure_install_servers })
 
+      ---@diagnostic disable: missing-fields
       require("mason-lspconfig").setup({
          handlers = {
             function(server_name)
@@ -153,6 +160,7 @@ return {
             end,
          },
          automatic_installation = true,
+         automatic_enable = true,
       })
    end,
 }

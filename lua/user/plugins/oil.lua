@@ -2,6 +2,7 @@
 
 return {
    "stevearc/oil.nvim",
+   event = "VimEnter",
    keys = {
       {
          "<leader>e",
@@ -11,6 +12,8 @@ return {
          desc = "File Explorer",
       },
    },
+   ---@module "oil"
+   ---@type oil.setupOpts
    opts = {
       default_file_explorer = true,
       keymaps = {

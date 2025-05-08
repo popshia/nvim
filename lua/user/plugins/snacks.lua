@@ -140,7 +140,7 @@ return {
          desc = "Delete Buffer",
       },
    },
-   --@type snacks.Config
+   ---@type snacks.Config
    opts = {
       animate = { enabled = true },
       bigfile = { enabled = true },

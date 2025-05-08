@@ -2,6 +2,8 @@
 
 return {
    "akinsho/bufferline.nvim",
+   ---@module "bufferline"
+   ---@type bufferline.UserConfig
    opts = {
       options = {
          -- diagnostics = "nvim_lsp",
