@@ -3,10 +3,6 @@
 return {
    "echasnovski/mini.nvim",
    version = false,
-   event = {
-      "BufReadPre",
-      "BufNewFile",
-   },
    config = function()
       -- Extend and create a/i textobjects
       require("mini.ai").setup()

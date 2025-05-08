@@ -2,10 +2,6 @@
 
 return {
    "RRethy/vim-illuminate",
-   event = {
-      "BufReadPre",
-      "BufNewFile",
-   },
    keys = {
       {
          "[[",
@@ -27,7 +23,7 @@ return {
          delay = 0,
          large_file_cutoff = 10000,
          filetypes_denylist = {
-            "alpha",
+            "snacks_dashboard",
             "mason",
             "lazy",
             "toggleterm",

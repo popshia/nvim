@@ -2,11 +2,6 @@
 
 return {
    "xzbdmw/colorful-menu.nvim",
-   event = {
-      "CmdlineEnter",
-      "BufReadPost",
-      "BufNewFile",
-   },
    opts = {
       ls = {
          lua_ls = {

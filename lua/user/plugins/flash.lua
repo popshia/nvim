@@ -2,10 +2,7 @@
 
 return {
    "folke/flash.nvim",
-   event = {
-      "BufReadPre",
-      "BufNewFile",
-   },
+   event = "VeryLazy",
    keys = {
       {
          "s",
@@ -24,6 +21,7 @@ return {
          desc = "Remote Flash",
       },
    },
+   ---@type Flash.Config
    opts = {
       search = {
          multi_window = false,

@@ -3,6 +3,7 @@
 return {
    "stevearc/conform.nvim",
    event = "BufWritePre",
+   cmd = "ConformInfo",
    keys = {
       {
          "<leader>ff",
@@ -12,6 +13,8 @@ return {
          desc = "File Format",
       },
    },
+   ---@module "conform"
+   ---@type conform.setupOpts
    opts = {
       formatters_by_ft = {
          cpp = { "clang_format" },

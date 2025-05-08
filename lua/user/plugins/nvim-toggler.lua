@@ -2,10 +2,6 @@
 
 return {
    "nguyenvukhang/nvim-toggler",
-   event = {
-      "BufReadPre",
-      "BufNewFile",
-   },
    keys = {
       {
          "<leader>i",

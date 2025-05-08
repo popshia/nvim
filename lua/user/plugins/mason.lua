@@ -2,10 +2,6 @@
 
 return {
    "williamboman/mason.nvim",
-   event = {
-      "BufReadPre",
-      "BufNewFile",
-   },
    cmd = "Mason",
    keys = {
       { "<leader>ms", "<cmd>Mason<CR>", desc = "Mason" },

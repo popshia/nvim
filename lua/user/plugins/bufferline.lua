@@ -2,10 +2,6 @@
 
 return {
    "akinsho/bufferline.nvim",
-   event = {
-      "BufReadPre",
-      "BufNewFile",
-   },
    opts = {
       options = {
          -- diagnostics = "nvim_lsp",
