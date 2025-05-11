@@ -8,6 +8,7 @@ return {
    dependencies = {
       {
          "williamboman/mason.nvim",
+         cmd = "Mason",
          keys = { "<leader>ms", "<cmd>Mason<CR>", desc = "Mason" },
          opts = {},
       },
