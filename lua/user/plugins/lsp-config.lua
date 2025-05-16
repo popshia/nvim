@@ -7,8 +7,25 @@ return {
       "BufNewFile",
    },
    dependencies = {
-      { "folke/lazydev.nvim", ft = "lua", opts = {} },
-      { "ray-x/lsp_signature.nvim", opts = {} },
+      {
+         "folke/lazydev.nvim",
+         ft = "lua",
+         opts = {
+            library = {
+               { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+            },
+         },
+      },
+      {
+         "ray-x/lsp_signature.nvim",
+         opts = {
+            hint_prefix = {
+               above = "↙ ", -- when the hint is on the line above the current line
+               current = "← ", -- when the hint is on the same line
+               below = "↖ ", -- when the hint is on the line below the current line
+            },
+         },
+      },
    },
    keys = {
       { "gd", "<cmd>Trouble lsp_definitions<CR>", desc = "Goto Definition" },
