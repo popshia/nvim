@@ -1,15 +1,17 @@
 -- mason
 
 return {
-   "williamboman/mason-lspconfig.nvim",
+   "mason-org/mason-lspconfig.nvim",
    event = {
       "BufReadPost",
    },
    dependencies = {
       {
-         "williamboman/mason.nvim",
+         "mason-org/mason.nvim",
          cmd = "Mason",
-         keys = { "<leader>ms", "<cmd>Mason<CR>", desc = "Mason" },
+         keys = {
+            { "<leader>ms", "<cmd>Mason<CR>", desc = "Mason" },
+         },
          opts = {},
       },
       "neovim/nvim-lspconfig",
