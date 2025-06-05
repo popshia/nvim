@@ -4,7 +4,7 @@ return {
          disableOrganizeImports = true,
          analysis = {
             autoImportCompletions = true,
-            typeCheckingMode = "off",
+            typeCheckingMode = "basic",
             diagnosticMode = "openFilesOnly",
             autoSearchPaths = true,
             useLibraryCodeForTypes = true,
