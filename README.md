@@ -1,4 +1,4 @@
-# My Neovim Configuration
+# nvim
 
 This is my personal Neovim configuration, meticulously crafted for a productive, visually appealing, and highly customized development experience. It is built upon `lazy.nvim` for robust plugin management and features a modular structure that separates concerns, making it easy to maintain and extend.
 
