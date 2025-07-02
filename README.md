@@ -1,5 +1,7 @@
 # nvim
 
+> this readme file is generated using gemini-cli.
+
 This is my personal Neovim configuration, meticulously crafted for a productive, visually appealing, and highly customized development experience. It is built upon `lazy.nvim` for robust plugin management and features a modular structure that separates concerns, making it easy to maintain and extend.
 
 ## ✨ Features
@@ -159,3 +161,4 @@ This configuration uses a curated list of plugins to achieve its functionality. 
 -   **[vim-illuminate](https://github.com/RRethy/vim-illuminate)**: Highlights other uses of the word under the cursor.
 
 </details>
+

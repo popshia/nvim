@@ -1,23 +1,20 @@
 -- vim markdown mode
 
 return {
-   "MeanderingProgrammer/markdown.nvim",
-   main = "render-markdown",
-   ft = "markdown",
+   "iamcco/markdown-preview.nvim",
+   cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+   ft = { "markdown" },
+   build = "cd app && yarn install",
    dependencies = {
-      { "preservim/vim-markdown" },
       {
-         "iamcco/markdown-preview.nvim",
-         cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-         build = "cd app && yarn install",
-         init = function()
-            vim.g.mkdp_filetypes = { "markdown" }
-         end,
-         ft = { "markdown" },
-         keys = {
-            { "<leader>md", "<cmd>MarkdownPreview<CR>", desc = "Preview Markdown File" },
-         },
+         "MeanderingProgrammer/markdown.nvim",
+         main = "render-markdown",
+         ft = "markdown",
+         opts = {},
       },
+      { "preservim/vim-markdown" },
    },
-   opts = {},
+   keys = {
+      { "<leader>md", "<cmd>MarkdownPreview<CR>", desc = "Preview Markdown File" },
+   },
 }
