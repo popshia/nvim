@@ -149,7 +149,7 @@ return {
       notifier = { enabled = true },
       picker = { enabled = true },
       words = { enabled = false },
-      image = { enabled = false },
+      image = { enabled = true },
       dashboard = {
          enabled = true,
          preset = {
