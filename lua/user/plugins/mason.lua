@@ -3,7 +3,7 @@
 return {
    "mason-org/mason-lspconfig.nvim",
    event = {
-      "BufReadPost",
+      "BufReadPre",
    },
    dependencies = {
       {
