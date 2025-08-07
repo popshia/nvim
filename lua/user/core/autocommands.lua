@@ -93,3 +93,15 @@ vim.api.nvim_create_autocmd("User", {
       end
    end,
 })
+
+-- auto refresh file in swift
+vim.api.nvim_create_autocmd({ "FileType" }, {
+   pattern = { "swift" },
+   callback = function()
+      vim.opt.autoread = true
+
+      vim.fn.timer_start(2000, function()
+         vim.cmd("silent! checktime")
+      end, { ["repeat"] = -1 })
+   end,
+})

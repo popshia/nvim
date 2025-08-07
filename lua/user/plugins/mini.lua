@@ -7,7 +7,9 @@ return {
       -- Extend and create a/i textobjects
       require("mini.ai").setup()
       -- Split/Join arguments
-      require("mini.splitjoin").setup({ mappings = { toggle = "<leader>sj" } })
+      require("mini.splitjoin").setup({
+         mappings = { toggle = "<leader>sj" },
+      })
       -- Surround
       require("mini.surround").setup({
          mappings = {
@@ -23,5 +25,9 @@ return {
       -- Icons
       require("mini.icons").setup()
       MiniIcons.mock_nvim_web_devicons()
+      -- Cursorword
+      require("mini.cursorword").setup()
+      vim.api.nvim_set_hl(0, "MiniCursorword", { underline = true })
+      vim.api.nvim_set_hl(0, "MiniCursorwordCurrent", { link = "MiniCursorword" })
    end,
 }
