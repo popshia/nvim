@@ -19,7 +19,7 @@ return {
       formatters_by_ft = {
          cpp = { "clang_format" },
          lua = { "stylua" },
-         python = { "isort", "black" },
+         python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
          shell = { "shfmt", "shellcheck" },
          fish = { "fish_indent" },
          json = { "prettier" },
@@ -32,14 +32,11 @@ return {
          ["_"] = {},
       },
       formatters = {
-         black = {
-            prepend_args = { "--fast" },
-         },
-         isort = {
-            prepend_args = { "--profile", "black" },
-         },
          clang_foramt = {
             prepend_args = { "--style=LLVM" },
+         },
+         injected = {
+            option = { ignore_errors = true },
          },
       },
       format_on_save = {
