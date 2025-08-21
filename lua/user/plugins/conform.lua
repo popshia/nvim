@@ -27,7 +27,7 @@ return {
          javascript = { "prettier" },
          svelte = { "prettier" },
          yaml = { "prettier" },
-         swift = { "swiftformat" },
+         swift = { "swift" },
          ["*"] = { "trim_whitespace", "codespell" },
          ["_"] = {},
       },
