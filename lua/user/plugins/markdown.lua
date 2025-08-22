@@ -2,6 +2,7 @@
 
 return {
    "preservim/vim-markdown",
+   ft = { "markdown" },
    dependencies = {
       {
          "MeanderingProgrammer/markdown.nvim",

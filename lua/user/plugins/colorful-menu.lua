@@ -2,6 +2,7 @@
 
 return {
    "xzbdmw/colorful-menu.nvim",
+   event = { "InsertEnter" },
    opts = {
       ls = {
          lua_ls = {

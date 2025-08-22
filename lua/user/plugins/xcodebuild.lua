@@ -2,12 +2,10 @@
 
 return {
    "wojciech-kulik/xcodebuild.nvim",
+   ft = { "swift" },
    dependencies = {
       "nvim-telescope/telescope.nvim",
       "MunifTanjim/nui.nvim",
-      "folke/snacks.nvim", -- (optional) to show previews
-      "stevearc/oil.nvim", -- (optional) to manage project files
-      "nvim-treesitter/nvim-treesitter", -- (optional) for Quick tests support (required Swift parser)
    },
    keys = {
       { "<leader>X", "<cmd>XcodebuildPicker<cr>", desc = "Show All Xcoddbuild Actions" },

@@ -2,6 +2,10 @@
 
 return {
    "saghen/blink.cmp",
+   event = {
+      "CmdlineEnter",
+      "InsertEnter",
+   },
    dependencies = {
       {
          "L3MON4D3/LuaSnip",
@@ -12,7 +16,9 @@ return {
                "rafamadriz/friendly-snippets",
                config = function()
                   require("luasnip.loaders.from_vscode").lazy_load()
-                  require("luasnip.loaders.from_vscode").lazy_load({ paths = { vim.fn.stdpath("config") .. "/snippets" } })
+                  require("luasnip.loaders.from_vscode").lazy_load({
+                     paths = { vim.fn.stdpath("config") .. "/snippets" },
+                  })
                end,
             },
          },
@@ -76,7 +82,7 @@ return {
          keyword = { range = "full" },
          menu = {
             draw = {
-               -- We don't need label_description now because label and label_description are already
+               -- don't need label_description now because label and label_description are already
                -- combined together in label by colorful-menu.nvim.
                columns = { { "kind_icon" }, { "label", gap = 1 } },
                components = {
