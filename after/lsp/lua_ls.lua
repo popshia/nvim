@@ -4,7 +4,7 @@ return {
          runtime = { version = "LuaJIT" },
          format = { enable = false },
          diagnostics = {
-            globals = { "vim" },
+            globals = { "vim", "hs" },
          },
          workspace = {
             library = {
