@@ -1,7 +1,5 @@
 # nvim
 
-> this readme file is generated using gemini-cli.
-
 This is my personal Neovim configuration, meticulously crafted for a productive, visually appealing, and highly customized development experience. It is built upon `lazy.nvim` for robust plugin management and features a modular structure that separates concerns, making it easy to maintain and extend.
 
 ## ✨ Features
@@ -42,6 +40,21 @@ The configuration is organized logically to make it easy to navigate and modify:
 
 ## 📦 Installation
 
+### Prerequisites
+
+Before you begin, ensure you have the following dependencies installed:
+
+-   **Neovim**: Version 0.9.0 or higher.
+-   **Git**: For cloning the configuration and managing plugins.
+-   **Node.js**: (v18.0.0 or higher recommended) Required for some plugins and LSPs. We recommend using a version manager like [nvm](https://github.com/nvm-sh/nvm).
+-   **Python 3.10+**: Required for Python-based tools and plugins. We recommend using a version manager like [pyenv](https://github.com/pyenv/pyenv).
+-   **Build Tools**: A C compiler, `make`, `unzip`, `wget`, and `curl` are required for building some plugins and LSPs.
+-   **ripgrep**: For fast searching.
+-   **fd**: For finding files.
+-   **A Nerd Font**: For icons to display correctly. I recommend [JetBrainsMono Nerd Font](https://www.nerdfonts.com/font-downloads).
+
+### Setup
+
 1.  **Clone the repository**:
     ```bash
     git clone https://github.com/popshia/nvim.git ~/.config/nvim
@@ -52,14 +65,39 @@ The configuration is organized logically to make it easy to navigate and modify:
     ```
     `lazy.nvim` will automatically handle the installation of all plugins on the first run.
 
+### Updating
+
+To update the configuration and plugins, run the following command from within Neovim:
+
+```
+:Lazy update
+```
+
+## 🤖 LSP (Language Server Protocol)
+
+This configuration uses `mason.nvim` to automatically install and manage LSP servers. The following servers are configured to be installed by default:
+
+- `basedpyright`
+- `bashls`
+- `clangd`
+- `eslint`
+- `html`
+- `lua_ls`
+- `markdown_oxide`
+- `ruff`
+- `tailwindcss`
+- `ts_ls`
+
+You can add more servers by modifying the `ensure_installed` list in `lua/user/plugins/mason.lua`.
+
 ## ⌨️ Keymaps
 
-Keymaps are set in `lua/user/core/keymaps.lua` and within each plugin's configuration file in `lua/user/plugins/`.
+Keymaps are set in `lua/user/core/keymaps.lua` and within each plugin\'s configuration file in `lua/user/plugins/`.
 
 ### General
 
 | Key | Description |
-| :--- | :--- |
+| :--- |
 | `<Space>` | **Leader key** |
 | `<Esc>` | Clear search highlighting |
 | `<C-h/j/k/l>` | Focus window left/down/up/right |
@@ -74,7 +112,7 @@ Keymaps are set in `lua/user/core/keymaps.lua` and within each plugin's configur
 ### Plugins
 
 | Key | Plugin | Description |
-| :--- | :--- | :--- |
+| :--- |
 | `<leader>lz` | `lazy.nvim` | Show the Lazy plugin manager UI |
 | `<leader>ff` | `conform.nvim` | Format the current file |
 | `<leader>;` | `dropbar.nvim` | Pick symbols from the winbar breadcrumbs |
@@ -83,14 +121,12 @@ Keymaps are set in `lua/user/core/keymaps.lua` and within each plugin's configur
 | `<leader>gb` | `gitsigns.nvim` | Blame the current line |
 | `<leader>gh` | `gitsigns.nvim` | Preview the hunk under the cursor |
 | `n`/`N` | `hlslens.nvim` | Go to next/previous search result with lens |
-| `[[`/`]]` | `vim-illuminate` | Go to previous/next reference of the word under cursor |
 | `gd`/`gr`/`gi` | `lsp-config` | Go to Definition/References/Implementation |
 | `gk` | `lsp-config` | Show hover documentation |
 | `gs` | `lsp-config` | Show signature help |
 | `<leader>rn` | `lsp-config` | Rename symbol |
 | `<leader>ca` | `lsp-config` | Show code actions |
 | `<leader>li` | `lsp-config` | Show LSP information |
-| `<leader>md` | `markdown.nvim` | Toggle markdown preview |
 | `<leader>ms` | `mason.nvim` | Show the Mason installer UI |
 | `<leader>sj` | `mini.splitjoin` | Toggle split/join of code blocks |
 | `ys`/`ds`/`cs` | `mini.surround` | Add/delete/change surroundings |
@@ -104,11 +140,12 @@ Keymaps are set in `lua/user/core/keymaps.lua` and within each plugin's configur
 | `<leader>sd` | `snacks.nvim` | Search for TODO comments |
 | `Q` / `<leader>bd` | `snacks.nvim` | Delete the current buffer |
 | `<leader>so` | `symbols.nvim` | Toggle the symbol outline sidebar |
-| `<c-\>` | `toggleterm.nvim` | Toggle a floating terminal |
+| `<c-\` | `toggleterm.nvim` | Toggle a floating terminal |
 | `<leader>ls` | `trouble.nvim` | Toggle LSP diagnostics list |
 | `<leader>dd`/`wd` | `trouble.nvim` | Toggle document/workspace diagnostics |
 | `<leader>qf` | `trouble.nvim` | Toggle the quickfix list in Trouble |
 | `<leader>/` | `which-key.nvim` | Show buffer-local keymaps |
+| `<leader>X` | `xcodebuild.nvim` | Show all Xcodebuild actions |
 
 ## 🔌 Plugins Overview
 
@@ -125,6 +162,9 @@ This configuration uses a curated list of plugins to achieve its functionality. 
 -   **[toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)**: A powerful terminal manager.
 -   **[which-key.nvim](https://github.com/folke/which-key.nvim)**: Displays a popup with possible keybindings.
 -   **[todo-comments.nvim](https://github.com/folke/todo-comments.nvim)**: Highlights and searches for TODO comments.
+-   **[guess-indent.nvim](https://github.com/nmac427/guess-indent.nvim)**: Automatic indentation style detection.
+-   **[auto-cmdheight.nvim](https://github.com/jake-stewart/auto-cmdheight.nvim)**: Automatically adjusts the command line height.
+-   **[store.nvim](https://github.com/alex-popov-tech/store.nvim)**: A plugin for managing notes and snippets.
 
 </details>
 
@@ -140,6 +180,10 @@ This configuration uses a curated list of plugins to achieve its functionality. 
 -   **[smear-cursor.nvim](https://github.com/sphamba/smear-cursor.nvim)**: A fun cursor animation plugin.
 -   **[nvim-highlight-colors](https://github.com/brenoprata10/nvim-highlight-colors)**: Highlights color codes in your files.
 -   **[visual-whitespace.nvim](https://github.com/mcauley-penney/visual-whitespace.nvim)**: Shows whitespace characters in visual mode.
+-   **[colorful-menu.nvim](https://github.com/xzbdmw/colorful-menu.nvim)**: Adds color to the completion menu.
+-   **[tiny-inline-diagnostic.nvim](https://github.com/rachartier/tiny-inline-diagnostic.nvim)**: Displays diagnostics inline.
+-   **[neoscroll.nvim](https://github.com/karb94/neoscroll.nvim)**: Smooth scrolling for Neovim.
+-   **[hlslens.nvim](https://github.com/kevinhwang91/nvim-hlslens)**: Shows a lens for search results.
 
 </details>
 
@@ -156,9 +200,14 @@ This configuration uses a curated list of plugins to achieve its functionality. 
 -   **[mini.nvim](https://github.com/echasnovski/mini.nvim)**: A collection of minimal, single-file plugins (`ai`, `surround`, `splitjoin`).
 -   **[Comment.nvim](https://github.com/numToStr/Comment.nvim)**: Smart commenting.
 -   **[nvim-autopairs](https://github.com/windwp/nvim-autopairs)**: Automatically inserts and manages pairs of brackets, quotes, etc.
--   **[markdown.nvim](https://github.com/MeanderingProgrammer/markdown.nvim)**: Enhanced markdown support with preview.
+-   **[vim-markdown](https://github.com/preservim/vim-markdown)**: Enhanced markdown support.
+-   **[markdown.nvim](https://github.com/MeanderingProgrammer/markdown.nvim)**: Markdown preview.
 -   **[nvim-toggler](https://github.com/nguyenvukhang/nvim-toggler)**: Toggles keywords and values (e.g., `true` to `false`).
--   **[vim-illuminate](https://github.com/RRethy/vim-illuminate)**: Highlights other uses of the word under the cursor.
+-   **[alternative.nvim](https://github.com/Goose97/alternative.nvim)**: Quickly edit code using predefined rules.
+-   **[nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)**: Automatically closes and renames HTML tags.
+-   **[tailwind-tools.nvim](https://github.com/luckasRanarison/tailwind-tools.nvim)**: Tools for Tailwind CSS.
+-   **[nvim-dap](https://github.com/mfussenegger/nvim-dap)** & **[nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)**: Debug Adapter Protocol support.
+-   **[xcodebuild.nvim](https://github.com/wojciech-kulik/xcodebuild.nvim)**: Xcode build integration.
+-   **[leetcode.nvim](https://github.com/kawre/leetcode.nvim)**: LeetCode integration.
 
 </details>
-
