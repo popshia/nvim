@@ -60,7 +60,7 @@ return {
       {
          "<leader>sm",
          function()
-            Snacks.picker.notifications()
+            Snacks.picker.notifications({ layout = "bottom" })
          end,
          desc = "Notification History",
       },

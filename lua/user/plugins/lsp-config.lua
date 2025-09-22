@@ -67,7 +67,8 @@ return {
             },
          },
       })
-      require("lspconfig")["sourcekit"].setup({
+      vim.lsp.config("sourcekit", {
+         filetypes = { "swift" },
          capabilities = {
             workspace = {
                didChangeWatchedFiles = {
@@ -76,5 +77,6 @@ return {
             },
          },
       })
+      vim.lsp.enable("sourcekit")
    end,
 }
