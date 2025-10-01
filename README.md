@@ -139,6 +139,7 @@ Keymaps are set in `lua/user/core/keymaps.lua` and within each plugin\'s configu
 | `<leader>gs`/`gl` | `snacks.nvim` | Search Git status/log |
 | `<leader>sd` | `snacks.nvim` | Search for TODO comments |
 | `Q` / `<leader>bd` | `snacks.nvim` | Delete the current buffer |
+| `<leader>aa` | `sidekick.nvim` | Toggle AI sidekick |
 | `<leader>so` | `symbols.nvim` | Toggle the symbol outline sidebar |
 | `<c-\` | `toggleterm.nvim` | Toggle a floating terminal |
 | `<leader>ls` | `trouble.nvim` | Toggle LSP diagnostics list |
@@ -176,6 +177,7 @@ This configuration uses a curated list of plugins to achieve its functionality. 
 -   **[bufferline.nvim](https://github.com/akinsho/bufferline.nvim)**: A stylish buffer line (tabs).
 -   **[dropbar.nvim](https://github.com/Bekaboo/dropbar.nvim)**: IDE-like breadcrumbs in the winbar.
 -   **[symbols.nvim](https://github.com/oskarrrrrrr/symbols.nvim)**: A sidebar for viewing code symbols.
+-   **[sidekick.nvim](https://github.com/folke/sidekick.nvim)**: A diagnostics sidebar.
 -   **[hlchunk.nvim](https://github.com/shellRaining/hlchunk.nvim)**: Highlights the current code chunk/indentation level.
 -   **[smear-cursor.nvim](https://github.com/sphamba/smear-cursor.nvim)**: A fun cursor animation plugin.
 -   **[nvim-highlight-colors](https://github.com/brenoprata10/nvim-highlight-colors)**: Highlights color codes in your files.
