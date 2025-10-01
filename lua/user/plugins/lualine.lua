@@ -55,7 +55,27 @@ return {
             lualine_a = { "mode" },
             lualine_b = { branch, diff },
             lualine_c = { "filename" },
-            lualine_x = { spaces, filetype },
+            lualine_x = {
+               spaces,
+               filetype,
+               {
+                  function()
+                     return " "
+                  end,
+                  color = function()
+                     local status = require("sidekick.status").get()
+                     if status then
+                        return status.kind == "Error" and "DiagnosticError"
+                           or status.busy and "DiagnosticWarn"
+                           or "Special"
+                     end
+                  end,
+                  cond = function()
+                     local status = require("sidekick.status")
+                     return status.get() ~= nil
+                  end,
+               },
+            },
             lualine_y = { diagnostics },
             lualine_z = { datetime },
          },
