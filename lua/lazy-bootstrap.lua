@@ -18,7 +18,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Install your plugins here
-require("lazy").setup({ { import = "user.plugins" } }, {
+require("lazy").setup({ { import = "plugins" } }, {
    colorscheme = { "gruvbox-material" },
    ui = {
       border = "rounded",
@@ -29,5 +29,5 @@ require("lazy").setup({ { import = "user.plugins" } }, {
    },
 })
 
--- keymaps
+-- lazy keymaps
 vim.keymap.set("n", "<leader>lz", "<cmd>Lazy show<CR>", { desc = "Lazy" })

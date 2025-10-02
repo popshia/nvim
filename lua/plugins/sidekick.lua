@@ -1,6 +1,5 @@
 return {
    "folke/sidekick.nvim",
-   event = "VeryLazy",
    keys = {
       {
          "<tab>",
@@ -22,7 +21,7 @@ return {
          desc = "Sidekick Switch Focus",
       },
       {
-         "<leader>aa",
+         "<leader>s.",
          function()
             require("sidekick.cli").toggle({ focus = true })
          end,
@@ -30,7 +29,7 @@ return {
          mode = { "n", "v" },
       },
       {
-         "<leader>ag",
+         "<leader>gm",
          function()
             require("sidekick.cli").toggle({ name = "gemini", focus = true })
          end,
@@ -38,7 +37,7 @@ return {
          mode = { "n", "v" },
       },
       {
-         "<leader>ac",
+         "<leader>cp",
          function()
             require("sidekick.cli").toggle({ name = "copilot", focus = true })
          end,
@@ -46,21 +45,21 @@ return {
          mode = { "n", "v" },
       },
       {
-         "<leader>ap",
+         "<leader>sp",
          function()
-            require("sidekick.cli").select_prompt()
+            require("sidekick.cli").prompt()
          end,
          desc = "Sidekick Ask Prompt",
          mode = { "n", "v" },
       },
-   },
-   opts = {
-      -- add any options here
-      cli = {
-         mux = {
-            backend = "tmux",
-            enabled = false,
-         },
+      {
+         "<leader>sv",
+         function()
+            require("sidekick.cli").send({ selection = true })
+         end,
+         mode = { "v" },
+         desc = "Sidekick Send Visual Selection",
       },
    },
+   opts = {},
 }

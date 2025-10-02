@@ -1,2 +1,4 @@
-require("user.core")
-require("user.lazy")
+require("autocommands")
+require("keymaps")
+require("options")
+require("lazy-bootstrap")
