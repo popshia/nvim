@@ -92,7 +92,7 @@ You can add more servers by modifying the `ensure_installed` list in `lua/user/p
 
 ## ⌨️ Keymaps
 
-Keymaps are set in `lua/user/core/keymaps.lua` and within each plugin\'s configuration file in `lua/user/plugins/`.
+Keymaps are set in `lua/user/core/keymaps.lua` and within each plugin's configuration file in `lua/user/plugins/`.
 
 ### General
 
@@ -136,13 +136,13 @@ Keymaps are set in `lua/user/core/keymaps.lua` and within each plugin\'s configu
 | `<leader>sf`/`st`/`sr` | `snacks.nvim` | Search files/text/recent files |
 | `<leader>sk`/`su`/`sb` | `snacks.nvim` | Search keymaps/undo history/buffers |
 | `<leader>lg` | `snacks.nvim` | Open Lazygit in a floating terminal |
-| `<leader>gs`/`gl` | `snacks.nvim` | Search Git status/log |
+| `<leader>gs` | `snacks.nvim` | Open changed file |
+| `<leader>gl` | `snacks.nvim` | Checkout commit |
 | `<leader>sd` | `snacks.nvim` | Search for TODO comments |
 | `Q` / `<leader>bd` | `snacks.nvim` | Delete the current buffer |
 | `<leader>aa` | `sidekick.nvim` | Toggle AI sidekick |
 | `<leader>so` | `symbols.nvim` | Toggle the symbol outline sidebar |
 | `<c-\` | `toggleterm.nvim` | Toggle a floating terminal |
-| `<leader>ls` | `trouble.nvim` | Toggle LSP diagnostics list |
 | `<leader>dd`/`wd` | `trouble.nvim` | Toggle document/workspace diagnostics |
 | `<leader>qf` | `trouble.nvim` | Toggle the quickfix list in Trouble |
 | `<leader>/` | `which-key.nvim` | Show buffer-local keymaps |
@@ -202,8 +202,7 @@ This configuration uses a curated list of plugins to achieve its functionality. 
 -   **[mini.nvim](https://github.com/echasnovski/mini.nvim)**: A collection of minimal, single-file plugins (`ai`, `surround`, `splitjoin`).
 -   **[Comment.nvim](https://github.com/numToStr/Comment.nvim)**: Smart commenting.
 -   **[nvim-autopairs](https://github.com/windwp/nvim-autopairs)**: Automatically inserts and manages pairs of brackets, quotes, etc.
--   **[vim-markdown](https://github.com/preservim/vim-markdown)**: Enhanced markdown support.
--   **[markdown.nvim](https://github.com/MeanderingProgrammer/markdown.nvim)**: Markdown preview.
+-   **[markview.nvim](https://github.com/OXY2DEV/markview.nvim)**: Markdown preview.
 -   **[nvim-toggler](https://github.com/nguyenvukhang/nvim-toggler)**: Toggles keywords and values (e.g., `true` to `false`).
 -   **[alternative.nvim](https://github.com/Goose97/alternative.nvim)**: Quickly edit code using predefined rules.
 -   **[nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)**: Automatically closes and renames HTML tags.

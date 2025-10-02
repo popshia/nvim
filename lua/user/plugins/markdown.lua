@@ -1,23 +1,22 @@
 -- vim markdown mode
 
 return {
-   "preservim/vim-markdown",
+   "OXY2DEV/markview.nvim",
    ft = { "markdown" },
-   dependencies = {
-      {
-         "MeanderingProgrammer/markdown.nvim",
-         main = "render-markdown",
-         ft = "markdown",
-         opts = {},
+   opts = {
+      preview = {
+         icon_provider = "mini",
       },
-      -- {
-      --    "iamcco/markdown-preview.nvim",
-      --    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-      --    ft = { "markdown" },
-      --    build = "cd app && yarn install",
-      --    keys = {
-      --       { "<leader>md", "<cmd>MarkdownPreview<CR>", desc = "Preview Markdown File" },
-      --    },
-      -- },
    },
+   -- "preservim/vim-markdown",
+   -- ft = { "markdown" },
+   -- dependencies = {
+   --    {
+   --       "MeanderingProgrammer/render-markdown.nvim",
+   --       ft = "markdown",
+   --       ---@module 'render-markdown'
+   --       ---@type render.md.UserConfig
+   --       opts = {},
+   --    },
+   -- },
 }
