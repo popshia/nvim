@@ -26,16 +26,15 @@ The configuration is organized logically to make it easy to navigate and modify:
 .
 ├── init.lua                -- Main entry point
 ├── lua/
-│   └── user/
-│       ├── lazy.lua          -- lazy.nvim setup and plugin manager bootstrapping
-│       ├── core/             -- Core editor settings
-│       │   ├── autocommands.lua -- Global autocommands
-│       │   ├── keymaps.lua   -- Global keybindings
-│       │   └── options.lua   -- Vim options (set)
-│       └── plugins/          -- All plugin specifications (one file per plugin)
+│   ├── lazy-bootstrap.lua  -- lazy.nvim setup
+│   ├── core/               -- Core editor settings
+│   │   ├── autocommands.lua
+│   │   ├── keymaps.lua
+│   │   └── options.lua
+│   └── plugins/            -- Plugin configurations
 ├── after/
-│   └── lsp/                  -- Language-specific LSP server settings
-└── ftplugin/                 -- Filetype-specific settings (e.g., tab widths)
+│   ├── ftplugin/           -- Filetype-specific settings
+│   └── lsp/                -- Language-specific LSP server settings
 ```
 
 ## 📦 Installation
@@ -140,9 +139,9 @@ Keymaps are set in `lua/user/core/keymaps.lua` and within each plugin's configur
 | `<leader>gl` | `snacks.nvim` | Checkout commit |
 | `<leader>sd` | `snacks.nvim` | Search for TODO comments |
 | `Q` / `<leader>bd` | `snacks.nvim` | Delete the current buffer |
-| `<leader>aa` | `sidekick.nvim` | Toggle AI sidekick |
+| `<leader>s.` | `sidekick.nvim` | Toggle AI sidekick |
 | `<leader>so` | `symbols.nvim` | Toggle the symbol outline sidebar |
-| `<c-\` | `toggleterm.nvim` | Toggle a floating terminal |
+| `<C-\>` | `toggleterm.nvim` | Toggle a floating terminal |
 | `<leader>dd`/`wd` | `trouble.nvim` | Toggle document/workspace diagnostics |
 | `<leader>qf` | `trouble.nvim` | Toggle the quickfix list in Trouble |
 | `<leader>/` | `which-key.nvim` | Show buffer-local keymaps |
