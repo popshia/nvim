@@ -1,4 +1,2 @@
-require("autocommands")
-require("keymaps")
-require("options")
+require("core")
 require("lazy-bootstrap")
