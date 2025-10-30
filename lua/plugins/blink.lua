@@ -30,16 +30,10 @@ return {
    opts = {
       keymap = {
          preset = "enter",
-         ["<Tab>"] = {
-            "snippet_forward",
-            function() -- sidekick next edit suggestion
-               return require("sidekick").nes_jump_or_apply()
-            end,
-            "fallback",
-         },
+         ["<Tab>"] = {},
          ["<S-Tab>"] = {},
          ["<C-e>"] = {},
-         ["<C-a>"] = { "hide", "fallback" },
+         ["<esc>"] = { "hide", "fallback" },
          ["<C-l>"] = { "snippet_forward", "fallback" },
          ["<C-h>"] = { "snippet_backward", "fallback" },
       },
