@@ -33,7 +33,7 @@ return {
          ["<Tab>"] = {},
          ["<S-Tab>"] = {},
          ["<C-e>"] = {},
-         ["<esc>"] = { "hide", "fallback" },
+         ["<C-a>"] = { "hide", "fallback" },
          ["<C-l>"] = { "snippet_forward", "fallback" },
          ["<C-h>"] = { "snippet_backward", "fallback" },
       },
