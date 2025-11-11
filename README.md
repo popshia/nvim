@@ -14,7 +14,7 @@ This is my personal Neovim configuration, meticulously crafted for a productive,
 -   **🎨 Modern & Polished UI**:
     -   **Theme**: A customized `gruvbox-material` colorscheme.
     -   **Components**: A clean `lualine.nvim` statusline, `bufferline.nvim` for tabs, `dropbar.nvim` for breadcrumbs, and `hlchunk.nvim` for indent visualization.
-    -   **File Management**: A beautiful floating file explorer powered by `oil.nvim`.
+    -   **File Management**: A powerful terminal file manager powered by `yazi.nvim`.
 -   **📝 Markdown Support**: Enhanced markdown editing with live preview.
 -   **✅ Fully Documented**: Keymaps and features are documented directly in the configuration and summarized in this README.
 
@@ -130,7 +130,7 @@ Keymaps are set in `lua/user/core/keymaps.lua` and within each plugin's configur
 | `<leader>sj` | `mini.splitjoin` | Toggle split/join of code blocks |
 | `ys`/`ds`/`cs` | `mini.surround` | Add/delete/change surroundings |
 | `<leader>i` | `nvim-toggler` | Toggle a variable or keyword (e.g., `true`/`false`) |
-| `<leader>e` | `oil.nvim` | Toggle the floating file explorer |
+| `<leader>e` | `yazi.nvim` | Toggle the floating file explorer |
 | `<leader>ds`/`ws` | `snacks.nvim` | Search document/workspace symbols |
 | `<leader>sf`/`st`/`sr` | `snacks.nvim` | Search files/text/recent files |
 | `<leader>sk`/`su`/`sb` | `snacks.nvim` | Search keymaps/undo history/buffers |
@@ -195,7 +195,7 @@ This configuration uses a curated list of plugins to achieve its functionality. 
 -   **[blink.cmp](https://github.com/saghen/blink.cmp)**: A fast and feature-rich autocompletion engine.
 -   **[LuaSnip](https://github.com/L3MON4D3/LuaSnip)**: A powerful snippet engine.
 -   **[flash.nvim](https://github.com/folke/flash.nvim)**: In-editor navigation via quick text jumps.
--   **[oil.nvim](https://github.com/stevearc/oil.nvim)**: A modern file explorer that edits the filesystem like a buffer.
+-   **[yazi.nvim](https://github.com/mikavilpas/yazi.nvim)**: A modern file explorer that integrates the Yazi terminal file manager.
 -   **[gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)**: Git integration in the sign column.
 -   **[trouble.nvim](https://github.com/folke/trouble.nvim)**: A pretty list for diagnostics, references, and more.
 -   **[mini.nvim](https://github.com/echasnovski/mini.nvim)**: A collection of minimal, single-file plugins (`ai`, `surround`, `splitjoin`).
