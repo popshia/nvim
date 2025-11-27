@@ -14,11 +14,11 @@ return {
          -- REVIEW: review this line.
          REVIEW = { icon = "", color = "#B0B846" },
          -- FIXME: fix me plz.
-         FIXME = { icon = "", color = "#F2594B" },
+         FIXME = { icon = "", color = "#F2594B", alt = { "BUG" } },
          -- NOTE: a note for myself.
-         NOTE = { icon = "󰎚", color = "#80AA9E" },
+         NOTE = { icon = "󰎚", color = "#80AA9E", alt = { "MARK" } },
          -- TEST: testing info.
-         TEST = { icon = "󰋼", color = "#D3869B" },
+         TEST = { icon = "󰙨", color = "#D3869B" },
       },
       gui_style = {
          fg = "BOLD", -- The gui style to use for the fg highlight group.
