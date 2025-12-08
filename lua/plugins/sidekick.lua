@@ -9,6 +9,7 @@ return {
                return "<Tab>" -- fallback to normal tab
             end
          end,
+         mode = { "n", "x", "i", "t" },
          expr = true,
          desc = "Goto/Apply Next Edit Suggestion",
       },
