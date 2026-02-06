@@ -67,16 +67,22 @@ return {
             },
          },
       })
-      vim.lsp.config("sourcekit", {
-         filetypes = { "swift" },
-         capabilities = {
-            workspace = {
-               didChangeWatchedFiles = {
-                  dynamicRegistration = true,
-               },
-            },
-         },
+      vim.api.nvim_create_autocmd("FileType", {
+         pattern = { "swift" },
+         callback = function(file_name)
+            vim.lsp.start({
+               name = "sourcekit",
+               cmd = { "xcrun", "sourcekit-lsp" },
+               root_dir = vim.fs.root(file_name.match, {
+                  "buildServer.json",
+                  "*.xcodeproj",
+                  "*.xcworkspace",
+                  ".git",
+                  "Package.swift",
+               }),
+               capabilities = require("blink.cmp").get_lsp_capabilities(),
+            })
+         end,
       })
-      vim.lsp.enable("sourcekit")
    end,
 }
