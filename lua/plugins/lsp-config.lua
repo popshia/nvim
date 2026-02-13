@@ -67,22 +67,18 @@ return {
             },
          },
       })
-      vim.api.nvim_create_autocmd("FileType", {
-         pattern = { "swift" },
-         callback = function(file_name)
-            vim.lsp.start({
-               name = "sourcekit",
-               cmd = { "xcrun", "sourcekit-lsp" },
-               root_dir = vim.fs.root(file_name.match, {
-                  "buildServer.json",
-                  "*.xcodeproj",
-                  "*.xcworkspace",
-                  ".git",
-                  "Package.swift",
-               }),
-               capabilities = require("blink.cmp").get_lsp_capabilities(),
-            })
-         end,
-      })
+      vim.lsp.config.sourcekit = {
+         cmd = { "xcrun", "sourcekit-lsp" },
+         filetypes = { "swift"},
+         root_markers = {
+            "buildServer.json",
+            "*.xcodeproj",
+            "*.xcworkspace",
+            ".git",
+            "Package.swift",
+         },
+         capabilities = require("blink.cmp").get_lsp_capabilities(),
+      }
+      vim.lsp.enable("sourcekit")
    end,
 }
