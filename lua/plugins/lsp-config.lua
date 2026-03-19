@@ -69,7 +69,7 @@ return {
       })
       vim.lsp.config.sourcekit = {
          cmd = { "xcrun", "sourcekit-lsp" },
-         filetypes = { "swift"},
+         filetypes = { "swift" },
          root_markers = {
             "buildServer.json",
             "*.xcodeproj",
