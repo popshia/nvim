@@ -25,7 +25,7 @@ return {
          "markdown",
          "markdown_inline",
          "python",
-         "svelte",
+         "swift",
          "toml",
          "vim",
          "vimdoc",

@@ -19,8 +19,6 @@ return {
    opts = {
       ensure_installed = {
          "basedpyright",
-         "bashls",
-         "clangd",
          "eslint",
          "html",
          "lua_ls",
