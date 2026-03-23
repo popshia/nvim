@@ -8,6 +8,11 @@ return {
             diagnosticMode = "openFilesOnly",
             autoSearchPaths = true,
             useLibraryCodeForTypes = true,
+            inlayHints = {
+               variableTypes = true,
+               functionReturnTypes = true,
+               callArgumentNames = true,
+            },
          },
       },
    },

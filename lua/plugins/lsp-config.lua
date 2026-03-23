@@ -36,6 +36,13 @@ return {
       { "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", desc = "Rename" },
       { "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", desc = "Code Actions" },
       { "<leader>li", "<cmd>LspInfo<CR>", desc = "LSP Info" },
+      {
+         "<leader>ih",
+         function()
+            vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+         end,
+         desc = "Enable Inlay Hint",
+      },
    },
    config = function()
       -- diagnostic configs
