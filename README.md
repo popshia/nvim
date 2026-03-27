@@ -14,8 +14,8 @@ This is my personal Neovim configuration, meticulously crafted for a productive,
 -   **🎨 Modern & Polished UI**:
     -   **Theme**: A customized `gruvbox-material` colorscheme.
     -   **Components**: A clean `lualine.nvim` statusline, `bufferline.nvim` for tabs, `dropbar.nvim` for breadcrumbs, and `hlchunk.nvim` for indent visualization.
-    -   **File Management**: A powerful terminal file manager powered by `yazi.nvim`.
--   **📝 Markdown Support**: Enhanced markdown editing with live preview.
+    -   **File Management**: A powerful terminal file manager powered by `oil.nvim`.
+-   **📝 Markdown Support**: Enhanced markdown editing with `markview.nvim`.
 -   **✅ Fully Documented**: Keymaps and features are documented directly in the configuration and summarized in this README.
 
 ## 📂 File Structure
@@ -77,8 +77,6 @@ To update the configuration and plugins, run the following command from within N
 This configuration uses `mason.nvim` to automatically install and manage LSP servers. The following servers are configured to be installed by default:
 
 - `basedpyright`
-- `bashls`
-- `clangd`
 - `eslint`
 - `html`
 - `lua_ls`
@@ -87,16 +85,16 @@ This configuration uses `mason.nvim` to automatically install and manage LSP ser
 - `tailwindcss`
 - `ts_ls`
 
-You can add more servers by modifying the `ensure_installed` list in `lua/user/plugins/mason.lua`.
+Note: `clangd` is also configured manually for C++ development.
 
 ## ⌨️ Keymaps
 
-Keymaps are set in `lua/user/core/keymaps.lua` and within each plugin's configuration file in `lua/user/plugins/`.
+Keymaps are set in `lua/core/keymaps.lua` and within each plugin's configuration file in `lua/plugins/`.
 
 ### General
 
 | Key | Description |
-| :--- |
+| :--- | :--- |
 | `<Space>` | **Leader key** |
 | `<Esc>` | Clear search highlighting |
 | `<C-h/j/k/l>` | Focus window left/down/up/right |
@@ -111,7 +109,7 @@ Keymaps are set in `lua/user/core/keymaps.lua` and within each plugin's configur
 ### Plugins
 
 | Key | Plugin | Description |
-| :--- |
+| :--- | :--- | :--- |
 | `<leader>lz` | `lazy.nvim` | Show the Lazy plugin manager UI |
 | `<leader>ff` | `conform.nvim` | Format the current file |
 | `<leader>;` | `dropbar.nvim` | Pick symbols from the winbar breadcrumbs |
@@ -120,36 +118,43 @@ Keymaps are set in `lua/user/core/keymaps.lua` and within each plugin's configur
 | `<leader>gb` | `gitsigns.nvim` | Blame the current line |
 | `<leader>gh` | `gitsigns.nvim` | Preview the hunk under the cursor |
 | `n`/`N` | `hlslens.nvim` | Go to next/previous search result with lens |
-| `gd`/`gr`/`gi` | `lsp-config` | Go to Definition/References/Implementation |
+| `gd`/`gr`/`gi` | `lsp-config` | Go to Definition/References/Implementation (via Trouble) |
 | `gk` | `lsp-config` | Show hover documentation |
 | `gs` | `lsp-config` | Show signature help |
 | `<leader>rn` | `lsp-config` | Rename symbol |
 | `<leader>ca` | `lsp-config` | Show code actions |
 | `<leader>li` | `lsp-config` | Show LSP information |
+| `<leader>ih` | `lsp-config` | Toggle inlay hints |
 | `<leader>ms` | `mason.nvim` | Show the Mason installer UI |
 | `<leader>sj` | `mini.splitjoin` | Toggle split/join of code blocks |
 | `ys`/`ds`/`cs` | `mini.surround` | Add/delete/change surroundings |
 | `<leader>i` | `nvim-toggler` | Toggle a variable or keyword (e.g., `true`/`false`) |
-| `<leader>e` | `yazi.nvim` | Toggle the floating file explorer |
+| `<leader>e` | `oil.nvim` | Toggle the floating file explorer |
 | `<leader>ds`/`ws` | `snacks.nvim` | Search document/workspace symbols |
 | `<leader>sf`/`st`/`sr` | `snacks.nvim` | Search files/text/recent files |
 | `<leader>sk`/`su`/`sb` | `snacks.nvim` | Search keymaps/undo history/buffers |
+| `<leader>sm`/`si` | `snacks.nvim` | Notification history / Icons |
 | `<leader>lg` | `snacks.nvim` | Open Lazygit in a floating terminal |
 | `<leader>gs` | `snacks.nvim` | Open changed file |
 | `<leader>gl` | `snacks.nvim` | Checkout commit |
 | `<leader>sd` | `snacks.nvim` | Search for TODO comments |
 | `Q` / `<leader>bd` | `snacks.nvim` | Delete the current buffer |
-| `<leader>s.` | `sidekick.nvim` | Toggle AI sidekick |
+| `<leader>s.` | `sidekick.nvim` | Toggle Sidekick CLI |
+| `<leader>gm`/`<leader>cp`| `sidekick.nvim` | Toggle Gemini / Copilot Sidekick |
+| `<leader>sp` | `sidekick.nvim` | Ask Sidekick prompt |
+| `<tab>` | `sidekick.nvim` | Jump or apply next edit suggestion |
 | `<leader>so` | `symbols.nvim` | Toggle the symbol outline sidebar |
 | `<C-\>` | `toggleterm.nvim` | Toggle a floating terminal |
 | `<leader>dd`/`wd` | `trouble.nvim` | Toggle document/workspace diagnostics |
 | `<leader>qf` | `trouble.nvim` | Toggle the quickfix list in Trouble |
 | `<leader>/` | `which-key.nvim` | Show buffer-local keymaps |
 | `<leader>X` | `xcodebuild.nvim` | Show all Xcodebuild actions |
+| `<leader>xb`/`<leader>xr`| `xcodebuild.nvim` | Build / Build & Run Project |
+| `<leader>xt` | `xcodebuild.nvim` | Run Tests |
 
 ## 🔌 Plugins Overview
 
-This configuration uses a curated list of plugins to achieve its functionality. They are managed in `lua/user/lazy.lua` and configured in the `lua/user/plugins/` directory.
+This configuration uses a curated list of plugins to achieve its functionality. They are managed in `lua/lazy-bootstrap.lua` and configured in the `lua/plugins/` directory.
 
 <details>
 <summary><strong>Core & Utility</strong></summary>
@@ -164,7 +169,6 @@ This configuration uses a curated list of plugins to achieve its functionality. 
 -   **[todo-comments.nvim](https://github.com/folke/todo-comments.nvim)**: Highlights and searches for TODO comments.
 -   **[guess-indent.nvim](https://github.com/nmac427/guess-indent.nvim)**: Automatic indentation style detection.
 -   **[auto-cmdheight.nvim](https://github.com/jake-stewart/auto-cmdheight.nvim)**: Automatically adjusts the command line height.
--   **[store.nvim](https://github.com/alex-popov-tech/store.nvim)**: A plugin for managing notes and snippets.
 
 </details>
 
@@ -176,12 +180,10 @@ This configuration uses a curated list of plugins to achieve its functionality. 
 -   **[bufferline.nvim](https://github.com/akinsho/bufferline.nvim)**: A stylish buffer line (tabs).
 -   **[dropbar.nvim](https://github.com/Bekaboo/dropbar.nvim)**: IDE-like breadcrumbs in the winbar.
 -   **[symbols.nvim](https://github.com/oskarrrrrrr/symbols.nvim)**: A sidebar for viewing code symbols.
--   **[sidekick.nvim](https://github.com/folke/sidekick.nvim)**: A diagnostics sidebar.
+-   **[sidekick.nvim](https://github.com/folke/sidekick.nvim)**: An AI-powered diagnostics and assistant sidebar.
 -   **[hlchunk.nvim](https://github.com/shellRaining/hlchunk.nvim)**: Highlights the current code chunk/indentation level.
 -   **[smear-cursor.nvim](https://github.com/sphamba/smear-cursor.nvim)**: A fun cursor animation plugin.
--   **[nvim-highlight-colors](https://github.com/brenoprata10/nvim-highlight-colors)**: Highlights color codes in your files.
 -   **[visual-whitespace.nvim](https://github.com/mcauley-penney/visual-whitespace.nvim)**: Shows whitespace characters in visual mode.
--   **[colorful-menu.nvim](https://github.com/xzbdmw/colorful-menu.nvim)**: Adds color to the completion menu.
 -   **[tiny-inline-diagnostic.nvim](https://github.com/rachartier/tiny-inline-diagnostic.nvim)**: Displays diagnostics inline.
 -   **[neoscroll.nvim](https://github.com/karb94/neoscroll.nvim)**: Smooth scrolling for Neovim.
 -   **[hlslens.nvim](https://github.com/kevinhwang91/nvim-hlslens)**: Shows a lens for search results.
@@ -195,19 +197,13 @@ This configuration uses a curated list of plugins to achieve its functionality. 
 -   **[blink.cmp](https://github.com/saghen/blink.cmp)**: A fast and feature-rich autocompletion engine.
 -   **[LuaSnip](https://github.com/L3MON4D3/LuaSnip)**: A powerful snippet engine.
 -   **[flash.nvim](https://github.com/folke/flash.nvim)**: In-editor navigation via quick text jumps.
--   **[yazi.nvim](https://github.com/mikavilpas/yazi.nvim)**: A modern file explorer that integrates the Yazi terminal file manager.
+-   **[oil.nvim](https://github.com/stevearc/oil.nvim)**: A file explorer that lets you edit your file system like a normal Neovim buffer.
 -   **[gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)**: Git integration in the sign column.
 -   **[trouble.nvim](https://github.com/folke/trouble.nvim)**: A pretty list for diagnostics, references, and more.
--   **[mini.nvim](https://github.com/echasnovski/mini.nvim)**: A collection of minimal, single-file plugins (`ai`, `surround`, `splitjoin`).
+-   **[mini.nvim](https://github.com/echasnovski/mini.nvim)**: A collection of minimal, single-file plugins (`ai`, `surround`, `splitjoin`, `icons`, `cursorword`).
 -   **[Comment.nvim](https://github.com/numToStr/Comment.nvim)**: Smart commenting.
--   **[nvim-autopairs](https://github.com/windwp/nvim-autopairs)**: Automatically inserts and manages pairs of brackets, quotes, etc.
--   **[markview.nvim](https://github.com/OXY2DEV/markview.nvim)**: Markdown preview.
+-   **[markview.nvim](https://github.com/OXY2DEV/markview.nvim)**: Highly customizable markdown previewer.
 -   **[nvim-toggler](https://github.com/nguyenvukhang/nvim-toggler)**: Toggles keywords and values (e.g., `true` to `false`).
--   **[alternative.nvim](https://github.com/Goose97/alternative.nvim)**: Quickly edit code using predefined rules.
--   **[nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)**: Automatically closes and renames HTML tags.
--   **[tailwind-tools.nvim](https://github.com/luckasRanarison/tailwind-tools.nvim)**: Tools for Tailwind CSS.
--   **[nvim-dap](https://github.com/mfussenegger/nvim-dap)** & **[nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)**: Debug Adapter Protocol support.
 -   **[xcodebuild.nvim](https://github.com/wojciech-kulik/xcodebuild.nvim)**: Xcode build integration.
--   **[leetcode.nvim](https://github.com/kawre/leetcode.nvim)**: LeetCode integration.
 
 </details>
