@@ -142,14 +142,14 @@ return {
    },
    ---@type snacks.Config
    opts = {
-      animate = { enabled = true },
+      animate = { enabled = false },
       bigfile = { enabled = true },
       input = { enabled = true },
       rename = { enabled = true },
       notifier = { enabled = true },
       picker = { enabled = true },
       words = { enabled = false },
-      image = { enabled = true },
+      image = { enabled = false },
       dashboard = {
          enabled = true,
          preset = {

@@ -1,39 +1,7 @@
--- treesitter for syntax highlighting and symbol recognition
+-- nvim-treesitter
 
 return {
    "nvim-treesitter/nvim-treesitter",
-   dependencies = {
-      "nvim-treesitter/nvim-treesitter-textobjects",
-   },
+   lazy = false,
    build = ":TSUpdate",
-   opts = {
-      ensure_installed = {
-         "bash",
-         "c",
-         "comment",
-         "css",
-         "cpp",
-         "comment",
-         "fish",
-         "gitconfig",
-         "gitcommit",
-         "gitignore",
-         "html",
-         "htmldjango",
-         "javascript",
-         "lua",
-         "markdown",
-         "markdown_inline",
-         "python",
-         "swift",
-         "toml",
-         "vim",
-         "vimdoc",
-         "xml",
-         "yaml",
-      },
-      auto_install = true,
-      highlight = { enable = true },
-      indent = { enable = true },
-   },
 }
