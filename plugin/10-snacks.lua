@@ -4,6 +4,7 @@ vim.pack.add({ "https://github.com/folke/snacks.nvim" })
 
 require("keymaps")
 
+---@diagnostic disable: undefined-global
 map("n", "<leader>ds", function()
    Snacks.picker.lsp_symbols()
 end, "Document Symbols")
