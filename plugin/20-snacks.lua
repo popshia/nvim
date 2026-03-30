@@ -45,15 +45,12 @@ map("n", "<leader>sb", function()
 end, "Search Buffers")
 
 require("snacks").setup({
-   animate = { enabled = false },
    bigfile = { enabled = true },
    input = { enabled = true },
    rename = { enabled = true },
    notifier = { enabled = true },
    picker = { enabled = true },
-   words = { enabled = false },
    image = { enabled = true },
-   dashboard = { enabled = false },
    styles = {
       input = {
          relative = "cursor",
