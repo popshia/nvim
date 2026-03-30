@@ -15,13 +15,9 @@ vim.api.nvim_create_autocmd({ "VimEnter", "BufReadPre" }, {
       require("mason-lspconfig").setup({
          ensure_installed = {
             "basedpyright",
-            "eslint",
-            "html",
             "lua_ls",
             "markdown_oxide",
             "ruff",
-            "tailwindcss",
-            "ts_ls",
          },
          automatic_installation = true,
          automatic_enable = true,
