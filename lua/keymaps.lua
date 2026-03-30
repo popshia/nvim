@@ -1,4 +1,4 @@
-local function map(mode, keys, func, desc, remap, expr)
+function map(mode, keys, func, desc, remap, expr)
    vim.keymap.set(mode, keys, func, { desc = desc, noremap = true, silent = true, remap = remap, expr = expr })
 end
 

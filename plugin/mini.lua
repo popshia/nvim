@@ -1,0 +1,33 @@
+-- mini.nvim plugins
+
+vim.pack.add({"https://github.com/nvim-mini/mini.nvim"})
+
+-- Extend and create a/i textobjects
+require("mini.ai").setup()
+
+-- Split/Join arguments
+require("mini.splitjoin").setup({
+ mappings = { toggle = "<leader>sj" },
+})
+
+-- Surround
+require("mini.surround").setup({
+ mappings = {
+	add = "ys",
+	delete = "ds",
+	replace = "cs",
+	find = "",
+	find_left = "",
+	highlight = "",
+	update_n_lines = "",
+ },
+})
+
+-- Icons
+require("mini.icons").setup()
+MiniIcons.mock_nvim_web_devicons()
+
+-- Cursorword
+require("mini.cursorword").setup()
+vim.api.nvim_set_hl(0, "MiniCursorword", { underline = true })
+vim.api.nvim_set_hl(0, "MiniCursorwordCurrent", { link = "MiniCursorword" })

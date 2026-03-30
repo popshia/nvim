@@ -48,3 +48,4 @@ Temporary Items
 lazy-lock.json
 
 # End of https://www.toptal.com/developers/gitignore/api/macos
+nvim-pack-lock.json
