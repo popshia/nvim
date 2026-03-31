@@ -2,7 +2,6 @@
 
 vim.pack.add({
    "https://github.com/neovim/nvim-lspconfig",
-   "https://github.com/folke/lazydev.nvim",
    "https://github.com/ray-x/lsp_signature.nvim",
 })
 
@@ -32,17 +31,6 @@ end, "Code Actions")
 map("n", "<leader>ih", function()
    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end, "Enable Inlay Hint")
-
-vim.api.nvim_create_autocmd({ "FileType" }, {
-   pattern = { "lua" },
-   callback = function()
-      require("lazydev").setup({
-         library = {
-            { path = "${3rd}/luv/library", words = { "vim%.uv" } },
-         },
-      })
-   end,
-})
 
 vim.api.nvim_create_autocmd({ "BufReadPre", "BufNewFile" }, {
    callback = function()

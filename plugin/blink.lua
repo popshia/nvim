@@ -2,6 +2,18 @@
 
 vim.pack.add({
    { src = "https://github.com/saghen/blink.cmp", version = vim.version.range("1.*") },
+   "https://github.com/folke/lazydev.nvim",
+})
+
+vim.api.nvim_create_autocmd({ "FileType" }, {
+   pattern = { "lua" },
+   callback = function()
+      require("lazydev").setup({
+         library = {
+            { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+         },
+      })
+   end,
 })
 
 vim.api.nvim_create_autocmd({ "CmdlineEnter", "InsertEnter" }, {
