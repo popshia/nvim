@@ -2,7 +2,8 @@
 
 vim.pack.add({ "https://github.com/folke/todo-comments.nvim" })
 
-vim.api.nvim_create_autocmd({ "BufReadPre", "BufNewFile" }, {
+vim.api.nvim_create_autocmd("LspAttach", {
+   once = true,
    callback = function()
       require("todo-comments").setup({
          signs = true,

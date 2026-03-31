@@ -6,11 +6,15 @@ vim.pack.add({
    "https://github.com/neovim/nvim-lspconfig",
 })
 
-require("keymaps")
-map("n", "<leader>ms", "<cmd>Mason<cr>", "Mason")
-
-vim.api.nvim_create_autocmd({ "VimEnter", "BufReadPre" }, {
+vim.api.nvim_create_autocmd({ "VimEnter" }, {
+   once = true,
    callback = function()
+      -- keymaps
+      require("keymaps")
+
+      map("n", "<leader>ms", "<cmd>Mason<cr>", "Mason")
+
+      -- setup
       require("mason").setup()
       require("mason-lspconfig").setup({
          ensure_installed = {

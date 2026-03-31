@@ -44,6 +44,9 @@ map("n", "<leader>sb", function()
       },
    })
 end, "Search Buffers")
+map("n", "<leader>bd", function()
+   Snacks.bufdelete()
+end, "Delete Buffer")
 
 require("snacks").setup({
    bigfile = { enabled = true },

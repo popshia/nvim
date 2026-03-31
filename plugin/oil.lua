@@ -1,8 +1,12 @@
 -- the GOAT of fm.
 
-vim.pack.add({ "https://github.com/stevearc/oil.nvim" })
+vim.pack.add({
+   "https://github.com/stevearc/oil.nvim",
+   "https://github.com/malewicz1337/oil-git.nvim",
+})
 
 require("keymaps")
+
 map("n", "<leader>e", function()
    require("oil").toggle_float()
 end, "File Explorer")
@@ -23,4 +27,18 @@ require("oil").setup({
       max_height = 50,
    },
    skip_confirm_for_simple_edits = true,
+})
+
+require("oil-git").setup({
+   highlights = {
+      OilGitAdded = { fg = "#b0b846" },
+      OilGitModifiedStaged = { fg = "#8bba7f" },
+      OilGitModifiedUnstaged = { fg = "#80aa9e" },
+      OilGitRenamed = { fg = "#e9b143" },
+      OilGitDeleted = { fg = "#f2594b" },
+      OilGitCopied = { fg = "#cba6f7" },
+      OilGitConflict = { fg = "#f28534" },
+      OilGitUntracked = { fg = "#a89984" },
+      OilGitIgnored = { fg = "#7c6f64" },
+   },
 })

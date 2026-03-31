@@ -11,7 +11,8 @@
 
 vim.pack.add({ "https://github.com/rachartier/tiny-inline-diagnostic.nvim" })
 
-vim.api.nvim_create_autocmd({ "BufReadPre", "BufNewFile" }, {
+vim.api.nvim_create_autocmd("LspAttach", {
+   once = true,
    callback = function()
       require("tiny-inline-diagnostic").setup({
          preset = "classic", -- modern, classic, minimal, simple, nonerdfont, powerline

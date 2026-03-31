@@ -3,6 +3,7 @@
 vim.pack.add({ "https://github.com/karb94/neoscroll.nvim" })
 
 vim.api.nvim_create_autocmd("BufEnter", {
+   once = true,
    callback = function()
       require("neoscroll").setup({
          stop_eof = false,

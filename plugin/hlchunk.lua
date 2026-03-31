@@ -4,6 +4,7 @@ vim.pack.add({ "https://github.com/shellRaining/hlchunk.nvim" })
 
 vim.api.nvim_create_autocmd({ "BufReadPre", "BufNewFile" }, {
    pattern = "*",
+   once = true,
    callback = function()
       require("hlchunk").setup({
          ---@module "hlchunk"

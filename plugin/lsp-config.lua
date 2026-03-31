@@ -32,57 +32,56 @@ map("n", "<leader>ih", function()
    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end, "Enable Inlay Hint")
 
-vim.api.nvim_create_autocmd({ "BufReadPre", "BufNewFile" }, {
-   callback = function()
-      require("lsp_signature").setup({
-         hint_prefix = {
-            above = "↙ ", -- when the hint is on the line above the current line
-            current = "← ", -- when the hint is on the same line
-            below = "↖ ", -- when the hint is on the line below the current line
-         },
-      })
-      -- diagnostic configs
-      vim.diagnostic.config({
-         virtual_lines = false,
-         virtual_text = false,
-         update_in_insert = false,
-         severity_sort = true,
-         float = {
-            focusable = true,
-            style = "minimal",
-            border = "rounded",
-            source = true,
-            header = "",
-            prefix = "",
-         },
-         signs = {
-            text = {
-               [vim.diagnostic.severity.ERROR] = "",
-               [vim.diagnostic.severity.WARN] = "",
-               [vim.diagnostic.severity.HINT] = "",
-               [vim.diagnostic.severity.INFO] = "",
-            },
-            numhl = {
-               [vim.diagnostic.severity.ERROR] = "DiagnosticError",
-               [vim.diagnostic.severity.WARN] = "DiagnosticWarning",
-               [vim.diagnostic.severity.INFO] = "DiagnosticInfo",
-               [vim.diagnostic.severity.HINT] = "DiagnosticHint",
-            },
-         },
-      })
-      vim.lsp.config.sourcekit = {
-         cmd = { "xcrun", "sourcekit-lsp" },
-         filetypes = { "swift" },
-         root_markers = {
-            "buildServer.json",
-            "*.xcodeproj",
-            "*.xcworkspace",
-            ".git",
-            "Package.swift",
-         },
-         capabilities = require("blink.cmp").get_lsp_capabilities(),
-      }
-      vim.lsp.enable("sourcekit")
-      vim.lsp.enable("copilot")
-   end,
+require("lsp_signature").setup({
+   hint_prefix = {
+      above = "↙ ", -- when the hint is on the line above the current line
+      current = "← ", -- when the hint is on the same line
+      below = "↖ ", -- when the hint is on the line below the current line
+   },
 })
+
+-- diagnostic configs
+vim.diagnostic.config({
+   virtual_lines = false,
+   virtual_text = false,
+   update_in_insert = false,
+   severity_sort = true,
+   float = {
+      focusable = true,
+      style = "minimal",
+      border = "rounded",
+      source = true,
+      header = "",
+      prefix = "",
+   },
+   signs = {
+      text = {
+         [vim.diagnostic.severity.ERROR] = "",
+         [vim.diagnostic.severity.WARN] = "",
+         [vim.diagnostic.severity.HINT] = "",
+         [vim.diagnostic.severity.INFO] = "",
+      },
+      numhl = {
+         [vim.diagnostic.severity.ERROR] = "DiagnosticError",
+         [vim.diagnostic.severity.WARN] = "DiagnosticWarning",
+         [vim.diagnostic.severity.INFO] = "DiagnosticInfo",
+         [vim.diagnostic.severity.HINT] = "DiagnosticHint",
+      },
+   },
+})
+
+vim.lsp.config.sourcekit = {
+   cmd = { "xcrun", "sourcekit-lsp" },
+   filetypes = { "swift" },
+   root_markers = {
+      "buildServer.json",
+      "*.xcodeproj",
+      "*.xcworkspace",
+      ".git",
+      "Package.swift",
+   },
+   capabilities = require("blink.cmp").get_lsp_capabilities(),
+}
+
+vim.lsp.enable("sourcekit")
+vim.lsp.enable("copilot")

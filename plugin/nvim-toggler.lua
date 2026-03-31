@@ -2,14 +2,21 @@
 
 vim.pack.add({ "https://github.com/nguyenvukhang/nvim-toggler" })
 
-require("keymaps")
+vim.api.nvim_create_autocmd("BufEnter", {
+   once = true,
+   callback = function()
+      -- keymaps
+      require("keymaps")
 
-map("n", "<leader>i", function()
-   require("nvim-toggler").toggle()
-end, "Toggle Variable")
+      map("n", "<leader>i", function()
+         require("nvim-toggler").toggle()
+      end, "Toggle Variable")
 
-require("nvim-toggler").setup({
-   inverses = {
-      ["before"] = "after",
-   },
+      -- setup
+      require("nvim-toggler").setup({
+         inverses = {
+            ["before"] = "after",
+         },
+      })
+   end,
 })
