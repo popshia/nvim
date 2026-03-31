@@ -1,48 +1,50 @@
-# Gemini Instruction Context - Neovim Configuration
+# 🌙 Project Overview: Neovim Config (popshia/nvim)
 
-This directory contains a modular, modern Neovim configuration written in Lua. It leverages high-performance plugins and the latest Neovim features (likely targeting Neovim 0.11+ due to the use of the experimental `vim.pack` API).
+This is a modern, high-performance Neovim configuration built with Neovim 0.12+ and Lua. It is designed for productivity, a refined UI, and deep AI integration.
 
-## Project Overview
+## 🛠️ Key Technologies & Architecture
 
-- **Main Technologies**: Neovim, Lua, `vim.pack` (built-in package management), LSP, Treesitter.
-- **Architecture**: 
-  - `init.lua`: Minimal entry point, requiring core modules.
-  - `lua/`: Core settings (`options.lua`, `keymaps.lua`, `autocommands.lua`).
-  - `plugin/`: Plugin-specific configurations. Each file is automatically loaded by Neovim.
-  - `after/lsp/`: Specialized configurations for individual Language Servers.
-  - `after/ftplugin/`: Filetype-specific overrides (e.g., `cpp.lua`, `markdown.lua`).
+- **Core**: Neovim 0.12+, Lua, `vim.pack` (native plugin management).
+- **Framework**: Uses `mini.nvim` (specifically `mini.misc`) to implement a custom loading strategy (`now`, `later`, `now_if_args`) for optimized startup performance.
+- **AI Integration**: Heavily integrated with `sidekick.nvim` for Gemini and GitHub Copilot support, including next-edit suggestions.
+- **LSP & Tooling**: Managed via `mason.nvim` and `nvim-lspconfig`, with `blink.cmp` for autocompletion.
+- **UI & Utilities**: `snacks.nvim` (pickers, explorer, UI), `oil.nvim` (file management), `flash.nvim` (navigation), `bufferline.nvim` (tabs).
 
-## Building and Running
+### Modular Directory Structure
+- `init.lua`: The entry point. Defines the global `Config` table and loading helpers.
+- `plugin/`: Modular configuration files for specific features and plugins. Files in this directory are automatically loaded by Neovim.
+- `after/ftplugin/`: Language-specific settings (e.g., `cpp.lua`, `markdown.lua`).
+- `after/lsp/`: Specific LSP server configurations (e.g., `lua_ls.lua`, `ts_ls.lua`) used by `lspconfig`.
+- `bench/`: Contains performance-related configurations or playground settings.
 
-- **To start Neovim**: Just run `nvim`.
-- **Plugin Management**: This configuration uses the built-in `vim.pack.add()` API. Plugins are added by URL directly in the `plugin/*.lua` files.
-- **LSP Server Management**: Managed via `mason.nvim` and `mason-lspconfig.nvim`. Servers are automatically installed if not present.
-- **Manual Installation**: Ensure dependencies like `ripgrep`, `fd`, and a Nerd Font are installed on the system.
+## 🚀 Building and Running
 
-## Development Conventions
+- **Starting Neovim**: Simply run `nvim` in the terminal.
+- **Plugin Management**: Plugins are registered and loaded natively via `vim.pack.add`. 
+- **Tool Management**: Run `:Mason` within Neovim to manage LSP servers, formatters, and linters.
+- **Formatting**: The project uses `stylua`. You can run `conform.nvim` with `<leader>ff` to format the current buffer.
 
-- **Modular Configuration**: New plugins should be added to a new file in the `plugin/` directory.
-- **LSP Configuration**: Server-specific settings should go into `after/lsp/<server_name>.lua`.
-- **Keymapping**: Use the global `map()` function defined in `lua/keymaps.lua` for consistent keybinding definitions. The leader key is `<Space>`.
-- **Code Style**: The project uses `stylua` for formatting (configuration in `.stylua.toml`). Adhere to the existing formatting when making changes.
-- **Keymaps Documentation**: Always include a description (`desc`) in keymap definitions to ensure they show up in `which-key` or other UI helpers.
+## ✍️ Development Conventions
 
-## Key Plugins & Functionalities
+### Coding Style
+- **Indentation**: 3 spaces (`indent_width = 3` in `.stylua.toml`).
+- **Formatting**: Managed via `stylua`.
+- **Global Helpers**: A global `map` function is available via `_G.map(mode, keys, func, desc, expr)`.
 
-- **LSP**: `nvim-lspconfig`, `mason.nvim` for server management, `blink.cmp` for completion, `lsp_signature.nvim` for parameter hints.
-- **UI**: `snacks.nvim` (pickers, notifications, lazygit), `lualine.nvim` (statusline), `bufferline.nvim` (tabs), `oil.nvim` (file explorer).
-- **Navigation**: `flash.nvim` (jumping), `symbols.nvim` (outline), `oil.nvim` (directory editing).
-- **Editing**: `conform.nvim` (formatting), `Comment.nvim`, `mini.surround`, `mini.splitjoin`.
-- **Git**: `gitsigns.nvim` for hunk tracking, `snacks.nvim` for `lazygit` integration.
+### Configuration Patterns
+- **Loading Helpers**: Use `Config.now(f)` for startup-critical code (colorschemes, statuslines) and `Config.later(f)` for everything else to keep startup fast.
+- **Plugin Setup**: Plugin configurations should ideally be placed in `plugin/` or loaded via the `Config` helpers in `init.lua`.
+- **LSP Setup**: New LSP configurations should be added as tables in `after/lsp/`.
 
-## Key Commands/Keymaps (Summary)
+### Keybindings (Leader: `<Space>`)
+- **Search**: `<leader>sf` (files), `<leader>st` (text), `<leader>sk` (keymaps).
+- **LSP**: `gd` (definition), `gr` (references), `gk` (hover), `<leader>rn` (rename), `<leader>ca` (code action).
+- **AI**: `<leader>gm` (Gemini), `<leader>cp` (Copilot), `<leader>s.` (Sidekick CLI), `<tab>` (Next-edit suggestion).
+- **UI**: `<leader>e` (Oil explorer), `<leader>so` (Symbols outline).
 
-- `<leader>ff`: Format file (via `conform.nvim`).
-- `<leader>e`: Toggle `oil.nvim` file explorer.
-- `<leader>lg`: Open `lazygit` (via `snacks.nvim`).
-- `gd`, `gr`, `gi`: LSP Go to definition/references/implementation.
-- `gk`: Show hover documentation.
-- `<leader>rn`: Rename symbol.
-- `<leader>ca`: Code actions.
-- `s`: Search/jump via `flash.nvim`.
-- `H` / `L`: Previous/Next buffer.
+## 🤖 AI-Powered Workflow
+
+The configuration is optimized for AI-assisted development using `sidekick.nvim`:
+- **Next-Edit Suggestions**: Use `<tab>` to jump to or apply the next suggested edit.
+- **Sidekick CLI**: Use `<leader>s.` or `<c-.>` to toggle and focus the AI assistant.
+- **Multiple Engines**: Seamlessly switch between Gemini (`<leader>gm`) and Copilot (`<leader>cp`).
