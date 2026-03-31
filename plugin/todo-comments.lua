@@ -1,10 +1,9 @@
 -- highlight todo comments
 
-vim.pack.add({ "https://github.com/folke/todo-comments.nvim" })
+Config.later(function()
+   vim.pack.add({ "https://github.com/folke/todo-comments.nvim" })
 
-vim.api.nvim_create_autocmd("LspAttach", {
-   once = true,
-   callback = function()
+   Config.on_event("LspAttach", function()
       require("todo-comments").setup({
          signs = true,
          keywords = {
@@ -29,5 +28,5 @@ vim.api.nvim_create_autocmd("LspAttach", {
             after = "fg", -- "fg" or "bg" or empty
          },
       })
-   end,
-})
+   end)
+end)

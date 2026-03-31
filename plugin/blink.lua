@@ -1,29 +1,22 @@
 -- autocomplete
 
-vim.pack.add({
-   { src = "https://github.com/saghen/blink.cmp", version = vim.version.range("1.*") },
-   "https://github.com/folke/lazydev.nvim",
-})
+Config.now_if_args(function()
+   vim.pack.add({
+      { src = "https://github.com/saghen/blink.cmp", version = vim.version.range("1.*") },
+      { src = "https://github.com/L3MON4D3/LuaSnip", version = vim.version.range("v2.*") },
+      "https://github.com/folke/lazydev.nvim",
+      "https://github.com/rafamadriz/friendly-snippets",
+   })
 
-vim.api.nvim_create_autocmd({ "FileType" }, {
-   pattern = { "lua" },
-   callback = function()
+   Config.on_filetype("lua", function()
       require("lazydev").setup({
          library = {
             { path = "${3rd}/luv/library", words = { "vim%.uv" } },
          },
       })
-   end,
-})
+   end)
 
-vim.api.nvim_create_autocmd({ "CmdlineEnter", "InsertEnter" }, {
-   once = true,
-   callback = function()
-      vim.pack.add({
-         { src = "https://github.com/L3MON4D3/LuaSnip", version = vim.version.range("v2.*") },
-         "https://github.com/rafamadriz/friendly-snippets",
-      })
-
+   Config.new_autocmd({ "CmdlineEnter", "InsertEnter" }, nil, true, function()
       require("luasnip.loaders.from_vscode").lazy_load()
 
       require("blink-cmp").setup({
@@ -31,9 +24,9 @@ vim.api.nvim_create_autocmd({ "CmdlineEnter", "InsertEnter" }, {
          ---@type blink.cmp.Config
          keymap = {
             preset = "enter",
-            ["<Tab>"] = {},
-            ["<S-Tab>"] = {},
-            ["<C-e>"] = {},
+            ["<Tab>"] = false,
+            ["<S-Tab>"] = false,
+            ["<C-e>"] = false,
             ["<C-a>"] = { "hide", "fallback" },
             ["<C-l>"] = { "snippet_forward", "fallback" },
             ["<C-h>"] = { "snippet_backward", "fallback" },
@@ -76,7 +69,7 @@ vim.api.nvim_create_autocmd({ "CmdlineEnter", "InsertEnter" }, {
             },
          },
          signature = {
-            enabled = false,
+            enabled = true,
             window = { show_documentation = false },
          },
          completion = {
@@ -113,5 +106,5 @@ vim.api.nvim_create_autocmd({ "CmdlineEnter", "InsertEnter" }, {
          },
          fuzzy = { implementation = "prefer_rust_with_warning" },
       })
-   end,
-})
+   end)
+end)

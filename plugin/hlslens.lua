@@ -1,13 +1,10 @@
 -- show search count using "/"
 
-vim.pack.add({ "https://github.com/kevinhwang91/nvim-hlslens" })
+Config.now_if_args(function()
+   vim.pack.add({ "https://github.com/kevinhwang91/nvim-hlslens" })
 
-vim.api.nvim_create_autocmd("CmdlineEnter", {
-   once = true,
-   callback = function()
+   Config.new_autocmd("CmdlineEnter", nil, true, function()
       -- keymaps
-      require("keymaps")
-
       map("n", "n", function()
          vim.cmd("normal!" .. vim.v.count1 .. "n")
          vim.api.nvim_feedkeys("zz", "n", false)
@@ -43,5 +40,5 @@ vim.api.nvim_create_autocmd("CmdlineEnter", {
             nearest_float_when = "auto",
          },
       })
-   end,
-})
+   end)
+end)

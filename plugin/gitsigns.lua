@@ -1,28 +1,23 @@
 -- gitsigns integration in nvim
 
-vim.pack.add({ "https://github.com/lewis6991/gitsigns.nvim" })
+Config.later(function()
+   vim.pack.add({ "https://github.com/lewis6991/gitsigns.nvim" })
 
-vim.api.nvim_create_autocmd("BufEnter", {
-   once = true,
-   callback = function()
-      -- keymaps
-      require("keymaps")
+   -- keymaps
+   map("n", "]g", "<cmd>Gitsigns next_hunk<CR>", "Next Hunk")
+   map("n", "[g", "<cmd>Gitsigns prev_hunk<CR>", "Prev Hunk")
+   map("n", "<leader>gb", "<cmd>Gitsigns blame_line<CR>", "Blame")
+   map("n", "<leader>gh", "<cmd>Gitsigns preview_hunk<CR>", "Preview Hunk")
 
-      map("n", "]g", "<cmd>Gitsigns next_hunk<CR>", "Next Hunk")
-      map("n", "[g", "<cmd>Gitsigns prev_hunk<CR>", "Prev Hunk")
-      map("n", "<leader>gb", "<cmd>Gitsigns blame_line<CR>", "Blame")
-      map("n", "<leader>gh", "<cmd>Gitsigns preview_hunk<CR>", "Preview Hunk")
-
-      -- setup
-      require("gitsigns").setup({
-         signs = {
-            add = { text = "│" }, -- "+"
-            change = { text = "│" }, -- "~"
-            delete = { text = "_" }, -- "-"
-            topdelete = { text = "‾" },
-            changedelete = { text = "~" },
-            untracked = { text = "┆" },
-         },
-      })
-   end,
-})
+   -- setup
+   require("gitsigns").setup({
+      signs = {
+         add = { text = "│" }, -- "+"
+         change = { text = "│" }, -- "~"
+         delete = { text = "_" }, -- "-"
+         topdelete = { text = "‾" },
+         changedelete = { text = "~" },
+         untracked = { text = "┆" },
+      },
+   })
+end)
