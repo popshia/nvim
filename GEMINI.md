@@ -1,59 +1,48 @@
-# GEMINI Project Overview: Neovim Configuration
+# Gemini Instruction Context - Neovim Configuration
 
-This document provides a comprehensive overview of the Neovim configuration in this directory, intended for use by the Gemini AI assistant.
+This directory contains a modular, modern Neovim configuration written in Lua. It leverages high-performance plugins and the latest Neovim features (likely targeting Neovim 0.11+ due to the use of the experimental `vim.pack` API).
 
 ## Project Overview
 
-This is a personal Neovim configuration designed for a modern and productive development workflow. It is built upon the `lazy.nvim` plugin manager, ensuring fast startup times by lazy-loading plugins. The configuration is written in Lua and follows a modular structure that separates concerns, making it easy to maintain and extend.
-
-The configuration is highly customized with a wide range of plugins that enhance the editing experience, provide a polished user interface, and integrate seamlessly with external tools like Git and the Language Server Protocol (LSP).
-
-### Key Technologies
-
--   **Editor:** Neovim
--   **Language:** Lua
--   **Plugin Manager:** `lazy.nvim`
--   **Primary Colorscheme:** `gruvbox-material`
-
-### Core Features
-
--   **Lazy Loading:** All plugins are lazy-loaded for optimal performance.
--   **LSP Integration:** `nvim-lspconfig` and `mason.nvim` are used for automatic LSP server installation and management, providing features like go-to-definition, code actions, and diagnostics.
--   **Custom UI:** The UI is enhanced with `lualine.nvim` for the statusline, `bufferline.nvim` for tabs, and various other plugins for a visually appealing experience.
--   **Modular Structure:** The configuration is well-organized into `core` settings (options, keymaps, autocommands) and a `plugins` directory where each plugin has its own configuration file.
-
-## File Structure
-
-The configuration is organized as follows:
-
-```
-.
-├── init.lua                -- Main entry point
-├── lua/
-│   └── user/
-│       ├── lazy.lua          -- lazy.nvim setup and plugin manager bootstrapping
-│       ├── core/             -- Core editor settings
-│       │   ├── autocommands.lua -- Global autocommands
-│       │   ├── keymaps.lua   -- Global keybindings
-│       │   └── options.lua   -- Vim options (set)
-│       └── plugins/          -- All plugin specifications (one file per plugin)
-├── after/
-│   └── lsp/                  -- Language-specific LSP server settings
-└── ftplugin/                 -- Filetype-specific settings (e.g., tab widths)
-```
+- **Main Technologies**: Neovim, Lua, `vim.pack` (built-in package management), LSP, Treesitter.
+- **Architecture**: 
+  - `init.lua`: Minimal entry point, requiring core modules.
+  - `lua/`: Core settings (`options.lua`, `keymaps.lua`, `autocommands.lua`).
+  - `plugin/`: Plugin-specific configurations. Each file is automatically loaded by Neovim.
+  - `after/lsp/`: Specialized configurations for individual Language Servers.
+  - `after/ftplugin/`: Filetype-specific overrides (e.g., `cpp.lua`, `markdown.lua`).
 
 ## Building and Running
 
-This is a Neovim configuration and is not "built" in a traditional sense. To use it, you would typically clone this repository into your Neovim configuration directory (`~/.config/nvim` on Linux/macOS).
-
-When Neovim is started for the first time after cloning, `lazy.nvim` will automatically install all the plugins listed in the configuration.
+- **To start Neovim**: Just run `nvim`.
+- **Plugin Management**: This configuration uses the built-in `vim.pack.add()` API. Plugins are added by URL directly in the `plugin/*.lua` files.
+- **LSP Server Management**: Managed via `mason.nvim` and `mason-lspconfig.nvim`. Servers are automatically installed if not present.
+- **Manual Installation**: Ensure dependencies like `ripgrep`, `fd`, and a Nerd Font are installed on the system.
 
 ## Development Conventions
 
-The configuration follows a set of conventions that make it easy to manage:
+- **Modular Configuration**: New plugins should be added to a new file in the `plugin/` directory.
+- **LSP Configuration**: Server-specific settings should go into `after/lsp/<server_name>.lua`.
+- **Keymapping**: Use the global `map()` function defined in `lua/keymaps.lua` for consistent keybinding definitions. The leader key is `<Space>`.
+- **Code Style**: The project uses `stylua` for formatting (configuration in `.stylua.toml`). Adhere to the existing formatting when making changes.
+- **Keymaps Documentation**: Always include a description (`desc`) in keymap definitions to ensure they show up in `which-key` or other UI helpers.
 
--   **Plugin Management:** All plugins are managed through `lazy.nvim`. To add a new plugin, a new Lua file should be created in the `lua/user/plugins/` directory.
--   **Modularity:** Each plugin has its own configuration file in `lua/user/plugins/`, making it easy to configure or disable individual plugins.
--   **Keymaps:** Global keymaps are defined in `lua/user/core/keymaps.lua`. Plugin-specific keymaps are typically defined within the plugin's configuration file. The leader key is set to `<Space>`.
--   **Options:** Core Neovim options are set in `lua/user/core/options.lua`.
--   **LSP Configuration:** LSP servers are automatically installed via `mason.nvim` based on the `ensure_installed` list in `lua/user/plugins/mason.lua`.
+## Key Plugins & Functionalities
+
+- **LSP**: `nvim-lspconfig`, `mason.nvim` for server management, `blink.cmp` for completion, `lsp_signature.nvim` for parameter hints.
+- **UI**: `snacks.nvim` (pickers, notifications, lazygit), `lualine.nvim` (statusline), `bufferline.nvim` (tabs), `oil.nvim` (file explorer).
+- **Navigation**: `flash.nvim` (jumping), `symbols.nvim` (outline), `oil.nvim` (directory editing).
+- **Editing**: `conform.nvim` (formatting), `Comment.nvim`, `mini.surround`, `mini.splitjoin`.
+- **Git**: `gitsigns.nvim` for hunk tracking, `snacks.nvim` for `lazygit` integration.
+
+## Key Commands/Keymaps (Summary)
+
+- `<leader>ff`: Format file (via `conform.nvim`).
+- `<leader>e`: Toggle `oil.nvim` file explorer.
+- `<leader>lg`: Open `lazygit` (via `snacks.nvim`).
+- `gd`, `gr`, `gi`: LSP Go to definition/references/implementation.
+- `gk`: Show hover documentation.
+- `<leader>rn`: Rename symbol.
+- `<leader>ca`: Code actions.
+- `s`: Search/jump via `flash.nvim`.
+- `H` / `L`: Previous/Next buffer.
