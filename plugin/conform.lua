@@ -32,4 +32,15 @@ later(function()
          lsp_format = "fallback",
       },
    })
+
+   require("conform").formatters.stylua = {
+      append_args = {
+         "--indent-type",
+         "Spaces",
+         "--indent-width",
+         "3",
+         "--column-width",
+         "120",
+      },
+   }
 end)
