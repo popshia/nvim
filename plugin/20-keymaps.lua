@@ -8,9 +8,6 @@ end
 -- Remove space keymapping ====================================================
 map("", "<Space>", "<Nop>")
 
--- Clear highlighting =========================================================
-map("n", "<Esc>", "<cmd>nohlsearch<CR>")
-
 -- Window/Buffer navigation/resizing ==========================================
 map("n", "<C-h>", "<C-w>h", "Focus Left")
 map("n", "<C-j>", "<C-w>j", "Focus Down")

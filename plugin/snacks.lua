@@ -1,6 +1,7 @@
 -- several QOL plugins
 
 now_if_args(function()
+   vim.cmd("packadd nvim.undotree")
    vim.pack.add({ "https://github.com/folke/snacks.nvim" })
 
    map("n", "<leader>ds", function()
@@ -28,7 +29,7 @@ now_if_args(function()
       Snacks.picker.notifications({ layout = "default" })
    end, "Search Notifications")
    map("n", "<leader>su", function()
-      Snacks.picker.undo()
+      require("undotree").open()
    end, "Search Undo History")
    map("n", "<leader>sb", function()
       Snacks.picker.buffers({

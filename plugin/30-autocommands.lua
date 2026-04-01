@@ -1,5 +1,5 @@
 -- Use 'q' to quit from common plugins
-new_autocmd("FileType", { "qf", "help", "man", "oil" }, false, function()
+new_autocmd("FileType", { "qf", "help", "man", "oil", "nvim-undotree" }, false, function()
    vim.cmd([[
 			nnoremap <silent> <buffer> q :close<CR>
 			set nobuflisted

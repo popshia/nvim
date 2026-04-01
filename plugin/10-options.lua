@@ -7,8 +7,8 @@ vim.g.mapleader          = " "  -- Use `<Space>` as <Leader> key
 vim.g.maplocalleader     = " "
 vim.o.mouse              = "a"  -- allow the mouse to be used in neovim
 vim.o.mousemoveevent     = true -- mouse scrolling
-vim.o.updatetime         = 250  -- faster completion (4000ms default)
-vim.o.timeoutlen         = 300  -- time to wait for a mapped sequence to complete (in milliseconds)
+vim.o.timeoutlen         = 200  -- time to wait for a mapped sequence to complete (in milliseconds)
+vim.o.updatetime         = 2000 -- faster completion (4000ms default)
 vim.g.loaded_netrw       = 1
 vim.g.loaded_netrwPlugin = 1
 

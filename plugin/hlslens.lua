@@ -1,6 +1,7 @@
 -- show search count using "/"
 
 on_event("CmdlineEnter", function()
+   vim.cmd("packadd nohlsearch")
    vim.pack.add({ "https://github.com/kevinhwang91/nvim-hlslens" })
 
    map("n", "n", function()
