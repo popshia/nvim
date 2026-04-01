@@ -1,6 +1,6 @@
 -- several QOL plugins
 
-Config.now_if_args(function()
+now_if_args(function()
    vim.pack.add({ "https://github.com/folke/snacks.nvim" })
 
    map("n", "<leader>ds", function()

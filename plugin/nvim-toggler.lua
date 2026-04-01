@@ -1,6 +1,6 @@
 -- toggle common values
 
-Config.later(function()
+later(function()
    vim.pack.add({ "https://github.com/nguyenvukhang/nvim-toggler" })
 
    -- keymaps

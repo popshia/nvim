@@ -1,6 +1,6 @@
 -- the GOAT of fm.
 
-Config.now(function()
+now(function()
    vim.pack.add({
       "https://github.com/stevearc/oil.nvim",
       "https://github.com/malewicz1337/oil-git.nvim",

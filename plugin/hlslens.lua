@@ -1,9 +1,9 @@
 -- show search count using "/"
 
-Config.now_if_args(function()
+now_if_args(function()
    vim.pack.add({ "https://github.com/kevinhwang91/nvim-hlslens" })
 
-   Config.new_autocmd("CmdlineEnter", nil, true, function()
+   new_autocmd("CmdlineEnter", nil, true, function()
       -- keymaps
       map("n", "n", function()
          vim.cmd("normal!" .. vim.v.count1 .. "n")

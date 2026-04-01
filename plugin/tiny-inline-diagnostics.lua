@@ -9,10 +9,10 @@
 -- error
 -- info = "hello"
 
-Config.later(function()
+later(function()
    vim.pack.add({ "https://github.com/rachartier/tiny-inline-diagnostic.nvim" })
 
-   Config.on_event("LspAttach", function()
+   on_event("LspAttach", function()
       require("tiny-inline-diagnostic").setup({
          preset = "classic", -- modern, classic, minimal, simple, nonerdfont, powerline
          transparent_bg = true,

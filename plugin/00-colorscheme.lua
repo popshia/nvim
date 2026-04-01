@@ -1,6 +1,6 @@
 -- colorscheme
 
-Config.now(function()
+now(function()
    vim.pack.add({ "https://github.com/sainnhe/gruvbox-material" })
 
    vim.g.gruvbox_material = {

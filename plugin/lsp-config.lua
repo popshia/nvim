@@ -1,6 +1,6 @@
 -- lsp keymaps and other configs
 
-Config.now_if_args(function()
+now_if_args(function()
    vim.pack.add({
       "https://github.com/neovim/nvim-lspconfig",
    })

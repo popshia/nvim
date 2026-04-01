@@ -1,6 +1,6 @@
 -- autocomplete
 
-Config.now_if_args(function()
+now_if_args(function()
    vim.pack.add({
       { src = "https://github.com/saghen/blink.cmp", version = vim.version.range("1.*") },
       { src = "https://github.com/L3MON4D3/LuaSnip", version = vim.version.range("v2.*") },
@@ -8,7 +8,7 @@ Config.now_if_args(function()
       "https://github.com/rafamadriz/friendly-snippets",
    })
 
-   Config.on_filetype("lua", function()
+   on_filetype("lua", function()
       require("lazydev").setup({
          library = {
             { path = "${3rd}/luv/library", words = { "vim%.uv" } },
@@ -16,7 +16,7 @@ Config.now_if_args(function()
       })
    end)
 
-   Config.new_autocmd({ "CmdlineEnter", "InsertEnter" }, nil, true, function()
+   new_autocmd({ "CmdlineEnter", "InsertEnter" }, nil, true, function()
       require("luasnip.loaders.from_vscode").lazy_load()
 
       require("blink-cmp").setup({

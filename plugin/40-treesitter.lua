@@ -1,11 +1,11 @@
 -- nvim-treesitter
 
-Config.now_if_args(function()
+now_if_args(function()
    -- Define hook to update tree-sitter parsers after plugin is updated
    local ts_update = function()
       vim.cmd("TSUpdate")
    end
-   Config.on_packchanged("nvim-treesitter", { "update" }, ts_update, ":TSUpdate")
+   on_packchanged("nvim-treesitter", { "update" }, ts_update, ":TSUpdate")
 
    vim.pack.add({
       "https://github.com/nvim-treesitter/nvim-treesitter",
@@ -46,5 +46,5 @@ Config.now_if_args(function()
    local ts_start = function(ev)
       vim.treesitter.start(ev.buf)
    end
-   Config.new_autocmd("FileType", filetypes, false, ts_start, "Start tree-sitter")
+   new_autocmd("FileType", filetypes, false, ts_start, "Start tree-sitter")
 end)

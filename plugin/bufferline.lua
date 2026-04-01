@@ -1,6 +1,6 @@
 -- bufferline enhancement
 
-Config.now_if_args(function()
+now_if_args(function()
    vim.pack.add({ "https://github.com/akinsho/bufferline.nvim" })
 
    require("bufferline").setup({

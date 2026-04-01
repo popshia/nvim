@@ -1,6 +1,6 @@
 -- auto adjust cmdheight
 
-Config.now(function()
+now(function()
    vim.pack.add({ "https://github.com/jake-stewart/auto-cmdheight.nvim" })
 
    require("auto-cmdheight").setup({

@@ -3,7 +3,6 @@
 _G.Config = {}
 
 -- 'mini.nvim' - all-in-one plugin powering most MiniMax features.
--- See 'plugin/30_mini.lua' for how it is used.
 -- Load now to have 'mini.misc' available for custom loading helpers.
 vim.pack.add({ "https://github.com/nvim-mini/mini.nvim" })
 
@@ -23,17 +22,17 @@ vim.pack.add({ "https://github.com/nvim-mini/mini.nvim" })
 -- See also:
 -- - `:h MiniMisc.safely()`
 local misc = require("mini.misc")
-Config.now = function(f)
+_G.now = function(f)
    misc.safely("now", f)
 end
-Config.later = function(f)
+_G.later = function(f)
    misc.safely("later", f)
 end
-Config.now_if_args = vim.fn.argc(-1) > 0 and Config.now or Config.later
-Config.on_event = function(ev, f)
+_G.now_if_args = vim.fn.argc(-1) > 0 and _G.now or _G.later
+_G.on_event = function(ev, f)
    misc.safely("event:" .. ev, f)
 end
-Config.on_filetype = function(ft, f)
+_G.on_filetype = function(ft, f)
    misc.safely("filetype:" .. ft, f)
 end
 
@@ -46,13 +45,13 @@ end
 -- - `:h nvim_create_augroup()`
 -- - `:h nvim_create_autocmd()`
 local gr = vim.api.nvim_create_augroup("custom-config", {})
-Config.new_autocmd = function(event, pattern, once, callback, desc)
+_G.new_autocmd = function(event, pattern, once, callback, desc)
    local opts = { group = gr, pattern = pattern, once = once, callback = callback, desc = desc }
    vim.api.nvim_create_autocmd(event, opts)
 end
 
 -- Define custom `vim.pack.add()` hook helper. See `:h vim.pack-events`.
-Config.on_packchanged = function(plugin_name, kinds, callback, desc)
+_G.on_packchanged = function(plugin_name, kinds, callback, desc)
    local f = function(ev)
       local name, kind = ev.data.spec.name, ev.data.kind
       if not (name == plugin_name and vim.tbl_contains(kinds, kind)) then
@@ -63,5 +62,5 @@ Config.on_packchanged = function(plugin_name, kinds, callback, desc)
       end
       callback()
    end
-   Config.new_autocmd("PackChanged", "*", false, f, desc)
+   new_autocmd("PackChanged", "*", false, f, desc)
 end

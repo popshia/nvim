@@ -85,6 +85,7 @@ local diagnostic_opts = {
       },
    },
 }
-Config.later(function() vim.diagnostic.config(diagnostic_opts) end)
+
+later(function() vim.diagnostic.config(diagnostic_opts) end)
 
 -- stylua: ignore end

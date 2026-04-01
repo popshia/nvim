@@ -1,6 +1,6 @@
 -- ai companion
 
-Config.now_if_args(function()
+now_if_args(function()
    vim.pack.add({ "https://github.com/folke/sidekick.nvim" })
 
    -- keymaps

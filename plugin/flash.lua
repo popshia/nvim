@@ -1,6 +1,6 @@
 -- quickly jump to text
 
-Config.later(function()
+later(function()
    vim.pack.add({ "https://github.com/folke/flash.nvim" })
 
    -- keymaps

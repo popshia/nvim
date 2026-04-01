@@ -1,6 +1,6 @@
 -- mini.nvim plugins
 
-Config.later(function()
+later(function()
    -- Around/Inside textobjects
    require("mini.ai").setup()
 

@@ -1,5 +1,5 @@
 -- Use 'q' to quit from common plugins
-Config.new_autocmd("FileType", { "qf", "help", "man", "oil" }, false, function()
+new_autocmd("FileType", { "qf", "help", "man", "oil" }, false, function()
    vim.cmd([[
 			nnoremap <silent> <buffer> q :close<CR>
 			set nobuflisted
@@ -7,38 +7,38 @@ Config.new_autocmd("FileType", { "qf", "help", "man", "oil" }, false, function()
 end)
 
 -- Set wrap and spell in markdown and gitcommit
-Config.new_autocmd("FileType", { "gitcommit", "markdown" }, false, function()
+new_autocmd("FileType", { "gitcommit", "markdown" }, false, function()
    vim.opt_local.wrap = true
    vim.opt_local.spell = true
 end)
 
 -- Fixes Autocomment
-Config.new_autocmd("Filetype", nil, false, function()
+new_autocmd("Filetype", nil, false, function()
    vim.cmd("set formatoptions-=cro")
 end)
 
 -- Highlight Yanked Text
-Config.new_autocmd("TextYankPost", nil, false, function()
+new_autocmd("TextYankPost", nil, false, function()
    vim.highlight.on_yank()
 end)
 
 -- Toggle relative number between normal and insert mode
-Config.new_autocmd("InsertEnter", nil, false, function()
+new_autocmd("InsertEnter", nil, false, function()
    vim.opt.relativenumber = false
 end)
-Config.new_autocmd("InsertLeave", nil, false, function()
+new_autocmd("InsertLeave", nil, false, function()
    vim.opt.relativenumber = true
 end)
 
 -- oil rename
-Config.new_autocmd("User", "OilActionPost", false, function(event)
+new_autocmd("User", "OilActionPost", false, function(event)
    if event.data.actions.type == "move" then
       Snacks.rename.on_rename_file(event.data.actions.src_url, event.data.actions.dest_url)
    end
 end, "Oil rename")
 
 -- auto refresh file in swift
-Config.new_autocmd("FileType", { "swift" }, false, function()
+new_autocmd("FileType", { "swift" }, false, function()
    vim.opt.autoread = true
    vim.fn.timer_start(2000, function()
       vim.cmd("silent! checktime")
@@ -49,7 +49,7 @@ end, "Auto refresh on Swift files")
 ---@type table<number, {token:lsp.ProgressToken, msg:string, done:boolean}[]>
 local progress = vim.defaulttable()
 ---@param ev {data: {client_id: integer, params: lsp.ProgressParams}}
-Config.new_autocmd("LspProgress", "", false, function(ev)
+new_autocmd("LspProgress", "", false, function(ev)
    local client = vim.lsp.get_client_by_id(ev.data.client_id)
    local value = ev.data.params.value --[[@as {percentage?: number, title?: string, message?: string, kind: "begin" | "report" | "end"}]]
    if not client or type(value) ~= "table" then
