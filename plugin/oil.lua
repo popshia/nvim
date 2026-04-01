@@ -6,12 +6,10 @@ now(function()
       "https://github.com/malewicz1337/oil-git.nvim",
    })
 
-   -- keymaps
    map("n", "<leader>e", function()
       require("oil").toggle_float()
    end, "File Explorer")
 
-   -- setup
    require("oil").setup({
       ---@module "oil"
       ---@type oil.setupOpts

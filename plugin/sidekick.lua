@@ -3,7 +3,6 @@
 now_if_args(function()
    vim.pack.add({ "https://github.com/folke/sidekick.nvim" })
 
-   -- keymaps
    map("n", "<tab>", function()
       -- if there is a next edit, jump to it, otherwise apply it if any
       if not require("sidekick").nes_jump_or_apply() then
@@ -29,6 +28,5 @@ now_if_args(function()
       require("sidekick.cli").send({ selection = true })
    end, "Sidekick Send Visual Selection")
 
-   -- setup
    require("sidekick").setup()
 end)

@@ -1,9 +1,8 @@
 -- quickly jump to text
 
-later(function()
+now_if_args(function()
    vim.pack.add({ "https://github.com/folke/flash.nvim" })
 
-   -- keymaps
    map({ "n", "x", "o" }, "s", function()
       require("flash").jump()
    end, "Flash")
@@ -11,7 +10,6 @@ later(function()
       require("flash").remote()
    end, "Remote Flash")
 
-   -- setup
    require("flash").setup({
       opts = {
          ---@type Flash.Config

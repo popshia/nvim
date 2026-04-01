@@ -5,7 +5,6 @@ now_if_args(function()
       "https://github.com/neovim/nvim-lspconfig",
    })
 
-   -- keymaps
    map("n", "gd", function()
       vim.lsp.buf.definition()
    end, "Goto Definition")
@@ -34,7 +33,6 @@ now_if_args(function()
       vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
    end, "Enable Inlay Hint")
 
-   -- setup
    vim.lsp.config.sourcekit = {
       cmd = { "xcrun", "sourcekit-lsp" },
       filetypes = { "swift" },

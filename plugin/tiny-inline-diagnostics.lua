@@ -9,7 +9,7 @@
 -- error
 -- info = "hello"
 
-later(function()
+now_if_args(function()
    vim.pack.add({ "https://github.com/rachartier/tiny-inline-diagnostic.nvim" })
 
    on_event("LspAttach", function()

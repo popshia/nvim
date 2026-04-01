@@ -8,10 +8,8 @@ now_if_args(function()
       "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim",
    })
 
-   -- keymaps
    map("n", "<leader>ms", "<cmd>Mason<cr>", "Mason")
 
-   -- setup
    require("mason").setup()
    require("mason-lspconfig").setup({
       automatic_installation = true,
