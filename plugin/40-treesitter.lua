@@ -29,7 +29,9 @@ now_if_args(function()
       "python",
       "regex",
       "swift",
+      "toml",
       "vimdoc",
+      "yaml",
    }
    local isnt_installed = function(lang)
       return #vim.api.nvim_get_runtime_file("parser/" .. lang .. ".*", false) == 0
