@@ -26,23 +26,24 @@ later(function()
          injected = {
             option = { ignore_errors = true },
          },
+         stylua = {
+            append_args = {
+               "--indent-type",
+               "Spaces",
+               "--indent-width",
+               "3",
+               "--column-width",
+               "120",
+            },
+         },
+         swift = {
+            -- Prepend the configuration flag to point to your local file
+            append_args = { "--configuration", "~/.swift-format.json" },
+         },
       },
       format_on_save = {
          timeout_ms = 500,
          lsp_format = "fallback",
       },
    })
-
-   require("conform").formatters.stylua = {
-      append_args = {
-         "--indent-type",
-         "Spaces",
-         "--indent-width",
-         "3",
-         "--column-width",
-         "120",
-      },
-   }
-
-   -- TODO: add swift format rule for 4 spaces
 end)
