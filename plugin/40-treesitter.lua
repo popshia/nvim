@@ -2,10 +2,9 @@
 
 now_if_args(function()
    -- Define hook to update tree-sitter parsers after plugin is updated
-   local ts_update = function()
+   on_packchanged("nvim-treesitter", { "update" }, function()
       vim.cmd("TSUpdate")
-   end
-   on_packchanged("nvim-treesitter", { "update" }, ts_update, ":TSUpdate")
+   end, ":TSUpdate")
 
    vim.pack.add({
       "https://github.com/nvim-treesitter/nvim-treesitter",
@@ -18,9 +17,13 @@ now_if_args(function()
    local languages = {
       -- These are already pre-installed with Neovim. Used as an example.
       "css",
+      "diff",
       "fish",
+      "gitcommit",
+      "gitignore",
       "html",
       "lua",
+      "luadoc",
       "markdown",
       "markdown_inline",
       "python",
