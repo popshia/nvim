@@ -31,7 +31,7 @@ end)
 
 later(function()
    -- Around/Inside textobjects
-   require("mini.ai").setup()
+   -- require("mini.ai").setup()
 
    -- Split/Join arguments
    require("mini.splitjoin").setup({
