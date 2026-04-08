@@ -14,11 +14,8 @@ later(function()
          exclude_filetypes = {
             terminal = true,
             nofile = true,
-            alpha = true,
             help = true,
-            dashboard = true,
             lazy = true,
-            trouble = true,
             text = true,
          },
       },

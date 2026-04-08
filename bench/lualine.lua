@@ -1,85 +1,83 @@
 -- statusline plugin
 
-return {
-   "nvim-lualine/lualine.nvim",
-   config = function()
-      local hide_in_width = function()
-         return vim.fn.winwidth(0) > 80
-      end
+later(function()
+   vim.pack.add({ gh("nvim-lualine/lualine.nvim") })
 
-      local diagnostics = {
-         "diagnostics",
-         sources = { "nvim_diagnostic" },
-         sections = { "error", "warn" },
-         symbols = { error = " ", warn = " " },
-         colored = true,
-         update_in_insert = false,
-         always_visible = false,
-      }
+   local hide_in_width = function()
+      return vim.fn.winwidth(0) > 80
+   end
 
-      local diff = {
-         "diff",
-         colored = true,
-         symbols = { added = "+", modified = "~", removed = "-" }, -- changes diff symbols
-         cond = hide_in_width,
-      }
+   local diagnostics = {
+      "diagnostics",
+      sources = { "nvim_diagnostic" },
+      sections = { "error", "warn" },
+      symbols = { error = " ", warn = " " },
+      colored = true,
+      update_in_insert = false,
+      always_visible = false,
+   }
 
-      local filetype = {
-         "filetype",
-         icons_enabled = true,
-      }
+   local diff = {
+      "diff",
+      colored = true,
+      symbols = { added = "+", modified = "~", removed = "-" }, -- changes diff symbols
+      cond = hide_in_width,
+   }
 
-      local branch = {
-         "branch",
-         icons_enabled = true,
-         icon = "",
-      }
+   local filetype = {
+      "filetype",
+      icons_enabled = true,
+   }
 
-      local datetime = function()
-         return os.date("%H:%M")
-      end
+   local branch = {
+      "branch",
+      icons_enabled = true,
+      icon = "",
+   }
 
-      local spaces = function()
-         return "Tab: " .. vim.api.nvim_get_option_value("shiftwidth", {})
-      end
+   local datetime = function()
+      return os.date("%H:%M")
+   end
 
-      require("lualine").setup({
-         options = {
-            globalstatus = true,
-            theme = "auto",
-            section_separators = {},
-            component_separators = { left = "|", right = "|" },
-            disabled_filetypes = { "snacks_dashboard", "Outline" },
-         },
-         sections = {
-            lualine_a = { "mode" },
-            lualine_b = { branch, diff },
-            lualine_c = { "filename" },
-            lualine_x = {
-               spaces,
-               filetype,
-               {
-                  function()
-                     return " "
-                  end,
-                  color = function()
-                     local status = require("sidekick.status").get()
-                     if status then
-                        return status.kind == "Error" and "DiagnosticError"
-                           or status.busy and "DiagnosticWarn"
-                           or "Special"
-                     end
-                  end,
-                  cond = function()
-                     local status = require("sidekick.status")
-                     return status.get() ~= nil
-                  end,
-               },
+   local spaces = function()
+      return "Tab: " .. vim.api.nvim_get_option_value("shiftwidth", {})
+   end
+
+   require("lualine").setup({
+      options = {
+         globalstatus = true,
+         theme = "auto",
+         section_separators = {},
+         component_separators = { left = "|", right = "|" },
+         disabled_filetypes = { "snacks_dashboard", "Outline" },
+      },
+      sections = {
+         lualine_a = { "mode" },
+         lualine_b = { branch, diff },
+         lualine_c = { "filename" },
+         lualine_x = {
+            filetype,
+            {
+               function()
+                  return " "
+               end,
+               color = function()
+                  local status = require("sidekick.status").get()
+                  if status then
+                     return status.kind == "Error" and "DiagnosticError"
+                        or status.busy and "DiagnosticWarn"
+                        or "Special"
+                  end
+               end,
+               cond = function()
+                  local status = require("sidekick.status")
+                  return status.get() ~= nil
+               end,
             },
-            lualine_y = { diagnostics },
-            lualine_z = { datetime },
          },
-         extensions = { "lazy", "mason", "oil", "quickfix", "toggleterm", "trouble" },
-      })
-   end,
-}
+         lualine_y = { diagnostics },
+         lualine_z = { datetime },
+      },
+      extensions = { "mason", "oil", "quickfix", "toggleterm" },
+   })
+end)

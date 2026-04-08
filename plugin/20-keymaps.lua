@@ -34,10 +34,9 @@ map("x", "K", ":move '<-2<CR>gv-gv")
 map("x", "/", "<Esc>/\\%V", "Search within visual selection")
 
 -- Cursor navigation ==========================================================
-map({ "n", "o", "x" }, "gh", "^", "Move Cursor to Line Start")
-map({ "n", "o", "x" }, "gl", "g_", "Move Cursor to Line End")
+map({ "n", "x" }, "gh", "^", "Move Cursor to Line Start")
+map({ "n", "x" }, "gl", "g_", "Move Cursor to Line End")
 
 -- Comment and yank paste =====================================================
-map("n", "ycc", function()
-   return "yy" .. vim.v.count1 .. "gcc']p"
-end, "Duplicate and comment line")
+map("n", "ycc", "yy<Plug>(comment_toggle_linewise_current)p", "Duplicate and comment line")
+map("x", "ycc", "ygv<Plug>(comment_toggle_linewise_visual)`>p", "Duplicate and comment line")

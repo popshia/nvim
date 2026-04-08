@@ -54,7 +54,7 @@ vim.o.foldenable    = false         -- code folding
 vim.opt.completeopt = { "menuone", "noselect" }
 vim.opt.whichwrap:append("<,>,[,],h,l")
 vim.opt.iskeyword:remove("_")
--- opt.iskeyword:append("-")
+-- vim.opt.iskeyword:append("-")
 
 -- Diagnostics ================================================================
 local diagnostic_opts = {

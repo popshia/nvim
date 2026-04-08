@@ -3,7 +3,10 @@
 now_if_args(function()
    vim.pack.add({
       gh("neovim/nvim-lspconfig"),
+      gh("j-hui/fidget.nvim"),
    })
+
+   require("fidget").setup({})
 
    -- "gra" (Normal and Visual mode) is mapped to |vim.lsp.buf.code_action()|
    -- "gri" is mapped to |vim.lsp.buf.implementation()|
