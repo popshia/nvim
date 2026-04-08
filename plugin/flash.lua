@@ -1,7 +1,7 @@
 -- quickly jump to text
 
 now_if_args(function()
-   vim.pack.add({ "https://github.com/folke/flash.nvim" })
+   vim.pack.add({ gh("folke/flash.nvim") })
 
    map({ "n", "x", "o" }, "s", function()
       require("flash").jump()

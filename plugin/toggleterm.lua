@@ -1,7 +1,7 @@
 -- terminal integration
 
 later(function()
-   vim.pack.add({ { src = "https://github.com/akinsho/toggleterm.nvim", version = vim.version.range("*") } })
+   vim.pack.add({ { src = gh("akinsho/toggleterm.nvim"), version = vim.version.range("*") } })
 
    require("toggleterm").setup({
       ---@module "toggleterm"

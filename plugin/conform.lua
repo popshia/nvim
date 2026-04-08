@@ -1,7 +1,7 @@
 -- file formatting
 
 later(function()
-   vim.pack.add({ "https://github.com/stevearc/conform.nvim" })
+   vim.pack.add({ gh("stevearc/conform.nvim") })
 
    require("conform").setup({
       ---@module "conform"

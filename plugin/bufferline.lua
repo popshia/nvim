@@ -1,7 +1,7 @@
 -- bufferline enhancement
 
 later(function()
-   vim.pack.add({ "https://github.com/akinsho/bufferline.nvim" })
+   vim.pack.add({ gh("akinsho/bufferline.nvim") })
 
    require("bufferline").setup({
       ---@module "bufferline"

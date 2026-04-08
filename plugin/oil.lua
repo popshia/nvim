@@ -2,8 +2,8 @@
 
 now(function()
    vim.pack.add({
-      "https://github.com/stevearc/oil.nvim",
-      "https://github.com/malewicz1337/oil-git.nvim",
+      gh("stevearc/oil.nvim"),
+      gh("malewicz1337/oil-git.nvim"),
    })
 
    map("n", "<leader>e", function()

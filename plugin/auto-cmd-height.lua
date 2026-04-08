@@ -1,7 +1,7 @@
 -- auto adjust cmdheight
 
 now(function()
-   vim.pack.add({ "https://github.com/jake-stewart/auto-cmdheight.nvim" })
+   vim.pack.add({ gh("jake-stewart/auto-cmdheight.nvim") })
 
    require("auto-cmdheight").setup({
       -- max cmdheight before displaying hit enter prompt.

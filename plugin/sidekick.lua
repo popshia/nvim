@@ -1,7 +1,7 @@
 -- ai companion
 
 now_if_args(function()
-   vim.pack.add({ "https://github.com/folke/sidekick.nvim" })
+   vim.pack.add({ gh("folke/sidekick.nvim") })
 
    map("n", "<tab>", function()
       -- if there is a next edit, jump to it, otherwise apply it if any

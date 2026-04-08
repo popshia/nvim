@@ -1,7 +1,7 @@
 -- gitsigns integration in nvim
 
 later(function()
-   vim.pack.add({ "https://github.com/lewis6991/gitsigns.nvim" })
+   vim.pack.add({ gh("lewis6991/gitsigns.nvim") })
 
    map("n", "]g", "<cmd>Gitsigns next_hunk<CR>", "Next Hunk")
    map("n", "[g", "<cmd>Gitsigns prev_hunk<CR>", "Prev Hunk")

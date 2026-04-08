@@ -1,7 +1,7 @@
 -- highlight todo comments
 
 later(function()
-   vim.pack.add({ "https://github.com/folke/todo-comments.nvim" })
+   vim.pack.add({ gh("folke/todo-comments.nvim") })
 
    on_event("LspAttach", function()
       require("todo-comments").setup({

@@ -1,7 +1,7 @@
 -- smooth scrolling
 
 later(function()
-   vim.pack.add({ "https://github.com/karb94/neoscroll.nvim" })
+   vim.pack.add({ gh("karb94/neoscroll.nvim") })
 
    require("neoscroll").setup({
       stop_eof = false,

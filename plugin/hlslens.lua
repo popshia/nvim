@@ -2,7 +2,7 @@
 
 on_event("CmdlineEnter", function()
    vim.cmd("packadd nohlsearch")
-   vim.pack.add({ "https://github.com/kevinhwang91/nvim-hlslens" })
+   vim.pack.add({ gh("kevinhwang91/nvim-hlslens") })
 
    map("n", "n", function()
       vim.cmd("normal!" .. vim.v.count1 .. "n")

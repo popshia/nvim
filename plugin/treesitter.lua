@@ -7,8 +7,8 @@ now_if_args(function()
    end, ":TSUpdate")
 
    vim.pack.add({
-      "https://github.com/nvim-treesitter/nvim-treesitter",
-      "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
+      gh("nvim-treesitter/nvim-treesitter"),
+      gh("nvim-treesitter/nvim-treesitter-textobjects"),
    })
 
    -- Define languages which will have parsers installed and auto enabled

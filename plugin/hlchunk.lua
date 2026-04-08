@@ -1,7 +1,7 @@
 -- indentation indicator
 
 later(function()
-   vim.pack.add({ "https://github.com/shellRaining/hlchunk.nvim" })
+   vim.pack.add({ gh("shellRaining/hlchunk.nvim") })
 
    require("hlchunk").setup({
       ---@module "hlchunk"

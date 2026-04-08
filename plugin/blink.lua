@@ -2,10 +2,10 @@
 
 now_if_args(function()
    vim.pack.add({
-      { src = "https://github.com/saghen/blink.cmp", version = vim.version.range("1.*") },
-      { src = "https://github.com/L3MON4D3/LuaSnip", version = vim.version.range("v2.*") },
-      "https://github.com/folke/lazydev.nvim",
-      "https://github.com/rafamadriz/friendly-snippets",
+      { src = gh("saghen/blink.cmp"), version = vim.version.range("1.*") },
+      { src = gh("L3MON4D3/LuaSnip"), version = vim.version.range("v2.*") },
+      gh("folke/lazydev.nvim"),
+      gh("rafamadriz/friendly-snippets"),
    })
 
    on_filetype("lua", function()

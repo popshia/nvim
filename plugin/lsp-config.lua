@@ -2,7 +2,7 @@
 
 now_if_args(function()
    vim.pack.add({
-      "https://github.com/neovim/nvim-lspconfig",
+      gh("neovim/nvim-lspconfig"),
    })
 
    -- "gra" (Normal and Visual mode) is mapped to |vim.lsp.buf.code_action()|

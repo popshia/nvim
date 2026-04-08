@@ -1,10 +1,13 @@
 -- Define config table to be able to pass data between scripts
 -- It is a global variable which can be use both as `_G.Config` and `Config`
 _G.Config = {}
+_G.gh = function(x)
+   return "https://github.com/" .. x
+end
 
 -- 'mini.nvim' - all-in-one plugin powering most MiniMax features.
 -- Load now to have 'mini.misc' available for custom loading helpers.
-vim.pack.add({ "https://github.com/nvim-mini/mini.nvim" })
+vim.pack.add({ gh("nvim-mini/mini.nvim") })
 
 -- Loading helpers used to organize config into fail-safe parts. Example usage:
 -- - `now` - execute immediately. Use for what must be executed during startup.
