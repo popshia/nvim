@@ -24,7 +24,12 @@ now_if_args(function()
          ---@type blink.cmp.Config
          keymap = {
             preset = "enter",
-            ["<Tab>"] = false,
+            ["<Tab>"] = {
+               function() -- sidekick next edit suggestion
+                  return require("sidekick").nes_jump_or_apply()
+               end,
+               "fallback",
+            },
             ["<S-Tab>"] = false,
             ["<C-e>"] = false,
             ["<C-a>"] = { "hide", "fallback" },
@@ -69,7 +74,7 @@ now_if_args(function()
             },
          },
          signature = {
-            enabled = true,
+            enabled = false,
             window = { show_documentation = false },
          },
          completion = {

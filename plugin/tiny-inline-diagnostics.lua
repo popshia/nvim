@@ -14,7 +14,7 @@ now_if_args(function()
 
    on_event("LspAttach", function()
       require("tiny-inline-diagnostic").setup({
-         preset = "classic", -- modern, classic, minimal, simple, nonerdfont, powerline
+         preset = "minimal", -- modern, classic, minimal, simple, nonerdfont, powerline
          transparent_bg = true,
          options = {
             multilines = {

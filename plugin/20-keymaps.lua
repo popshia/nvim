@@ -7,6 +7,8 @@ end
 
 -- Remove space keymapping ====================================================
 map("", "<Space>", "<Nop>")
+vim.keymap.del({ "i", "s" }, "<Tab>")
+vim.keymap.del({ "i", "s" }, "<S-Tab>")
 
 -- Window/Buffer navigation/resizing ==========================================
 map("n", "<C-h>", "<C-w>h", "Focus Left")
