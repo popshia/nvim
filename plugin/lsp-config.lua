@@ -3,10 +3,13 @@
 now_if_args(function()
    vim.pack.add({
       gh("neovim/nvim-lspconfig"),
+      gh("nmac427/guess-indent.nvim"),
       gh("j-hui/fidget.nvim"),
+      gh("Bekaboo/dropbar.nvim"),
    })
 
    require("fidget").setup({})
+   require("guess-indent").setup({})
 
    -- "gra" (Normal and Visual mode) is mapped to |vim.lsp.buf.code_action()|
    -- "gri" is mapped to |vim.lsp.buf.implementation()|
@@ -29,6 +32,9 @@ now_if_args(function()
    map("n", "<leader>ih", function()
       vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
    end, "Enable Inlay Hint")
+   map("n", "<leader>;", function()
+      require("dropbar.api").pick()
+   end, "Pick Dropbar Item")
    -- map("n", "gr", function()
    --    Snacks.picker.lsp_references({ layout = "bottom" })
    -- end, "Goto Reference")

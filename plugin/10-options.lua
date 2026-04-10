@@ -85,6 +85,11 @@ later(function()
    vim.diagnostic.config(diagnostic_opts)
 end)
 
+-- neovim built in plugins
+vim.cmd("packadd nohlsearch")
+vim.cmd("packadd nvim.undotree")
+vim.cmd("packadd nvim.tohtml")
+
 -- ui2 ========================================================================
 -- require("vim._core.ui2").enable({
 --    enable = true,

@@ -1,6 +1,6 @@
 -- statusline plugin
 
-later(function()
+now_if_args(function()
    vim.pack.add({ gh("nvim-lualine/lualine.nvim") })
 
    local hide_in_width = function()
@@ -39,9 +39,34 @@ later(function()
       return os.date("%H:%M")
    end
 
-   local spaces = function()
-      return "Tab: " .. vim.api.nvim_get_option_value("shiftwidth", {})
-   end
+   local session_status = {
+      function()
+         local status = require("sidekick.status").cli()
+         return " " .. (#status > 1 and #status or "")
+      end,
+      cond = function()
+         return #require("sidekick.status").cli() > 0
+      end,
+      color = function()
+         return "Special"
+      end,
+   }
+
+   local copilot_status = {
+      function()
+         return " "
+      end,
+      color = function()
+         local status = require("sidekick.status").get()
+         if status then
+            return status.kind == "Error" and "DiagnosticError" or status.busy and "DiagnosticWarn" or "Special"
+         end
+      end,
+      cond = function()
+         local status = require("sidekick.status")
+         return status.get() ~= nil
+      end,
+   }
 
    require("lualine").setup({
       options = {
@@ -49,33 +74,14 @@ later(function()
          theme = "auto",
          section_separators = {},
          component_separators = { left = "|", right = "|" },
-         disabled_filetypes = { "snacks_dashboard", "Outline" },
+         disabled_filetypes = { "Outline", "ministarter" },
       },
       sections = {
          lualine_a = { "mode" },
          lualine_b = { branch, diff },
-         lualine_c = { "filename" },
-         lualine_x = {
-            filetype,
-            {
-               function()
-                  return " "
-               end,
-               color = function()
-                  local status = require("sidekick.status").get()
-                  if status then
-                     return status.kind == "Error" and "DiagnosticError"
-                        or status.busy and "DiagnosticWarn"
-                        or "Special"
-                  end
-               end,
-               cond = function()
-                  local status = require("sidekick.status")
-                  return status.get() ~= nil
-               end,
-            },
-         },
-         lualine_y = { diagnostics },
+         lualine_c = { "diagnostics" },
+         lualine_x = { filetype },
+         lualine_y = {},
          lualine_z = { datetime },
       },
       extensions = { "mason", "oil", "quickfix", "toggleterm" },

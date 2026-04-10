@@ -1,8 +1,6 @@
 -- several QOL plugins
 
 now_if_args(function()
-   vim.cmd("packadd nvim.undotree")
-   vim.cmd("packadd nvim.tohtml")
    vim.pack.add({ gh("folke/snacks.nvim") })
 
    -- search
@@ -22,14 +20,16 @@ now_if_args(function()
       Snacks.picker.icons({ layout = "select" })
    end, "Search Icons")
    map("n", "<leader>sm", function()
-      Snacks.picker.notifications({ layout = "default" })
+      Snacks.picker.notifications({
+         layout = "default",
+         on_show = function()
+            vim.cmd.stopinsert()
+         end,
+      })
    end, "Search Notifications")
-   map("n", "<leader>su", function()
-      require("undotree").open({ command = "40vnew" })
-   end, "Search Undo History")
    map("n", "<leader>sb", function()
       Snacks.picker.buffers({
-         layout = "select",
+         layout = "vscode",
          on_show = function()
             vim.cmd.stopinsert()
          end,

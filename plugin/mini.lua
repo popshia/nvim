@@ -34,6 +34,9 @@ later(function()
       silent = true,
    })
 
+   -- Autopairs
+   require("mini.pairs").setup()
+
    -- Split/Join arguments
    require("mini.splitjoin").setup({
       mappings = {
