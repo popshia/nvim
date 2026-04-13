@@ -8,7 +8,7 @@ now_if_args(function()
       Snacks.picker.smart()
    end, "Search Files")
    map("n", "<leader>st", function()
-      Snacks.picker.grep() -- somehow the fuzzy search in grep isn't working...
+      Snacks.picker.grep()
    end, "Search Text")
    map("n", "<leader>sr", function()
       Snacks.picker.recent()

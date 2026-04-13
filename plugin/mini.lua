@@ -37,6 +37,13 @@ later(function()
    -- Autopairs
    require("mini.pairs").setup()
 
+   -- Navigation through brackets
+   -- buffers: b
+   -- comment block: c
+   -- indent: i
+   -- yank selection replacing lastest put region: y
+   require("mini.bracketed").setup()
+
    -- Split/Join arguments
    require("mini.splitjoin").setup({
       mappings = {
@@ -73,4 +80,7 @@ later(function()
          start_with_preview = "<leader>A",
       },
    })
+
+   -- Indent
+   require("mini.indentscope").setup()
 end)
