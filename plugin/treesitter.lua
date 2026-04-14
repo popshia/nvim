@@ -22,6 +22,7 @@ now_if_args(function()
       "gitcommit",
       "gitignore",
       "html",
+      "json",
       "lua",
       "luadoc",
       "markdown",
