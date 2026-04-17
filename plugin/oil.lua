@@ -6,10 +6,6 @@ now(function()
       gh("malewicz1337/oil-git.nvim"),
    })
 
-   map("n", "<leader>e", function()
-      require("oil").toggle_float()
-   end, "File Explorer")
-
    require("oil").setup({
       ---@module "oil"
       ---@type oil.setupOpts
@@ -41,4 +37,8 @@ now(function()
          OilGitIgnored = { fg = "#7c6f64" },
       },
    })
+
+   map("n", "<leader>e", function()
+      require("oil").toggle_float()
+   end, "File Explorer")
 end)

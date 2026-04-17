@@ -8,8 +8,6 @@ now_if_args(function()
       gh("WhoIsSethDaniel/mason-tool-installer.nvim"),
    })
 
-   map("n", "<leader>ms", "<cmd>Mason<cr>", "Mason")
-
    require("mason").setup()
    require("mason-lspconfig").setup({
       automatic_installation = true,
@@ -28,4 +26,6 @@ now_if_args(function()
       },
       auto_update = true,
    })
+
+   map("n", "<leader>ms", "<cmd>Mason<cr>", "Mason")
 end)

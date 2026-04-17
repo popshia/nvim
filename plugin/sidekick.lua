@@ -3,6 +3,20 @@
 now_if_args(function()
    vim.pack.add({ gh("folke/sidekick.nvim") })
 
+   require("sidekick").setup()
+
+   local disabled = false
+   new_autocmd("User", "SidekickNesHide", false, function()
+      if disabled then
+         disabled = false
+         require("tiny-inline-diagnostic").enable()
+      end
+   end, "SidekickNesHide")
+   new_autocmd("User", "SidekickNesShow", false, function()
+      disabled = true
+      require("tiny-inline-diagnostic").disable()
+   end, "SidekickNesShow")
+
    map("n", "<tab>", function()
       if not require("sidekick").nes_jump_or_apply() then
          return "<Tab>"
@@ -23,18 +37,4 @@ now_if_args(function()
    map({ "n", "x" }, "<leader>sv", function()
       require("sidekick.cli").send({ msg = "{this}" })
    end, "Sidekick Send Visual Selection")
-
-   require("sidekick").setup()
-
-   local disabled = false
-   new_autocmd("User", "SidekickNesHide", false, function()
-      if disabled then
-         disabled = false
-         require("tiny-inline-diagnostic").enable()
-      end
-   end, "SidekickNesHide")
-   new_autocmd("User", "SidekickNesShow", false, function()
-      disabled = true
-      require("tiny-inline-diagnostic").disable()
-   end, "SidekickNesShow")
 end)

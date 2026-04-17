@@ -1,11 +1,6 @@
 -- nvim-treesitter
 
 now_if_args(function()
-   -- Define hook to update tree-sitter parsers after plugin is updated
-   on_packchanged("nvim-treesitter", { "update" }, function()
-      vim.cmd("TSUpdate")
-   end, ":TSUpdate")
-
    vim.pack.add({
       gh("nvim-treesitter/nvim-treesitter"),
       gh("nvim-treesitter/nvim-treesitter-textobjects"),
@@ -15,7 +10,6 @@ now_if_args(function()
    -- After changing this, restart Neovim once to install necessary parsers. Wait
    -- for the installation to finish before opening a file for added language(s).
    local languages = {
-      -- These are already pre-installed with Neovim. Used as an example.
       "css",
       "diff",
       "fish",
@@ -23,6 +17,7 @@ now_if_args(function()
       "gitignore",
       "html",
       "json",
+      "javascript",
       "lua",
       "luadoc",
       "markdown",
@@ -32,6 +27,7 @@ now_if_args(function()
       "swift",
       "toml",
       "vimdoc",
+      "vue",
       "yaml",
    }
    local isnt_installed = function(lang)
@@ -53,4 +49,9 @@ now_if_args(function()
       vim.treesitter.start(ev.buf)
    end
    new_autocmd("FileType", filetypes, false, ts_start, "Start tree-sitter")
+
+   -- Define hook to update tree-sitter parsers after plugin is updated
+   on_packchanged("nvim-treesitter", { "update" }, function()
+      vim.cmd("TSUpdate")
+   end, ":TSUpdate")
 end)

@@ -3,9 +3,25 @@
 now_if_args(function()
    vim.pack.add({ gh("folke/snacks.nvim") })
 
+   require("snacks").setup({
+      bigfile = { enabled = true },
+      input = { enabled = true },
+      rename = { enabled = true },
+      notifier = { enabled = true },
+      picker = { enabled = true },
+      image = { enabled = true },
+      styles = {
+         input = {
+            relative = "cursor",
+            row = -3,
+            width = 30,
+         },
+      },
+   })
+
    -- search
    map("n", "<leader>sf", function()
-      Snacks.picker.smart()
+      Snacks.picker.files()
    end, "Search Files")
    map("n", "<leader>st", function()
       Snacks.picker.grep()
@@ -21,7 +37,7 @@ now_if_args(function()
    end, "Search Icons")
    map("n", "<leader>sm", function()
       Snacks.picker.notifications({
-         layout = "default",
+         layout = "ivy",
          on_show = function()
             vim.cmd.stopinsert()
          end,
@@ -43,23 +59,4 @@ now_if_args(function()
    map("n", "<leader>q", function()
       Snacks.bufdelete()
    end, "Delete Buffer")
-   map("n", "<leader>lg", function()
-      Snacks.lazygit()
-   end, "LazyGit")
-
-   require("snacks").setup({
-      bigfile = { enabled = true },
-      input = { enabled = true },
-      rename = { enabled = true },
-      notifier = { enabled = true },
-      picker = { enabled = true },
-      image = { enabled = true },
-      styles = {
-         input = {
-            relative = "cursor",
-            row = -3,
-            width = 30,
-         },
-      },
-   })
 end)
