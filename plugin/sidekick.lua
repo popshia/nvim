@@ -1,6 +1,6 @@
 -- ai companion
 
-now_if_args(function()
+now(function()
    vim.pack.add({ gh("folke/sidekick.nvim") })
 
    require("sidekick").setup()

@@ -5,7 +5,7 @@ now_if_args(function()
       gh("neovim/nvim-lspconfig"),
       gh("nmac427/guess-indent.nvim"),
       gh("j-hui/fidget.nvim"),
-      gh("Bekaboo/dropbar.nvim"),
+      -- gh("Bekaboo/dropbar.nvim"),
    })
 
    require("fidget").setup({})

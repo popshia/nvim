@@ -27,12 +27,12 @@ vim.o.splitright         = true   -- force all vertical splits to go to the righ
 vim.o.termguicolors      = true   -- set term gui colors (most terminals support this)
 vim.o.background         = "dark" -- dark mode theme
 vim.o.expandtab          = false  -- convert tabs to spaces
-vim.o.laststatus         = 0      -- set global status bar
+vim.o.laststatus         = 0      -- 0: never, 1: only show if two windows, 2: show for all, 3: global
 vim.o.showcmd            = false  -- don't show commands
 vim.o.scrolloff          = 8      -- vertical scrolloff with 8 char
 vim.o.sidescrolloff      = 8      -- horizontal scrolloff with 8 char
 vim.o.wrap               = false  -- display lines as one long line
-vim.opt.shortmess:append("c")
+vim.opt.shortmess:append("cW")
 
 -- Editing ====================================================================
 vim.o.autoindent    = true               -- make indenting same as line above
