@@ -1,4 +1,4 @@
--- mini.nvim plugins
+-- mini.nvim
 
 now(function()
    -- Start screen
@@ -19,7 +19,7 @@ now(function()
             name = "project",
             section = "find",
          },
-         { action = "Pack", name = "plugins", section = "actions" },
+         { action = "Pack", name = "pack", section = "actions" },
          { action = "qall", name = "quit", section = "actions" },
       },
       footer = "stay hungry, stay foolish.",

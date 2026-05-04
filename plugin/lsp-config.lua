@@ -5,7 +5,6 @@ now_if_args(function()
       gh("neovim/nvim-lspconfig"),
       gh("nmac427/guess-indent.nvim"),
       gh("j-hui/fidget.nvim"),
-      -- gh("Bekaboo/dropbar.nvim"),
    })
 
    require("fidget").setup({})
@@ -36,8 +35,8 @@ now_if_args(function()
    -- |v_an| and |v_in| fall back to LSP |vim.lsp.buf.selection_range()| if
    --   treesitter is not active.
    -- |gx| handles `textDocument/documentLink`. Example: with gopls, invoking gx
-   --   on "os" in this Go code will open documentation externally: >
    map("n", "gd", function()
+      --   on "os" in this Go code will open documentation externally: >
       vim.lsp.buf.definition()
    end, "Goto Definition")
    map("n", "gk", function()
@@ -46,7 +45,4 @@ now_if_args(function()
    map("n", "<leader>ih", function()
       vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
    end, "Enable Inlay Hint")
-   map("n", "<leader>;", function()
-      require("dropbar.api").pick()
-   end, "Pick Dropbar Item")
 end)
