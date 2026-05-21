@@ -11,7 +11,7 @@ This is my personal Neovim configuration, meticulously crafted for a productive,
     - **Autocompletion**: High-performance completion powered by `blink.cmp` and `LuaSnip`.
     - **Advanced Navigation**: Swift jumping with `flash.nvim` and bracket-based navigation with `mini.bracketed`.
     - **Powerful Manipulation**: Full `mini.nvim` suite for text objects, surroundings, split/join, and alignment, plus `nvim-toggler` for keyword flipping.
-    - **Git Integration**: Comprehensive Git support with `gitsigns.nvim` for hunk management and `snacks.nvim` for LazyGit integration.
+    - **Git Integration**: Comprehensive Git support with `gitsigns.nvim` for hunk management.
 - **🎨 Polished UI**:
     - **Theme**: A customized `gruvbox-material` colorscheme with a refined statusline by `lualine.nvim`.
     - **Components**: `bufferline.nvim` for sleek tabs, `mini.indentscope` for indent visualization, and `neoscroll.nvim` for smooth scrolling.
@@ -84,6 +84,7 @@ The leader key is set to `<Space>`.
 | `H`/`L` | Previous/Next buffer |
 | `J`/`K` | Move selected line(s) down/up |
 | `gh`/`gl` | Move cursor to line start/end |
+| `cp` | Paste and reindent |
 | `ycc` | Duplicate and comment the current line |
 | `v` + `/` | Search within the visual selection |
 
@@ -97,12 +98,14 @@ The leader key is set to `<Space>`.
 | `<leader>gb` | `gitsigns.nvim` | Blame the current line |
 | `<leader>gh` | `gitsigns.nvim` | Preview the hunk under the cursor |
 | `gd`/`gk` | `lsp-config` | Go to Definition / Hover Documentation |
-| `grn`/`gra` | `lsp-config` | Rename symbol / Code actions (0.11+ defaults) |
-| `grr`/`gri` | `lsp-config` | Show references / implementation |
+| `grn`/`gra` | `lsp-config` | Rename symbol / Code actions (0.12+ defaults) |
+| `grr`/`gri` | `lsp-config` | Show references / Go to implementation |
+| `grt`/`grx` | `lsp-config` | Type definition / Run codelens |
+| `gO` | `lsp-config` | Document symbols |
 | `<leader>ih` | `lsp-config` | Toggle inlay hints |
 | `<leader>sj` | `mini.splitjoin` | Toggle split/join of code blocks |
 | `ys`/`ds`/`cs` | `mini.surround` | Add/delete/change surroundings |
-| `<leader>a`/`<leader>A`| `mini.align` | Align text (with preview) |
+| `<leader>a`/`<leader>A` | `mini.align` | Align text (with preview) |
 | `[b`/`]b` | `mini.bracketed` | Navigate between buffers |
 | `<leader>i` | `nvim-toggler` | Toggle a variable or keyword (e.g., `true`/`false`) |
 | `<leader>e` | `oil.nvim` | Toggle the file explorer |
@@ -112,8 +115,11 @@ The leader key is set to `<Space>`.
 | `<leader>q` | `snacks.nvim` | Delete the current buffer |
 | `<leader>su` | `undotree` | Toggle the undo tree |
 | `<leader>s.` | `sidekick.nvim` | Toggle Sidekick CLI |
-| `<leader>gm`/`<leader>cp`| `sidekick.nvim` | Toggle Gemini / Copilot Sidekick |
-| `<tab>` | `sidekick.nvim` | Jump or apply next edit suggestion |
+| `<leader>gm` | `sidekick.nvim` | Toggle Gemini Sidekick |
+| `<leader>sp` | `sidekick.nvim` | Ask Sidekick a prompt |
+| `<leader>sv` | `sidekick.nvim` | Send visual selection to Sidekick |
+| `<C-.>` | `sidekick.nvim` | Switch focus to Sidekick |
+| `<Tab>` | `sidekick.nvim` | Jump or apply next edit suggestion |
 | `<C-\>` | `toggleterm.nvim` | Toggle a floating terminal |
 
 ## 🔌 Plugins Overview
@@ -123,8 +129,8 @@ The leader key is set to `<Space>`.
 
 - **[mason.nvim](https://github.com/williamboman/mason.nvim)**: LSP/DAP/Linter/Formatter manager.
 - **[nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)**: Native LSP configurations.
-- **[conform.nvim](https://github.com/stevearc/conform.nvim)**: Lightweight formatting engine.
-- **[snacks.nvim](https://github.com/folke/snacks.nvim)**: High-quality QoL utilities (pickers, etc.).
+- **[conform.nvim](https://github.com/stevearc/conform.nvim)**: Lightweight formatting engine (stylua, ruff, prettier, swift-format, shfmt).
+- **[snacks.nvim](https://github.com/folke/snacks.nvim)**: High-quality QoL utilities (pickers, notifier, image rendering, LSP rename UI).
 - **[toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)**: Persistent terminal management.
 - **[todo-comments.nvim](https://github.com/folke/todo-comments.nvim)**: Smart TODO highlighting.
 - **[guess-indent.nvim](https://github.com/nmac427/guess-indent.nvim)**: Automatic indentation detection.
@@ -137,27 +143,27 @@ The leader key is set to `<Space>`.
 
 - **[gruvbox-material](https://github.com/sainnhe/gruvbox-material)**: Primary colorscheme.
 - **[bufferline.nvim](https://github.com/akinsho/bufferline.nvim)**: Stylish buffer tabs.
-- **[lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)**: Fast and easy-to-configure statusline.
-- **[tiny-inline-diagnostic.nvim](https://github.com/rachartier/tiny-inline-diagnostic.nvim)**: Modern inline diagnostics.
+- **[lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)**: Fast statusline with git, diagnostics, Sidekick/Copilot status, and clock.
+- **[tiny-inline-diagnostic.nvim](https://github.com/rachartier/tiny-inline-diagnostic.nvim)**: Modern inline diagnostics (auto-disabled when Sidekick NES is active).
 - **[neoscroll.nvim](https://github.com/karb94/neoscroll.nvim)**: Smooth scrolling.
 - **[mini.starter](https://github.com/echasnovski/mini.starter)**: Minimal and fast start screen.
 - **[mini.indentscope](https://github.com/echasnovski/mini.indentscope)**: Visualize indent scope.
+- **[markview.nvim](https://github.com/OXY2DEV/markview.nvim)**: Markdown rendering inside Neovim buffers.
 
 </details>
 
 <details>
 <summary><strong>Editing & Development</strong></summary>
 
-- **[nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)**: Treesitter parsing and highlighting.
+- **[nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)**: Treesitter parsing and highlighting (css, fish, html, json, js, lua, markdown, python, swift, vue, yaml, and more).
 - **[blink.cmp](https://github.com/saghen/blink.cmp)**: Blazing fast completion engine.
 - **[LuaSnip](https://github.com/L3MON4D3/LuaSnip)**: Feature-rich snippet engine.
 - **[flash.nvim](https://github.com/folke/flash.nvim)**: Precise text navigation.
-- **[oil.nvim](https://github.com/stevearc/oil.nvim)**: Filesystem editing as a buffer.
+- **[oil.nvim](https://github.com/stevearc/oil.nvim)**: Filesystem editing as a buffer (renames trigger LSP-aware snacks.rename).
 - **[gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)**: Git hunk indicators and actions.
-- **[mini.nvim](https://github.com/echasnovski/mini.nvim)**: Minimalistic utilities (`ai`, `pairs`, `surround`, `splitjoin`, `icons`, `cursorword`, `align`, `bracketed`).
-- **[sidekick.nvim](https://github.com/folke/sidekick.nvim)**: AI assistant and diagnostics sidebar.
+- **[mini.nvim](https://github.com/echasnovski/mini.nvim)**: Minimalistic utilities (`ai`, `pairs`, `surround`, `splitjoin`, `icons`, `cursorword`, `align`, `bracketed`, `indentscope`, `starter`).
+- **[sidekick.nvim](https://github.com/folke/sidekick.nvim)**: AI assistant (Gemini + Copilot) with next-edit suggestions.
 - **[undotree](https://github.com/mbbill/undotree)**: Visualizes the undo history.
 - **[nvim-toggler](https://github.com/nguyenvukhang/nvim-toggler)**: Boolean and keyword toggling.
 
 </details>
-
