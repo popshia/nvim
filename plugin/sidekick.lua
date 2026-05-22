@@ -3,7 +3,15 @@
 now(function()
    vim.pack.add({ gh("folke/sidekick.nvim") })
 
-   require("sidekick").setup()
+   require("sidekick").setup({
+      cli = {
+         tools = {
+            antigravity = {
+               cmd = { "agy" },
+            },
+         },
+      },
+   })
 
    local disabled = false
    new_autocmd("User", "SidekickNesHide", false, function()
