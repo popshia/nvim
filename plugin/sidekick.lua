@@ -1,14 +1,13 @@
 -- ai companion
 
-now(function()
+now_if_args(function()
    vim.pack.add({ gh("folke/sidekick.nvim") })
 
    require("sidekick").setup({
       cli = {
          tools = {
-            antigravity = {
-               cmd = { "agy" },
-            },
+            antigravity = { cmd = { "agy" } },
+            pi = { cmd = { "pi" } },
          },
       },
    })
@@ -36,9 +35,6 @@ now(function()
    map({ "n", "v" }, "<leader>s.", function()
       require("sidekick.cli").select({ filter = { installed = true } })
    end, "Sidekick Toggle CLI")
-   map({ "n", "v" }, "<leader>gm", function()
-      require("sidekick.cli").toggle({ name = "gemini", focus = true })
-   end, "Sidekick Gemini Toggle")
    map({ "n", "v" }, "<leader>sp", function()
       require("sidekick.cli").prompt()
    end, "Sidekick Ask Prompt")
