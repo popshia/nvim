@@ -10,6 +10,7 @@ return {
             ignoreSubmodules = true,
             library = {
                vim.env.VIMRUNTIME,
+               "/Applications/Hammerspoon.app/Contents/Resources/extensions/hs",
             },
          },
          completion = { callSnippet = "Replace" },

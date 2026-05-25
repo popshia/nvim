@@ -238,7 +238,7 @@ local function build_content()
       local commit_count = commits and #commits or 0
       local status = pending and (" +" .. commit_count) or " ok"
       local revs = pending and (" " .. short_rev(plugin.rev) .. " -> " .. short_rev(plugin.rev_to))
-          or (" " .. short_rev(plugin.rev))
+         or (" " .. short_rev(plugin.rev))
       local active = plugin.active and "loaded" or "inactive"
       local pad = string.rep(" ", math.max(0, max_name - #name))
       local line = ("  %s%s  %-8s %s%s"):format(name, pad, active, status, revs)
@@ -287,10 +287,10 @@ local function build_content()
    end
 
    local loaded_pending = vim.iter(state.pending)
-       :filter(function(plugin)
-          return plugin.active
-       end)
-       :totable()
+      :filter(function(plugin)
+         return plugin.active
+      end)
+      :totable()
 
    add((" Updates (%d)"):format(#loaded_pending), "PackFloatSection")
    if #loaded_pending == 0 then
@@ -509,10 +509,10 @@ end
 
 local function update_all()
    local names = vim.iter(state.pending)
-       :map(function(plugin)
-          return plugin.spec.name
-       end)
-       :totable()
+      :map(function(plugin)
+         return plugin.spec.name
+      end)
+      :totable()
    update_plugins(names)
 end
 
