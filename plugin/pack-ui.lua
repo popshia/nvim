@@ -577,13 +577,13 @@ local function remove_plugin()
 
    local choice = vim.fn.confirm(string.format("Delete plugin %s?", name), "&Yes\n&No", 2, "Question")
    if choice == 1 then
-      close()
       local del_ok, err = pcall(vim.pack.del, { name })
       if del_ok then
          vim.notify(string.format("vim.pack: removed %s", name), vim.log.levels.INFO)
       else
          vim.notify("vim.pack: " .. tostring(err), vim.log.levels.ERROR)
       end
+      refresh()
    end
 end
 

@@ -75,52 +75,52 @@ The leader key is set to `<Space>`.
 
 ### General
 
-| Key | Description |
-| :--- | :--- |
-| `<Esc>` | Clear search highlighting |
-| `<C-h/j/k/l>` | Focus window left/down/up/right |
-| `<C-Up/Down>` | Resize window horizontally |
-| `<C--/+>` | Resize window vertically |
-| `H`/`L` | Previous/Next buffer |
-| `J`/`K` | Move selected line(s) down/up |
-| `gh`/`gl` | Move cursor to line start/end |
-| `cp` | Paste and reindent |
-| `ycc` | Duplicate and comment the current line |
-| `v` + `/` | Search within the visual selection |
+| Key           | Description                            |
+| :---          | :---                                   |
+| `<Esc>`       | Clear search highlighting              |
+| `<C-h/j/k/l>` | Focus window left/down/up/right        |
+| `<C-Up/Down>` | Resize window horizontally             |
+| `<C--/+>`     | Resize window vertically               |
+| `H`/`L`       | Previous/Next buffer                   |
+| `J`/`K`       | Move selected line(s) down/up          |
+| `gh`/`gl`     | Move cursor to line start/end          |
+| `cp`          | Paste and reindent                     |
+| `ycc`         | Duplicate and comment the current line |
+| `v` + `/`     | Search within the visual selection     |
 
 ### Plugins
 
-| Key | Plugin | Description |
-| :--- | :--- | :--- |
-| `<leader>ms` | `mason.nvim` | Show the Mason installer UI |
-| `s` | `flash.nvim` | Jump to any position in the visible buffer |
-| `]g`/`[g` | `gitsigns.nvim` | Go to the next/previous git hunk |
-| `<leader>gb` | `gitsigns.nvim` | Blame the current line |
-| `<leader>gh` | `gitsigns.nvim` | Preview the hunk under the cursor |
-| `gd`/`gk` | `lsp-config` | Go to Definition / Hover Documentation |
-| `grn`/`gra` | `lsp-config` | Rename symbol / Code actions (0.12+ defaults) |
-| `grr`/`gri` | `lsp-config` | Show references / Go to implementation |
-| `grt`/`grx` | `lsp-config` | Type definition / Run codelens |
-| `gO` | `lsp-config` | Document symbols |
-| `<leader>ih` | `lsp-config` | Toggle inlay hints |
-| `<leader>sj` | `mini.splitjoin` | Toggle split/join of code blocks |
-| `ys`/`ds`/`cs` | `mini.surround` | Add/delete/change surroundings |
-| `<leader>a`/`<leader>A` | `mini.align` | Align text (with preview) |
-| `[b`/`]b` | `mini.bracketed` | Navigate between buffers |
-| `<leader>i` | `nvim-toggler` | Toggle a variable or keyword (e.g., `true`/`false`) |
-| `<leader>e` | `oil.nvim` | Toggle the file explorer |
-| `<leader>sf`/`st`/`sr` | `snacks.nvim` | Search files/text/recent files |
-| `<leader>sk`/`sb` | `snacks.nvim` | Search keymaps/buffers |
-| `<leader>si`/`sm` | `snacks.nvim` | Search icons / notification history |
-| `<leader>q` | `snacks.nvim` | Delete the current buffer |
-| `<leader>su` | `undotree` | Toggle the undo tree |
-| `<leader>s.` | `sidekick.nvim` | Toggle Sidekick CLI |
-| `<leader>gm` | `sidekick.nvim` | Toggle Gemini Sidekick |
-| `<leader>sp` | `sidekick.nvim` | Ask Sidekick a prompt |
-| `<leader>sv` | `sidekick.nvim` | Send visual selection to Sidekick |
-| `<C-.>` | `sidekick.nvim` | Switch focus to Sidekick |
-| `<Tab>` | `sidekick.nvim` | Jump or apply next edit suggestion |
-| `<C-\>` | `toggleterm.nvim` | Toggle a floating terminal |
+| Key                     | Plugin            | Description                                         |
+| :---                    | :---              | :---                                                |
+| `<leader>ms`            | `mason.nvim`      | Show the Mason installer UI                         |
+| `s`                     | `flash.nvim`      | Jump to any position in the visible buffer          |
+| `]g`/`[g`               | `gitsigns.nvim`   | Go to the next/previous git hunk                    |
+| `<leader>gb`            | `gitsigns.nvim`   | Blame the current line                              |
+| `<leader>gh`            | `gitsigns.nvim`   | Preview the hunk under the cursor                   |
+| `gd`/`gk`               | `lsp-config`      | Go to Definition / Hover Documentation              |
+| `grn`/`gra`             | `lsp-config`      | Rename symbol / Code actions (0.12+ defaults)       |
+| `grr`/`gri`             | `lsp-config`      | Show references / Go to implementation              |
+| `grt`/`grx`             | `lsp-config`      | Type definition / Run codelens                      |
+| `gO`                    | `lsp-config`      | Document symbols                                    |
+| `<leader>ih`            | `lsp-config`      | Toggle inlay hints                                  |
+| `<leader>sj`            | `mini.splitjoin`  | Toggle split/join of code blocks                    |
+| `ys`/`ds`/`cs`          | `mini.surround`   | Add/delete/change surroundings                      |
+| `<leader>a`/`<leader>A` | `mini.align`      | Align text (with preview)                           |
+| `[b`/`]b`               | `mini.bracketed`  | Navigate between buffers                            |
+| `<leader>i`             | `nvim-toggler`    | Toggle a variable or keyword (e.g., `true`/`false`) |
+| `<leader>e`             | `oil.nvim`        | Toggle the file explorer                            |
+| `<leader>sf`/`st`/`sr`  | `snacks.nvim`     | Search files/text/recent files                      |
+| `<leader>sk`/`sb`       | `snacks.nvim`     | Search keymaps/buffers                              |
+| `<leader>si`/`sm`       | `snacks.nvim`     | Search icons / notification history                 |
+| `<leader>q`             | `snacks.nvim`     | Delete the current buffer                           |
+| `<leader>su`            | `undotree`        | Toggle the undo tree                                |
+| `<leader>s.`            | `sidekick.nvim`   | Toggle Sidekick CLI                                 |
+| `<leader>gm`            | `sidekick.nvim`   | Toggle Gemini Sidekick                              |
+| `<leader>sp`            | `sidekick.nvim`   | Ask Sidekick a prompt                               |
+| `<leader>sv`            | `sidekick.nvim`   | Send visual selection to Sidekick                   |
+| `<C-.>`                 | `sidekick.nvim`   | Switch focus to Sidekick                            |
+| `<Tab>`                 | `sidekick.nvim`   | Jump or apply next edit suggestion                  |
+| `<C-\>`                 | `toggleterm.nvim` | Toggle a floating terminal                          |
 
 ## 🔌 Plugins Overview
 
@@ -148,7 +148,7 @@ The leader key is set to `<Space>`.
 - **[neoscroll.nvim](https://github.com/karb94/neoscroll.nvim)**: Smooth scrolling.
 - **[mini.starter](https://github.com/echasnovski/mini.starter)**: Minimal and fast start screen.
 - **[mini.indentscope](https://github.com/echasnovski/mini.indentscope)**: Visualize indent scope.
-- **[markview.nvim](https://github.com/OXY2DEV/markview.nvim)**: Markdown rendering inside Neovim buffers.
+- **[render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim)**: Markdown rendering inside Neovim buffers.
 
 </details>
 
