@@ -9,7 +9,7 @@ now_if_args(function()
       rename = { enabled = true },
       notifier = { enabled = true },
       picker = { enabled = true },
-      image = { enabled = true },
+      image = { enabled = false },
       styles = {
          input = {
             relative = "cursor",
