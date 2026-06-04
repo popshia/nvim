@@ -5,10 +5,13 @@ now_if_args(function()
       gh("neovim/nvim-lspconfig"),
       gh("nmac427/guess-indent.nvim"),
       gh("j-hui/fidget.nvim"),
+      gh("r4ppz/lspeek.nvim"),
    })
 
    require("fidget").setup({})
    require("guess-indent").setup({})
+   require("lspeek").setup()
+
    vim.lsp.config.sourcekit = {
       cmd = { "xcrun", "sourcekit-lsp" },
       filetypes = { "swift" },
@@ -35,10 +38,16 @@ now_if_args(function()
    -- |v_an| and |v_in| fall back to LSP |vim.lsp.buf.selection_range()| if
    --   treesitter is not active.
    -- |gx| handles `textDocument/documentLink`. Example: with gopls, invoking gx
+   --   on "os" in this Go code will open documentation externally: >
    map("n", "gd", function()
-      --   on "os" in this Go code will open documentation externally: >
       vim.lsp.buf.definition()
    end, "Goto Definition")
+   map("n", "gD", function()
+      require("lspeek").peek_definition()
+   end, "Peek Definition")
+   map("n", "gT", function()
+      require("lspeek").peek_type_definition()
+   end, "Peek Type Definition")
    map("n", "gk", function()
       vim.lsp.buf.hover({ border = "rounded" })
    end, "Hover Documentation")
