@@ -1,6 +1,5 @@
 -- Define config table to be able to pass data between scripts
 -- It is a global variable which can be use both as `_G.Config` and `Config`
-_G.Config = {}
 _G.gh = function(x)
    return "https://github.com/" .. x
 end

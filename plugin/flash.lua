@@ -4,24 +4,22 @@ now_if_args(function()
    vim.pack.add({ gh("folke/flash.nvim") })
 
    require("flash").setup({
-      opts = {
-         ---@type Flash.Config
-         search = {
-            multi_window = false,
-         },
-         jump = {
-            nohlsearch = true,
-            autojump = true,
-         },
-         label = {
-            uppercase = false,
-         },
-         modes = {
-            char = {
-               enabled = true,
-               jump_labels = true,
-               keys = { "f", "F" },
-            },
+      ---@type Flash.Config
+      search = {
+         multi_window = false,
+      },
+      jump = {
+         nohlsearch = true,
+         autojump = true,
+      },
+      label = {
+         uppercase = false,
+      },
+      modes = {
+         char = {
+            enabled = true,
+            jump_labels = true,
+            keys = { "f", "F" },
          },
       },
    })

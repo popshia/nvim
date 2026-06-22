@@ -40,8 +40,8 @@ map({ "n", "x" }, "gh", "^", "Move Cursor to Line Start")
 map({ "n", "x" }, "gl", "g_", "Move Cursor to Line End")
 
 -- Comment and yank paste =====================================================
-map("n", "ycc", "yy<Plug>(comment_toggle_linewise_current)p", "Duplicate and comment line")
-map("x", "ycc", "ygv<Plug>(comment_toggle_linewise_visual)`>p", "Duplicate and comment line")
+map("n", "ycc", "yygccp", "Duplicate and comment line")
+map("x", "ycc", "ygvgcp", "Duplicate and comment line")
 
 -- Undo tree ==================================================================
 map("n", "<leader>su", function()

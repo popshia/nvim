@@ -17,12 +17,8 @@ later(function()
          yaml = { "prettier" },
          swift = { "swift" },
          ["*"] = { "trim_whitespace", "codespell" },
-         ["_"] = {},
       },
       formatters = {
-         clang_foramt = {
-            prepend_args = { "--style=LLVM" },
-         },
          injected = {
             option = { ignore_errors = true },
          },
