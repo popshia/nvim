@@ -14,6 +14,7 @@ later(function()
          json = { "prettier" },
          html = { "prettier" },
          javascript = { "prettier" },
+         vue = { "prettier" },
          yaml = { "prettier" },
          swift = { "swift" },
          ["*"] = { "trim_whitespace", "codespell" },
