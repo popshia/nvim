@@ -20,6 +20,7 @@ now(function()
             section = "find",
          },
          { action = "Pack", name = "pack", section = "actions" },
+         { action = "Leet", name = "leet", section = "actions" },
          { action = "qall", name = "quit", section = "actions" },
       },
       footer = "stay hungry, stay foolish.",

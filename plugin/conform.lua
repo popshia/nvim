@@ -7,6 +7,7 @@ later(function()
       ---@module "conform"
       ---@type conform.setupOpts
       formatters_by_ft = {
+         cpp = { "clang-format" },
          lua = { "stylua" },
          python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
          shell = { "shfmt", "shellcheck" },
@@ -22,6 +23,9 @@ later(function()
       formatters = {
          injected = {
             option = { ignore_errors = true },
+         },
+         ["clang-format"] = {
+            prepend_args = { "--style={BasedOnStyle: llvm, IndentWidth: 4, TabWidth: 4}" },
          },
          stylua = {
             append_args = {

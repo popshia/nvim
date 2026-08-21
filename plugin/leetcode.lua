@@ -7,9 +7,11 @@ later(function()
       gh("kawre/leetcode.nvim"),
    })
 
+   vim.fn.mkdir(vim.fn.expand("~/repos/leetcode/.cache"), "p")
+
    require("leetcode").setup({
-      lang = "python3",
-      picker = { "snacks-picker" },
+      lang = "cpp",
+      picker = { provider = "snacks-picker" },
       storage = {
          home = "~/repos/leetcode/code",
          cache = "~/repos/leetcode/.cache",
@@ -25,6 +27,7 @@ later(function()
          medium = { fg = "#e9b143" },
          hard = { fg = "#f2594b" },
       },
+      image_support = true,
    })
 
    map("n", "<leader>ls", "<cmd>Leet submit<CR>", "Leetcode Submit")
